@@ -1,0 +1,62 @@
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+
+    .logo {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0 1rem;
+
+        a {
+            color: black;
+            font-size: 1.5rem;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            padding: 0.5rem;
+
+            &:hover {
+                color: rgb(79, 114, 189);
+            }
+        }
+    }
+
+    nav {
+        flex: 1;
+
+        ul {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            max-width: 70rem;
+            margin: 0 auto;
+            padding: 0;
+
+            li {
+                text-align: center;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin: 0;
+                flex: 1;
+
+                a {
+                    font-size: 1.5rem;
+                    font-family: 'Times New Roman', Times, serif;
+                    padding: 0.5rem;
+                    color: black;
+
+                    &:hover {
+                        color: rgb(79, 114, 189);
+                    }
+
+                    &.active {
+                        background-color: black;
+                        color: white;
+                    }
+                }
+            }
+        }
+    }
+}

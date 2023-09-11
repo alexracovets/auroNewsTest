@@ -1,0 +1,68 @@
+.popup_info {
+    position: fixed;
+    z-index: 10;
+    left: 0;
+    top: 0;
+    background-color: rgba(128, 128, 128, 0.267);
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .content {
+        position: relative;
+        width: 100%;
+        height: 50vh;
+        max-width: 50rem;
+        margin: 0 2rem;
+        padding: 2.5rem 1.5rem;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        flex-direction: column;
+        border-radius: 5rem;
+        background-color: #cec8f4;
+
+
+        .photo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            width: 6rem;
+            height: 6rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            border-radius: 1.5rem;
+            background-color: #5ac4f6;
+        }
+
+        .text {
+            flex: 1;
+            width: 100%;
+            font-size: 1.5rem;
+            text-align: center;
+            padding: 0.5rem 1.5rem;
+            border-radius: 2rem;
+            background-color: #5ac4f6;
+        }
+
+        .close {
+            position: absolute;
+            right: 0;
+            top: 0;
+            font-size: 1.3rem;
+            font-weight: 600;
+            width: 2rem;
+            height: 2rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: none;
+            border-radius: 0.5rem;
+            background-color: #5ac4f6;
+            cursor: pointer;
+        }
+    }
+}

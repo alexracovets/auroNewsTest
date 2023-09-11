@@ -1,0 +1,19 @@
+.tittle_context {
+
+    h2,
+    .sub_title {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 2rem;
+        font-weight: bold;
+        width: 100%;
+        padding: 1rem 0;
+        background-color: #5ac4f6;
+        border-radius: 2rem;
+    }
+
+    h2 {
+        margin-bottom: 1rem;
+    }
+}
