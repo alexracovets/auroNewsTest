@@ -13,7 +13,9 @@ export default function SmallNews({ news }) {
     return (
         <div className={s.small_new}>
             <div className={s.description}>
-                <CustomButton text={news.description} />
+                <Link to={`/news/${news.id}`}>
+                    <CustomButton text={news.description} />
+                </Link>
             </div>
             <div className={s.content}>
                 <div className={s.photo}>
