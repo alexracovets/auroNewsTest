@@ -1,9 +1,29 @@
+import { useState, useEffect } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 
 import s from './Header.module.scss';
 import logo from '/img/logo.svg';
 
 export default function Header() {
+
+    const [isScrolled, setIsScrolled] = useState(false);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            if (window.scrollY > (window.lastScrollY || 0)) {
+                setIsScrolled(true);
+            } else {
+                setIsScrolled(false);
+            }
+            window.lastScrollY = window.scrollY;
+        };
+
+        window.addEventListener('scroll', handleScroll);
+
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
 
     const links = [
         {
@@ -25,7 +45,7 @@ export default function Header() {
     ]
 
     return (
-        <header>
+        <header className={isScrolled ? s.disable : null} >
             <div className={s.logo}>
                 <Link to="/">
                     <img src={logo} alt="logo" />
@@ -46,6 +66,6 @@ export default function Header() {
                     ))}
                 </ul>
             </nav>
-        </header>
+        </ header>
     )
 }

@@ -9,6 +9,12 @@ header {
     width: 100%;
     padding: 1.6875rem 4.1875rem 0 4.1875rem;
     pointer-events: none;
+    transform: translateY(0);
+    transition: all 300ms ease-in;
+
+    &.disable {
+        transform: translateY(-100%);
+    }
 
     .logo {
         display: flex;

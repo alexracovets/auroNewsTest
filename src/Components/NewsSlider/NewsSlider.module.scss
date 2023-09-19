@@ -132,7 +132,6 @@
 
         &::-webkit-scrollbar-track {
             background-color: $base-sand;
-            cursor: pointer;
         }
 
         &::-webkit-scrollbar-thumb {
@@ -153,7 +152,6 @@
             border: none;
             border-radius: 1.875rem;
             background: $base-sand;
-            cursor: pointer;
 
             &.active {
                 background-color: $base-yellow;
