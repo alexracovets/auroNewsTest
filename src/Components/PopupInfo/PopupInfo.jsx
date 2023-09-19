@@ -7,6 +7,8 @@ PopupInfo.propTypes = {
     data: PropTypes.object.isRequired
 };
 
+//TEST
+
 import { setInfo } from '../../store/reducers/popups.js';
 
 export default function PopupInfo({ data }) {

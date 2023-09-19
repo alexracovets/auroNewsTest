@@ -1,44 +1,88 @@
+@import '../../global/variable.scss';
+
 .short_news {
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    padding: 1rem 0;
-    padding-bottom: 2rem;
-    border-radius: 2rem;
-    background-color: #5ac4f6;
 
     .title {
-        font-size: 2rem;
+        text-align: center;
+        font-size: 4rem;
+        color: $base-red;
+        font-family: $font-rounds;
         margin-bottom: 1rem;
+        margin-bottom: 5.3125rem;
     }
 
     .news_list {
         width: 100%;
         display: flex;
-        justify-content: center;
+        justify-content: flex-start;
         align-items: center;
         flex-direction: column;
-        padding: 0 1.5rem;
+        max-width: 75rem;
+        max-height: 46.875rem;
+        overflow-y: scroll;
+        padding-right: 4.0625rem;
+
+        &::-webkit-scrollbar {
+            width: 0.25rem;
+            border-radius: 0.25rem;
+        }
+
+        &::-webkit-scrollbar-track {
+            background-color: $base-sand;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            background-color: $base-yellow;
+            border-radius: 0.25rem;
+            height: 1.25rem;
+        }
 
         .item {
-            font-size: 1.5rem;
-            font-weight: 600;
             display: flex;
             justify-content: center;
+            align-items: flex-start;
+            flex-direction: column;
+            color: $base-black;
+            font-family: $font-mont;
             width: 100%;
-            margin: 0.5rem auto;
-            padding: 0.5rem;
-            border-radius: 2rem;
-            background-color: #cec8f4;
+            margin-bottom: 1.25rem;
+            padding: 3.75rem;
+            border-radius: 1.875rem;
+            background-color: $base-sand;
 
-            &:first-of-type {
-                margin-top: 0;
+            .name {
+                font-size: 2rem;
+                font-weight: 600;
+                margin-bottom: 1.25rem;
             }
 
-            &:last-of-type {
-                margin-bottom: 0;
+            .description {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                width: 100%;
+                position: relative;
+
+                .text {
+                    font-size: 1rem;
+                    width: 100%;
+                    max-width: 34.5rem;
+                }
+
+                .likes {
+                    position: absolute;
+                    right: 0;
+                    bottom: -2rem;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    flex-direction: column;
+                }
             }
         }
     }
@@ -48,7 +92,17 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        margin-top: 1.5rem;
-        margin-bottom: 0.5rem;
+        margin: 4.375rem auto;
+
+        .link {
+            width: 100%;
+            max-width: 24.375rem;
+
+            .count {
+                text-align: center;
+                font-size: 1.25rem;
+                font-family: $font-mont;
+            }
+        }
     }
 }

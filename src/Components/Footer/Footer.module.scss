@@ -1,8 +1,10 @@
-footer.footer {
-    font-size: 1rem;
-    font-weight: bold;
-    text-align: center;
-    background-color: white;
-    padding: 0.5rem;
-    border-radius: 2rem;
+@import '../../global/variable.scss';
+
+.footer {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: $base-sand;
+    padding: 5.5rem 5rem;
 }

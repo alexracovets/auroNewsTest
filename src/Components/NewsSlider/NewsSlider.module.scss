@@ -1,0 +1,99 @@
+@import '../../global/variable.scss';
+
+.newsSlider {
+    padding-top: 14.75rem;
+
+    .slider {
+        display: block;
+        max-width: 72.3125rem;
+        margin: 0 auto;
+
+        .slide {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 0 2rem;
+            transform: translateX(0.75rem);
+
+            .wrapperSlider {
+                font-family: $font-mont;
+                width: 100%;
+                border-radius: 1.875rem;
+                padding: 4.0625rem 1.25rem 3.125rem 1.25rem;
+                background-color: $base-sand;
+                max-width: 70.3125rem;
+                margin: 0 auto;
+
+                h3 {
+                    font-size: 2rem;
+                    text-align: center;
+                    margin-bottom: 5.125rem;
+                }
+
+                .wrapper {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    width: 100%;
+                    max-width: 100%;
+
+                    .image {
+                        width: 100%;
+                        max-width: 38.1875rem;
+                        transform: translateX(-2.5rem);
+
+                        img {
+                            display: block;
+                            width: 100%;
+                            border-radius: 1.875rem;
+                            overflow: hidden;
+                        }
+                    }
+
+                    .content {
+                        display: flex;
+                        justify-content: center;
+                        align-items: flex-start;
+                        flex-direction: column;
+                        width: 100%;
+                        flex: 1;
+
+                        .description {
+                            width: 100%;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            flex-direction: column;
+                            margin-bottom: 3rem;
+                            max-width: 27.0625rem;
+
+                            p {
+                                font-size: 1rem;
+                                width: 100%;
+                                margin-bottom: 1.5rem;
+
+                                &:last-of-type {
+                                    margin-bottom: 0;
+                                }
+                            }
+                        }
+
+                        .read {
+                            font-size: 1.25rem;
+                            color: $base-black;
+                            font-family: $font-mont;
+                            font-weight: 500;
+                            text-transform: uppercase;
+                            padding: 1.5625rem 6.25rem;
+                            background: $base-yellow;
+                            border-radius: 3rem;
+                            border: none;
+                        }
+                    }
+                }
+            }
+
+        }
+    }
+}

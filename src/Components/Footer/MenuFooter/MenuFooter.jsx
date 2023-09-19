@@ -1,10 +1,9 @@
-import { Link, NavLink } from 'react-router-dom';
-
-import s from './Header.module.scss';
+import { Link } from 'react-router-dom';
 import logo from '/img/logo.svg';
 
-export default function Header() {
+import s from './MenuFooter.module.scss';
 
+export default function MenuFooter() {
     const links = [
         {
             name: 'Головна',
@@ -25,7 +24,7 @@ export default function Header() {
     ]
 
     return (
-        <header>
+        <div className={s.menu}>
             <div className={s.logo}>
                 <Link to="/">
                     <img src={logo} alt="logo" />
@@ -35,17 +34,13 @@ export default function Header() {
                 <ul>
                     {links.map((link, index) => (
                         <li key={index}>
-                            <NavLink
-                                to={link.path}
-                                className={({ isActive }) => isActive ? s.active : undefined}
-                                exact="true"
-                            >
+                            <Link to={link.path}>
                                 {link.name}
-                            </NavLink>
+                            </Link>
                         </li>
                     ))}
                 </ul>
             </nav>
-        </header>
+        </div>
     )
 }

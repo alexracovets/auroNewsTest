@@ -7,6 +7,8 @@ SmallMuseum.propTypes = {
     museum: PropTypes.object.isRequired,
 };
 
+//TEST
+
 export default function SmallMuseum({ museum }) {
 
     return (

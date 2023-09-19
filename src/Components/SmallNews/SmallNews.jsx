@@ -8,6 +8,8 @@ SmallNews.propTypes = {
     news: PropTypes.object.isRequired,
 };
 
+//TEST
+
 export default function SmallNews({ news }) {
 
     return (

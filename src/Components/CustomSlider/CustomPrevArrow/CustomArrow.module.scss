@@ -1,0 +1,27 @@
+@import '../../../global/variable.scss';
+
+.arrow {
+    position: absolute;
+    top: 50%;
+    z-index: 5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 4.0625rem;
+    height: 4.0625rem;
+    background-color: $base-yellow;
+    border-radius: 50%;
+
+    &.arrow_Prev {
+        left: -3.84375rem;
+    }
+
+    &.arrow_Next {
+        right: -3.84375rem;
+        transform: rotate(180deg);
+    }
+
+    svg {
+        transform: translateX(-0.3rem);
+    }
+}

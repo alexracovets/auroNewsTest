@@ -1,19 +1,26 @@
+@import '../../global/variable.scss';
+
 .tittle_context {
+    height: 100vh;
+    background-color: $base-sand;
+    padding-top: 11.875rem;
 
     h2,
     .sub_title {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        font-size: 2rem;
-        font-weight: bold;
-        width: 100%;
-        padding: 1rem 0;
-        background-color: #5ac4f6;
-        border-radius: 2rem;
+        text-align: center;
+        color: $base-black;
     }
 
     h2 {
-        margin-bottom: 1rem;
+        font-size: 4rem;
+        font-family: $font-rounds;
+        margin-bottom: 3.75rem;
+    }
+
+    .sub_title {
+        font-size: 1rem;
+        font-family: $font-mont;
+        max-width: 37.5rem;
+        margin: 0 auto;
     }
 }

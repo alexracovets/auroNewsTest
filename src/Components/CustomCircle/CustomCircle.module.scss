@@ -1,0 +1,10 @@
+@import '../../global/variable.scss';
+
+.circle {
+    position: absolute;
+    z-index: -1;
+    background-color: $base-yellow;
+    border-radius: 50%;
+    right: -4.3125rem;
+    top: -4.3125rem;
+}

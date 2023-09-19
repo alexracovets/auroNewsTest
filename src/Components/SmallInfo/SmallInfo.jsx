@@ -7,6 +7,8 @@ SmallInfo.propTypes = {
     info: PropTypes.object.isRequired,
 };
 
+//TEST
+
 import { setInfo } from '../../store/reducers/popups.js';
 
 export default function SmallInfo({ info }) {

@@ -1,55 +1,25 @@
-import { useDispatch } from 'react-redux';
-
-import CustomButton from "../CustomButton/CustomButton";
-import CustomSlider from "../CustomSlider/CustomSlider";
-
-import s from './ShortInfo.module.scss';
-
-import { setInfo } from '../../store/reducers/popups.js';
+import CustomBlock from "../CustomBlock/CustomBlock";
 
 export default function ShortInfo() {
-
-    const dispatch = useDispatch();
-
-    const newsList = [
-        {
-            photo: 'Фото1',
-            text: 'Коротка інформація1'
-        },
-        {
-            photo: 'Фото2',
-            text: 'Коротка інформація2'
-        },
-        {
-            photo: 'Фото3',
-            text: 'Коротка інформація3'
+    const data = {
+        img: '',
+        title: 'Інформація',
+        description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
+        btn: 'читати більше',
+        reverse: false,
+        link: '/info',
+        circle: {
+            radius: "20.6875",
+            position: {
+                top: '-4.3125rem',
+                bottom: 'auto',
+                left: '0',
+                right: 'auto'
+            }
         }
-    ]
-    const OnHandler = (item) => {
-        dispatch(setInfo(item));
     }
 
-    const renderSlide = () => {
-        return newsList.map((item, index) => (
-            <div className={s.slide} key={index}>
-                <div className={s.content}>
-                    <div className={s.photo}>{item.photo}</div>
-                    <div className={s.info}>{item.text}</div>
-                </div>
-                <div className={s.all} onClick={() => OnHandler(item)}>
-                    <CustomButton text="Кнопка переходу" />
-                </div>
-            </div>
-        ));
-    };
     return (
-        <div className={s.short_info}>
-            <h3 className={s.title}>
-                Інфо
-            </h3>
-            <div className={s.slider}>
-                <CustomSlider renderSlide={renderSlide} />
-            </div>
-        </div>
+        <CustomBlock data={data} />
     )
 }
