@@ -7,13 +7,15 @@ header {
     justify-content: center;
     align-items: center;
     width: 100%;
-    padding: 1.6875rem 4.1875rem;
+    padding: 1.6875rem 4.1875rem 0 4.1875rem;
+    pointer-events: none;
 
     .logo {
         display: flex;
         justify-content: center;
         align-items: center;
         width: 12.5rem;
+        pointer-events: all;
     }
 
     nav {
@@ -41,6 +43,7 @@ header {
                     font-family: $font-mont;
                     padding: 0.5rem;
                     color: $base-black;
+                    pointer-events: all;
 
                     &:hover,
                     &.active {

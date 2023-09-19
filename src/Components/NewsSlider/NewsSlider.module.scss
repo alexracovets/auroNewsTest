@@ -2,12 +2,14 @@
 
 .newsSlider {
     padding-top: 14.75rem;
+    padding-bottom: 0;
 
     .slider {
         display: block;
         max-width: 72.3125rem;
         margin: 0 auto;
         position: relative;
+        margin-bottom: 11.75rem;
 
         .slide {
             width: 100%;
@@ -49,6 +51,7 @@
                             width: 100%;
                             border-radius: 1.875rem;
                             overflow: hidden;
+                            background-color: $base-yellow;
                         }
                     }
 
@@ -95,6 +98,66 @@
                 }
             }
 
+        }
+    }
+}
+
+.subNewsSlider {
+    padding-top: 0;
+
+    h3 {
+        font-size: 4rem;
+        text-align: center;
+        color: $base-red;
+        font-family: $font-rounds;
+        margin-bottom: 6.25rem;
+    }
+
+    .news {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        flex-direction: column;
+        max-height: 45rem;
+        overflow-y: scroll;
+        max-width: 70.3125rem;
+        margin: 0 auto;
+        padding-right: 4.125rem;
+        margin-bottom: 7rem;
+
+        &::-webkit-scrollbar {
+            width: 0.25rem;
+            border-radius: 0.25rem;
+        }
+
+        &::-webkit-scrollbar-track {
+            background-color: $base-sand;
+            cursor: pointer;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            background-color: $base-yellow;
+            border-radius: 0.25rem;
+            height: 1.25rem;
+        }
+
+        .newsItem {
+            font-size: 2rem;
+            font-family: $font-mont;
+            font-weight: 600;
+            text-align: center;
+            width: 100%;
+            height: 9.375rem;
+            padding: 3.469rem 11.25rem;
+            margin: 1.25rem auto;
+            border: none;
+            border-radius: 1.875rem;
+            background: $base-sand;
+            cursor: pointer;
+
+            &.active {
+                background-color: $base-yellow;
+            }
         }
     }
 }

@@ -15,12 +15,17 @@
     transition: all 300ms ease-in;
     transform: rotate(0) scale(1);
 
+    &:hover {
+        transform: scale(1.1);
+    }
+
     &.arrow_Prev {
         left: -3.84375rem;
 
         &.disabled {
             opacity: 0.35;
             transform: rotate(0) scale(0.9);
+            pointer-events: none;
         }
     }
 
@@ -31,6 +36,7 @@
         &.disabled {
             opacity: 0.35;
             transform: rotate(180deg) scale(0.9);
+            pointer-events: none;
         }
     }
 

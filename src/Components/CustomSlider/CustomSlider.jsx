@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Slider from "react-slick";
 import PropTypes from "prop-types";
 import CustomArrow from "./CustomPrevArrow/CustomArrow";
@@ -8,17 +8,23 @@ import "slick-carousel/slick/slick-theme.css";
 
 CustomSlider.propTypes = {
     renderSlide: PropTypes.func.isRequired,
+    afterChange: PropTypes.func.isRequired,
+    setSlider: PropTypes.func.isRequired
 };
 
-export default function CustomSlider({ renderSlide }) {
+export default function CustomSlider({ renderSlide, afterChange, setSlider }) {
     const sliderRef = useRef(null);
     const [currentSlide, setCurrentSlide] = useState(0);
 
+    useEffect(() => {
+        setSlider(sliderRef.current)
+    }, [sliderRef])
 
     const settings = {
         arrows: true,
         dots: false,
         infinite: false,
+        lazyLoad: true,
         speed: 500,
         slidesToShow: 1,
         slidesToScroll: 1,
@@ -34,8 +40,9 @@ export default function CustomSlider({ renderSlide }) {
             currentSlide={Number(currentSlide)}
             slider={sliderRef}
         />,
-        afterChange: (current) => {
-            setCurrentSlide(current);
+        afterChange: (index) => {
+            setCurrentSlide(index);
+            afterChange(index);
         },
     };
 
