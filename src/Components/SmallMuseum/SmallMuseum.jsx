@@ -12,9 +12,9 @@ SmallMuseum.propTypes = {
 export default function SmallMuseum({ museum }) {
 
     return (
-        <div className={s.small_museum}>
+        <section className={s.small_museum}>
             <div className={s.description}>
-                <CustomButton text={museum.description} /> 
+                <CustomButton text={museum.description} />
             </div>
             <div className={s.content}>
                 <div className={s.photo}>
@@ -24,6 +24,6 @@ export default function SmallMuseum({ museum }) {
                     {museum.text}
                 </div>
             </div>
-        </div>
+        </section>
     )
 }

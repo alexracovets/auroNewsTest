@@ -5,11 +5,12 @@ import { Layout } from "./layout/default";
 import Home from "./pages/Home";
 import News from "./pages/News";
 import NewsDetail from "./pages/NewsDetail";
-import Info from "./pages/Info";
+import Info from "./pages/Memorial";
 import Museum from "./pages/Museum";
 import Page404 from "./pages/404";
 
 export default function App() {
+
 
   return (
     <>
@@ -18,7 +19,7 @@ export default function App() {
           <Route index element={<Home />} />
           <Route path="news" element={<News />} />
           <Route path="news/:id" element={<NewsDetail />} />
-          <Route path="info" element={<Info />} />
+          <Route path="memorial" element={<Info />} />
           <Route path="museum" element={<Museum />} />
           <Route path="*" element={<Page404 />} />
         </Route>

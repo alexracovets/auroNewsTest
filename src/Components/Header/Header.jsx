@@ -35,8 +35,8 @@ export default function Header() {
             path: '/news',
         },
         {
-            name: 'Інформація',
-            path: '/info',
+            name: 'Меморіал',
+            path: '/memorial',
         },
         {
             name: 'Музей',
@@ -44,11 +44,18 @@ export default function Header() {
         }
     ]
 
+    const scrollToTop = () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth',
+        });
+    };
+
     return (
         <header className={isScrolled ? s.disable : null} >
             <div className={s.logo}>
                 <Link to="/">
-                    <img src={logo} alt="logo" />
+                    <img src={logo} alt="logo" onClick={scrollToTop} />
                 </Link>
             </div>
             <nav>
@@ -59,6 +66,7 @@ export default function Header() {
                                 to={link.path}
                                 className={({ isActive }) => isActive ? s.active : undefined}
                                 exact="true"
+                                onClick={scrollToTop}
                             >
                                 {link.name}
                             </NavLink>

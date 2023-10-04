@@ -12,6 +12,13 @@ CustomBlock.propTypes = {
 
 export default function CustomBlock({ data }) {
 
+    const scrollToTop = () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth',
+        });
+    };
+
     return (
         <section className={data.reverse ? s.customBlock + ' ' + s.reverse : s.customBlock}>
             <div className={s.left}>
@@ -27,7 +34,7 @@ export default function CustomBlock({ data }) {
                         {data.description}
                     </div>
                     <div className={s.link}>
-                        <Link to={data.link}>
+                        <Link to={data.link} onClick={scrollToTop}>
                             <CustomButton text={data.btn} />
                         </Link>
                     </div>

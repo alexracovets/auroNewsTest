@@ -1,0 +1,58 @@
+@import '../../../global/variable.scss';
+
+.item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $opacity-yellow;
+    padding: 6rem;
+    border-radius: 1.875rem;
+    margin-bottom: 6rem;
+
+    .item_left {
+        margin-right: 2.5rem;
+        flex: 1;
+        border-radius: 1.75rem;
+        overflow: hidden;
+
+        img {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+    }
+
+    .item_rigth {
+        margin-left: 2.5rem;
+        flex: 1;
+        font-family: $font-mont;
+        color: $base-black;
+
+        .title,
+        .item_name,
+        .item_age,
+        .item_position {
+            margin-bottom: 1.5rem;
+        }
+
+        .title {
+            font-size: 2.5rem;
+            font-weight: bold;
+        }
+
+        .item_name {
+            font-size: 2rem;
+            font-weight: 500;
+        }
+
+        .item_age,
+        .item_position {
+            font-size: 1.5rem;
+            font-weight: 500;
+        }
+
+        .item_position {
+            margin-bottom: 3.75rem;
+        }
+    }
+}

@@ -4,6 +4,7 @@ import logo from '/img/logo.svg';
 import s from './MenuFooter.module.scss';
 
 export default function MenuFooter() {
+    
     const links = [
         {
             name: 'Головна',
@@ -14,8 +15,8 @@ export default function MenuFooter() {
             path: '/news',
         },
         {
-            name: 'Інформація',
-            path: '/info',
+            name: 'Меморіал',
+            path: '/memorial',
         },
         {
             name: 'Музей',
@@ -23,10 +24,17 @@ export default function MenuFooter() {
         }
     ]
 
+    const scrollToTop = () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth',
+        });
+    };
+
     return (
         <div className={s.menu}>
             <div className={s.logo}>
-                <Link to="/">
+                <Link to="/" onClick={scrollToTop}>
                     <img src={logo} alt="logo" />
                 </Link>
             </div>
@@ -34,7 +42,7 @@ export default function MenuFooter() {
                 <ul>
                     {links.map((link, index) => (
                         <li key={index}>
-                            <Link to={link.path}>
+                            <Link to={link.path} onClick={scrollToTop}>
                                 {link.name}
                             </Link>
                         </li>

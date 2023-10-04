@@ -1,0 +1,36 @@
+@import '../../../global/variable.scss';
+
+.pagination_wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .pagination {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        list-style: none;
+        padding: 0;
+        margin: 2.7rem;
+
+        li {
+            padding: 2.475px 0.5rem;
+
+            .page_link {
+                color: $opacity-gray;
+                font-size: 1.5rem;
+                font-family: $font-mont;
+                font-weight: 500;
+
+                &.active {
+                    color: $base-black;
+                }
+            }
+        }
+    }
+
+    .arrow {
+        border: none;
+        background-color: transparent;
+    }
+}

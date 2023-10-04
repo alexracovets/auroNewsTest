@@ -12,10 +12,17 @@ SmallNews.propTypes = {
 
 export default function SmallNews({ news }) {
 
+    const scrollToTop = () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth',
+        });
+    };
+
     return (
         <div className={s.small_new}>
             <div className={s.description}>
-                <Link to={`/news/${news.id}`}>
+                <Link to={`/news/${news.id}`} onClick={scrollToTop}>
                     <CustomButton text={news.description} />
                 </Link>
             </div>
@@ -29,7 +36,7 @@ export default function SmallNews({ news }) {
             </div>
             <div className={s.down_side}>
                 <div className={s.read}>
-                    <Link to={`/news/${news.id}`}>
+                    <Link to={`/news/${news.id}`} onClick={scrollToTop}>
                         <CustomButton text="Читати" />
                     </Link>
                 </div>

@@ -10,9 +10,7 @@ export default function Home() {
             <TitleBlock />
             <ShortNews />
             <ShortInfo />
-            <section>
-                <ShortMuseum />
-            </section>
+            <ShortMuseum />
         </>
     )
 }
