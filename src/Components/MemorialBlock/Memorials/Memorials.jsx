@@ -18,7 +18,7 @@ export default function Memorials({ currentMemo }) {
 
 
     return (
-        <>
+        <div className={s.memorial}>
             {
                 memorials.map((item, index) => (
                     <div className={s.item} key={index}>
@@ -35,6 +35,6 @@ export default function Memorials({ currentMemo }) {
                     </div>
                 ))
             }
-        </>
+        </div>
     )
 }

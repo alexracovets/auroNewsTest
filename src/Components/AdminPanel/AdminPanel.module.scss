@@ -1,0 +1,21 @@
+@import '../../global/variable.scss';
+
+.adminePanel {
+    font-size: 1rem;
+    font-family: $font-mont;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+    margin-top: 3rem;
+    border-top: 0.15rem solid $base-black;
+    border-bottom: 0.15rem solid $base-black;
+    padding: 0.5rem 0;
+
+    .item {
+        padding: 0.5rem;
+        cursor: pointer;
+        margin: 0 0.5rem;
+        background-color: $opacity-yellow;
+    }
+}

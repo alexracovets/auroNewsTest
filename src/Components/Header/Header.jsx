@@ -10,12 +10,14 @@ export default function Header() {
 
     useEffect(() => {
         const handleScroll = () => {
-            if (window.scrollY > (window.lastScrollY || 0)) {
-                setIsScrolled(true);
-            } else {
-                setIsScrolled(false);
+            if (window.scrollY > 90) {
+                if (window.scrollY > (window.lastScrollY || 0)) {
+                    setIsScrolled(true);
+                } else {
+                    setIsScrolled(false);
+                }
+                window.lastScrollY = window.scrollY;
             }
-            window.lastScrollY = window.scrollY;
         };
 
         window.addEventListener('scroll', handleScroll);

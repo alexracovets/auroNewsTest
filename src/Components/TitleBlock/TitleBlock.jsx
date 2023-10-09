@@ -2,6 +2,8 @@ import CustomCircle from '../CustomCircle/CustomCircle';
 
 import s from './TitleBlock.module.scss';
 
+import title_image from '/img/title_img.png'
+
 export default function TitleBlock() {
 
     const circle = {
@@ -17,10 +19,23 @@ export default function TitleBlock() {
     return (
         <section className={s.tittle_context}>
             <h2>
-                Заголовок
+                <span>Аврора:</span> шлях до перемоги
             </h2>
             <div className={s.sub_title}>
-                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&apos;s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
+                Аврора від початку повномасштабного вторгнення не тільки не призупинила свою роботу, а тільки зросла й зміцніла. <b>Чому?</b>
+            </div>
+            <div className={s.hero_block}>
+                <div className={s.block__title}>
+                    Тому що Аврора - справжні герої та героїні свого часу, які:
+                </div>
+                <ul className={s.block__list}>
+                    <li>захищають Україну, навіть ціною власного життя;</li>
+                    <li>щодня працюють, щоб підтримувати країну економічно;</li>
+                    <li>волонтерять, донатять та допомагають чим можуть;</li>
+                </ul>
+            </div>
+            <div className={s.title_image}>
+                <img src={title_image} alt="CHK" />
             </div>
             <CustomCircle radius={circle.radius} position={circle.position} />
         </section>

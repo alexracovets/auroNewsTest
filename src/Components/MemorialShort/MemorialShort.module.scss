@@ -1,0 +1,73 @@
+@import '../../global/variable.scss';
+
+.memorialShort {
+    background-color: $opacity-yellow;
+
+    .title {
+        color: $base-red;
+        font-size: 4rem;
+        text-align: center;
+        font-weight: 400;
+        font-family: $font-rounds;
+        display: block;
+        margin: 0 auto;
+        margin-bottom: 5rem;
+    }
+
+    .memorialShort_wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 2rem;
+
+        .left {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            flex-direction: column;
+            color: $base-black;
+            font-family: $font-mont;
+            padding-right: 6.5rem;
+            width: 50%;
+
+            .wrapper__title {
+                font-size: 2rem;
+                font-weight: 500;
+                margin-bottom: 2rem;
+            }
+
+            .description {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                margin-bottom: 3.125rem;
+
+                .item {
+                    font-size: 1.25rem;
+                    margin-bottom: 1.5rem;
+
+                    &:last-of-type {
+                        margin-bottom: 0;
+                    }
+                }
+            }
+
+        }
+
+        .right {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 0 0.5rem;
+            width: 50%;
+
+            img {
+                display: block;
+                width: 100%;
+                border-radius: 1.875rem;
+                overflow: hidden;
+            }
+        }
+    }
+}

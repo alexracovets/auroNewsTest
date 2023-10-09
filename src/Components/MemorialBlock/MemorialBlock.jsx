@@ -12,22 +12,22 @@ export default function MemorialBlock() {
     const [currentPage, setCurrentPage] = useState(1);
     const [memoPerPage] = useState(3);
 
-    useEffect(() => {
-        const fetchData = async () => {
-            try {
-                const dbRef = firestore.ref('data/memorials');
-                const snapshot = await dbRef.once('value');
+    const fetchData = async () => {
+        try {
+            const dbRef = firestore.ref('data/memorials');
+            const snapshot = await dbRef.once('value');
 
-                const data = snapshot.val();
-                if (data) {
-                    const memorialsArray = Object.values(data);
-                    setMemorials(memorialsArray);
-                }
-            } catch (error) {
-                console.error('Error fetching memorials:', error);
+            const data = snapshot.val();
+            if (data) {
+                const memorialsArray = Object.values(data);
+                setMemorials(memorialsArray);
             }
-        };
+        } catch (error) {
+            console.error('Error fetching memorials:', error);
+        }
+    };
 
+    useEffect(() => {
         fetchData();
     }, []);
 
@@ -41,10 +41,7 @@ export default function MemorialBlock() {
 
     return (
         <section className={s.memo}>
-            <div className={s.memorial}>
-                <Memorials currentMemo={currentMemo} />
-            </div>
-
+            <Memorials currentMemo={currentMemo} />
             <Pagination
                 memoPerPage={memoPerPage}
                 totalMemo={memorials.length}

@@ -80,6 +80,10 @@
                                 &:last-of-type {
                                     margin-bottom: 0;
                                 }
+
+                                &.bold {
+                                    font-weight: bold;
+                                }
                             }
                         }
 

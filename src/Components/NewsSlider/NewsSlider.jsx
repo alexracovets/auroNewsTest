@@ -1,4 +1,6 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { firestore } from '../../firebase';
+
 import CustomSlider from "../CustomSlider/CustomSlider";
 import CustomCircle from '../CustomCircle/CustomCircle';
 
@@ -7,49 +9,27 @@ import s from './NewsSlider.module.scss';
 export default function NewsSlider() {
     const [activeSlide, setActiveSlide] = useState(0);
     const [slider, setSlider] = useState(null);
+    const [slides, setSlides] = useState([])
 
-    const museumList = [
-        {
-            title: 'Аврора передала 200 рацій ЗСУ',
-            photo: '/img/news/news1.jpg',
-            description: [
-                "Однією з найактуальніших потреб української армії є рації. Адже надійний зв’язок, який не підведе у складну хвилину, допомагає не тільки успішно виконувати бойові завдання, а й рятувати життя.",
-                "Найчастіше бойові загони розсіюються на місцевості. І зв’язок військових по рації може стати порятунком, забезпечити зміцнення позицій й допомогти виявити зосередження противника."
-            ]
-        },
-        {
-            title: 'Аврора передала 200 рацій ЗСУ',
-            photo: '/img/news/news1.jpg',
-            description: [
-                "Однією з найактуальніших потреб української армії є рації. Адже надійний зв’язок, який не підведе у складну хвилину, допомагає не тільки успішно виконувати бойові завдання, а й рятувати життя.",
-                "Найчастіше бойові загони розсіюються на місцевості. І зв’язок військових по рації може стати порятунком, забезпечити зміцнення позицій й допомогти виявити зосередження противника."
-            ]
-        },
-        {
-            title: 'Аврора передала 200 рацій ЗСУ',
-            photo: '/img/news/news1.jpg',
-            description: [
-                "Однією з найактуальніших потреб української армії є рації. Адже надійний зв’язок, який не підведе у складну хвилину, допомагає не тільки успішно виконувати бойові завдання, а й рятувати життя.",
-                "Найчастіше бойові загони розсіюються на місцевості. І зв’язок військових по рації може стати порятунком, забезпечити зміцнення позицій й допомогти виявити зосередження противника."
-            ]
-        },
-        {
-            title: 'Аврора передала 200 рацій ЗСУ',
-            photo: '/img/news/news1.jpg',
-            description: [
-                "Однією з найактуальніших потреб української армії є рації. Адже надійний зв’язок, який не підведе у складну хвилину, допомагає не тільки успішно виконувати бойові завдання, а й рятувати життя.",
-                "Найчастіше бойові загони розсіюються на місцевості. І зв’язок військових по рації може стати порятунком, забезпечити зміцнення позицій й допомогти виявити зосередження противника."
-            ]
-        },
-        {
-            title: 'Аврора передала 200 рацій ЗСУ',
-            photo: '/img/news/news1.jpg',
-            description: [
-                "Однією з найактуальніших потреб української армії є рації. Адже надійний зв’язок, який не підведе у складну хвилину, допомагає не тільки успішно виконувати бойові завдання, а й рятувати життя.",
-                "Найчастіше бойові загони розсіюються на місцевості. І зв’язок військових по рації може стати порятунком, забезпечити зміцнення позицій й допомогти виявити зосередження противника."
-            ]
-        },
-    ]
+    const fetchData = async () => {
+        try {
+            const dbRef = firestore.ref('data/news');
+            const snapshot = await dbRef.once('value');
+
+            const data = snapshot.val();
+
+            if (data) {
+                const memorialsArray = Object.values(data);
+                setSlides(memorialsArray);
+            }
+        } catch (error) {
+            console.error('Error fetching memorials:', error);
+        }
+    };
+
+    useEffect(() => {
+        fetchData();
+    }, []); 
 
     const circle1 = {
         radius: "15.625rem",
@@ -76,19 +56,19 @@ export default function NewsSlider() {
     }
 
     const renderSlide = () => {
-        return museumList.map((news, index) => (
+        return slides.map((news, index) => (
             <div className={s.slide} key={index}>
                 <div className={s.wrapperSlider}>
                     <h3>{news.title}</h3>
                     <div className={s.wrapper}>
                         <div className={s.image}>
-                            <img src={news.photo} alt="news" />
+                            <img src={news.image} alt="news" />
                         </div>
                         <div className={s.content}>
                             <div className={s.description}>
-                                {news.description.map((item, index) => (
-                                    <p key={index}>
-                                        {item}
+                                {news.text && news.text.map((item) => (
+                                    <p key={item.key} className={item.bold ? s.bold : ''}>
+                                        {item.value}
                                     </p>
                                 ))}
                             </div>
@@ -112,7 +92,7 @@ export default function NewsSlider() {
             <section className={s.subNewsSlider}>
                 <h3>Новини</h3>
                 <div className={s.news}>
-                    {museumList.map((news, index) => (
+                    {slides.map((news, index) => (
                         <button className={`${s.newsItem} ${index === activeSlide ? s.active : ""}`} key={index} onClick={() => clickItem(index)}>
                             {news.title}
                         </button>

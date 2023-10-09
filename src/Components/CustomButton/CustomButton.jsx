@@ -11,7 +11,7 @@ CustomButton.defaultProps = {
 };
 export default function CustomButton({ text, noArrow }) {
     return (
-        <button className={s.customBtn}>
+        <button className={s.customBtn} type='button'>
             <div className={s.text}>
                 {text}
             </div>

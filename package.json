@@ -20,7 +20,8 @@
     "react-slick": "^0.29.0",
     "redux": "^4.2.1",
     "sass": "^1.66.1",
-    "slick-carousel": "^1.8.0"
+    "slick-carousel": "^1.8.0",
+    "uuid": "^9.0.1"
   },
   "devDependencies": {
     "@types/react": "^18.2.15",
