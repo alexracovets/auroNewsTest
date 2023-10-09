@@ -1,19 +1,9 @@
 import CustomButton from '../CustomButton/CustomButton';
 import { Link } from 'react-router-dom';
 
-import s from './NewsShort.module.scss';
-// import CustomCircle from '../CustomCircle/CustomCircle';
+import s from './NewsShort.module.scss'; 
 
-export default function NewsShort() {
-    // const circle = {
-    //     radius: "19.375rem",
-    //     position: {
-    //         top: '-12.9175rem',
-    //         bottom: 'auto',
-    //         left: '-4.3125rem',
-    //         right: 'auto'
-    //     }
-    // }
+export default function NewsShort() { 
 
     return (
         <section className={s.short_news}>
@@ -94,8 +84,6 @@ export default function NewsShort() {
                     <CustomButton text="Читати Всі Новини" />
                 </Link>
             </div>
-
-            {/* <CustomCircle radius={circle.radius} position={circle.position} /> */}
         </section>
     )
 }
