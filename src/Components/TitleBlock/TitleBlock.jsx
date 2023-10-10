@@ -2,7 +2,7 @@ import CustomCircle from '../CustomCircle/CustomCircle';
 
 import s from './TitleBlock.module.scss';
 
-import title_image from '/img/title_img.png'
+import main from '/img/main.jpg'
 
 export default function TitleBlock() {
 
@@ -35,7 +35,7 @@ export default function TitleBlock() {
                 </ul>
             </div>
             <div className={s.title_image}>
-                <img src={title_image} alt="CHK" />
+                <img src={main} alt="CHK" />
             </div>
             <CustomCircle radius={circle.radius} position={circle.position} />
         </section>

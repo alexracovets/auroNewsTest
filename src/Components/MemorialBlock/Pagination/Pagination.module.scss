@@ -11,10 +11,10 @@
         align-items: center;
         list-style: none;
         padding: 0;
-        margin: 2.7rem;
+        margin: 0 2.7rem;
 
         li {
-            padding: 2.475px 0.5rem;
+            padding: 0 0.5rem;
 
             .page_link {
                 color: $opacity-gray;
@@ -32,5 +32,10 @@
     .arrow {
         border: none;
         background-color: transparent;
+
+        svg {
+            width: 0.6875rem;
+            height: auto;
+        }
     }
 }

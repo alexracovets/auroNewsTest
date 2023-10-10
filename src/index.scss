@@ -50,6 +50,12 @@ section {
 }
 
 a,
-button{
+button {
   cursor: pointer;
+}
+
+@media (min-width:1513px) {
+  html{
+    font-size: 1.058vw;
+  }
 }

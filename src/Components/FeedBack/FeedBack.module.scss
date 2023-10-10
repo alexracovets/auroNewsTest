@@ -1,0 +1,181 @@
+@import '../../global/variable.scss';
+
+.FeedBack {
+    background-color: $base-white;
+
+    .title {
+        font-size: 4rem;
+        color: $base-red;
+        font-family: $font-rounds;
+        text-align: center;
+        display: block;
+        margin: 0 auto;
+        margin-bottom: 5rem;
+    }
+
+    .contact_block_first {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        margin-bottom: 5rem;
+
+        .left {
+            display: flex;
+            justify-content: flex-start;
+            align-items: flex-start;
+            flex-direction: column;
+            color: $base-black;
+            font-family: $font-mont;
+            width: 50%;
+            padding-right: 9%;
+
+            .title {
+                color: $base-black;
+                text-align: left;
+                font-size: 2rem;
+                font-weight: 600;
+                font-family: $font-mont;
+                margin-bottom: 2rem;
+                text-transform: none;
+                margin: 0;
+                margin-bottom: 1.5rem;
+            }
+
+            .list {
+                display: flex;
+                justify-content: flex-start;
+                align-items: flex-start;
+                flex-direction: column;
+                color: $smallOpacity-gray;
+                font-size: 1.5rem;
+                font-style: italic;
+                padding: 0;
+                margin-bottom: 1.5rem;
+
+                li {
+                    padding-left: 1.75rem;
+                    position: relative;
+
+                    &::before {
+                        position: absolute;
+                        content: "";
+                        left: 0.8rem;
+                        top: 0.7rem;
+                        width: 0.2rem;
+                        height: 0.2rem;
+                        background-color: rgba(0, 0, 0, 0.7);
+                        border-radius: 50%;
+                        overflow: hidden;
+                    }
+                }
+            }
+
+            .description {
+                font-size: 1.5rem;
+            }
+        }
+
+        .right {
+            display: flex;
+            justify-content: flex-end;
+            align-items: flex-start;
+            flex-direction: column;
+            width: 50%;
+            padding-left: 9%;
+
+            .title {
+                color: $base-black;
+                text-align: left;
+                font-size: 2rem;
+                font-weight: 600;
+                font-family: $font-mont;
+                margin-bottom: 2rem;
+                text-transform: none;
+                margin: 0;
+                margin-bottom: 1.5rem;
+            }
+
+            .list {
+                display: flex;
+                justify-content: flex-start;
+                align-items: flex-start;
+                flex-direction: column;
+                list-style: none;
+                padding: 0;
+
+                li {
+                    width: 100%;
+                    display: flex;
+                    justify-content: flex-start;
+                    align-items: center;
+                    font-family: $font-mont;
+                    font-size: 1.5rem;
+
+                    a {
+                        display: block;
+                        width: auto;
+                        margin: 0;
+                        color: $base-black;
+                        padding: 0;
+                        margin-right: 1rem;
+                        font-weight: 600;
+                    }
+
+                    .text {
+                        color: $smallOpacity-gray;
+                        text-wrap: nowrap;
+                        font-weight: 400;
+                        font-style: italic;
+                    }
+                }
+            }
+        }
+    }
+
+    .contact_block_second {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        margin-bottom: 6.375rem;
+
+        .left,
+        .right {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            width: 50%;
+            background-color: $opacity-yellow;
+            border-radius: 1.875rem;
+            overflow: hidden;
+            padding: 3.75rem 1.875rem;
+
+            .title {
+                color: $base-black;
+                text-align: center;
+                font-size: 1.5rem;
+                font-family: $font-mont;
+                font-weight: 500;
+                margin: 0 auto;
+                margin-bottom: 1.5rem;
+                max-width: 29.875rem;
+            }
+
+            .tel {
+                font-size: 1.5rem;
+                font-family: $font-mont;
+                text-align: center;
+                margin: 0 auto;
+                max-width: 29.875rem;
+            }
+        }
+
+        .left {
+            margin-right: 5%;
+        }
+
+        .right {
+            margin-left: 5%;
+        }
+    }
+}

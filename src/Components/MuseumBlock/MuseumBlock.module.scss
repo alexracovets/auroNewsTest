@@ -1,0 +1,14 @@
+@import '../../global/variable.scss';
+
+.MuseumBlock {
+    margin-top: 2rem;
+
+    .title {
+        font-size: 4rem;
+        color: $base-red;
+        font-family: $font-rounds;
+        text-align: center;
+        display: block;
+        margin: 5rem auto;
+    }
+}

@@ -29,7 +29,7 @@ export default function NewsSlider() {
 
     useEffect(() => {
         fetchData();
-    }, []); 
+    }, []);
 
     const circle1 = {
         radius: "15.625rem",
@@ -84,6 +84,9 @@ export default function NewsSlider() {
     return (
         <>
             <section className={s.newsSlider}>
+                <div className={s.title}>
+                    Новини
+                </div>
                 <div className={s.slider}>
                     <CustomSlider renderSlide={renderSlide} afterChange={(index) => setActiveSlide(index)} setSlider={setSlider} />
                 </div>

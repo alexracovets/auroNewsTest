@@ -1,8 +1,16 @@
 @import '../../global/variable.scss';
 
 .newsSlider {
-    padding-top: 14.75rem;
-    padding-bottom: 0;
+    margin-top: 2rem;
+
+    .title {
+        font-size: 4rem;
+        color: $base-black;
+        font-family: $font-rounds;
+        text-align: center;
+        display: block;
+        margin: 5rem auto;
+    }
 
     .slider {
         display: block;

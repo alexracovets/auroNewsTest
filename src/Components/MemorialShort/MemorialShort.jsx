@@ -1,5 +1,6 @@
-import memorial from '/img/memorial.jpg'
+
 import CustomButton from '../CustomButton/CustomButton'
+import memorial from '/img/memorial.jpg'
 
 import s from './MemorialShort.module.scss';
 

@@ -36,7 +36,7 @@
         justify-content: center;
         align-items: center;
         flex-direction: column;
-        font-family: $font-mont; 
+        font-family: $font-mont;
 
         .block__title {
             font-size: 1.5rem;
@@ -56,11 +56,11 @@
                 &::before {
                     position: absolute;
                     content: "";
-                    left: -2%;
-                    top: 40%;
-                    width: 0.25rem;
-                    height: 0.25rem;
-                    background-color: $smallOpacity-gray;
+                    left: 0.8rem;
+                    top: 0.7rem;
+                    width: 0.2rem;
+                    height: 0.2rem;
+                    background-color: rgba(0, 0, 0, 0.7);
                     border-radius: 50%;
                     overflow: hidden;
                 }
@@ -75,5 +75,13 @@
         position: relative;
         transform: translateY(7rem);
         margin-top: -2.625rem;
+        padding: 0 5.625rem;
+
+        img {
+            width: 100%;
+            max-width: 55.8125rem;
+            border-radius: 1.875rem;
+            overflow: hidden;
+        }
     }
 }

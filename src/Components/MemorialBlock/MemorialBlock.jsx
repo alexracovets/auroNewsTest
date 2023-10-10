@@ -41,6 +41,9 @@ export default function MemorialBlock() {
 
     return (
         <section className={s.memo}>
+            <div className={s.title}>
+                Меморіал
+            </div>
             <Memorials currentMemo={currentMemo} />
             <Pagination
                 memoPerPage={memoPerPage}
