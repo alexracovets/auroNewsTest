@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { firestore } from '../../firebase';
+import { useNavigate } from 'react-router-dom';
 
 import CustomSlider from "../CustomSlider/CustomSlider";
 import CustomCircle from '../CustomCircle/CustomCircle';
@@ -9,7 +10,8 @@ import s from './NewsBlock.module.scss';
 export default function NewsBlock() {
     const [activeSlide, setActiveSlide] = useState(0);
     const [slider, setSlider] = useState(null);
-    const [slides, setSlides] = useState([])
+    const [slides, setSlides] = useState([]);
+    const navigate = useNavigate();
 
     const fetchData = async () => {
         try {
@@ -54,6 +56,9 @@ export default function NewsBlock() {
         slider.slickGoTo(toSlide);
         setActiveSlide(toSlide);
     }
+    const goToPage = (item) => {
+        navigate(`/news/${item.key}`);
+    }
 
     const renderSlide = () => {
         return slides.map((news, index) => (
@@ -72,7 +77,7 @@ export default function NewsBlock() {
                                     </p>
                                 ))}
                             </div>
-                            <button className={s.read}>читати</button>
+                            <button className={s.read} onClick={() => goToPage(news)}>читати</button>
                         </div>
                     </div>
                 </div>
