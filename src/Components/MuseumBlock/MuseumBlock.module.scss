@@ -1,7 +1,8 @@
 @import '../../global/variable.scss';
 
 .MuseumBlock {
-    margin-top: 2rem;
+    padding-top: 7.5rem;
+    background-color: $opacity-yellow;
 
     .title {
         font-size: 4rem;
@@ -10,5 +11,104 @@
         text-align: center;
         display: block;
         margin: 5rem auto;
+    }
+
+    .MuseumBlock_wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+
+        .descriptions {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            width: 100%;
+            max-width: 10.75rem;
+            margin-right: 3.5rem;
+
+            .description {
+                width: 100%;
+                height: 3.125rem;
+                color: $base-black;
+                font-size: 1.1rem;
+                font-weight: 600;
+                text-align: center;
+                text-transform: uppercase;
+                font-family: $font-mont;
+                border-radius: 3.125rem;
+                border: 0.0625rem solid $base-black;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin-bottom: 1.25rem;
+                transition: 300ms ease-in-out all;
+                background-color: transparent;
+                cursor: pointer;
+
+                &:hover,
+                &.active {
+                    border: 0.0625rem solid transparent;
+                    background-color: $base-yellow;
+                }
+
+                &:last-of-type {
+                    margin-bottom: 0;
+                }
+            }
+        }
+
+        .slider {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            max-width: 73%;
+
+            .item {
+                display: flex !important;
+                justify-content: center;
+                align-items: center;
+                width: 100%;
+                cursor: pointer;
+
+                .item__image {
+                    width: 100%;
+                    max-width: 28.5625rem;
+                    border-radius: 1.875rem;
+                    overflow: hidden;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+
+                    img {
+                        width: 100%;
+                        height: auto;
+                    }
+                }
+
+                .item__content {
+                    display: flex;
+                    justify-content: flex-start;
+                    align-items: flex-start;
+                    flex-direction: column;
+                    font-family: $font-mont;
+                    max-width: 27.0625rem;
+                    margin-left: 5.875rem;
+
+                    .description {
+                        font-size: 2rem;
+                        color: $base-black;
+                        font-weight: 600;
+                        margin-bottom: 2.3125rem;
+                    }
+
+                    .text {
+                        font-size: 1rem;
+                        margin-bottom: 1.5rem;
+                    }
+                }
+            }
+        }
     }
 }

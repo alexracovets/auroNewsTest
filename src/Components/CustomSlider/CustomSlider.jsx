@@ -9,10 +9,11 @@ import "slick-carousel/slick/slick-theme.css";
 CustomSlider.propTypes = {
     renderSlide: PropTypes.func.isRequired,
     afterChange: PropTypes.func.isRequired,
-    setSlider: PropTypes.func.isRequired
+    setSlider: PropTypes.func.isRequired,
+    isArrow: PropTypes.bool.isRequired,
 };
 
-export default function CustomSlider({ renderSlide, afterChange, setSlider }) {
+export default function CustomSlider({ renderSlide, afterChange, setSlider, isArrow }) {
     const sliderRef = useRef(null);
     const [currentSlide, setCurrentSlide] = useState(0);
 
@@ -21,7 +22,7 @@ export default function CustomSlider({ renderSlide, afterChange, setSlider }) {
     }, [sliderRef])
 
     const settings = {
-        arrows: true,
+        arrows: isArrow,
         dots: false,
         infinite: false,
         lazyLoad: true,

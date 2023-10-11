@@ -54,8 +54,12 @@ button {
   cursor: pointer;
 }
 
+.slick-slider {
+  width: 100%;
+}
+
 @media (min-width:1513px) {
-  html{
+  html {
     font-size: 1.058vw;
   }
 }

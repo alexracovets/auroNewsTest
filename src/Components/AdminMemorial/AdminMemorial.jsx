@@ -25,7 +25,7 @@ export default function AdminMemorial() {
             const data = snapshot.val();
             if (data) {
                 const memorialsArray = Object.values(data);
-                setMemorials(memorialsArray.reverse());
+                setMemorials(memorialsArray);
             }
         } catch (error) {
             console.error('Error fetching memorials:', error);

@@ -2,6 +2,7 @@ import { useState } from "react";
 import AdminMemorial from "../Components/AdminMemorial/AdminMemorial";
 import AdminPanel from "../Components/AdminPanel/AdminPanel";
 import AdminNews from "../Components/AdminNews/AdminNews";
+import AdminMuseum from "../Components/AdminMuseum/AdminMuseum";
 
 
 export default function Admin() {
@@ -16,6 +17,7 @@ export default function Admin() {
             <AdminPanel onMenuItemClick={handleMenuItemClick} />
             {selectedMenuItem === 'memorial' && <AdminMemorial />}
             {selectedMenuItem === 'news' && <AdminNews />}
+            {selectedMenuItem === 'museum' && <AdminMuseum />} 
         </section>
     )
 }

@@ -4,9 +4,9 @@ import { firestore } from '../../firebase';
 import CustomSlider from "../CustomSlider/CustomSlider";
 import CustomCircle from '../CustomCircle/CustomCircle';
 
-import s from './NewsSlider.module.scss';
+import s from './NewsBlock.module.scss';
 
-export default function NewsSlider() {
+export default function NewsBlock() {
     const [activeSlide, setActiveSlide] = useState(0);
     const [slider, setSlider] = useState(null);
     const [slides, setSlides] = useState([])
@@ -20,7 +20,7 @@ export default function NewsSlider() {
 
             if (data) {
                 const memorialsArray = Object.values(data);
-                setSlides(memorialsArray);
+                setSlides(memorialsArray.reverse());
             }
         } catch (error) {
             console.error('Error fetching memorials:', error);
@@ -34,7 +34,7 @@ export default function NewsSlider() {
     const circle1 = {
         radius: "15.625rem",
         position: {
-            top: '-2.8125rem',
+            top: '-12.8125rem',
             bottom: 'auto',
             left: 'auto',
             right: '-2.4375rem'
@@ -84,11 +84,8 @@ export default function NewsSlider() {
     return (
         <>
             <section className={s.newsSlider}>
-                <div className={s.title}>
-                    Новини
-                </div>
                 <div className={s.slider}>
-                    <CustomSlider renderSlide={renderSlide} afterChange={(index) => setActiveSlide(index)} setSlider={setSlider} />
+                    <CustomSlider renderSlide={renderSlide} afterChange={(index) => setActiveSlide(index)} setSlider={setSlider} isArrow={true} />
                 </div>
                 <CustomCircle radius={circle1.radius} position={circle1.position} />
             </section>

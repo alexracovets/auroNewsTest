@@ -1,9 +1,9 @@
-import NewSlider from "../Components/NewsSlider/NewsSlider";
+import NewsBlock from "../Components/NewsBlock/NewsBlock";
 
 
 export default function News() {
 
     return (
-        <NewSlider />
+        <NewsBlock />
     )
 }
