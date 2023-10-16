@@ -23,9 +23,10 @@ export default function PopUpEdit({ dataRef, fetchData, currentNews, setPopUpEdi
     const [newsData, setNewsData] = useState({
         title: currentNews.title,
         image: currentNews.image,
+        likes: currentNews.likes,
         text: currentNews.text || [],
         key: currentNews.key
-    }); 
+    });
     const handleInputChange = async (e, name, key) => {
         if (name === 'image') {
             const file = e.target.files[0];
@@ -106,6 +107,7 @@ export default function PopUpEdit({ dataRef, fetchData, currentNews, setPopUpEdi
                     </label>
                 </div>
                 <input type='text' placeholder='Заголовок' onChange={(e) => handleInputChange(e, 'title')} value={newsData.title} />
+                <input type='number' placeholder="Лайки" onChange={(e) => handleInputChange(e, 'likes')} value={newsData.likes} />
                 <input id='image' className={s.image} type='file' onChange={(e) => handleInputChange(e, 'image')} />
                 <div className={s.text_wrapper}>
                     {newsData.text &&
