@@ -1,0 +1,82 @@
+@import '../../global/variable.scss';
+
+.NewsDetailes {
+    margin-top: 7rem;
+
+    .news_wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        background-color: $opacity-yellow;
+        padding: 5rem;
+        border-radius: 2rem;
+        width: 90%;
+        margin: 0 auto;
+        position: relative;
+
+        .title {
+            font-size: 4rem;
+            color: $base-red;
+            font-family: $font-rounds;
+            text-align: center;
+            display: block;
+            margin: 0 auto;
+            max-width: 90%;
+            width: 100%;
+        }
+
+        .news__image {
+            width: 64rem;
+            height: 33.5rem;
+            background-size: cover;
+            background-position: center;
+            border-radius: 2rem;
+            scale: 1.3;
+            margin: 10rem auto;
+        }
+
+        .text {
+            width: 100%;
+            font-size: 2rem;
+            font-family: $font-mont;
+            margin-bottom: 2rem;
+
+            &.bold {
+                text-align: center;
+                font-size: 2.5rem;
+                font-weight: 600;
+                margin-bottom: 3rem;
+            }
+        }
+
+        .likes {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            max-width: 3rem;
+            position: absolute;
+            right: 1.5rem;
+            bottom: 2rem;
+
+            &.active {
+                opacity: 0.5;
+            }
+
+            .heart {
+                width: 100%;
+
+                img {
+                    width: 100%;
+                }
+            }
+
+            .count {
+                font-size: 2rem;
+                font-family: $font-mont;
+                font-weight: bold;
+            }
+        }
+    }
+}
