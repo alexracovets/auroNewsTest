@@ -34,12 +34,16 @@ export default function Header() {
             path: '/news',
         },
         {
-            name: 'Меморіал',
+            name: 'Наші Герої',
             path: '/memorial',
         },
         {
             name: 'Музей',
             path: '/museum',
+        },
+        {
+            name: 'Контакти',
+            path: '/contacts',
         }
     ]
 

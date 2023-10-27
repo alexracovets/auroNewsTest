@@ -37,7 +37,7 @@
                 display: flex;
                 justify-content: flex-start;
                 align-items: flex-start;
-                width: 100%;
+                width: 27rem;
                 padding: 0;
 
                 li {
@@ -47,7 +47,7 @@
                         font-size: 1rem;
                         font-family: $font-mont;
                         color: $base-black;
-                        padding: 0.5rem;
+                        padding: 0.46875rem;
 
                         &:hover {
                             font-weight: bold;

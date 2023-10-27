@@ -23,7 +23,7 @@ export default function Footer() {
         },
         {
             name: 'Контакти',
-            path: '/',
+            path: '/contacts',
         }
     ]
 

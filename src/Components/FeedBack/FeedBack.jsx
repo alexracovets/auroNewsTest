@@ -5,21 +5,37 @@ export default function FeedBack() {
     return (
         <section className={s.FeedBack}>
             <h3 className={s.title}>
-                звʼязок з нами
+                Контакти
             </h3>
+            <div className={s.contact_block_second}>
+                <div className={s.left}>
+                    <div className={s.title}>
+                        З питань отримання безкоштовної юридичної допомоги:
+                    </div>
+                    <div className={s.tel}>
+                        лінія підтримки +380 67 826 00 00
+                        (після виклику натиснути 3)
+                    </div>
+                </div>
+                <div className={s.right}>
+                    <div className={s.title}>
+                        З юридичних питань і психологічної підтримки звертайтеся на лінію підтримки Ветеран Хаб за номером
+                    </div>
+                    <div className={s.tel}>
+                        +380 67 348 28 68
+                    </div>
+                </div>
+            </div>
             <div className={s.contact_block_first}>
                 <div className={s.left}>
                     <div className={s.title}>
-                        Аврорівці, якщо виникають питання щодо:
+                        Запитання та пропозиції:
                     </div>
-                    <ul className={s.list}>
-                        <li>зборів</li>
-                        <li>отримання допомоги</li>
-                        <li>обладнання</li>
-                        <li>тощо</li>
-                    </ul>
+                    <div className={s.tell}>
+                        +380 67 557 27 16
+                    </div>
                     <div className={s.description}>
-                        Звертайтеся до відділу корпоративної соціальної відповідальності (КСВ) і вас проконсультують.
+                        Керівниця відділу КСВ
                     </div>
                 </div>
                 <div className={s.right}>
@@ -44,25 +60,6 @@ export default function FeedBack() {
                             <div className={s.text}>Марина Мельничук</div>
                         </li>
                     </ul>
-                </div>
-            </div>
-            <div className={s.contact_block_second}>
-                <div className={s.left}>
-                    <div className={s.title}>
-                        З питань отримання безкоштовної юридичної допомоги:
-                    </div>
-                    <div className={s.tel}>
-                        лінія підтримки +380 67 826 00 00
-                        (після виклику натиснути 3)
-                    </div>
-                </div>
-                <div className={s.right}>
-                    <div className={s.title}>
-                        З юридичних питань і психологічної підтримки звертайтеся на лінію підтримки Ветеран Хаб за номером
-                    </div>
-                    <div className={s.tel}>
-                        +380 67 348 28 68
-                    </div>
                 </div>
             </div>
         </section>

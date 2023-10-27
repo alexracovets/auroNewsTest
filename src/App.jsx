@@ -7,6 +7,7 @@ import News from "./pages/News";
 import NewsDetail from "./pages/NewsDetail";
 import Info from "./pages/Memorial";
 import Museum from "./pages/Museum";
+import Contacts from "./pages/Contacts";
 import Admin from "./pages/Admin";
 import Page404 from "./pages/404";
 
@@ -22,6 +23,7 @@ export default function App() {
           <Route path="news/:id" element={<NewsDetail />} />
           <Route path="memorial" element={<Info />} />
           <Route path="museum" element={<Museum />} />
+          <Route path="contacts" element={<Contacts />} />
           <Route path="admin" element={<Admin />} />
           <Route path="*" element={<Page404 />} />
         </Route>
