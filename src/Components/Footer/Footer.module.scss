@@ -6,6 +6,55 @@
     justify-content: space-between;
     align-items: center;
     background-color: $base-sand;
-    padding: 5.5rem 5rem;
+    padding: 5rem;
     z-index: 1;
+
+    .menu {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+
+        .logo {
+            width: 12.5rem;
+
+            a {
+                display: block;
+
+                img {
+                    width: 100%;
+                }
+            }
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 0;
+
+            ul {
+                display: flex;
+                justify-content: flex-start;
+                align-items: flex-start;
+                width: 100%;
+                padding: 0;
+
+                li {
+
+                    a {
+                        display: block;
+                        font-size: 1rem;
+                        font-family: $font-mont;
+                        color: $base-black;
+                        padding: 0.5rem;
+
+                        &:hover {
+                            font-weight: bold;
+                        }
+                    }
+                }
+            }
+        }
+    }
 }

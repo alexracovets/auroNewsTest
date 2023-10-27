@@ -1,14 +1,15 @@
-import museum from '/img/museum.jpg'
+import { Link } from 'react-router-dom';
+import museum from '/img/museum.jpg';
 
 import s from './MuseumShort.module.scss';
-import CustomButton from '../CustomButton/CustomButton';
+import CustomButton from '../CustomButton/CustomButton'; 
 
 export default function MuseumShort() {
 
     return (
         <section className={s.MuseumShort}>
             <h3 className={s.title}>Музей</h3>
-            <div className={s.MuseumShort_wrapper}>
+            <div className={s.MuseumShort_wrapper + ' ' + s.desktop}>
                 <div className={s.left}>
                     <img src={museum} alt="meseum" />
                 </div>
@@ -25,8 +26,17 @@ export default function MuseumShort() {
                     <div className={s.description}>
                         У цьому розділі маєте можливість побачити ексклюзивну колекцію Аврори.
                     </div>
+                    <Link to="/museum">
+                        <CustomButton text={"читати більше"} />
+                    </Link>
+                </div>
+            </div>
+            <div className={s.MuseumShort_wrapper + ' ' + s.mobile}>
+                <div className={s.img} style={{ backgroundImage: `url(${museum})` }}>
+                </div>
+                <Link to="/museum">
                     <CustomButton text={"читати більше"} />
-                </div> 
+                </Link>
             </div>
         </section>
     )

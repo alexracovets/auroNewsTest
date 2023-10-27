@@ -1,6 +1,7 @@
 
-import CustomButton from '../CustomButton/CustomButton'
-import memorial from '/img/memorial.jpg'
+import CustomButton from '../CustomButton/CustomButton';
+import { Link } from 'react-router-dom';
+import memorial from '/img/memorial.jpg';
 
 import s from './MemorialShort.module.scss';
 
@@ -9,7 +10,7 @@ export default function MemorialShort() {
     return (
         <section className={s.memorialShort}>
             <h3 className={s.title}>
-                Меморіал
+                Наші Герої
             </h3>
             <div className={s.memorialShort_wrapper}>
                 <div className={s.left}>
@@ -24,7 +25,9 @@ export default function MemorialShort() {
                             Ми вшановуємо наших полеглих колег, щоб завжди <b>пам’ятати</b> ціну перемоги.
                         </div>
                     </div>
-                    <CustomButton text={'читати більше'} />
+                    <Link to="/memorial">
+                        <CustomButton text={"читати більше"} />
+                    </Link>
                 </div>
                 <div className={s.right}>
                     <img src={memorial} alt="" />

@@ -1,25 +1,59 @@
+import { Link } from 'react-router-dom';
+import logo from '/img/logo.svg'; 
+
 import s from './Footer.module.scss';
-import MenuFooter from './MenuFooter/MenuFooter';
-import Proposition from './Proposition/Proposition';
-import CustomCircle from '../CustomCircle/CustomCircle';
 
 export default function Footer() {
-
-    const circle = {
-        radius: "15.625rem",
-        position: {
-            top: '-4.3125rem',
-            bottom: 'auto',
-            left: 'auto',
-            right: '-4.3125rem'
+    const links = [
+        {
+            name: 'Головна',
+            path: '/',
+        },
+        {
+            name: 'Новини',
+            path: '/news',
+        },
+        {
+            name: 'Наші Герої',
+            path: '/memorial',
+        },
+        {
+            name: 'Музей',
+            path: '/museum',
+        },
+        {
+            name: 'Контакти',
+            path: '/',
         }
-    }
+    ]
+
+    const scrollToTop = () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth',
+        });
+    };
 
     return (
         <footer className={s.footer}>
-            <MenuFooter />
-            <Proposition />
-            <CustomCircle radius={circle.radius} position={circle.position} />
+            <div className={s.menu}>
+                <div className={s.logo}>
+                    <Link to="/" onClick={scrollToTop}>
+                        <img src={logo} alt="logo" />
+                    </Link>
+                </div>
+                <nav>
+                    <ul>
+                        {links.map((link, index) => (
+                            <li key={index}>
+                                <Link to={link.path} onClick={scrollToTop}>
+                                    {link.name}
+                                </Link>
+                            </li>
+                        ))}
+                    </ul>
+                </nav>
+            </div>
         </footer>
     )
 }

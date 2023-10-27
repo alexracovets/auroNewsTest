@@ -80,6 +80,9 @@ export default function NewsBlock() {
                             <button className={s.read} onClick={() => goToPage(news)}>читати</button>
                         </div>
                     </div>
+                    <div className="date">
+                        19.10.2023
+                    </div>
                 </div>
 
             </div>

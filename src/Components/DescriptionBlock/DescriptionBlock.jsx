@@ -4,7 +4,7 @@ import s from './DescriptionBlock.module.scss';
 
 export default function DescriptionBlock() {
     return (
-        <section>
+        <section className={s.DescriptionBlock}>
             <h3 className={s.title}>
                 Цей сайт створений для того, щоб назавжди закарбувати у пам’яті <b>часи незламності</b>.
             </h3>

@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Link, NavLink } from 'react-router-dom';
+import handleScroll from '../../const/handleScroll.js'
 
 import s from './Header.module.scss';
 import logo from '/img/logo.svg';
@@ -9,21 +10,12 @@ export default function Header() {
     const [isScrolled, setIsScrolled] = useState(false);
 
     useEffect(() => {
-        const handleScroll = () => {
-            if (window.scrollY > 90) {
-                if (window.scrollY > (window.lastScrollY || 0)) {
-                    setIsScrolled(true);
-                } else {
-                    setIsScrolled(false);
-                }
-                window.lastScrollY = window.scrollY;
-            }
-        };
+        const scrollHandler = () => handleScroll(setIsScrolled);
 
-        window.addEventListener('scroll', handleScroll);
+        window.addEventListener('scroll', scrollHandler);
 
         return () => {
-            window.removeEventListener('scroll', handleScroll);
+            window.removeEventListener('scroll', scrollHandler);
         };
     }, []);
 
@@ -76,6 +68,9 @@ export default function Header() {
                     ))}
                 </ul>
             </nav>
+            <div className="burger">
+
+            </div>
         </ header>
     )
 }

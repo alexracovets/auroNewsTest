@@ -10,9 +10,11 @@ export default function Home() {
         <>
             <TitleBlock />
             <DescriptionBlock />
-            <MemorialShort />
-            <NewsShort />
-            <MuseumShort />
+            <div className="mobile-wrapper">
+                <NewsShort />
+                <MuseumShort />
+                <MemorialShort />
+            </div>
         </>
     )
 }

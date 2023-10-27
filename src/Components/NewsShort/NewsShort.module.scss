@@ -7,6 +7,9 @@
     align-items: center;
     flex-direction: column;
 
+    @media (max-width:$mobile) {
+        height: 30vh;
+    }
 
     .title {
         text-align: center;
@@ -15,6 +18,11 @@
         font-family: $font-rounds;
         margin-bottom: 1rem;
         margin-bottom: 5.3125rem;
+
+        @media (max-width:$mobile) {
+            font-size: 4.65116rem;
+            margin-bottom: 3.48837rem;
+        }
     }
 
     .news_list {
@@ -27,6 +35,20 @@
         max-height: 46.875rem;
         overflow-y: scroll;
         padding-right: 4.0625rem;
+
+        @media (max-width:$mobile) {
+            max-width: 100%;
+            padding: 0;
+            overflow: visible;
+
+            &.desktop {
+                display: none;
+            }
+
+            &.mobile {
+                display: flex;
+            }
+        }
 
         &::-webkit-scrollbar {
             width: 0.25rem;
@@ -57,11 +79,35 @@
             background-color: $base-sand;
             position: relative;
 
+            @media (max-width:$mobile) {
+                flex-direction: row;
+                align-items: center;
+                justify-content: space-between;
+                padding: 4.65117rem 6.97675rem;
+
+                .right {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: flex-end;
+                    flex-direction: column;
+
+                    .date {
+                        font-size: 2.55815rem;
+                        margin-bottom: 6.27906rem;
+                    }
+                }
+            }
+
             .name {
                 font-size: 2rem;
                 font-weight: 600;
                 margin-bottom: 1.25rem;
                 max-width: 45.875rem;
+
+                @media (max-width:$mobile) {
+                    margin-bottom: 0;
+                    font-size: 3.72094rem;
+                }
             }
 
             .description {
@@ -117,17 +163,28 @@
                 justify-content: center;
                 align-items: center;
                 flex-direction: column;
-                cursor: pointer;
+
+                @media (max-width:$mobile) {
+                    position: initial;
+                }
 
                 svg {
                     width: 2rem;
                     height: auto;
+
+                    @media (max-width:$mobile) {
+                        width: 4.52rem;
+                    }
                 }
 
                 .count {
                     text-align: center;
                     font-size: 1.25rem;
                     font-family: $font-mont;
+
+                    @media (max-width:$mobile) {
+                        font-size: 2.4rem;
+                    }
                 }
             }
         }
@@ -139,5 +196,23 @@
         justify-content: center;
         align-items: center;
         margin: 4.375rem auto;
+
+        .link {
+            &.desktop {
+                display: flex;
+
+                @media (max-width:$mobile) {
+                    display: none;
+                }
+            }
+
+            &.mobile {
+                display: none;
+
+                @media (max-width:$mobile) {
+                    display: flex;
+                }
+            }
+        }
     }
 }

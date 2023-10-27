@@ -12,9 +12,15 @@ header {
     transform: translateY(0);
     transition: all 300ms ease-in;
 
+    @media (max-width:$mobile) {
+        padding: 5.3488rem 9.30233rem 0 9.30233rem;
+    }
+
     &.disable {
         transform: translateY(-100%);
     }
+
+
 
     .logo {
         display: flex;
@@ -22,6 +28,10 @@ header {
         align-items: center;
         width: 12.5rem;
         pointer-events: all;
+
+        @media (max-width:$mobile) {
+            width: 26.98rem;
+        }
 
         a {
             width: 100%;
@@ -34,6 +44,10 @@ header {
 
     nav {
         flex: 1;
+
+        @media (max-width:$mobile) {
+            display: none;
+        }
 
         ul {
             display: flex;
