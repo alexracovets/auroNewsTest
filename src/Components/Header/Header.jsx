@@ -1,13 +1,18 @@
 import { useState, useEffect } from 'react';
-import { Link, NavLink } from 'react-router-dom';
+import { Link, NavLink, useLocation } from 'react-router-dom';
 import handleScroll from '../../const/handleScroll.js'
 
 import s from './Header.module.scss';
 import logo from '/img/logo.svg';
 
 export default function Header() {
-
+    const location = useLocation();
     const [isScrolled, setIsScrolled] = useState(false);
+
+    useEffect(() => {
+        setIsScrolled(false);
+        scrollToTop()
+    }, [location.pathname]);
 
     useEffect(() => {
         const scrollHandler = () => handleScroll(setIsScrolled);
@@ -49,7 +54,7 @@ export default function Header() {
         <header className={isScrolled ? s.disable : null} >
             <div className={s.logo}>
                 <Link to="/">
-                    <img src={logo} alt="logo" onClick={scrollToTop} />
+                    <img src={logo} alt="logo" />
                 </Link>
             </div>
             <nav>
@@ -60,7 +65,6 @@ export default function Header() {
                                 to={link.path}
                                 className={({ isActive }) => isActive ? s.active : undefined}
                                 exact="true"
-                                onClick={scrollToTop}
                             >
                                 {link.name}
                             </NavLink>
