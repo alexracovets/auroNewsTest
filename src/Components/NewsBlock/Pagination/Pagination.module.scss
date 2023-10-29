@@ -1,0 +1,46 @@
+@import '../../../global/variable.scss';
+
+.pagination_wrapper {
+    display: none;
+    justify-content: center;
+    align-items: center;
+
+    @media(max-width:$mobile-big) {
+        display: flex;
+    }
+
+    .pagination {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        list-style: none;
+        padding: 0;
+        margin: 0 2vh;
+
+        li {
+            padding: 0 0.7vh;
+
+            .page_link {
+                color: $opacity-gray;
+                font-size: 2.57511vh;
+                font-family: $font-mont;
+                font-weight: 500;
+                line-height: 1;
+
+                &.active {
+                    color: $base-black;
+                }
+            }
+        }
+    }
+
+    .arrow {
+        border: none;
+        background-color: transparent;
+
+        svg {
+            width: 1.181vh;
+            height: auto;
+        }
+    }
+}

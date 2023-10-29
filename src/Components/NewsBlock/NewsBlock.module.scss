@@ -296,11 +296,25 @@
         padding-right: 4.125rem;
         margin-bottom: 7rem;
 
+        &.mobile {
+            display: none;
+        }
+
         @media(max-width:$mobile-big) {
             max-height: 100%;
+            max-width: 100%;
             height: auto;
             padding: 0;
             overflow: auto;
+            margin-bottom: 6.26566vh;
+
+            &.mobile {
+                display: flex;
+            }
+
+            &.desktop {
+                display: none;
+            }
         }
 
         &::-webkit-scrollbar {
@@ -334,6 +348,7 @@
             &.active {
                 background-color: $base-yellow;
             }
+
 
             @media(max-width:$mobile-big) {
                 margin: 0.804721vh auto;

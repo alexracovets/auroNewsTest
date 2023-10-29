@@ -3,6 +3,8 @@ import { firestore } from '../../firebase';
 import { useNavigate } from 'react-router-dom';
 
 import CustomSlider from "../CustomSlider/CustomSlider";
+import Pagination from './Pagination/Pagination';
+import PaginNews from './PaginNews/PaginNews';
 
 import s from './NewsBlock.module.scss';
 
@@ -12,11 +14,19 @@ export default function NewsBlock() {
     const [slides, setSlides] = useState([]);
     const navigate = useNavigate();
 
+    const [newsPerPage] = useState(3);
+    const [currentPage, setCurrentPage] = useState(1);
+    const lastMemoIndex = currentPage * newsPerPage;
+    const firstMemoIndex = lastMemoIndex - newsPerPage;
+    const currentNews = slides.slice(firstMemoIndex, lastMemoIndex);
+    const paginate = (newsNumber) => {
+        setCurrentPage(newsNumber);
+    };
+
     const fetchData = async () => {
         try {
             const dbRef = firestore.ref('data/news');
             const snapshot = await dbRef.once('value');
-
             const data = snapshot.val();
 
             if (data) {
@@ -91,13 +101,26 @@ export default function NewsBlock() {
             </section>
             <section className={s.subNewsSlider}>
                 <h3>Новини</h3>
-                <div className={s.news}>
+                <div className={s.news + ' ' + s.desktop}>
                     {slides.map((news, index) => (
-                        <button className={`${s.newsItem} ${index === activeSlide ? s.active : ""}`} key={index} onClick={() => clickItem(index)}>
+                        <button className={index === activeSlide ? s.newsItem + ' ' + s.active : s.newsItem} key={index} onClick={() => clickItem(index)}>
                             {news.title}
                         </button>
                     ))}
                 </div>
+                <div className={s.news + ' ' + s.mobile}>
+                    <PaginNews
+                        currentNews={currentNews}
+                        activeSlide={activeSlide}
+                        clickItem={clickItem}
+                    />
+                </div>
+                <Pagination
+                    newsPerPage={newsPerPage}
+                    totalNews={slides.length}
+                    paginate={paginate}
+                    currentPage={currentPage}
+                />
             </section >
         </>
     )
