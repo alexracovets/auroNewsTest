@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import museum from '/img/museum.jpg';
 
 import s from './MuseumShort.module.scss';
-import CustomButton from '../CustomButton/CustomButton'; 
+import CustomButton from '../CustomButton/CustomButton';
 
 export default function MuseumShort() {
 
@@ -32,8 +32,8 @@ export default function MuseumShort() {
                 </div>
             </div>
             <div className={s.MuseumShort_wrapper + ' ' + s.mobile}>
-                <div className={s.img} style={{ backgroundImage: `url(${museum})` }}>
-                </div>
+                <div className={s.backSide}></div>
+                <div className={s.img} style={{ backgroundImage: `url(${museum})` }}></div>
                 <Link to="/museum">
                     <CustomButton text={"читати більше"} />
                 </Link>

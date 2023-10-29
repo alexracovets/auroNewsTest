@@ -9,6 +9,21 @@
     padding: 5rem;
     z-index: 1;
 
+    @media (max-width:$mobile-big) {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background-color: $base-white;
+        padding: 4.29185vh;
+        padding-top: 0.536481vh;
+        height: 8.5vh;
+    }
+
+    @media (max-width:$mobile-small) {
+        padding: 1.55vh;
+    }
+
     .menu {
         display: flex;
         justify-content: space-between;
@@ -17,6 +32,10 @@
 
         .logo {
             width: 12.5rem;
+
+            @media (max-width:$mobile-big) {
+                display: none;
+            }
 
             a {
                 display: block;
@@ -33,12 +52,22 @@
             align-items: center;
             padding: 0;
 
+            @media (max-width:$mobile-big) {
+                flex: 1;
+            }
+
+
             ul {
                 display: flex;
                 justify-content: flex-start;
                 align-items: flex-start;
                 width: 27rem;
                 padding: 0;
+
+                @media (max-width:$mobile-big) {
+                    width: 100%;
+                    justify-content: center;
+                }
 
                 li {
 
@@ -48,6 +77,18 @@
                         font-family: $font-mont;
                         color: $base-black;
                         padding: 0.46875rem;
+
+                        @media (max-width:$mobile-big) {
+                            text-transform: uppercase;
+                            flex: 1;
+                            font-size: 1.03872vh;
+                            padding: 0 0.4721435vh;
+                        }
+
+                        @media (max-width:420px) {
+                            font-size: 0.9vh;
+                            padding: 0 0.3vh;
+                        }
 
                         &:hover {
                             font-weight: bold;

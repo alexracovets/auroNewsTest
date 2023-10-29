@@ -12,7 +12,7 @@ export default function MemorialShort() {
             <h3 className={s.title}>
                 Наші Герої
             </h3>
-            <div className={s.memorialShort_wrapper}>
+            <div className={s.memorialShort_wrapper + ' ' + s.desktop}>
                 <div className={s.left}>
                     <div className={s.wrapper__title}>
                         Це віртуальна дошка пам&#39;яті аврорівців, які після 24 лютого 2022 року стали на захист країни.
@@ -32,6 +32,13 @@ export default function MemorialShort() {
                 <div className={s.right}>
                     <img src={memorial} alt="" />
                 </div>
+            </div>
+            <div className={s.memorialShort_wrapper + ' ' + s.mobile}>
+                <div className={s.backSide}></div>
+                <div className={s.img} style={{ backgroundImage: `url(${memorial})` }}></div>
+                <Link to="/museum">
+                    <CustomButton text={"читати більше"} />
+                </Link>
             </div>
         </section>
     )

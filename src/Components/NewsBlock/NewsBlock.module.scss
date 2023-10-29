@@ -3,6 +3,13 @@
 .newsSlider {
     margin-top: 10.6875rem;
 
+    @media(max-width:$mobile-big) {
+        margin: 0 auto;
+        height: 88vh;
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+
     .title {
         font-size: 4rem;
         color: $base-black;
@@ -14,32 +21,135 @@
 
     .slider {
         display: block;
-        max-width: 72.3125rem;
+        width: 100%;
         margin: 0 auto;
         position: relative;
         margin-bottom: 11.75rem;
 
+        @media(max-width:$mobile-big) {
+            max-width: 100%;
+            padding-bottom: 11vh;
+        }
+
         .slide {
             width: 100%;
-            display: flex;
+            display: flex !important;
             justify-content: center;
             align-items: center;
             padding: 0 2rem;
             transform: translateX(0.75rem);
 
+            @media(max-width:$mobile-big) {
+                padding: 0;
+                transform: none;
+            }
+
             .wrapperSlider {
                 font-family: $font-mont;
                 width: 100%;
                 border-radius: 1.875rem;
-                padding: 4.0625rem 1.25rem 3.125rem 1.25rem;
+                padding: 4rem 0 2.9375rem 0;
                 background-color: $base-sand;
                 max-width: 70.3125rem;
-                margin: 0 auto;
+                box-sizing: border-box;
 
-                h3 {
+                @media(max-width:$mobile-big) {
+                    max-width: 100%;
+                    padding: 0;
+                }
+
+                .title {
                     font-size: 2rem;
                     text-align: center;
+                    padding: 0 4.6875rem;
+                    margin: 0 auto;
                     margin-bottom: 5.125rem;
+
+                    &.desktop {
+                        @media(max-width:$mobile-big) {
+                            display: none;
+                        }
+                    }
+
+                    &.mobile {
+                        display: none;
+                        width: 100%;
+                        font-size: 2.36051vh;
+                        text-align: left;
+                        font-family: $font-mont;
+                        padding: 0 3.00429vh;
+                        margin-bottom: 1.60944vh;
+
+                        @media(max-width:$mobile-big) {
+                            display: block;
+                        }
+                    }
+                }
+
+                .date {
+                    font-size: 1.2502rem;
+                    font-family: $font-mont;
+                    padding: 0 4.6875rem;
+
+                    &.mobile {
+                        display: none;
+
+                        @media(max-width:$mobile-big) {
+                            font-size: 1.39485vh;
+                            display: block;
+                            width: 100%;
+                            margin-bottom: 2.14592vh;
+                            padding: 0 3.00429vh;
+                        }
+                    }
+
+                    &.desktop {
+                        margin-top: 2.2rem;
+
+                        @media(max-width:$mobile-big) {
+                            display: none;
+                        }
+                    }
+
+
+                }
+
+                .like {
+                    display: flex;
+                    justify-content: flex-end;
+                    align-items: center;
+                    padding: 0 4.6875rem;
+
+                    @media(max-width:$mobile-big) {
+                        padding: 0 4vh;
+                        margin-bottom: 3.21vh;
+                    }
+
+                    .like__wrapper {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        flex-direction: column;
+                        max-width: 2.5rem;
+                        width: 100%;
+
+                        @media(max-width:$mobile-big) {
+                            max-width: 2.8vh;
+                        }
+
+                        svg {
+                            width: 100%;
+                            height: auto;
+                        }
+
+                        .count {
+                            font-size: 1.3455rem;
+
+                            @media(max-width:$mobile-big) {
+                                font-size: 1.5vh;
+                            }
+                        }
+                    }
                 }
 
                 .wrapper {
@@ -48,11 +158,25 @@
                     align-items: center;
                     width: 100%;
                     max-width: 100%;
+                    padding-right: 4.6875rem;
+
+                    @media(max-width:$mobile-big) {
+                        justify-content: center;
+                        align-items: center;
+                        flex-direction: column;
+                        padding: 0;
+                    }
 
                     .image {
                         width: 100%;
-                        max-width: 38.1875rem;
-                        transform: translateX(-2.5rem);
+                        max-width: 39.1rem;
+                        transform: translateX(-2.4375rem);
+
+                        @media(max-width:$mobile-big) {
+                            max-width: 100%;
+                            margin-bottom: 2.6824vh;
+                            transform: none;
+                        }
 
                         img {
                             display: block;
@@ -69,7 +193,12 @@
                         align-items: flex-start;
                         flex-direction: column;
                         width: 100%;
-                        flex: 1;
+                        max-width: 27.0625rem;
+
+                        @media(max-width:$mobile-big) {
+                            padding: 0 3.00429vh;
+                            max-width: 100%;
+                        }
 
                         .description {
                             width: 100%;
@@ -80,10 +209,21 @@
                             margin-bottom: 3rem;
                             max-width: 27.0625rem;
 
+                            @media(max-width:$mobile-big) {
+                                width: 100%;
+                                max-width: 100%;
+                                margin-bottom: 2vh;
+                            }
+
                             p {
                                 font-size: 1rem;
                                 width: 100%;
                                 margin-bottom: 1.5rem;
+
+                                @media(max-width:$mobile-big) {
+                                    font-size: 1.18026vh;
+                                    margin-bottom: 1vh;
+                                }
 
                                 &:last-of-type {
                                     margin-bottom: 0;
@@ -105,6 +245,13 @@
                             background: $base-yellow;
                             border-radius: 3rem;
                             border: none;
+
+                            @media(max-width:$mobile-big) {
+                                font-size: 1.5vh;
+                                width: 17.9vh;
+                                padding: 1.45vh 3vh;
+                                border-radius: 3vh;
+                            }
                         }
                     }
                 }
@@ -117,12 +264,24 @@
 .subNewsSlider {
     padding-top: 0;
 
+    @media(max-width:$mobile-big) {
+        margin: 0 auto;
+        height: 100vh;
+        padding-top: 12vh;
+        padding-bottom: 0;
+    }
+
     h3 {
         font-size: 4rem;
         text-align: center;
         color: $base-red;
         font-family: $font-rounds;
         margin-bottom: 6.25rem;
+
+        @media(max-width:$mobile-big) {
+            font-size: 3.64807vh;
+            margin-bottom: 4.29185vh;
+        }
     }
 
     .news {
@@ -136,6 +295,13 @@
         margin: 0 auto;
         padding-right: 4.125rem;
         margin-bottom: 7rem;
+
+        @media(max-width:$mobile-big) {
+            max-height: 100%;
+            height: auto;
+            padding: 0;
+            overflow: auto;
+        }
 
         &::-webkit-scrollbar {
             width: 0.25rem;
@@ -167,6 +333,13 @@
 
             &.active {
                 background-color: $base-yellow;
+            }
+
+            @media(max-width:$mobile-big) {
+                margin: 0.804721vh auto;
+                font-size: 1.93133vh;
+                height: 16.095vh;
+                padding: 2.6824vh;
             }
         }
     }

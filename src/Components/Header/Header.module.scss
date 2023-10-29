@@ -12,8 +12,13 @@ header {
     transform: translateY(0);
     transition: all 300ms ease-in;
 
-    @media (max-width:$mobile) {
-        padding: 5.3488rem 9.30233rem 0 9.30233rem;
+    @media (max-width:$mobile-big) {
+        align-items: flex-start;
+        padding: 4.29185vh;
+        padding-top: 2.3vh;
+        padding-bottom: 0;
+        height: 10vh;
+        overflow: hidden;
     }
 
     &.disable {
@@ -32,15 +37,27 @@ header {
         width: 12.5rem;
         pointer-events: all;
 
-        @media (max-width:$mobile) {
-            width: 26.98rem;
+        @media (max-width:$mobile-big) {
+            height: 4.295vh;
+            width: auto;
+            position: initial;
         }
 
         a {
             width: 100%;
 
+            @media (max-width:$mobile-big) {
+                height: 100%;
+                width: auto;
+            }
+
             img {
                 width: 100%;
+
+                @media (max-width:$mobile-big) {
+                    height: 100%;
+                    width: auto;
+                }
             }
         }
     }
@@ -48,7 +65,7 @@ header {
     nav {
         flex: 1;
 
-        @media (max-width:$mobile) {
+        @media (max-width:$mobile-big) {
             display: none;
         }
 

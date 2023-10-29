@@ -48,8 +48,12 @@ section {
   max-width: 100%;
   padding: 5.5rem 5rem;
 
-  @media (max-width:$mobile) {
+  @media (max-width:$mobile-big) {
     padding: 4.29185vh;
+  }
+
+  @media (max-width:$mobile-small) {
+    padding: 1.55vh;
   }
 }
 
@@ -65,16 +69,20 @@ button {
 html {
   font-size: 1.058vw;
 
-  @media(max-width:$mobile) {
+  @media(max-width:$mobile-big) {
     font-size: 1vw;
   }
 }
 
-@media(max-width:$mobile) {
+@media(max-width:$mobile-big) {
   .mobile-wrapper {
     width: 100%;
     height: 100%;
-    max-height: 100vh;
-    padding-top: 10vh;
+    max-height: 91.5vh;
+    overflow: hidden;
+  }
+
+  main {
+    padding-top: 12vh;
   }
 }

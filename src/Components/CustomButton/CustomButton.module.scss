@@ -12,10 +12,17 @@
     border-radius: 3rem;
     background: $base-yellow;
 
+    @media (max-width:$mobile-big) {
+        border-radius: 2.5vh;
+        height: 4vh;
+        max-width: 30vh;
+        padding: 0 2vh;
+    }
+
     @media (max-width:$mobile) {
-        border-radius: 10.468rem;
-        height: 10.468rem;
-        max-width: 46.515rem;
+        border-radius: 3vh;
+        height: 4.83vh;
+        max-width: 21.46vh;
     }
 
     .text {
@@ -24,8 +31,12 @@
         font-weight: 500;
         text-transform: uppercase;
 
+        @media (max-width:$mobile-big) {
+            font-size: 2vh;
+        }
+
         @media (max-width:$mobile) {
-            font-size: 2.7907rem;
+            font-size: 1.28755vh;
         }
     }
 
@@ -34,9 +45,14 @@
         width: 1rem;
         height: auto;
 
+        @media (max-width:$mobile-big) {
+            width: 1vh;
+            margin-left: 1vh;
+        }
+
         @media (max-width:$mobile) {
-            width: 2.32rem;
-            margin-left: 2.7907rem;
+            width: 1.07vh;
+            margin-left: 1.28755vh;
         }
     }
 }
