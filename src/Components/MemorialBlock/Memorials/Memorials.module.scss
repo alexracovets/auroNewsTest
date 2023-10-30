@@ -4,20 +4,43 @@
     max-width: 70.25rem;
     margin: 0 auto;
 
+    @media(max-width:$mobile-big) {
+        display: none;
+    }
+
     .item {
         display: flex;
         justify-content: center;
         align-items: center;
-        background-color: $opacity-yellow;
-        padding: 6rem;
+        background-color: $ligth-gray;
+        padding: 6rem 4.6875rem 6rem 6rem;
         border-radius: 1.875rem;
-        margin-bottom: 6rem;
+        margin-bottom: 5rem;
+        position: relative;
+
+        .trident {
+            position: absolute;
+            right: 11rem;
+            top: 5rem;
+            z-index: 0;
+            width: 14.378rem;
+
+            svg {
+                width: 100%;
+                height: auto;
+            }
+        }
 
         .item_left {
+            width: 27.25rem;
+            height: 27.75rem;
             margin-right: 2.5rem;
             flex: 1;
             border-radius: 1.75rem;
             overflow: hidden;
+            filter: grayscale(1);
+            background-size: cover;
+            background-position: center;
 
             img {
                 display: block;
@@ -31,6 +54,7 @@
             flex: 1;
             font-family: $font-mont;
             color: $base-black;
+            position: relative;
 
             .title,
             .item_name,
@@ -56,7 +80,18 @@
             }
 
             .item_position {
-                margin-bottom: 3.75rem;
+                margin-bottom: 7rem;
+            }
+
+            .btn {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                button {
+                    width: 100%;
+                    max-width: 100%;
+                }
             }
         }
     }

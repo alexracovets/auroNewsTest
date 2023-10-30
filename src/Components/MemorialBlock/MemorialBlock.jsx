@@ -1,11 +1,13 @@
 import { useEffect, useState } from 'react';
 import { firestore } from '../../firebase';
 
+import CustomSlider from "../CustomSlider/CustomSlider";
+import CustomButton from "../CustomButton/CustomButton";
 import Pagination from './Pagination/Pagination';
-
-import s from './MemorialBlock.module.scss';
 import Memorials from './Memorials/Memorials';
 import PopUp from '../PopUp/PopUp';
+
+import s from './MemorialBlock.module.scss';
 
 export default function MemorialBlock() {
 
@@ -14,6 +16,7 @@ export default function MemorialBlock() {
     const [memoPerPage] = useState(3);
     const [selectedItem, setSelectedItem] = useState(null);
     const [isPopUpOpen, setIsPopUpOpen] = useState(false);
+    const [slides, setSlides] = useState([]);
 
     const fetchData = async () => {
         try {
@@ -24,6 +27,7 @@ export default function MemorialBlock() {
             if (data) {
                 const memorialsArray = Object.values(data);
                 setMemorials(memorialsArray);
+                setSlides(memorialsArray.reverse());
             }
         } catch (error) {
             console.error('Error fetching memorials:', error);
@@ -54,11 +58,28 @@ export default function MemorialBlock() {
         setIsPopUpOpen(false);
     }
 
+    const renderSlide = () => {
+        return slides.map((memo, index) => (
+            <div className={s.slide} key={index}>
+                <div className={s.slider__wrapper}>
+                    <div className={s.image} style={{ backgroundImage: `url(${memo.image})` }}></div>
+                    <div className={s.name}>{memo.name}</div>
+                    <div className={s.age}>{memo.age}</div>
+                    <div className={s.position}>{memo.position}</div>
+                    <div className={s.btn} onClick={() => moreInfo(memo)} >
+                        <CustomButton text="додаткова інформація" noArrow white />
+                    </div>
+
+                </div>
+            </div>
+        ));
+    };
+
     return (
         <>
             <section className={s.memo}>
                 <div className={s.title}>
-                    Меморіал
+                    Наші Герої
                 </div>
                 <Memorials currentMemo={currentMemo} moreInfo={moreInfo} />
                 <Pagination
@@ -67,6 +88,9 @@ export default function MemorialBlock() {
                     paginate={paginate}
                     currentPage={currentPage}
                 />
+                <div className={s.slider__mobile}>
+                    <CustomSlider renderSlide={renderSlide} isArrow={true} dark />
+                </div>
             </section>
             <PopUp isPopUpOpen={isPopUpOpen}>
                 {selectedItem && (

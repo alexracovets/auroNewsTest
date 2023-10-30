@@ -3,6 +3,11 @@
 .memo {
     margin-top: 2rem;
 
+    @media(max-width:$mobile-big) {
+        margin-top: 0;
+        padding-top: 0;
+    }
+
     .title {
         font-size: 4rem;
         color: $base-black;
@@ -10,6 +15,22 @@
         text-align: center;
         display: block;
         margin: 5rem auto;
+
+        @media (max-width:$mobile-big) {
+            margin-top: 0;
+            font-size: 4vh;
+            margin-bottom: 1.5vh;
+        }
+
+        @media (max-width:$mobile) {
+            font-size: 2.14592vh;
+            margin-bottom: 1.60944vh;
+        }
+
+        @media (max-width:$mobile-small) {
+            font-size: 2.2vh;
+            margin-bottom: 1.5vh;
+        }
     }
 }
 
@@ -104,6 +125,75 @@
 
             &.bold {
                 font-weight: bold;
+            }
+        }
+    }
+}
+
+.slider__mobile {
+    display: none;
+
+    @media(max-width:$mobile-big) {
+        display: block;
+    }
+
+    .slide {
+        display: flex !important;
+        justify-content: flex-start;
+        align-items: center;
+        flex-direction: column;
+        background-color: $ligth-gray;
+        padding: 3.21888vh 5.90129vh;
+        border-radius: 2vh;
+
+        .slider__wrapper {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            flex-direction: column;
+            width: 100%;
+
+            .image {
+                width: 21.46vh;
+                height: 21.46vh;
+                background-size: cover;
+                background-position: center;
+                border-radius: 1.5vh;
+                margin-bottom: 2.6824vh;
+                filter: grayscale(1);
+            }
+
+            .name {
+                font-size: 2.14592vh;
+                margin-bottom: 1.072965vh;
+                font-weight: 600;
+                font-family: $font-mont;
+            }
+
+            .age {
+                font-size: 1.39485vh;
+                font-weight: 500;
+                font-family: $font-mont;
+            }
+
+            .position {
+                font-size: 1.39485vh;
+                font-weight: 500;
+                font-family: $font-mont;
+                margin-bottom: 2.6824vh;
+            }
+
+            .btn {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 100%;
+
+                button {
+                    width: 100%;
+                    max-width: 100%;
+                    font-size: 1.18026vh;
+                }
             }
         }
     }

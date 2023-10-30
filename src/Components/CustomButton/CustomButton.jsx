@@ -4,14 +4,15 @@ import s from './CustomButton.module.scss';
 
 CustomButton.propTypes = {
     text: PropTypes.string.isRequired,
-    noArrow: PropTypes.bool.isRequired
+    noArrow: PropTypes.bool.isRequired,
+    white: PropTypes.bool.isRequired
 };
 CustomButton.defaultProps = {
     noArrow: false
 };
-export default function CustomButton({ text, noArrow }) {
+export default function CustomButton({ text, noArrow, white }) {
     return (
-        <button className={s.customBtn} type='button'>
+        <button className={s.customBtn} type='button' style={{ backgroundColor: white ? '#fff' : "auto" }}>
             <div className={s.text}>
                 {text}
             </div>
