@@ -198,3 +198,23 @@
         }
     }
 }
+
+form {
+    position: absolute;
+    right: 5rem;
+    top: 2.8125rem;
+    z-index: 10;
+
+
+    input {
+        width: 13.0625rem;
+        height: 2.5rem;
+        border-radius: 2rem;
+        font-size: 0.875rem;
+        font-family: $font-mont;
+        padding: 0 1.75rem;
+        outline: none;
+        border: 0.0625rem solid $base-black;
+    }
+
+}

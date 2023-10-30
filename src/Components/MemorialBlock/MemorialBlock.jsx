@@ -17,6 +17,11 @@ export default function MemorialBlock() {
     const [selectedItem, setSelectedItem] = useState(null);
     const [isPopUpOpen, setIsPopUpOpen] = useState(false);
     const [slides, setSlides] = useState([]);
+    const [value, setValue] = useState('');
+
+    const fitered = memorials.filter(memo => {
+        return memo.name.toLowerCase().includes(value.toLowerCase())
+    })
 
     const fetchData = async () => {
         try {
@@ -40,7 +45,7 @@ export default function MemorialBlock() {
 
     const lastMemoIndex = currentPage * memoPerPage;
     const firstMemoIndex = lastMemoIndex - memoPerPage;
-    const currentMemo = memorials.slice(firstMemoIndex, lastMemoIndex);
+    const currentMemo = fitered.slice(firstMemoIndex, lastMemoIndex);
 
     const paginate = (pageNumber) => {
         setCurrentPage(pageNumber);
@@ -75,6 +80,14 @@ export default function MemorialBlock() {
 
     return (
         <>
+            <form className={s.form}>
+                <input
+                    type="text"
+                    placeholder='Пошук за ПІП'
+                    className={s.search}
+                    onChange={(event) => setValue(event.target.value)}
+                />
+            </form>
             <section className={s.memo}>
                 <div className={s.title}>
                     Наші Герої
