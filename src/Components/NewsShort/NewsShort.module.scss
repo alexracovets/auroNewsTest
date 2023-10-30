@@ -58,6 +58,12 @@
         max-height: 46.875rem;
         overflow-y: scroll;
         padding-right: 4.0625rem;
+        scrollbar-color: $base-yellow $base-sand;
+        scrollbar-width: thin;
+
+        &.mobile {
+            display: none;
+        }
 
         @media (max-width:$mobile-big) {
             max-width: 100%;

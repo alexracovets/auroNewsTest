@@ -3,6 +3,7 @@ import DescriptionBlock from "../Components/DescriptionBlock/DescriptionBlock";
 import NewsShort from "../Components/NewsShort/NewsShort";
 import MuseumShort from "../Components/MuseumShort/MuseumShort";
 import MemorialShort from "../Components/MemorialShort/MemorialShort";
+import FeedBack from "../Components/FeedBack/FeedBack";
 
 export default function Home() {
 
@@ -15,6 +16,7 @@ export default function Home() {
                 <MuseumShort />
                 <MemorialShort />
             </div>
+            <FeedBack />
         </>
     )
 }

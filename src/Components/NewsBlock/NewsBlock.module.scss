@@ -295,6 +295,8 @@
         margin: 0 auto;
         padding-right: 4.125rem;
         margin-bottom: 7rem;
+        scrollbar-color: $base-yellow $base-sand;
+        scrollbar-width: thin;
 
         &.mobile {
             display: none;

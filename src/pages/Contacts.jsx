@@ -1,9 +1,9 @@
-import FeedBack from "../Components/FeedBack/FeedBack";
+import ContactsWrapper from "../Components/ContactsWrapper/ContactsWrapper";
 
 
 export default function Contacts() {
 
     return (
-        <FeedBack />
+        <ContactsWrapper />
     )
 }

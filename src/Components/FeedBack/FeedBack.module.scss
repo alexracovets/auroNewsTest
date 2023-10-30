@@ -1,8 +1,7 @@
 @import '../../global/variable.scss';
 
 .FeedBack {
-    background-color: $base-white;
-    padding-top: 7.5rem;
+    background-color: $base-white; 
 
     .title {
         font-size: 4rem;
@@ -11,6 +10,7 @@
         text-align: center;
         display: block;
         margin: 5rem auto;
+        margin-top: 0;
     }
 
     .contact_block_first {
@@ -37,7 +37,6 @@
                 font-size: 1.5rem;
                 font-weight: 500;
                 font-family: $font-mont;
-                margin-bottom: 1.875rem;
                 text-transform: none;
                 margin: 0;
                 margin-bottom: 1.5rem;
