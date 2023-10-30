@@ -1,7 +1,7 @@
 @import '../../global/variable.scss';
 
 .MuseumBlock {
-    padding-top: 7.5rem; 
+    padding-top: 7.5rem;
 
     .title {
         font-size: 4rem;
@@ -15,7 +15,100 @@
     .MuseumBlock_wrapper {
         display: flex;
         justify-content: center;
-        align-items: flex-start;
+        align-items: center;
+        flex-direction: column;
+
+        .slider {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            margin-bottom: 3.125rem;
+
+            .arrow {
+                &.arrow_Prev {
+                    display: none !important;
+                }
+            }
+
+
+            .item {
+                display: flex !important;
+                justify-content: flex-start;
+                align-items: flex-start;
+                width: 100%;
+                max-width: 70.3125rem;
+                background-color: $opacity-yellow;
+                padding: 4.9375rem 6.125rem 4.9375rem 5.75rem;
+                border-radius: 1.875rem;
+                margin: 0 auto;
+                cursor: pointer;
+
+                .item__image {
+                    min-width: 28.5626rem;
+                    width: 28.5626rem;
+                    height: 32.5001rem;
+                    border-radius: 1.875rem;
+                    overflow: hidden;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    background-size: cover;
+                    background-position: center;
+                    margin-right: 2.8125rem;
+
+                    img {
+                        width: 100%;
+                        height: auto;
+                    }
+                }
+
+                .item__content {
+                    display: flex;
+                    justify-content: flex-start;
+                    align-items: flex-start;
+                    flex-direction: column;
+                    font-family: $font-mont;
+                    max-width: 27.0625rem;
+                    margin-bottom: 2.5rem;
+
+                    .description {
+                        font-size: 2rem;
+                        color: $base-black;
+                        font-weight: 600;
+                        margin-top: 2.0625rem;
+                        margin-bottom: 1.875rem;
+                    }
+
+                    .item__texts {
+                        margin-bottom: 2.5rem;
+
+                        .text {
+                            font-size: 1rem;
+                            margin-bottom: 1.5rem;
+
+                            &:last-of-type {
+                                margin-bottom: 0;
+                            }
+                        }
+                    }
+
+
+                    .btn {
+                        display: flex;
+                        justify-content: flex-start;
+                        align-items: flex-start;
+                        width: 100%;
+
+                        button {
+                            width: 100%;
+                            max-width: 22.18751rem;
+                            height: 4.68751rem;
+                        }
+                    }
+                }
+            }
+        }
 
         .descriptions {
             display: flex;
@@ -57,57 +150,94 @@
             }
         }
 
-        .slider {
+        .sub_slider {
             display: flex;
             justify-content: center;
             align-items: center;
             width: 100%;
-            max-width: 73%;
+            margin-bottom: 14.375rem;
 
             .item {
                 display: flex !important;
                 justify-content: center;
                 align-items: center;
-                width: 100%;
-                cursor: pointer;
+                padding: 2rem 0;
 
                 .item__image {
-                    width: 100%;
-                    max-width: 28.5625rem;
-                    border-radius: 1.875rem;
-                    overflow: hidden;
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
+                    width: 10.3125rem;
+                    height: 11.75rem;
+                    background-size: cover;
+                    background-position: center;
+                    border-radius: 1.25rem;
+                    transform: translateY(0);
+                    opacity: 0.5;
+                    transition: all ease-in-out 200ms;
+                    transition-delay: 0ms;
 
-                    img {
-                        width: 100%;
-                        height: auto;
-                    }
-                }
-
-                .item__content {
-                    display: flex;
-                    justify-content: flex-start;
-                    align-items: flex-start;
-                    flex-direction: column;
-                    font-family: $font-mont;
-                    max-width: 27.0625rem;
-                    margin-left: 5.875rem;
-
-                    .description {
-                        font-size: 2rem;
-                        color: $base-black;
-                        font-weight: 600;
-                        margin-bottom: 2.3125rem;
-                    }
-
-                    .text {
-                        font-size: 1rem;
-                        margin-bottom: 1.5rem;
+                    &.active {
+                        width: 14.8125rem;
+                        height: 13rem;
+                        transform: translateY(-0.5rem);
+                        opacity: 1;
+                        transition: all ease-in-out 200ms;
+                        transition-delay: 0ms;
                     }
                 }
             }
         }
     }
+}
+
+.PopUp_wrapper {
+    background-color: #FFFAD9;
+    width: 100%;
+    height: auto;
+    margin: 0 3.5rem;
+    padding: 3.75rem 10.625rem 3.75rem 8.125rem;
+    border-radius: 2.5rem;
+    position: relative;
+
+    .cross {
+        position: absolute;
+        right: 6.25rem;
+        top: 3.125rem;
+        width: 2.8125rem;
+        height: 2.8125rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+
+        svg {
+            width: 100%;
+            height: auto;
+        }
+    }
+
+    .image {
+        width: 11.375rem;
+        height: 13.6875rem;
+        background-size: cover;
+        background-position: center;
+        border-radius: 1.25rem;
+        margin-right: 2.5rem;
+        margin-bottom: 2.5rem;
+        float: left;
+    }
+
+    .title {
+        font-size: 2rem;
+        font-family: $font-mont;
+        font-weight: bold;
+        margin-bottom: 1.3125rem;
+    }
+
+    .texts {
+        p {
+            font-size: 1rem;
+            font-family: $font-mont;
+            margin-bottom: 1rem;
+        }
+    }
+
 }

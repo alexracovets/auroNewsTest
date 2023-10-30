@@ -47,7 +47,6 @@ export default function MemorialBlock() {
     };
 
     const moreInfo = (memorial) => {
-
         if (!memorial) return setIsPopUpOpen(false);
         setSelectedItem(memorial);
         setIsPopUpOpen(true);
@@ -69,7 +68,6 @@ export default function MemorialBlock() {
                     <div className={s.btn} onClick={() => moreInfo(memo)} >
                         <CustomButton text="додаткова інформація" noArrow white />
                     </div>
-
                 </div>
             </div>
         ));

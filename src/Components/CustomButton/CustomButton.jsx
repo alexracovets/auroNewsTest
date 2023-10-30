@@ -5,7 +5,7 @@ import s from './CustomButton.module.scss';
 CustomButton.propTypes = {
     text: PropTypes.string.isRequired,
     noArrow: PropTypes.bool.isRequired,
-    white: PropTypes.bool.isRequired
+    white: PropTypes.bool
 };
 CustomButton.defaultProps = {
     noArrow: false

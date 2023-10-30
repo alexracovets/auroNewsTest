@@ -14,15 +14,16 @@ CustomSlider.propTypes = {
     setSlider: PropTypes.func,
     isArrow: PropTypes.bool.isRequired,
     dark: PropTypes.bool,
+    otherSlider: PropTypes.object,
 };
 
-export default function CustomSlider({ renderSlide, afterChange, setSlider, isArrow, dark }) {
+export default function CustomSlider({ renderSlide, afterChange, setSlider, isArrow, dark, otherSlider }) {
     const sliderRef = useRef(null);
     const [currentSlide, setCurrentSlide] = useState(0);
 
     useEffect(() => {
-        setSlider && setSlider(sliderRef.current)
-    }, [sliderRef])
+        setSlider && setSlider(sliderRef.current);
+    }, [sliderRef, setSlider]);
 
     const settings = {
         arrows: isArrow,
@@ -36,13 +37,19 @@ export default function CustomSlider({ renderSlide, afterChange, setSlider, isAr
             dark ?
                 <DarkArrow
                     vector="prev"
-                    clickAction={() => sliderRef.current.slickPrev()}
+                    clickAction={() => {
+                        sliderRef.current.slickPrev();
+                        otherSlider && otherSlider.slickPrev();
+                    }}
                     currentSlide={Number(currentSlide)}
                     slider={sliderRef}
                 /> :
                 <CustomArrow
                     vector="prev"
-                    clickAction={() => sliderRef.current.slickPrev()}
+                    clickAction={() => {
+                        sliderRef.current.slickPrev();
+                        otherSlider && otherSlider.slickPrev();
+                    }}
                     currentSlide={Number(currentSlide)}
                     slider={sliderRef}
                 />
@@ -50,13 +57,19 @@ export default function CustomSlider({ renderSlide, afterChange, setSlider, isAr
         nextArrow:
             dark ? <DarkArrow
                 vector="next"
-                clickAction={() => sliderRef.current.slickNext()}
+                clickAction={() => {
+                    sliderRef.current.slickNext()
+                    otherSlider && otherSlider.slickNext();
+                }}
                 currentSlide={Number(currentSlide)}
                 slider={sliderRef}
             /> :
                 <CustomArrow
                     vector="next"
-                    clickAction={() => sliderRef.current.slickNext()}
+                    clickAction={() => {
+                        sliderRef.current.slickNext()
+                        otherSlider && otherSlider.slickNext();
+                    }}
                     currentSlide={Number(currentSlide)}
                     slider={sliderRef}
                 />

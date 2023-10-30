@@ -1,0 +1,48 @@
+@import '../../../global/variable.scss';
+
+.arrow {
+    position: absolute;
+    top: auto;
+    bottom: -6.125rem;
+    z-index: 5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 4.0625rem;
+    height: 4.0625rem;
+    border: none;
+    border-radius: 50%;
+    transition: all 300ms ease-in;
+    transform: rotate(0) scale(1);
+    background-color: transparent;
+
+    &:hover {
+        transform: scale(1.1);
+    }
+
+    &.arrow_Prev {
+        left: 38rem;
+
+        &.disabled {
+            opacity: 0.35;
+            transform: rotate(0) scale(0.9);
+            pointer-events: none;
+        }
+    }
+
+    &.arrow_Next {
+        right: 38rem;
+        transform: rotate(180deg);
+
+        &.disabled {
+            opacity: 0.35;
+            transform: rotate(180deg) scale(0.9);
+            pointer-events: none;
+        }
+    }
+
+    svg {
+        transform: translateX(-0.3rem);
+        width: 1.1255rem;
+    }
+}
