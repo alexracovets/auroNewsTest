@@ -56,8 +56,7 @@ export default function NewsBlock() {
                 <div className={s.wrapperSlider}>
                     <h3 className={s.title + ' ' + s.desktop}>{news.title}</h3>
                     <div className={s.wrapper}>
-                        <div className={s.image}>
-                            <img src={news.image} alt="news" />
+                        <div className={s.image} style={{ backgroundImage: `url(${news.image})` }}>
                         </div>
                         <div className={s.date + ' ' + s.mobile}>
                             19.10.2023

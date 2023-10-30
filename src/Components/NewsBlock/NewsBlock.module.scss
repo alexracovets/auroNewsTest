@@ -6,7 +6,7 @@
     @media(max-width:$mobile-big) {
         margin: 0 auto;
         height: 88vh;
-        padding-top: 0;
+        padding-top: 8.3691vh;
         padding-bottom: 0;
     }
 
@@ -24,7 +24,7 @@
         width: 100%;
         margin: 0 auto;
         position: relative;
-        margin-bottom: 11.75rem;
+        margin-bottom: 6.25rem;
 
         @media(max-width:$mobile-big) {
             max-width: 100%;
@@ -54,6 +54,7 @@
                 box-sizing: border-box;
 
                 @media(max-width:$mobile-big) {
+                    border-radius: 1.71674vh;
                     max-width: 100%;
                     padding: 0;
                 }
@@ -122,7 +123,8 @@
 
                     @media(max-width:$mobile-big) {
                         padding: 0 4vh;
-                        margin-bottom: 3.21vh;
+                        margin-bottom: 3.17811vh;
+                        margin-top: -2.16878vh;
                     }
 
                     .like__wrapper {
@@ -169,13 +171,20 @@
 
                     .image {
                         width: 100%;
-                        max-width: 39.1rem;
+                        width: 38.18751rem;
+                        height: 20.5005rem;
                         transform: translateX(-2.4375rem);
+                        border-radius: 1.875rem;
+                        background-size: cover;
+                        background-position: center;
 
                         @media(max-width:$mobile-big) {
+                            width: 91.72vw;
+                            height: 20.172vh;
                             max-width: 100%;
                             margin-bottom: 2.6824vh;
                             transform: none;
+                            border-radius: 1.71674vh;
                         }
 
                         img {
@@ -211,7 +220,7 @@
 
                             @media(max-width:$mobile-big) {
                                 width: 100%;
-                                max-width: 100%;
+                                max-width: 27vh;
                                 margin-bottom: 2vh;
                             }
 
@@ -267,7 +276,7 @@
     @media(max-width:$mobile-big) {
         margin: 0 auto;
         height: 100vh;
-        padding-top: 12vh;
+        padding-top: 16.0944vh;
         padding-bottom: 0;
     }
 
@@ -294,7 +303,6 @@
         max-width: 70.3125rem;
         margin: 0 auto;
         padding-right: 4.125rem;
-        margin-bottom: 7rem;
         scrollbar-color: $base-yellow $base-sand;
         scrollbar-width: thin;
 
