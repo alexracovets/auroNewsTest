@@ -9,6 +9,15 @@ export default function Home() {
 
     return (
         <>
+            <style>
+                {`
+                    @media screen and (max-width: 767px) { 
+                        .feedback {
+                            display: none;
+                        }  
+                    }
+                `}
+            </style>
             <TitleBlock />
             <DescriptionBlock />
             <div className="mobile-wrapper">
@@ -16,7 +25,9 @@ export default function Home() {
                 <MuseumShort />
                 <MemorialShort />
             </div>
-            <FeedBack />
+            <div className="feedback">
+                <FeedBack />
+            </div> 
         </>
     )
 }

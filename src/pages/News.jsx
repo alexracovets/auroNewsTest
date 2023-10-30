@@ -5,8 +5,19 @@ export default function News() {
 
     return (
         <>
+            <style>
+                {`
+                    @media screen and (max-width: 767px) { 
+                        .feedback {
+                            display: none;
+                        }  
+                    }
+                `}
+            </style>
             <NewsBlock />
-            <FeedBack />
+            <div className="feedback">
+                <FeedBack />
+            </div>
         </>
     )
 }

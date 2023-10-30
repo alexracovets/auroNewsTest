@@ -5,8 +5,19 @@ export default function Museum() {
 
     return (
         <>
+            <style>
+                {`
+                    @media screen and (max-width: 767px) { 
+                        .feedback {
+                            display: none;
+                        }  
+                    }
+                `}
+            </style>
             <MuseumBlock />
-            <FeedBack />
+            <div className="feedback">
+                <FeedBack />
+            </div>
         </>
     )
 }
