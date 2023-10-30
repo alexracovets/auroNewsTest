@@ -49,6 +49,14 @@ export default function NewsBlock() {
     const goToPage = (item) => {
         navigate(`/news/${item.key}`);
     }
+    const checkLength = (string) => {
+        if (string.length <= 192) {
+            return string
+        } else {
+            const truncatedString = string.substring(0, 189) + '...';
+            return truncatedString
+        }
+    };
 
     const renderSlide = () => {
         return slides.map((news, index) => (
@@ -64,11 +72,8 @@ export default function NewsBlock() {
                         <h3 className={s.title + ' ' + s.mobile}>{news.title}</h3>
                         <div className={s.content}>
                             <div className={s.description}>
-                                {news.text && news.text.map((item) => (
-                                    <p key={item.key} className={item.bold ? s.bold : ''}>
-                                        {item.value}
-                                    </p>
-                                ))}
+                                {news.text[0] && <p>{checkLength(news.text[0].value)}</p>}
+                                {news.text[1] && <p>{checkLength(news.text[1].value)}</p>}
                             </div>
                             <button className={s.read} onClick={() => goToPage(news)}>читати</button>
                         </div>

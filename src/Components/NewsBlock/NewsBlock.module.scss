@@ -13,7 +13,8 @@
     .title {
         font-size: 4rem;
         color: $base-black;
-        font-family: $font-rounds;
+        font-family: $font-mont;
+        font-weight: 600;
         text-align: center;
         display: block;
         margin: 5rem auto;
@@ -213,7 +214,7 @@
                             width: 100%;
                             display: flex;
                             justify-content: center;
-                            align-items: center;
+                            align-items: flex-start;
                             flex-direction: column;
                             margin-bottom: 3rem;
                             max-width: 27.0625rem;
