@@ -10,6 +10,10 @@
     z-index: 1;
 
     @media (max-width:$mobile-big) {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
         background-color: $base-white;
         padding: 4.29185vh;
         padding-top: 0.536481vh;
