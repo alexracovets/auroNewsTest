@@ -1,3 +1,9 @@
+@import '../../global/variable.scss';
+
 .ContactsWrapper {
     padding-top: 7.5rem;
+
+    @media (max-width:$mobile-big) {
+        padding-top: 0;
+    }
 }

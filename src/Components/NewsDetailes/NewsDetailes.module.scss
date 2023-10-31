@@ -3,6 +3,9 @@
 .NewsDetailes {
     padding-top: 12rem;
 
+    @media (max-width:$mobile-big) {
+        padding-top: 12vh;
+    }
 
     .back {
         color: $base-black;
