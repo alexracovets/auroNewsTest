@@ -11,7 +11,9 @@ export default function PopUp({ isPopUpOpen, children }) {
 
     return (
         <div className={isPopUpOpen ? s.PopUp + ' ' + s.active : s.PopUp}>
-            {children}
+            <div className={s.content}>
+                {children}
+            </div>
         </div>
     )
 }

@@ -27,7 +27,7 @@ export default function PaginNews({ currentNews, activeSlide, clickItem }) {
                         </div>
                         <div className={s.info}>
                             <div className={s.date}>
-                                23.10.2023
+                                {item.date}
                             </div>
                             <div className={s.like}>
                                 <div className={s.like__wrapper}>

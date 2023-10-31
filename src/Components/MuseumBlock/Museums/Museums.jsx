@@ -5,10 +5,11 @@ import { useEffect, useState } from 'react';
 
 Museums.propTypes = {
     currentMemo: PropTypes.array.isRequired,
-    moreInfo: PropTypes.func.isRequired,
+    showInfo: PropTypes.func.isRequired,
+    currentSlide: PropTypes.number.isRequired,
 };
 
-export default function Museums({ currentMemo }) {
+export default function Museums({ currentMemo, showInfo, currentSlide }) {
     const [museums, setMuseums] = useState([]);
 
     useEffect(() => {
@@ -20,7 +21,7 @@ export default function Museums({ currentMemo }) {
         <div className={s.museums}>
             {
                 museums.map((item, index) => (
-                    <div className={s.item} key={index}>
+                    <div className={currentSlide === index ? s.item + ' ' + s.active : s.item} key={index} onClick={() => { showInfo(index) }}>
                         <div className={s.item__image} style={{ backgroundImage: `url(${item.image})` }}> </div>
                     </div>
                 ))

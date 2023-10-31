@@ -67,7 +67,7 @@ export default function NewsBlock() {
                         <div className={s.image} style={{ backgroundImage: `url(${news.image})` }}>
                         </div>
                         <div className={s.date + ' ' + s.mobile}>
-                            19.10.2023
+                            {news.date}
                         </div>
                         <h3 className={s.title + ' ' + s.mobile}>{news.title}</h3>
                         <div className={s.content}>
@@ -79,7 +79,7 @@ export default function NewsBlock() {
                         </div>
                     </div>
                     <div className={s.date + ' ' + s.desktop}>
-                        19.10.2023
+                        {news.date}
                     </div>
                     <div className={s.like}>
                         <div className={s.like__wrapper}>

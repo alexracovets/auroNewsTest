@@ -16,8 +16,36 @@ export default function MuseumBlock() {
     const [currentSlide, setCurrentSlide] = useState(0);
     const [isPopUpOpen, setIsPopUpOpen] = useState(false);
     const [selectedItem, setSelectedItem] = useState(null);
+    const [currentPage, setCurrentPage] = useState(1);
+    const [isInfo, setIsInfo] = useState(false);
+    const [memoPerPage] = useState(16);
     const slider1 = useRef(null);
     const slider2 = useRef(null);
+    const slider3 = useRef(null);
+
+    const lastMemoIndex = currentPage * memoPerPage;
+    const firstMemoIndex = lastMemoIndex - memoPerPage;
+    const currentMemo = slides.slice(firstMemoIndex, lastMemoIndex);
+
+    const fetchData = async () => {
+        try {
+            const dbRef = firestore.ref("data/museums");
+            const snapshot = await dbRef.once("value");
+
+            const data = snapshot.val();
+
+            if (data) {
+                const museumsArray = Object.values(data);
+                setSlides(museumsArray);
+            }
+        } catch (error) {
+            console.error("Помилка завантаження:", error);
+        }
+    };
+
+    const paginate = (pageNumber) => {
+        setCurrentPage(pageNumber);
+    };
 
     const toSlide = (index) => {
         slider1.current.slickGoTo(index);
@@ -29,6 +57,15 @@ export default function MuseumBlock() {
         setSelectedItem(info);
         setIsPopUpOpen(true);
     }
+
+    const checkLength = (number, string) => {
+        if (string.length <= number) {
+            return string
+        } else {
+            const truncatedString = string.substring(0, (+number - 3)) + '...';
+            return truncatedString
+        }
+    };
 
     const closePopUp = () => {
         setSelectedItem(null);
@@ -45,15 +82,9 @@ export default function MuseumBlock() {
                 <div className={s.item__content}>
                     <div className={s.description}>{item.title}</div>
                     <div className={s.item__texts}>
-                        {item.text &&
-                            item.text.map((text) => (
-                                <div
-                                    key={text.key}
-                                    className={text.bold ? s.text + " " + s.bold : s.text}
-                                >
-                                    {text.value}
-                                </div>
-                            ))}
+                        {item.text && (item.text[0] && <p>{checkLength(246, item.text[0].value)}</p>)}
+                        {item.text && (item.text[1] && <p>{checkLength(120, item.text[1].value)}</p>)}
+                        {item.text && (item.text[2] && <p>{checkLength(246, item.text[2].value)}</p>)}
                     </div>
                     <div className={s.btn} onClick={() => { moreInfo(item) }}>
                         <CustomButton text={"детальніше"} />
@@ -76,25 +107,31 @@ export default function MuseumBlock() {
         ));
     };
 
-    const fetchData = async () => {
-        try {
-            const dbRef = firestore.ref("data/museums");
-            const snapshot = await dbRef.once("value");
-
-            const data = snapshot.val();
-
-            if (data) {
-                const museumsArray = Object.values(data);
-                setSlides(museumsArray);
-            }
-        } catch (error) {
-            console.error("Помилка завантаження:", error);
-        }
+    const renderMobileSlide = () => {
+        return slides.map((item) => (
+            <div className={s.item} key={item.key}>
+                <div
+                    className={s.item__image}
+                    style={{ backgroundImage: `url(${item.image})` }}
+                ></div>
+                <div className={s.item__content}>
+                    <div className={s.description}>{item.title}</div>
+                    <div className={s.item__texts}>
+                        {item.text && (item.text[0] && <p>{checkLength(90, item.text[0].value)}</p>)}
+                        {item.text && (item.text[1] && <p>{checkLength(90, item.text[1].value)}</p>)}
+                    </div>
+                    <div className={s.btn} onClick={() => { moreInfo(item) }}>
+                        <CustomButton text={"детальніше"} />
+                    </div>
+                </div>
+            </div>
+        ));
     };
 
-    useEffect(() => {
-        fetchData();
-    }, []);
+    const showInfo = (slide) => {
+        slider3.current.slickGoTo(slide);
+        setIsInfo(true)
+    }
 
     const settingsMain = {
         arrows: true,
@@ -157,16 +194,40 @@ export default function MuseumBlock() {
         },
     };
 
-    const [memoPerPage] = useState(16);
-    const [currentPage, setCurrentPage] = useState(1);
-
-    const paginate = (pageNumber) => {
-        setCurrentPage(pageNumber);
+    const settingsMobile = {
+        arrows: true,
+        dots: false,
+        infinite: false,
+        lazyLoad: true,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        initialSlide: 0,
+        speed: 300,
+        swipeToSlide: true,
+        prevArrow: <CustomArrow
+            vector="prev"
+            clickAction={() => {
+                slider3.current.slickPrev();
+            }}
+            currentSlide={Number(currentSlide)}
+            slider={slider3}
+        />,
+        nextArrow: <CustomArrow
+            vector="next"
+            clickAction={() => {
+                slider3.current.slickNext();
+            }}
+            currentSlide={Number(currentSlide)}
+            slider={slider3}
+        />,
+        afterChange: (index) => {
+            setCurrentSlide(index);
+        },
     };
 
-    const lastMemoIndex = currentPage * memoPerPage;
-    const firstMemoIndex = lastMemoIndex - memoPerPage;
-    const currentMemo = slides.slice(firstMemoIndex, lastMemoIndex);
+    useEffect(() => {
+        fetchData();
+    }, []);
 
     return (
         <>
@@ -193,15 +254,32 @@ export default function MuseumBlock() {
                     </div>
                 </div>
                 <div className={s.MuseumBlock_wrapper + ' ' + s.mobile}>
-                    <Museums currentMemo={currentMemo} />
-                    <Pagination
-                        memoPerPage={memoPerPage}
-                        totalMemo={slides.length}
-                        paginate={paginate}
-                        currentPage={currentPage}
-                    />
+                    <div className={isInfo ? s.back + ' ' + s.active : s.back} onClick={isInfo ? () => setIsInfo(false) : null}>
+                        <div className={s.text}>
+                            Всі експонати
+                        </div>
+                    </div>
+                    <div className={!isInfo ? s.pagination + ' ' + s.active : s.pagination}>
+                        <Museums currentMemo={currentMemo} showInfo={showInfo} currentSlide={currentSlide} />
+                        <Pagination
+                            memoPerPage={memoPerPage}
+                            totalMemo={slides.length}
+                            paginate={paginate}
+                            currentPage={currentPage}
+                        />
+                    </div>
+                    <div className={isInfo ? s.short__info + ' ' + s.active : s.short__info}>
+                        <div className={s.mobile_slider}>
+                            <Slider
+                                ref={slider3}
+                                {...settingsMobile}
+                            >
+                                {renderMobileSlide()}
+                            </Slider>
+                        </div>
+                    </div>
                 </div>
-            </section>
+            </section >
             <PopUp isPopUpOpen={isPopUpOpen}>
                 {selectedItem && (
                     <div className={s.PopUp_wrapper}>

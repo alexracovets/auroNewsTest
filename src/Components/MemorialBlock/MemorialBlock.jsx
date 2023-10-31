@@ -39,10 +39,6 @@ export default function MemorialBlock() {
         }
     };
 
-    useEffect(() => {
-        fetchData();
-    }, []);
-
     const lastMemoIndex = currentPage * memoPerPage;
     const firstMemoIndex = lastMemoIndex - memoPerPage;
     const currentMemo = fitered.slice(firstMemoIndex, lastMemoIndex);
@@ -61,6 +57,10 @@ export default function MemorialBlock() {
         setSelectedItem(null);
         setIsPopUpOpen(false);
     }
+
+    useEffect(() => {
+        fetchData();
+    }, []);
 
     const renderSlide = () => {
         return slides.map((memo, index) => (

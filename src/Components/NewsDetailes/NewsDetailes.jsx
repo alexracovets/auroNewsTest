@@ -86,7 +86,7 @@ export default function NewsDetailes({ id }) {
                     <div className={s.news_wrapper}>
                         <div className={s.news__image} style={{ backgroundImage: `url(${data.image})` }}></div>
                         <div className={s.date}>
-                            19.10.2023
+                            {data.date}
                         </div>
                         <h2 className={s.title}>{data.title}</h2>
                         {

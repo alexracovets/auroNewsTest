@@ -24,8 +24,17 @@ export default function PopUpAdd({ dataRef, fetchData, setPoUoAdded }) {
         image: null,
         text: [],
         likes: 0,
+        date: null,
         key: null
     });
+    
+    const getDate = () => {
+        const currentDate = new Date();
+        const day = currentDate.getDate();
+        const month = currentDate.getMonth() + 1;
+        const year = currentDate.getFullYear();
+        newsData.date = `${day < 10 ? '0' : ''}${day}.${month < 10 ? '0' : ''}${month}.${year}`;
+    }
 
     const handleInputChange = async (e, name, key) => {
         if (name === 'image') {
@@ -80,6 +89,7 @@ export default function PopUpAdd({ dataRef, fetchData, setPoUoAdded }) {
     };
 
     const createMemorial = () => {
+        getDate();
         if (
             newsData.title &&
             newsData.image

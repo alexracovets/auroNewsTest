@@ -3,8 +3,8 @@
 .museums {
     display: inline-block;
     width: 100%;
-    height: 47.7vh;
-
+    height: 55.165vh;
+    padding-top: 9.22747vh;
 
     .item {
         float: left;
@@ -12,6 +12,14 @@
         height: 25%;
         margin: 0 0.1vh;
         padding-bottom: 0.552vh;
+        opacity: 0.65;
+        cursor: pointer;
+        transition: all ease-in-out 300ms;
+
+        &.active {
+            opacity: 1;
+            transition: all ease-in-out 300ms;
+        }
 
         .item__image {
             width: 100%;

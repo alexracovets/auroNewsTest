@@ -82,7 +82,7 @@ export default function NewsShort() {
                             </div>
                             <div className={s.right}>
                                 <div className={s.date}>
-                                    23.10.2023
+                                    {news[0].date}
                                 </div>
                                 <div className={s.likes}>
                                     <svg xmlns="http://www.w3.org/2000/svg" width="33" height="33" viewBox="0 0 33 33" fill="none">

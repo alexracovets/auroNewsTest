@@ -17,7 +17,7 @@
 
     @media(max-width:$mobile-big) {
         top: auto;
-        bottom: -9vh;
+        bottom: -8.4vh;
         width: 5.6vh;
         height: 5.6vh;
     }
@@ -30,7 +30,7 @@
         left: 0;
 
         @media(max-width:$mobile-big) {
-            left: 25vw;
+            left: 20vw;
         }
 
         &.disabled {
@@ -45,7 +45,7 @@
         transform: rotate(180deg);
 
         @media(max-width:$mobile-big) {
-            right: 25vw;
+            right: 20vw;
         }
 
         &.disabled {

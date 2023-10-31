@@ -73,7 +73,7 @@ export default function AdminMemorial() {
                         <div className={s.memo} key={memo.key}>
                             <div className={s.memo_content}>
                                 <div className={s.memo__img} style={{ backgroundImage: `url(${memo.image})` }}> </div>
-                                <div className={s.memo__name}>{memo.title}</div>
+                                <div className={s.memo__name}>{memo.name}</div>
                             </div>
                             <div className={s.memo_setting}>
                                 <div className={s.setting__edit} onClick={() => editMemo(memo)}> <SettingSvg /></div>
