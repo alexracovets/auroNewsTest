@@ -1,7 +1,7 @@
 @import '../../../global/variable.scss';
 
 .memorial {
-    max-width: 70.25rem;
+    max-width: 50rem;
     margin: 0 auto;
 
     @media(max-width:$mobile-big) {
@@ -11,9 +11,9 @@
     .item {
         display: flex;
         justify-content: flex-start;
-        align-items: flex-start;
+        align-items: center;
         background-color: $ligth-gray;
-        padding: 7.375rem 4.8125rem 7.375rem 7.1875rem;
+        padding: 3rem;
         border-radius: 1.875rem;
         margin-bottom: 5rem;
         position: relative;
@@ -21,10 +21,10 @@
         .trident {
             position: absolute;
             right: 10.625rem;
-            top: 7.375rem;
+            top: 2.375rem;
             z-index: 0;
-            width: 14.3751rem;
-            height: 22.5005rem;
+            width: 8.3751rem;
+            height: 13.5005rem;
 
             svg {
                 width: 100%;
@@ -33,8 +33,8 @@
         }
 
         .item_left {
-            width: 27.2505rem;
-            height: 27.7505rem;
+            width: 15rem;
+            height: 15rem;
             margin-right: 5rem;
             border-radius: 1.75rem;
             overflow: hidden;
@@ -53,28 +53,28 @@
             font-family: $font-mont;
             color: $base-black;
             position: relative;
-            padding-top: 5.8125rem;
+            padding-top: 3rem;
 
             .title,
             .item_name,
             .item_age,
             .item_position {
-                margin-bottom: 1.5625rem;
+                margin-bottom: 1rem;
             }
 
             .item_name {
-                font-size: 2.25rem;
+                font-size: 1.5rem;
                 font-weight: 600;
             }
 
             .item_age,
             .item_position {
-                font-size: 1.5rem;
+                font-size: 1rem;
                 font-weight: 500;
             }
 
             .item_position {
-                margin-bottom: 7rem;
+                margin-bottom: 1.5rem;
             }
 
             .btn {
@@ -84,12 +84,12 @@
                 position: absolute;
                 bottom: -4.687505rem;
                 left: 0;
-                width: 26rem;
+                width: 22rem;
 
                 button {
                     width: 100%;
                     max-width: 100%;
-                    height: 4.687505rem;
+                    height: 3rem;
                 }
             }
         }

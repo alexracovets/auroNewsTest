@@ -1,7 +1,7 @@
 @import '../../global/variable.scss';
 
 .memo {
-    padding-top: 12.5rem;
+    padding-top: 9rem;
 
     @media(max-width:$mobile-big) {
         margin-top: 12vh;
@@ -9,12 +9,12 @@
     }
 
     .title {
-        font-size: 4rem;
+        font-size: 3rem;
         color: $base-black;
         font-family: $font-rounds;
         text-align: center;
         display: block;
-        margin: 5rem auto;
+        margin: 3rem auto;
         margin-top: 0;
 
         @media (max-width:$mobile-big) {
