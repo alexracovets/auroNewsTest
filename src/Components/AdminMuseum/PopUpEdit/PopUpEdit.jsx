@@ -18,7 +18,7 @@ PopUpEdit.propTypes = {
 };
 
 export default function PopUpEdit({ dataRef, fetchData, base, setPopUpEdit }) {
-    const [isBold, setIsBold] = useState(true);
+    const [isBold, setIsBold] = useState(false);
     const [imageLoad, setImageLoad] = useState(true);
     const [data, setData] = useState({
         title: base.title,
@@ -114,7 +114,7 @@ export default function PopUpEdit({ dataRef, fetchData, base, setPopUpEdit }) {
                                 <div key={item.key} className={s.input_text}>
                                     <input
                                         type='text'
-                                        placeholder='Роки життя'
+                                        placeholder='Введіть текст'
                                         style={{ fontWeight: item.bold ? 'bold' : 'normal' }}
                                         onChange={(e) => handleInputChange(e, 'text', item.key)}
                                         value={item.value}

@@ -17,7 +17,7 @@ PopUpAdd.propTypes = {
 };
 
 export default function PopUpAdd({ dataRef, fetchData, setPoUoAdded }) {
-    const [isBold, setIsBold] = useState(true);
+    const [isBold, setIsBold] = useState(false);
     const [imageLoad, setImageLoad] = useState(false);
     const [memorialData, setMemorialData] = useState({
         title: null,
@@ -130,7 +130,7 @@ export default function PopUpAdd({ dataRef, fetchData, setPoUoAdded }) {
                                 <div key={item.key} className={s.input_text}>
                                     <input
                                         type='text'
-                                        placeholder='Роки життя'
+                                        placeholder='Введіть текст'
                                         style={{ fontWeight: item.bold ? 'bold' : 'normal' }}
                                         onChange={(e) => handleInputChange(e, 'text', item.key)}
                                     />
