@@ -1,7 +1,7 @@
 @import '../../global/variable.scss';
 
 .newsSlider {
-    margin-top: 10.6875rem;
+    padding-top: 9rem;
 
     @media(max-width:$mobile-big) {
         margin: 0 auto;
@@ -23,10 +23,9 @@
 
     .slider {
         display: block;
-        width: 100%;
+        width: 60rem;
         margin: 0 auto;
         position: relative;
-        margin-bottom: 6.25rem;
 
         @media(max-width:$mobile-big) {
             max-width: 100%;
@@ -39,7 +38,7 @@
             justify-content: center;
             align-items: center;
             padding: 0 2rem;
-            transform: translateX(0.75rem);
+            transform: translateX(0.5rem);
 
             @media(max-width:$mobile-big) {
                 padding: 0;
@@ -49,10 +48,10 @@
             .wrapperSlider {
                 font-family: $font-mont;
                 width: 100%;
-                border-radius: 1.875rem;
-                padding: 4rem 0 2.9375rem 0;
+                border-radius: 1rem;
+                padding: 1rem 0 1rem 0;
                 background-color: $base-sand;
-                max-width: 70.3125rem;
+                max-width: 50rem;
                 box-sizing: border-box;
 
                 @media(max-width:$mobile-big) {
@@ -64,9 +63,9 @@
                 .title {
                     font-size: 2rem;
                     text-align: center;
-                    padding: 0 4.6875rem;
+                    padding: 0 2rem;
                     margin: 0 auto;
-                    margin-bottom: 5.125rem;
+                    margin-bottom: 2rem;
 
                     &.desktop {
                         @media(max-width:$mobile-big) {
@@ -90,9 +89,9 @@
                 }
 
                 .date {
-                    font-size: 1.2502rem;
+                    font-size: 1rem;
                     font-family: $font-mont;
-                    padding: 0 4.6875rem;
+                    padding: 0 2rem;
 
                     &.mobile {
                         display: none;
@@ -107,7 +106,7 @@
                     }
 
                     &.desktop {
-                        margin-top: 2.2rem;
+                        margin-top: 1rem;
 
                         @media(max-width:$mobile-big) {
                             display: none;
@@ -121,7 +120,7 @@
                     display: flex;
                     justify-content: flex-end;
                     align-items: center;
-                    padding: 0 4.6875rem;
+                    padding: 0 2rem;
 
                     @media(max-width:$mobile-big) {
                         padding: 0 4vh;
@@ -134,7 +133,7 @@
                         justify-content: center;
                         align-items: center;
                         flex-direction: column;
-                        max-width: 2.5rem;
+                        max-width: 2rem;
                         width: 100%;
 
                         @media(max-width:$mobile-big) {
@@ -147,7 +146,7 @@
                         }
 
                         .count {
-                            font-size: 1.3455rem;
+                            font-size: 1rem;
 
                             @media(max-width:$mobile-big) {
                                 font-size: 1.5vh;
@@ -162,7 +161,7 @@
                     align-items: center;
                     width: 100%;
                     max-width: 100%;
-                    padding-right: 4.6875rem;
+                    padding-right: 2rem;
 
                     @media(max-width:$mobile-big) {
                         justify-content: center;
@@ -173,10 +172,10 @@
 
                     .image {
                         width: 100%;
-                        width: 38.18751rem;
-                        height: 20.5005rem;
-                        transform: translateX(-2.4375rem);
-                        border-radius: 1.875rem;
+                        width: 29.375001rem;
+                        height: 15.76961rem;
+                        transform: translateX(-1rem);
+                        border-radius: 1rem;
                         background-size: cover;
                         background-position: center;
 
@@ -192,8 +191,6 @@
                         img {
                             display: block;
                             width: 100%;
-                            border-radius: 1.875rem;
-                            overflow: hidden;
                             background-color: $base-yellow;
                         }
                     }
@@ -204,7 +201,7 @@
                         align-items: flex-start;
                         flex-direction: column;
                         width: 100%;
-                        max-width: 27.0625rem;
+                        max-width: 20rem;
 
                         @media(max-width:$mobile-big) {
                             padding: 0 3.00429vh;
@@ -217,8 +214,8 @@
                             justify-content: center;
                             align-items: flex-start;
                             flex-direction: column;
-                            margin-bottom: 3rem;
-                            max-width: 27.0625rem;
+                            margin-bottom: 2rem;
+                            max-width: 20rem;
 
                             @media(max-width:$mobile-big) {
                                 width: 100%;
@@ -227,9 +224,9 @@
                             }
 
                             p {
-                                font-size: 1rem;
+                                font-size: 0.8rem;
                                 width: 100%;
-                                margin-bottom: 1.5rem;
+                                margin-bottom: 1rem;
 
                                 @media(max-width:$mobile-big) {
                                     font-size: 1.18026vh;
@@ -251,12 +248,12 @@
                         }
 
                         .read {
-                            font-size: 1.25rem;
+                            font-size: 1rem;
                             color: $base-black;
                             font-family: $font-mont;
                             font-weight: 500;
                             text-transform: uppercase;
-                            padding: 1.5625rem 6.25rem;
+                            padding: 1rem 4rem;
                             background: $base-yellow;
                             border-radius: 3rem;
                             border: none;
@@ -278,6 +275,7 @@
 
 .subNewsSlider {
     padding-top: 0;
+    padding-bottom: 0;
 
     @media(max-width:$mobile-big) {
         margin: 0 auto;
@@ -287,11 +285,11 @@
     }
 
     h3 {
-        font-size: 4rem;
+        font-size: 3rem;
         text-align: center;
         color: $base-red;
         font-family: $font-rounds;
-        margin-bottom: 6.25rem;
+        margin-bottom: 3rem;
 
         @media(max-width:$mobile-big) {
             font-size: 3.64807vh;
@@ -304,9 +302,9 @@
         justify-content: flex-start;
         align-items: center;
         flex-direction: column;
-        max-height: 45rem;
+        height: 18rem;
         overflow-y: scroll;
-        max-width: 70.3125rem;
+        max-width: 60rem;
         margin: 0 auto;
         padding-right: 4.125rem;
         scrollbar-color: $base-yellow $base-sand;
@@ -354,11 +352,10 @@
             font-weight: 600;
             text-align: center;
             width: 100%;
-            height: 9.375rem;
-            padding: 3.469rem 11.25rem;
-            margin: 1.25rem auto;
+            min-height: 5rem;
+            margin: 0.25rem auto;
             border: none;
-            border-radius: 1.875rem;
+            border-radius: 1rem;
             background: $base-sand;
 
             &.active {

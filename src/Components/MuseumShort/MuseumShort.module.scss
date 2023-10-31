@@ -2,6 +2,8 @@
 
 .MuseumShort {
     background-color: $opacity-yellow;
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
 
     @media (max-width:$mobile-big) {
         background-color: $base-white;
@@ -22,13 +24,13 @@
     }
 
     .title {
-        font-size: 4rem;
+        font-size: 3rem;
         color: $base-red;
         font-family: $font-rounds;
         text-align: center;
         display: block;
         margin: 0 auto;
-        margin-bottom: 5rem;
+        margin-bottom: 3rem;
 
         @media (max-width:$mobile-big) {
             font-size: 4vh;
@@ -36,13 +38,9 @@
         }
 
         @media (max-width:$mobile) {
-            font-size: 2.57511vh;
+            font-size: 2.14592vh;
             margin-bottom: 1.60944vh;
-        }
-
-        @media (max-width:$mobile-small) {
-            font-size: 2.2vh;
-            margin-bottom: 1.5vh;
+            padding-bottom: 0.536481vh;
         }
     }
 
@@ -95,10 +93,6 @@
                     border-radius: 1.5vh;
                     z-index: 0;
                     transform: translateY(3vh);
-                }
-
-                a {
-                    z-index: 1;
                 }
             }
         }
