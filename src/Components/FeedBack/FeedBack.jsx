@@ -1,3 +1,5 @@
+import logo from '/img/logo.svg';
+
 import s from './FeedBack.module.scss';
 
 export default function FeedBack() {
@@ -65,7 +67,62 @@ export default function FeedBack() {
                 </div>
             </div>
             <div className={s.feedBack__wrapper + ' ' + s.mobile}>
-
+                <div className={s.question_number}>
+                    <p>
+                        З юридичних питань і психологічної підтримки звертайтеся на лінію підтримки Ветеран Хаб:
+                    </p>
+                    <a href="tel:+380673482868"> +380 67 348 28 68 </a>
+                </div>
+                <div className={s.question_number}>
+                    <p>
+                        З питань отримання безкоштовної юридичної допомоги:
+                    </p>
+                    <a href="tel:+380678260000">
+                        лінія підтримки <br />
+                        +380 67 826 00 00 <br />
+                        (після виклику натиснути 3)
+                    </a>
+                </div>
+                <div className={s.contacts}>
+                    <div className={s.contacts__title}>
+                        Контакти менеджерок КСВ:
+                    </div>
+                    <div className={s.contacts__wrapper}>
+                        <div className={s.left}>
+                            <div className={s.item}>
+                                <a href="tel:+380675572716">+380 67 557 27 16</a>
+                                <p> Альона Жигура </p>
+                            </div>
+                            <div className={s.item}>
+                                <a href="tel:+380671746363">+380 67 174 63 63</a>
+                                <p> Надія Грисенко </p>
+                            </div>
+                        </div>
+                        <div className={s.right}>
+                            <div className={s.item}>
+                                <a href="tel:+380956252907">+380 95 625 29 07</a>
+                                <p> Марія Яременко </p>
+                            </div>
+                            <div className={s.item}>
+                                <a href="tel:+380664746618">+380 66 474 66 18</a>
+                                <p> Марина Мельничук </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div className={s.question}>
+                        <div className={s.title}>
+                            Запитання та пропозиції:
+                        </div>
+                        <a href="tel:+380675572716">+380 67 557 27 16</a>
+                        <div className={s.name}>
+                            Альона Жигура
+                        </div>
+                        <div className={s.position}>
+                            Керівниця відділу КСВ
+                        </div>
+                        <img src={logo} alt="logo" className={s.logo} />
+                    </div>
+                </div>
             </div>
         </section>
     )
