@@ -1,0 +1,62 @@
+@import '../../../global/variable.scss';
+
+.pagination_wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .pagination {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        list-style: none;
+        padding: 0;
+        margin: 0 2.7rem;
+
+        @media (max-width:$mobile-big) {
+            margin: 3.73134vh;
+        }
+
+        li {
+            padding: 0 0.5rem;
+
+            @media (max-width:$mobile-big) {
+                padding: 0 0.799574vh;
+            }
+
+            .page_link {
+                color: $opacity-gray;
+                font-size: 1.5rem;
+                font-family: $font-mont;
+                font-weight: 500;
+                line-height: 1;
+
+                &.active {
+                    color: $base-black;
+                }
+
+                @media (max-width:$mobile-big) {
+                    font-size: 2.55864vh;
+                }
+            }
+        }
+    }
+
+    .arrow {
+        border: none;
+        background-color: transparent;
+
+        @media (max-width:$mobile-big) {
+            padding: 0 0.799574vh;
+        }
+
+        svg {
+            width: 0.6875rem;
+            height: auto;
+
+            @media (max-width:$mobile-big) {
+                width: 2.56rem;
+            }
+        }
+    }
+}

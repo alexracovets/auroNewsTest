@@ -233,6 +233,10 @@
                                 @media(max-width:$mobile-big) {
                                     font-size: 1.18026vh;
                                     margin-bottom: 1vh;
+
+                                    &:nth-of-type(2) {
+                                        display: none;
+                                    }
                                 }
 
                                 &:last-of-type {

@@ -36,7 +36,7 @@ export default function MemorialShort() {
             <div className={s.memorialShort_wrapper + ' ' + s.mobile}>
                 <div className={s.backSide}></div>
                 <div className={s.img} style={{ backgroundImage: `url(${memorial})` }}></div>
-                <Link to="/museum">
+                <Link to="/memorial">
                     <CustomButton text={"читати більше"} />
                 </Link>
             </div>

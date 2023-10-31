@@ -1,7 +1,11 @@
 @import '../../global/variable.scss';
 
 .MuseumBlock {
-    padding-top: 7.5rem;
+    padding-top: 12.5rem;
+
+    @media (max-width:$mobile-big) {
+        padding-top: 0;
+    }
 
     .title {
         font-size: 4rem;
@@ -10,6 +14,12 @@
         text-align: center;
         display: block;
         margin: 5rem auto;
+        margin-top: 0;
+
+        @media (max-width:$mobile-big) {
+            font-size: 3.64807vh;
+            margin-bottom: 9.22747vh;
+        }
     }
 
     .MuseumBlock_wrapper {
@@ -17,6 +27,22 @@
         justify-content: center;
         align-items: center;
         flex-direction: column;
+
+        &.mobile {
+            display: none;
+        }
+
+        @media (max-width:$mobile-big) {
+            &.desktop {
+                display: none;
+            }
+
+            &.mobile {
+                display: flex;
+            }
+        }
+
+
 
         .slider {
             display: flex;

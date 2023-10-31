@@ -2,9 +2,11 @@ import { useState, useEffect, useRef } from "react";
 import Slider from "react-slick";
 import { firestore } from "../../firebase";
 
-import CustomButton from "../CustomButton/CustomButton";
 import CustomArrow from "../CustomSlider/CustomArrow/CustomArrow";
-import SubArrow from "./SubArrow/SubArrow"
+import CustomButton from "../CustomButton/CustomButton";
+import Pagination from './Pagination/Pagination';
+import SubArrow from "./SubArrow/SubArrow";
+import Museums from './Museums/Museums';
 
 import s from "./MuseumBlock.module.scss";
 import PopUp from "../PopUp/PopUp";
@@ -155,11 +157,22 @@ export default function MuseumBlock() {
         },
     };
 
+    const [memoPerPage] = useState(16);
+    const [currentPage, setCurrentPage] = useState(1);
+
+    const paginate = (pageNumber) => {
+        setCurrentPage(pageNumber);
+    };
+
+    const lastMemoIndex = currentPage * memoPerPage;
+    const firstMemoIndex = lastMemoIndex - memoPerPage;
+    const currentMemo = slides.slice(firstMemoIndex, lastMemoIndex);
+
     return (
         <>
             <section className={s.MuseumBlock}>
                 <div className={s.title}>Музей</div>
-                <div className={s.MuseumBlock_wrapper}>
+                <div className={s.MuseumBlock_wrapper + ' ' + s.desktop}>
                     <div className={s.slider}>
                         <Slider
                             asNavFor={slider2.current}
@@ -178,6 +191,15 @@ export default function MuseumBlock() {
                             {renderSubSlide()}
                         </Slider>
                     </div>
+                </div>
+                <div className={s.MuseumBlock_wrapper + ' ' + s.mobile}>
+                    <Museums currentMemo={currentMemo} />
+                    <Pagination
+                        memoPerPage={memoPerPage}
+                        totalMemo={slides.length}
+                        paginate={paginate}
+                        currentPage={currentPage}
+                    />
                 </div>
             </section>
             <PopUp isPopUpOpen={isPopUpOpen}>

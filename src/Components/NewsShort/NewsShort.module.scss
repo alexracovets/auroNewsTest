@@ -9,7 +9,7 @@
 
     @media (max-width:$mobile-big) {
         height: 26.5vh;
-        padding-top: 1vh;
+        padding-top: 0;
         padding-bottom: 3vh;
         width: 100%;
         display: flex;
@@ -38,7 +38,7 @@
         }
 
         @media (max-width:$mobile) {
-            font-size: 2.14592vh;
+            font-size: 2.57511vh;
             margin-bottom: 1.60944vh;
         }
 
@@ -113,7 +113,7 @@
                 align-items: center;
                 justify-content: space-between;
                 padding: 1.5vh 3vh;
-                margin-bottom: 1vh;
+                margin-bottom: 0;
                 border-radius: 1.5vh;
 
                 .right {
@@ -288,7 +288,8 @@
         margin: 4.375rem auto;
 
         @media (max-width:$mobile-big) {
-            margin: 2vh auto;
+            margin: 0 auto;
+            margin-top: 1.072965vh;
         }
 
         .link {

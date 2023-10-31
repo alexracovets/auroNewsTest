@@ -1,7 +1,7 @@
 @import '../../global/variable.scss';
 
 .memo {
-    padding-top: 7.5rem;
+    padding-top: 12.5rem;
 
     @media(max-width:$mobile-big) {
         margin-top: 0;
@@ -15,16 +15,16 @@
         text-align: center;
         display: block;
         margin: 5rem auto;
+        margin-top: 0;
 
         @media (max-width:$mobile-big) {
-            margin-top: 0;
             font-size: 4vh;
             margin-bottom: 1.5vh;
         }
 
         @media (max-width:$mobile) {
-            font-size: 2.14592vh;
-            margin-bottom: 1.60944vh;
+            font-size: 3.64807vh;
+            margin-bottom: 3.21888vh;
         }
 
         @media (max-width:$mobile-small) {
@@ -144,7 +144,25 @@
         flex-direction: column;
         background-color: $ligth-gray;
         padding: 3.21888vh 5.90129vh;
-        border-radius: 2vh;
+        border-radius: 1.9068vh;
+        position: relative;
+
+        .trident {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+
+            svg {
+                width: 8.155vh;
+                height: 12.769vh;
+                transform: translateY(-9vh);
+            }
+        }
 
         .slider__wrapper {
             display: flex;
@@ -159,11 +177,16 @@
                 background-size: cover;
                 background-position: center;
                 border-radius: 1.5vh;
-                margin-bottom: 2.6824vh;
+                margin-bottom: 4.5vh;
                 filter: grayscale(1);
+
+                @media (max-width:$mobile) {
+                    margin-bottom: 2.6824vh;
+                }
             }
 
             .name {
+                text-align: center;
                 font-size: 2.14592vh;
                 margin-bottom: 1.072965vh;
                 font-weight: 600;
@@ -191,8 +214,15 @@
 
                 button {
                     width: 100%;
-                    max-width: 100%;
-                    font-size: 1.18026vh;
+                    max-width: 60vh;
+                    font-size: 1.5vh;
+                    height: 5vh;
+
+                    @media (max-width:$mobile) {
+                        width: 100%;
+                        max-width: 100%;
+                        font-size: 1.18026vh;
+                    }
                 }
             }
         }
@@ -205,6 +235,17 @@ form {
     top: 2.8125rem;
     z-index: 10;
 
+    @media (max-width:$mobile-big) {
+        position: initial;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 1.5vh;
+    }
+
+    @media (max-width:$mobile) {
+        margin-bottom: 4.18455vh;
+    }
 
     input {
         width: 13.0625rem;
@@ -215,6 +256,24 @@ form {
         padding: 0 1.75rem;
         outline: none;
         border: 0.0625rem solid $base-black;
+
+        @media (max-width:$mobile-big) {
+            font-size: 1.5vh;
+            width: 25vh;
+            height: 4vh;
+            border-radius: 4vh;
+            border: 0.1vh solid $base-black;
+            padding: 0 3vh;
+        }
+
+        @media (max-width:$mobile) {
+            font-size: 1.072965vh;
+            width: 18.242vh;
+            height: 3.22vh;
+            border-radius: 3.22vh;
+            border: 0.0912017vh solid $base-black;
+            padding: 0 2.46781vh;
+        }
     }
 
 }
