@@ -62,15 +62,17 @@ export default function AdminNews() {
         const newCount = currentNews.count + countMath;
         const swapedNews = findNewsByKey(newCount);
 
-        if (newCount <= 0 || newCount > news.length) {
+      
+        if (newCount < 0 || newCount > news.length-1) {
             return null;
         } 
-        if (newCount >= -1) {
+        
+        if (newCount >= 0) {
             try {
                 // Оновлення даних в Firebase
                 await dataRef.child(currentNews.key).update({ count: newCount });
                 await dataRef.child(swapedNews.key).update({ count: currentCount });
-                await fetchData();
+                fetchData();
             } catch (error) {
                 console.error('Помилка при оновленні даних в Firebase:', error);
             }
