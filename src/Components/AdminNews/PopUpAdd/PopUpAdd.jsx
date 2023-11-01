@@ -12,11 +12,11 @@ import s from './PopUpAdd.module.scss';
 
 PopUpAdd.propTypes = {
     dataRef: PropTypes.object.isRequired,
-    fetchData: PropTypes.func.isRequired,
     setPoUoAdded: PropTypes.func.isRequired,
+    updateList: PropTypes.func.isRequired
 };
 
-export default function PopUpAdd({ dataRef, fetchData, setPoUoAdded }) {
+export default function PopUpAdd({ dataRef, setPoUoAdded, updateList }) {
     const [isBold, setIsBold] = useState(false);
     const [imageLoad, setImageLoad] = useState(false);
     const [newsData, setNewslData] = useState({
@@ -25,9 +25,10 @@ export default function PopUpAdd({ dataRef, fetchData, setPoUoAdded }) {
         text: [],
         likes: 0,
         date: null,
+        count: -1,
         key: null
     });
-    
+
     const getDate = () => {
         const currentDate = new Date();
         const day = currentDate.getDate();
@@ -98,7 +99,9 @@ export default function PopUpAdd({ dataRef, fetchData, setPoUoAdded }) {
                 .child(newsData.key)
                 .set(newsData)
                 .then(() => {
-                    fetchData();
+                    updateList()
+                })
+                .then(() => {
                     setPoUoAdded(false);
                 });
         }

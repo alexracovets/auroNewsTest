@@ -19,8 +19,8 @@ export default function NewsShort() {
             const data = snapshot.val();
 
             if (data) {
-                const memorialsArray = Object.values(data);
-                setNews(memorialsArray.reverse());
+                const newsArray = Object.values(data);
+                setNews(newsArray.sort((a, b) => a.count - b.count)); 
             }
         } catch (error) {
             console.error('Error fetching memorials:', error);

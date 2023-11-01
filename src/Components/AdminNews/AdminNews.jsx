@@ -1,13 +1,12 @@
 import { useState, useEffect } from 'react';
 import { firestore } from '../../firebase';
 
-import CrossSvg from './CrossSvg/CrossSvg';
 import PlusSvg from './PlusSvg/PlusSvg';
-import SettingSvg from './SettingSvg/SettingSvg';
 import PopUpEdit from './PopUpEdit/PopUpEdit';
 
 import s from './AdminNews.module.scss';
 import PopUpAdd from './PopUpAdd/PopUpAdd';
+import Item from './Item/Item';
 
 export default function AdminNews() {
     const [news, setNews] = useState([]);
@@ -24,14 +23,14 @@ export default function AdminNews() {
             const data = snapshot.val();
             if (data) {
                 const newsArray = Object.values(data);
-                setNews(newsArray.reverse());
+                setNews(newsArray.sort((a, b) => a.count - b.count));
             }
         } catch (error) {
             console.error('Error fetching news:', error);
         }
     };
 
-    const deletNew = async (key) => {
+    const deletNews = async (key) => {
         try {
             const snapshot = await dataRef.orderByChild('key').equalTo(key).once('value');
             const memos = snapshot.val();
@@ -52,35 +51,64 @@ export default function AdminNews() {
         setPopUpEdit(true);
     }
 
+    const findNewsByKey = (count) => {
+        return news.find(item => item.count === count);
+    };
+
+    const changePosition = async (element, countMath) => {
+
+        const currentCount = element.count;
+        const currentNews = findNewsByKey(currentCount);
+        const newCount = currentNews.count + countMath;
+        const swapedNews = findNewsByKey(newCount);
+
+        if (newCount <= 0 || newCount > news.length) {
+            return null;
+        } 
+        if (newCount >= -1) {
+            try {
+                // Оновлення даних в Firebase
+                await dataRef.child(currentNews.key).update({ count: newCount });
+                await dataRef.child(swapedNews.key).update({ count: currentCount });
+                await fetchData();
+            } catch (error) {
+                console.error('Помилка при оновленні даних в Firebase:', error);
+            }
+        }
+    };
+
+    const updateList = async () => {
+        try {
+            // Отримуємо дані з Firebase
+            const snapshot = await dataRef.once('value');
+            const data = snapshot.val();
+
+            // Перебираємо всі елементи та оновлюємо їх count
+            Object.keys(data).forEach(async (key) => {
+                const currentCount = data[key].count;
+                await dataRef.child(key).update({ count: currentCount + 1 });
+            });
+            await fetchData();
+        } catch (error) {
+            console.error('Помилка при оновленні списку:', error);
+        }
+    };
 
     useEffect(() => {
         if (news.length === 0) {
             fetchData();
         }
     }, [news]);
-
+    console.log(news)
     return (
         <section>
             <div className={s.added} onClick={() => setPoUoAdded(true)}>
                 <PlusSvg />
             </div>
             <div className={s.news}>
-                {news.map((news) => {
-                    return (
-                        <div className={s.memo} key={news.key}>
-                            <div className={s.memo_content}>
-                                <div className={s.memo__img} style={{ backgroundImage: `url(${news.image})` }}> </div>
-                                <div className={s.memo__name}>{news.title}</div>
-                            </div>
-                            <div className={s.memo_setting}>
-                                <div className={s.setting__edit} onClick={() => editNew(news)}><SettingSvg /></div>
-                                <div className={s.setting__cross} onClick={() => deletNew(news.key)}><CrossSvg /></div>
-                            </div>
-                        </div>
-                    )
-                })}
+                <Item list={news} deletNews={deletNews} changePosition={changePosition} editNew={editNew} />
             </div>
-            {popUpAdded && <PopUpAdd dataRef={dataRef} fetchData={fetchData} setPoUoAdded={setPoUoAdded} />}
+            {popUpAdded && <PopUpAdd dataRef={dataRef} fetchData={fetchData} setPoUoAdded={setPoUoAdded} changePosition={changePosition} updateList={updateList} />}
             {popUpEdit && <PopUpEdit dataRef={dataRef} fetchData={fetchData} currentNews={currentNews} setPopUpEdit={setPopUpEdit} />}
         </section >
     );

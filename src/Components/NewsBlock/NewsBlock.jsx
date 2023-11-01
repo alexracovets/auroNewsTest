@@ -30,8 +30,8 @@ export default function NewsBlock() {
             const data = snapshot.val();
 
             if (data) {
-                const memorialsArray = Object.values(data);
-                setSlides(memorialsArray.reverse());
+                const newsArray = Object.values(data);
+                setSlides(newsArray.sort((a, b) => a.count - b.count));
             }
         } catch (error) {
             console.error('Error fetching memorials:', error);
@@ -72,8 +72,8 @@ export default function NewsBlock() {
                         <h3 className={s.title + ' ' + s.mobile}>{news.title}</h3>
                         <div className={s.content}>
                             <div className={s.description}>
-                                {news.text[0] && <p>{checkLength(news.text[0].value)}</p>}
-                                {news.text[1] && <p>{checkLength(news.text[1].value)}</p>}
+                                {news.text && news.text[0] && <p>{checkLength(news.text[0].value)}</p>}
+                                {news.text && news.text[1] && <p>{checkLength(news.text[1].value)}</p>}
                             </div>
                             <button className={s.read} onClick={() => goToPage(news)}>читати</button>
                         </div>

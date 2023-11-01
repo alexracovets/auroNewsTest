@@ -8,6 +8,8 @@ import PopUpAdd from './PopUpAdd/PopUpAdd';
 import PlusSvg from './PlusSvg/PlusSvg';
 import PopUpEdit from './PopUpEdit/PopUpEdit';
 
+import fetchData from '../../const/fetchData'
+
 import s from './AdminMemorial.module.scss';
 
 export default function AdminMemorial() {
@@ -17,20 +19,7 @@ export default function AdminMemorial() {
     const [memo, setMemo] = useState(null);
 
     const dataRef = firestore.ref('/data/memorials');
-
-    const fetchData = async () => {
-        try {
-            const snapshot = await dataRef.once('value');
-
-            const data = snapshot.val();
-            if (data) {
-                const memorialsArray = Object.values(data);
-                setMemorials(memorialsArray);
-            }
-        } catch (error) {
-            console.error('Error fetching memorials:', error);
-        }
-    };
+    const fetch = () => fetchData(dataRef, setMemorials);
 
     const deletMemo = async (key) => {
         try {
@@ -59,7 +48,7 @@ export default function AdminMemorial() {
 
     useEffect(() => {
         if (memorials.length === 0) {
-            fetchData();
+            fetch();
         }
     }, [memorials]);
     return (
@@ -83,8 +72,8 @@ export default function AdminMemorial() {
                     )
                 })}
             </div>
-            {popUpAdded && <PopUpAdd dataRef={dataRef} fetchData={fetchData} setPoUoAdded={setPoUoAdded} />}
-            {popUpEdit && <PopUpEdit dataRef={dataRef} fetchData={fetchData} memo={memo} setPopUpEdit={setPopUpEdit} />}
+            {popUpAdded && <PopUpAdd dataRef={dataRef} fetchData={fetch} setPoUoAdded={setPoUoAdded} />}
+            {popUpEdit && <PopUpEdit dataRef={dataRef} fetchData={fetch} memo={memo} setPopUpEdit={setPopUpEdit} />}
         </section >
     );
 }

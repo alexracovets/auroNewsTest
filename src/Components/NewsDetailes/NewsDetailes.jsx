@@ -13,7 +13,7 @@ NewsDetailes.propTypes = {
 
 export default function NewsDetailes({ id }) {
     const [data, setData] = useState(null);
-    const [likeActive, setLikeActive] = useState(true); 
+    const [likeActive, setLikeActive] = useState(true);
     useEffect(() => {
         const storageData = JSON.parse(localStorage.getItem('news')) || [];
         const findStorage = storageData.includes(id);
@@ -93,7 +93,7 @@ export default function NewsDetailes({ id }) {
                         </div>
                         <h2 className={s.title}>{data.title}</h2>
                         {
-                            data.text.map((item) => (
+                            data.text && data.text.map((item) => (
                                 <div className={item.bold ? s.text + " " + s.bold : s.text} key={item.key}>
                                     {item.value}
                                 </div>
