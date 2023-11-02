@@ -10,13 +10,13 @@
     cursor: pointer;
 }
 
-.memorials {
+.items {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
 
-    .memo {
+    .item {
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -27,12 +27,12 @@
         overflow: hidden;
         padding: 1rem;
 
-        .memo_content {
+        .item_content {
             display: flex;
             justify-content: center;
             align-items: center;
 
-            .memo__img {
+            .item__img {
                 width: 5rem;
                 height: 5rem;
                 background-repeat: no-repeat;
@@ -46,7 +46,7 @@
                 }
             }
 
-            .memo__name {
+            .item__name {
                 color: $base-black;
                 font-size: 1rem;
                 font-family: $font-mont;
@@ -55,7 +55,7 @@
         }
 
 
-        .memo_setting {
+        .item_setting {
             display: flex;
             justify-content: center;
             align-items: center;

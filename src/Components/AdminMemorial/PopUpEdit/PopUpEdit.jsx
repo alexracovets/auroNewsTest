@@ -13,21 +13,21 @@ import s from './PopUpEdit.module.scss';
 PopUpEdit.propTypes = {
     dataRef: PropTypes.object.isRequired,
     fetchData: PropTypes.func.isRequired,
-    memo: PropTypes.object.isRequired,
+    item: PropTypes.object.isRequired,
     setPopUpEdit: PropTypes.func.isRequired
 };
 
-export default function PopUpEdit({ dataRef, fetchData, memo, setPopUpEdit }) {
+export default function PopUpEdit({ dataRef, fetchData, item, setPopUpEdit }) {
     const [isBold, setIsBold] = useState(false);
     const [imageLoad, setImageLoad] = useState(true);
     const [memorialData, setMemorialData] = useState({
-        title: memo.title,
-        image: memo.image,
-        name: memo.name,
-        age: memo.age,
-        position: memo.position,
-        text: memo.text || [],
-        key: memo.key
+        title: item.title,
+        image: item.image,
+        name: item.name,
+        age: item.age,
+        position: item.position,
+        text: item.text || [],
+        key: item.key
     });
 
     const handleInputChange = async (e, name, key) => {

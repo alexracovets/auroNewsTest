@@ -13,10 +13,10 @@ import s from './PopUpAdd.module.scss';
 PopUpAdd.propTypes = {
     dataRef: PropTypes.object.isRequired,
     fetchData: PropTypes.func.isRequired,
-    setPoUoAdded: PropTypes.func.isRequired,
+    setPopUpAdd: PropTypes.func.isRequired,
 };
 
-export default function PopUpAdd({ dataRef, fetchData, setPoUoAdded }) {
+export default function PopUpAdd({ dataRef, fetchData, setPopUpAdd }) {
     const [isBold, setIsBold] = useState(false);
     const [imageLoad, setImageLoad] = useState(false);
     const [memorialData, setMemorialData] = useState({
@@ -94,7 +94,7 @@ export default function PopUpAdd({ dataRef, fetchData, setPoUoAdded }) {
                 .set(memorialData)
                 .then(() => {
                     fetchData();
-                    setPoUoAdded(false);
+                    setPopUpAdd(false);
                 });
         }
     };
@@ -102,7 +102,7 @@ export default function PopUpAdd({ dataRef, fetchData, setPoUoAdded }) {
     return (
         <form className={s.add_memo}>
             <div className={s.memo_wrapper}>
-                <div className={s.cross_main} onClick={() => setPoUoAdded(false)}>
+                <div className={s.cross_main} onClick={() => setPopUpAdd(false)}>
                     <CrossSvg />
                 </div>
                 <div className={s.wrapper_label}>
