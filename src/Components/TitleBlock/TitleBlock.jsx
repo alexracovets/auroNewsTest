@@ -18,7 +18,7 @@ export default function TitleBlock() {
 
     return (
         <section className={s.tittle_context}>
-            <h2>
+            <h2 className={s.title}>
                 <span>Аврора:</span> шлях до перемоги
             </h2>
             <div className={s.sub_title}>

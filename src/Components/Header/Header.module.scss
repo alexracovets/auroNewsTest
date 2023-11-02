@@ -3,15 +3,11 @@
 header {
     position: fixed;
     z-index: 10;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     width: 100%;
-    padding: 3.4rem 4.1875rem 0 4.1875rem;
     pointer-events: none;
     transform: translateY(0);
     transition: all 300ms ease-in;
-    background-color: white;
+    background-color: $base-white;
 
     @media (max-width:$mobile-big) {
         align-items: flex-start;
@@ -26,109 +22,119 @@ header {
         transform: translateY(-120%);
     }
 
-
-
-    .logo {
-        position: fixed;
-        left: 5rem;
-        top: 1.6875rem;
+    .header_wrapper {
         display: flex;
         justify-content: center;
         align-items: center;
-        width: 12.5rem;
-        pointer-events: all;
+        padding: 1.625rem 5rem;
+        background-color: $opacity-yellow;
 
-        @media (max-width:$mobile-big) {
-            height: 4.295vh;
-            width: auto;
-            position: initial;
-        }
-
-        a {
+        .logo {
+            left: 5rem;
+            top: 1.625rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            max-width: 11.5005rem;
             width: 100%;
+            pointer-events: all;
 
             @media (max-width:$mobile-big) {
-                height: 100%;
+                height: 4.295vh;
                 width: auto;
+                position: initial;
             }
 
-            img {
+            a {
                 width: 100%;
 
                 @media (max-width:$mobile-big) {
                     height: 100%;
                     width: auto;
                 }
-            }
-        }
-    }
 
-    nav {
-        flex: 1;
+                img {
+                    width: 100%;
 
-        @media (max-width:$mobile-big) {
-            display: none;
-        }
-
-        ul {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            max-width: 46rem;
-            margin: 0 auto;
-            padding: 0;
-
-            li {
-                text-align: center;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                margin: 0;
-                flex: 1;
-
-                a {
-                    font-size: 1.4rem;
-                    line-height: 1.218;
-                    font-family: $font-mont;
-                    padding: 0.5rem;
-                    color: $base-black;
-                    pointer-events: all;
-                    transition: all ease-in 100ms;
-
-                    &:hover,
-                    &.active {
-                        font-weight: bold;
-                        transition: all ease-in 100ms;
+                    @media (max-width:$mobile-big) {
+                        height: 100%;
+                        width: auto;
                     }
                 }
             }
         }
-    }
 
-    .burger {
-        display: none;
-        justify-content: center;
-        align-items: center;
-        position: absolute;
-        right: 3.97vh;
-        top: 3.649vh;
-        z-index: 10;
-        cursor: pointer;
-        pointer-events: all;
-        width: 3.863vh;
+        nav {
+            flex: 1;
 
-        @media (max-width:$mobile-big) {
-            display: flex;
-
-            &.disable {
+            @media (max-width:$mobile-big) {
                 display: none;
+            }
+
+            ul {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                max-width: 40rem;
+                margin: 0 auto;
+                padding: 0;
+
+                li {
+                    text-align: center;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    margin: 0;
+                    flex: 1;
+
+                    a {
+                        color: $base-black;
+                        font-size: 1.0625rem;
+                        line-height: 1;
+                        text-transform: uppercase;
+                        font-family: $font-mont;
+                        padding: 0.546875rem;
+                        color: $base-black;
+                        pointer-events: all;
+                        transition: all ease-in 100ms;
+                        text-wrap: nowrap;
+
+                        &:hover,
+                        &.active {
+                            font-weight: bold;
+                            transition: all ease-in 100ms;
+                        }
+                    }
+                }
             }
         }
 
-        @media (max-width:370px) {
-            top: 3vh;
+        .burger {
+            display: none;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            right: 3.97vh;
+            top: 3.649vh;
+            z-index: 10;
+            cursor: pointer;
+            pointer-events: all;
+            width: 3.863vh;
+
+            @media (max-width:$mobile-big) {
+                display: flex;
+
+                &.disable {
+                    display: none;
+                }
+            }
+
+            @media (max-width:370px) {
+                top: 3vh;
+            }
         }
     }
+
 }
 
 .popMenu {
@@ -138,7 +144,7 @@ header {
     top: 0;
     width: 100vw;
     height: 100vh;
-    background-color: $base-yellow; 
+    background-color: $base-yellow;
     justify-content: center;
     align-items: center;
     z-index: -1;
