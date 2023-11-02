@@ -6,7 +6,7 @@ import AdminMuseum from "../Components/AdminMuseum/AdminMuseum";
 
 
 export default function Admin() {
-    const [selectedMenuItem, setSelectedMenuItem] = useState(null);
+    const [selectedMenuItem, setSelectedMenuItem] = useState('');
 
     const handleMenuItemClick = (menuItem) => {
         setSelectedMenuItem(menuItem);
@@ -14,10 +14,10 @@ export default function Admin() {
 
     return (
         <section>
-            <AdminPanel onMenuItemClick={handleMenuItemClick} />
+            <AdminPanel selectedMenuItem={selectedMenuItem} onMenuItemClick={handleMenuItemClick} />
             {selectedMenuItem === 'memorial' && <AdminMemorial />}
             {selectedMenuItem === 'news' && <AdminNews />}
-            {selectedMenuItem === 'museum' && <AdminMuseum />} 
+            {selectedMenuItem === 'museum' && <AdminMuseum />}
         </section>
     )
 }

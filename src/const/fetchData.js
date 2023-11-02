@@ -8,7 +8,7 @@ const fetchData = async (store, func, sort) => {
             sort ? func(memorialsArray.sort((a, b) => a.count - b.count)) : func(memorialsArray)
         }
     } catch (error) {
-        console.error('Error fetching memorials:', error);
+        console.error('Помилка отримання бази елементів:', error);
     }
 };
 
