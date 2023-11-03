@@ -2,6 +2,8 @@
 
 .FeedBack {
     background-color: $base-white;
+    padding-top: 0;
+    padding-bottom: 6.25rem;
 
     @media (max-width:$mobile-big) {
         padding-top: 12vh;
@@ -10,13 +12,12 @@
     }
 
     .title {
-        font-size: 3rem;
+        font-size: 4rem;
         color: $base-red;
         font-family: $font-rounds;
         text-align: center;
         display: block;
-        margin: 5rem auto;
-        margin-top: 0;
+        margin-bottom: 3.125rem;
 
         @media (max-width:$mobile-big) {
             font-size: 3.64807vh;
@@ -42,7 +43,6 @@
                 align-items: flex-start;
                 flex-direction: row-reverse;
                 width: 100%;
-                margin-bottom: 5rem;
 
                 .left {
                     display: flex;
@@ -75,6 +75,14 @@
                         margin-bottom: 1.25rem;
                     }
 
+                    .name_tell {
+                        color: $base-black;
+                        font-size: 1.25rem;
+                        font-family: $font-mont;
+                        font-weight: 600;
+                        margin-bottom: 1.25rem;
+                    }
+
                     .tell_name {
                         color: $base-black;
                     }
@@ -103,10 +111,9 @@
                         font-size: 1.5rem;
                         font-weight: 600;
                         font-family: $font-mont;
-                        margin-bottom: 1.875rem;
                         text-transform: none;
                         margin: 0;
-                        margin-bottom: 1.5rem;
+                        margin-bottom: 2rem;
                     }
 
                     .list {
@@ -149,7 +156,7 @@
 
             .contact_block_second {
                 display: flex;
-                justify-content: space-between;
+                justify-content: center;
                 align-items: flex-start;
                 width: 100%;
                 margin-bottom: 5rem;
@@ -160,7 +167,8 @@
                     justify-content: center;
                     align-items: center;
                     flex-direction: column;
-                    width: 50%;
+                    width: 100%;
+                    max-width: 41.625rem;
                     background-color: $opacity-yellow;
                     border-radius: 1.875rem;
                     overflow: hidden;
@@ -187,11 +195,11 @@
                 }
 
                 .left {
-                    margin-right: 0.75%;
+                    margin-right: 0.625rem;
                 }
 
                 .right {
-                    margin-left: 0.75%;
+                    margin-left: 0.625rem;
                 }
             }
         }

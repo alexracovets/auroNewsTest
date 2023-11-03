@@ -2,8 +2,8 @@
 
 .MuseumShort {
     background-color: $opacity-yellow;
-    padding-top: 2.5rem;
-    padding-bottom: 2.5rem;
+    padding-top: 6.25rem;
+    padding-bottom: 9.9375rem;
 
     @media (max-width:$mobile-big) {
         background-color: $base-white;
@@ -24,13 +24,13 @@
     }
 
     .title {
-        font-size: 3rem;
+        font-size: 4rem;
         color: $base-red;
         font-family: $font-rounds;
         text-align: center;
         display: block;
         margin: 0 auto;
-        margin-bottom: 3rem;
+        margin-bottom: 5.25rem;
 
         @media (max-width:$mobile-big) {
             font-size: 4vh;
@@ -48,7 +48,6 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        padding: 0 0.5rem;
 
         &.mobile {
             display: none;
@@ -120,26 +119,24 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            width: 50%;
-
-            img {
-                display: block;
-                width: 100%;
-                max-height: 40.85vw;
-                overflow: hidden;
-                border-radius: 1.875rem;
-            }
+            width: 41.6251rem;
+            height: 38.5626rem;
+            background-size: cover;
+            background-position: center;
+            border-radius: 1.875rem;
+            margin-right: 3.5rem;
         }
 
         .rigth {
             display: flex;
-            justify-content: center;
+            justify-content: flex-start;
             align-items: flex-start;
             flex-direction: column;
             color: $base-black;
             font-family: $font-mont;
-            padding-left: 6.5rem;
-            width: 50%;
+            width: 100%;
+            max-width: 35.75rem;
+            margin-left: 3.5rem;
 
             .wrapper__title {
                 font-size: 2rem;
@@ -186,6 +183,14 @@
                 font-size: 1.25rem;
                 font-weight: 600;
                 margin-bottom: 3.125rem;
+            }
+
+            .btn {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 100%;
+                max-width: 21.8751rem;
             }
         }
     }

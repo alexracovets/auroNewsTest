@@ -1,5 +1,4 @@
 import TitleBlock from "../Components/TitleBlock/TitleBlock";
-import DescriptionBlock from "../Components/DescriptionBlock/DescriptionBlock";
 import NewsShort from "../Components/NewsShort/NewsShort";
 import MuseumShort from "../Components/MuseumShort/MuseumShort";
 import MemorialShort from "../Components/MemorialShort/MemorialShort";
@@ -19,7 +18,6 @@ export default function Home() {
                 `}
             </style>
             <TitleBlock />
-            <DescriptionBlock />
             <div className="mobile-wrapper">
                 <NewsShort />
                 <MuseumShort />
@@ -27,7 +25,7 @@ export default function Home() {
             </div>
             <div className="feedback">
                 <FeedBack />
-            </div> 
+            </div>
         </>
     )
 }

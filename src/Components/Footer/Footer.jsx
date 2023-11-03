@@ -1,33 +1,9 @@
-import { Link, useLocation } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import logo from '/img/logo.svg';
 
 import s from './Footer.module.scss';
-import { useEffect, useState, useMemo } from 'react';
 
 export default function Footer() {
-    const [isYellow, setIsYellow] = useState(false);
-    const location = useLocation();
-
-    const pathNames = useMemo(() => [
-        '/contacts',
-        '/news/',
-        '/museum'
-    ], []);
-
-    useEffect(() => {
-        const checkConditions = () => {
-            const isPathMatch = pathNames.some(path => location.pathname.includes(path));
-            const isMobile = window.innerWidth <= 768;
-
-            setIsYellow(isPathMatch && isMobile ? true : false);
-        };
-        checkConditions();
-
-        window.addEventListener('resize', checkConditions);
-        return () => {
-            window.removeEventListener('resize', checkConditions);
-        };
-    }, [location.pathname, pathNames]);
 
     const links = [
         {
@@ -60,7 +36,7 @@ export default function Footer() {
     };
 
     return (
-        <footer className={s.footer} style={{ backgroundColor: isYellow ? 'rgba(255, 221, 0, 0.15)' : '#fff' }}>
+        <footer className={s.footer}>
             <div className={s.menu}>
                 <div className={s.logo}>
                     <Link to="/" onClick={scrollToTop}>

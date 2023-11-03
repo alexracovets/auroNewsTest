@@ -2,6 +2,7 @@
 
 .DescriptionBlock {
     padding-bottom: 0;
+    padding-top: 6.25rem;
 
     .title {
         color: $base-black;
@@ -12,7 +13,6 @@
         display: block;
         margin: 0 auto;
         max-width: 48rem;
-        margin-top: 6.125rem;
         margin-bottom: 2rem;
     }
 

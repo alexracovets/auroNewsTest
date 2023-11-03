@@ -10,9 +10,7 @@ export default function MuseumShort() {
         <section className={s.MuseumShort}>
             <h3 className={s.title}>Музей</h3>
             <div className={s.MuseumShort_wrapper + ' ' + s.desktop}>
-                <div className={s.left}>
-                    <img src={museum} alt="meseum" />
-                </div>
+                <div className={s.left} style={{ backgroundImage: `url(${museum})` }}></div>
                 <div className={s.rigth}>
                     <div className={s.wrapper__title}>
                         Ми створили віртуальний музей подяк, нагород та трофеїв компанії &#34;Аврора&#34;, отриманих у період великої війни.
@@ -26,9 +24,7 @@ export default function MuseumShort() {
                     <div className={s.description}>
                         У цьому розділі маєте можливість побачити ексклюзивну колекцію Аврори.
                     </div>
-                    <Link to="/museum">
-                        <CustomButton text={"читати більше"} />
-                    </Link>
+                    <div className={s.btn}><Link to="/museum"><CustomButton text={"читати більше"} /></Link></div>
                 </div>
             </div>
             <div className={s.MuseumShort_wrapper + ' ' + s.mobile}>

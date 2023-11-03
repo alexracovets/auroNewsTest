@@ -37,6 +37,9 @@ export default function FeedBack() {
                         <div className={s.tell}>
                             +380 67 557 27 16
                         </div>
+                        <div className={s.name_tell}>
+                            Альона Жигура
+                        </div>
                         <div className={s.description}>
                             Керівниця відділу КСВ
                         </div>

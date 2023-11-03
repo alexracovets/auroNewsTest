@@ -2,8 +2,8 @@
 
 .memorialShort {
     background-color: $base-white;
-    padding-top: 2.5rem;
-    padding-bottom: 2.5rem;
+    padding-top: 6.25rem;
+    padding-bottom: 6.25rem;
 
     @media (max-width:$mobile-big) {
         background-color: $base-white;
@@ -25,13 +25,11 @@
 
     .title {
         color: $base-red;
-        font-size: 3rem;
+        font-size: 4rem;
         text-align: center;
         font-weight: 400;
         font-family: $font-rounds;
-        display: block;
-        margin: 0 auto;
-        margin-bottom: 3rem;
+        margin-bottom: 5rem;
 
         @media (max-width:$mobile-big) {
             font-size: 4vh;
@@ -51,8 +49,10 @@
 
     .memorialShort_wrapper {
         display: flex;
-        justify-content: center;
+        justify-content: space-between;
         align-items: center;
+        max-width: 84.5rem;
+        margin: 0 auto;
 
         &.mobile {
             display: none;
@@ -132,7 +132,7 @@
             color: $base-black;
             font-family: $font-mont;
             padding-right: 6.5rem;
-            width: 50%;
+            max-width: 42.875rem;
 
             .wrapper__title {
                 font-size: 2rem;
@@ -145,7 +145,7 @@
                 justify-content: center;
                 align-items: center;
                 flex-direction: column;
-                margin-bottom: 3.125rem;
+                margin-bottom: 2.5rem;
 
                 .item {
                     font-size: 1.25rem;
@@ -157,21 +157,24 @@
                 }
             }
 
+            .btn {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 100%;
+                max-width: 21.875rem;
+            }
         }
 
         .right {
             display: flex;
             justify-content: center;
             align-items: center;
-            padding: 0 0.5rem;
-            width: 50%;
-
-            img {
-                display: block;
-                width: 100%;
-                border-radius: 1.875rem;
-                overflow: hidden;
-            }
+            width: 41.6251rem;
+            height: 21.8751rem;
+            background-size: cover;
+            background-position: center;
+            border-radius: 1.875rem;
         }
     }
 }
