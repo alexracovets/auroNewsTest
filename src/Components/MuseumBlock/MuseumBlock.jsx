@@ -84,7 +84,7 @@ export default function MuseumBlock() {
                     <div className={s.item__texts}>
                         {item.text && (item.text[0] && <p>{checkLength(246, item.text[0].value)}</p>)}
                         {item.text && (item.text[1] && <p>{checkLength(120, item.text[1].value)}</p>)}
-                        {item.text && (item.text[2] && <p>{checkLength(246, item.text[2].value)}</p>)}
+                        {item.text && (item.text[2] && <p>...</p>)}
                     </div>
                     <div className={s.btn} onClick={() => { moreInfo(item) }}>
                         <CustomButton text={"детальніше"} />

@@ -19,8 +19,7 @@ PopUpAdd.propTypes = {
 export default function PopUpAdd({ dataRef, fetchData, setPopUpAdd }) {
     const [isBold, setIsBold] = useState(false);
     const [imageLoad, setImageLoad] = useState(false);
-    const [memorialData, setMemorialData] = useState({
-        title: null,
+    const [memorialData, setMemorialData] = useState({ 
         image: null,
         name: null,
         age: null,
@@ -83,7 +82,6 @@ export default function PopUpAdd({ dataRef, fetchData, setPopUpAdd }) {
 
     const createMemorial = () => {
         if (
-            memorialData.title &&
             memorialData.image &&
             memorialData.name &&
             memorialData.age &&
@@ -117,8 +115,7 @@ export default function PopUpAdd({ dataRef, fetchData, setPopUpAdd }) {
                     <label htmlFor='image' className={s.label_image}>
                         <div className={s.status}>{imageLoad ? 'Фото завантажене' : 'Додати фото'}</div>
                     </label>
-                </div>
-                <input type='text' placeholder='Заголовок' onChange={(e) => handleInputChange(e, 'title')} />
+                </div> 
                 <input type='text' placeholder='ПIП' onChange={(e) => handleInputChange(e, 'name')} />
                 <input type='text' placeholder='Роки життя' onChange={(e) => handleInputChange(e, 'age')} />
                 <input type='text' placeholder='Посада' onChange={(e) => handleInputChange(e, 'position')} />

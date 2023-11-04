@@ -21,7 +21,6 @@ export default function PopUpEdit({ dataRef, fetchData, item, setPopUpEdit }) {
     const [isBold, setIsBold] = useState(false);
     const [imageLoad, setImageLoad] = useState(true);
     const [memorialData, setMemorialData] = useState({
-        title: item.title,
         image: item.image,
         name: item.name,
         age: item.age,
@@ -108,7 +107,6 @@ export default function PopUpEdit({ dataRef, fetchData, item, setPopUpEdit }) {
                         <div className={s.status}>{imageLoad ? 'Фото завантажене' : 'Додати фото'}</div>
                     </label>
                 </div>
-                <input type='text' placeholder='Заголовок' onChange={(e) => handleInputChange(e, 'title')} value={memorialData.title} />
                 <input type='text' placeholder='ПIП' onChange={(e) => handleInputChange(e, 'name')} value={memorialData.name} />
                 <input type='text' placeholder='Роки життя' onChange={(e) => handleInputChange(e, 'age')} value={memorialData.age} />
                 <input type='text' placeholder='Посада' onChange={(e) => handleInputChange(e, 'position')} value={memorialData.position} />

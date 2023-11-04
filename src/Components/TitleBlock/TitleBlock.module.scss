@@ -3,8 +3,8 @@
 .tittle_context {
     height: auto;
     background-color: $base-sand;
-    padding-top: 9rem;
-    padding-bottom: 0;
+    padding-top: 7.2rem; 
+    padding-bottom: 1rem;
 
     .title,
     .sub_title {
@@ -17,7 +17,7 @@
     .title {
         font-size: 4rem;
         font-family: $font-rounds;
-        margin-bottom: 2.5rem;
+        margin: 2.5rem auto;
 
         span {
             color: $base-red;

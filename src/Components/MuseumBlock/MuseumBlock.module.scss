@@ -1,7 +1,7 @@
 @import '../../global/variable.scss';
 
 .MuseumBlock {
-    padding-top: 9rem;
+    padding-top: 7.2rem;
 
     @media (max-width:$mobile-big) {
         padding-top: 12vh;
@@ -10,13 +10,12 @@
     }
 
     .title {
-        font-size: 3rem;
+        font-size: 4rem;
         color: $base-red;
         font-family: $font-rounds;
         text-align: center;
         display: block;
-        margin: 3rem auto;
-        margin-top: 0;
+        margin: 2.5rem auto;
 
         @media (max-width:$mobile-big) {
             font-size: 3.64807vh;
@@ -182,6 +181,7 @@
             justify-content: center;
             align-items: center;
             width: 100%;
+            max-width: 88.251rem;
             margin-bottom: 3.125rem;
 
             .arrow {
@@ -196,17 +196,17 @@
                 justify-content: flex-start;
                 align-items: flex-start;
                 width: 100%;
-                max-width: 70.3125rem;
-                background-color: $opacity-yellow;
-                padding: 4.9375rem 6.125rem 4.9375rem 5.75rem;
-                border-radius: 1.875rem;
+                max-width: 72.751rem;
                 margin: 0 auto;
+                background-color: $opacity-yellow;
+                padding: 3.25rem;
+                border-radius: 1.875rem;
                 cursor: pointer;
 
                 .item__image {
-                    min-width: 28.5626rem;
-                    width: 28.5626rem;
-                    height: 32.5001rem;
+                    min-width: 19.125rem;
+                    width: 17rem;
+                    height: 19.125rem;
                     border-radius: 1.875rem;
                     overflow: hidden;
                     display: flex;
@@ -214,12 +214,7 @@
                     align-items: center;
                     background-size: cover;
                     background-position: center;
-                    margin-right: 2.8125rem;
-
-                    img {
-                        width: 100%;
-                        height: auto;
-                    }
+                    margin-right: 2.5rem;
                 }
 
                 .item__content {
@@ -227,23 +222,25 @@
                     justify-content: flex-start;
                     align-items: flex-start;
                     flex-direction: column;
-                    font-family: $font-mont;
-                    max-width: 27.0625rem;
-                    margin-bottom: 2.5rem;
 
                     .description {
                         font-size: 2rem;
                         color: $base-black;
+                        font-family: $font-mont;
                         font-weight: 600;
-                        margin-top: 2.0625rem;
-                        margin-bottom: 1.875rem;
+                        margin-top: 1rem;
+                        margin-bottom: 0.9375rem;
                     }
 
                     .item__texts {
                         margin-bottom: 2.5rem;
+                        width: 100%;
+                        max-width: 44.3125rem;
 
                         p {
                             font-size: 1rem;
+                            color: $base-black;
+                            font-family: $font-mont;
                             margin-bottom: 1.5rem;
 
                             &:last-of-type {
@@ -261,8 +258,14 @@
 
                         button {
                             width: 100%;
-                            max-width: 22.18751rem;
-                            height: 4.68751rem;
+                            max-width: 18.7501rem;
+                            height: 4.06251rem;
+
+
+                            div {
+                                font-weight: 500;
+                                font-size: 1.125rem;
+                            }
                         }
                     }
                 }
@@ -310,22 +313,20 @@
         }
 
         .sub_slider {
-            display: flex;
+            display: flex !important;
             justify-content: center;
             align-items: center;
             width: 100%;
-            margin-bottom: 14.375rem;
 
             .item {
-                display: flex !important;
+                display: flex;
                 justify-content: center;
                 align-items: center;
-                padding: 2rem 0;
                 cursor: pointer;
 
                 .item__image {
-                    width: 10.3125rem;
-                    height: 11.75rem;
+                    width: 8.1875rem;
+                    height: 9.375rem;
                     background-size: cover;
                     background-position: center;
                     border-radius: 1.25rem;
@@ -335,8 +336,8 @@
                     transition-delay: 0ms;
 
                     &.active {
-                        width: 14.8125rem;
-                        height: 13rem;
+                        width: 11rem;
+                        height: 12.5rem;
                         transform: translateY(-0.5rem);
                         opacity: 1;
                         transition: all ease-in-out 200ms;

@@ -13,6 +13,12 @@ Memorials.propTypes = {
 export default function Memorials({ currentMemo, moreInfo }) {
     const [memorials, setMemorials] = useState([]);
 
+    const checkLength = (string, count) => {
+        let checked;
+        string.length <= count ? checked = string : checked = string.substring(0, count - 3) + '...';
+        return checked
+    };
+
     useEffect(() => {
         setMemorials(currentMemo)
     }, [currentMemo])
@@ -30,9 +36,9 @@ export default function Memorials({ currentMemo, moreInfo }) {
                         </div>
                         <div className={s.item_left} style={{ backgroundImage: `url(${item.image})` }}> </div>
                         <div className={s.item_rigth}>
-                            <div className={s.item_name}>{item.name}</div>
-                            <div className={s.item_age}>{item.age}</div>
-                            <div className={s.item_position}>{item.position}</div>
+                            <div className={s.item_name}>{checkLength(item.name, 70)} </div>
+                            <div className={s.item_age}> {checkLength(item.age, 48)} </div>
+                            <div className={s.item_position}>{checkLength(item.position, 48)} </div>
                             <div className={s.btn} onClick={() => moreInfo(item)}>
                                 <CustomButton text="додаткова інформація" noArrow white />
                             </div>

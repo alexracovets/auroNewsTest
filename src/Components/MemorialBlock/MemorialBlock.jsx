@@ -32,7 +32,7 @@ export default function MemorialBlock() {
             if (data) {
                 const memorialsArray = Object.values(data);
                 setMemorials(memorialsArray);
-                setSlides(memorialsArray.reverse());
+                setSlides(memorialsArray);
             }
         } catch (error) {
             console.error('Error fetching memorials:', error);

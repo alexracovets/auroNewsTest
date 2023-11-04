@@ -7,8 +7,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 4.0625rem;
-    height: 4.0625rem;
+    width: 4.06251rem;
+    height: 4.06251rem;
     background-color: $base-yellow;
     border: none;
     border-radius: 50%;
@@ -57,7 +57,7 @@
 
     svg {
         transform: translateX(-0.3rem);
-        width: 1.1rem;
+        width: 1.1255rem;
 
         @media(max-width:$mobile-big) {
             width: 1.33vh;

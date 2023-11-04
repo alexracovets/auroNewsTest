@@ -69,6 +69,7 @@ button {
 html {
   // font-size: 1.058201vw;
   font-size: 0.833333vw;
+
   @media(max-width:$mobile-big) {
     font-size: 1vw;
   }
@@ -87,4 +88,10 @@ html {
 a {
   color: $base-black;
   cursor: pointer;
+}
+
+.slick-track {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

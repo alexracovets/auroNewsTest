@@ -1,7 +1,8 @@
 @import '../../global/variable.scss';
 
 .newsSlider {
-    padding-top: 9rem;
+    padding-top: 7.2rem;
+    padding-bottom: 6.25rem;
 
     @media(max-width:$mobile-big) {
         margin: 0 auto;
@@ -11,21 +12,13 @@
         padding-bottom: 0;
     }
 
-    .title {
-        font-size: 4rem;
-        color: $base-black;
-        font-family: $font-mont;
-        font-weight: 600;
-        text-align: center;
-        display: block;
-        margin: 5rem auto;
-    }
-
     .slider {
         display: block;
-        width: 60rem;
+        width: 100%;
+        max-width: 88.251rem;
         margin: 0 auto;
         position: relative;
+        margin-top: 3rem;
 
         @media(max-width:$mobile-big) {
             max-width: 100%;
@@ -37,8 +30,6 @@
             display: flex !important;
             justify-content: center;
             align-items: center;
-            padding: 0 2rem;
-            transform: translateX(0.5rem);
 
             @media(max-width:$mobile-big) {
                 padding: 0;
@@ -49,9 +40,9 @@
                 font-family: $font-mont;
                 width: 100%;
                 border-radius: 1rem;
-                padding: 1rem 0 1rem 0;
+                padding: 4.6875rem 0;
                 background-color: $base-sand;
-                max-width: 50rem;
+                max-width: 72.751rem;
                 box-sizing: border-box;
 
                 @media(max-width:$mobile-big) {
@@ -61,11 +52,13 @@
                 }
 
                 .title {
+                    color: $base-black;
                     font-size: 2rem;
                     text-align: center;
-                    padding: 0 2rem;
+                    font-family: $font-mont;
+                    padding: 0 2.5rem;
                     margin: 0 auto;
-                    margin-bottom: 2rem;
+                    margin-bottom: 4.125rem;
 
                     &.desktop {
                         @media(max-width:$mobile-big) {
@@ -89,9 +82,11 @@
                 }
 
                 .date {
-                    font-size: 1rem;
+                    color: $base-black;
+                    font-size: 1.25rem;
                     font-family: $font-mont;
                     padding: 0 2rem;
+                    margin-top: 2.51625rem;
 
                     &.mobile {
                         display: none;
@@ -100,14 +95,13 @@
                             font-size: 1.39485vh;
                             display: block;
                             width: 100%;
+                            margin-top: 0rem;
                             margin-bottom: 2.14592vh;
                             padding: 0 3.00429vh;
                         }
                     }
 
                     &.desktop {
-                        margin-top: 1rem;
-
                         @media(max-width:$mobile-big) {
                             display: none;
                         }
@@ -120,7 +114,7 @@
                     display: flex;
                     justify-content: flex-end;
                     align-items: center;
-                    padding: 0 2rem;
+                    padding: 0 4.375rem;
 
                     @media(max-width:$mobile-big) {
                         padding: 0 4vh;
@@ -133,7 +127,8 @@
                         justify-content: center;
                         align-items: center;
                         flex-direction: column;
-                        max-width: 2rem;
+                        max-width: 2.5001rem;
+                        transform: translateY(-1.2rem);
                         width: 100%;
 
                         @media(max-width:$mobile-big) {
@@ -146,7 +141,9 @@
                         }
 
                         .count {
-                            font-size: 1rem;
+                            color: $base-black;
+                            font-size: 1.25rem;
+                            font-family: $font-mont;
 
                             @media(max-width:$mobile-big) {
                                 font-size: 1.5vh;
@@ -157,11 +154,10 @@
 
                 .wrapper {
                     display: flex;
-                    justify-content: center;
+                    justify-content: flex-start;
                     align-items: center;
                     width: 100%;
                     max-width: 100%;
-                    padding-right: 2rem;
 
                     @media(max-width:$mobile-big) {
                         justify-content: center;
@@ -172,12 +168,14 @@
 
                     .image {
                         width: 100%;
-                        width: 29.375001rem;
-                        height: 15.76961rem;
-                        transform: translateX(-1rem);
-                        border-radius: 1rem;
+                        width: 39.43752rem;
+                        height: 21.1710625rem;
+                        margin-right: 2.5rem;
+                        border-radius: 1.936375rem;
                         background-size: cover;
                         background-position: center;
+                        background-color: $base-yellow;
+                        transform: translateX(-1.0625rem);
 
                         @media(max-width:$mobile-big) {
                             width: 91.72vw;
@@ -187,12 +185,6 @@
                             transform: none;
                             border-radius: 1.71674vh;
                         }
-
-                        img {
-                            display: block;
-                            width: 100%;
-                            background-color: $base-yellow;
-                        }
                     }
 
                     .content {
@@ -201,7 +193,7 @@
                         align-items: flex-start;
                         flex-direction: column;
                         width: 100%;
-                        max-width: 20rem;
+                        max-width: 30.81252rem;
 
                         @media(max-width:$mobile-big) {
                             padding: 0 3.00429vh;
@@ -214,8 +206,8 @@
                             justify-content: center;
                             align-items: flex-start;
                             flex-direction: column;
-                            margin-bottom: 2rem;
-                            max-width: 20rem;
+                            margin-bottom: 2.8125rem;
+                            max-width: 27.063rem;
 
                             @media(max-width:$mobile-big) {
                                 width: 100%;
@@ -224,9 +216,11 @@
                             }
 
                             p {
-                                font-size: 0.8rem;
+                                color: $base-black;
+                                font-size: 1rem;
+                                font-family: $font-mont;
                                 width: 100%;
-                                margin-bottom: 1rem;
+                                margin-bottom: 2rem;
 
                                 @media(max-width:$mobile-big) {
                                     font-size: 1.18026vh;
@@ -248,12 +242,14 @@
                         }
 
                         .read {
-                            font-size: 1rem;
+                            font-size: 1.25rem;
                             color: $base-black;
                             font-family: $font-mont;
                             font-weight: 500;
                             text-transform: uppercase;
                             padding: 1rem 4rem;
+                            width: 17.5001rem;
+                            height: 4.68751rem;
                             background: $base-yellow;
                             border-radius: 3rem;
                             border: none;
@@ -275,7 +271,7 @@
 
 .subNewsSlider {
     padding-top: 0;
-    padding-bottom: 0;
+    padding-bottom: 6.25rem;
 
     @media(max-width:$mobile-big) {
         margin: 0 auto;
@@ -285,11 +281,11 @@
     }
 
     h3 {
-        font-size: 3rem;
-        text-align: center;
+        font-size: 4rem;
         color: $base-red;
         font-family: $font-rounds;
-        margin-bottom: 3rem;
+        text-align: center;
+        margin-bottom: 3.125rem;
 
         @media(max-width:$mobile-big) {
             font-size: 3.64807vh;
@@ -302,11 +298,11 @@
         justify-content: flex-start;
         align-items: center;
         flex-direction: column;
-        height: 18rem;
+        height: 44.375rem;
         overflow-y: scroll;
-        max-width: 60rem;
+        max-width: 75.9375rem;
         margin: 0 auto;
-        padding-right: 4.125rem;
+        padding-right: 2.875rem;
         scrollbar-color: $base-yellow $base-sand;
         scrollbar-width: thin;
 
@@ -332,8 +328,8 @@
         }
 
         &::-webkit-scrollbar {
-            width: 0.25rem;
-            border-radius: 0.25rem;
+            width: 0.3rem;
+            border-radius: 0.5rem;
         }
 
         &::-webkit-scrollbar-track {
@@ -342,32 +338,71 @@
 
         &::-webkit-scrollbar-thumb {
             background-color: $base-yellow;
-            border-radius: 0.25rem;
+            border-radius: 0.5rem;
             height: 1.25rem;
         }
 
         .newsItem {
-            font-size: 2rem;
-            font-family: $font-mont;
-            font-weight: 600;
-            text-align: center;
             width: 100%;
-            min-height: 5rem;
-            margin: 0.25rem auto;
+            min-height: 8.1251rem;
+            margin-bottom: 0.9375rem;
             border: none;
             border-radius: 1rem;
+            padding: 0 0.5rem;
             background: $base-sand;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
 
             &.active {
                 background-color: $base-yellow;
             }
 
+            &:last-of-type {
+                margin-bottom: 0rem;
+            }
 
             @media(max-width:$mobile-big) {
                 margin: 0.804721vh auto;
                 font-size: 1.93133vh;
                 height: 16.095vh;
                 padding: 2.6824vh;
+            }
+
+            .title {
+                color: $base-black;
+                font-size: 1.875rem;
+                font-family: $font-mont;
+                font-weight: 600;
+                text-align: center;
+                flex: 1;
+            }
+
+            .rigth_btn {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                padding: 1.5rem 3.25rem;
+                height: 100%;
+
+                svg {
+                    width: 1.6rem;
+                    height: 100%;
+                }
+
+                .count {
+                    font-size: 0.9868125rem;
+                    color: $base-black;
+                    font-family: $font-mont;
+                    margin-bottom: 0.9375rem;
+                }
+
+                .date {
+                    font-size: 1rem;
+                    color: $base-black;
+                    font-family: $font-mont;
+                }
             }
         }
     }
