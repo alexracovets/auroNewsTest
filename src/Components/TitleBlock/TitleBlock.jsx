@@ -12,7 +12,8 @@ export default function TitleBlock() {
             top: '-4.3125rem',
             bottom: 'auto',
             left: 'auto',
-            right: '-4.3125rem'
+            right: '-4.3125rem',
+            zIndex: "100"
         }
     }
 
