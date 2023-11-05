@@ -1,104 +1,77 @@
 @import '../../global/variable.scss';
 
 .NewsDetailes {
-    padding-top: 12rem;
+    padding-top: 7.2rem;
+    background-color: $opacity-yellow;
 
     @media (max-width:$mobile-big) {
         padding-top: 12vh;
-        background-color: $opacity-yellow;
     }
-
-    .back__wrapper {
-        display: flex;
-        justify-content: flex-start;
-        align-items: flex-start;
-
-        .back {
-            color: $base-black;
-            font-size: 3rem;
-            text-transform: uppercase;
-            font-family: $font-mont;
-            font-weight: 500;
-            width: auto;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background-color: transparent;
-            border: none;
-            margin: 0;
-            margin-bottom: 2rem;
-
-            @media (max-width:$mobile-big) {
-                font-size: 1.39485vh;
-                margin-bottom: 2.46781vh;
-            }
-
-            svg {
-                width: 2rem;
-                height: auto;
-                margin-right: 1rem;
-            }
-        }
-    }
-
 
     .news_wrapper {
         display: flex;
         justify-content: flex-start;
         align-items: flex-start;
         flex-direction: column;
-        background-color: $opacity-yellow;
         border-radius: 1.875rem;
         width: 100%;
+        max-width: 84.5rem;
         margin: 0 auto;
         position: relative;
         padding-bottom: 10rem;
+
 
         @media (max-width:$mobile-big) {
             background-color: transparent;
         }
 
-        .news__image {
-            width: 84.458rem;
-            height: 45.325rem;
-            background-size: cover;
-            background-position: center;
-            border-radius: 2rem;
-            margin: 0 auto;
-            margin-bottom: 3rem;
+        .back__wrapper {
+            display: flex;
+            justify-content: flex-start;
+            align-items: flex-start;
+            position: absolute;
+            left: 0;
+            top: 0;
 
-            @media (max-width:$mobile-big) {
-                width: 32.19vh;
-                height: 17.276vh;
+            .back {
+                color: $base-black;
+                font-size: 1.25rem;
+                text-transform: uppercase;
+                font-family: $font-mont;
+                font-weight: 500;
+
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background-color: transparent;
+                border: none;
                 margin: 0;
-                margin-bottom: 2.14592vh;
-                border-radius: 1.71674vh;
-            }
-        }
+                margin-bottom: 2rem;
 
-        .date {
-            font-size: 2rem;
-            font-family: $font-mont;
-            margin-bottom: 3rem;
-            padding: 0 5rem;
+                @media (max-width:$mobile-big) {
+                    font-size: 1.39485vh;
+                    margin-bottom: 2.46781vh;
+                }
 
-            @media (max-width:$mobile-big) {
-                font-size: 1.39485vh;
-                padding: 0;
-                margin-bottom: 2.14592vh;
+                svg {
+                    width: 1.06251rem;
+                    height: auto;
+                    margin-right: 0.5rem;
+                }
             }
         }
 
         .title {
-            font-size: 4rem;
+            font-size: 2.25rem;
             color: $base-black;
             font-family: $font-mont;
-            text-align: left;
+            text-align: center;
             display: block;
             margin: 0 auto;
             width: 100%;
-            padding: 0 5rem;
-            margin-bottom: 5rem;
+            padding: 0 10rem;
+            margin-bottom: 3.75rem;
+            overflow-wrap: anywhere;
 
             @media (max-width:$mobile-big) {
                 font-size: 2.36052vh;
@@ -107,24 +80,74 @@
             }
         }
 
-        .text {
+        .wrapper {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
             width: 100%;
-            font-size: 2rem;
-            font-family: $font-mont;
-            margin-bottom: 2rem;
-            padding: 0 5rem;
 
-            @media (max-width:$mobile-big) {
-                font-size: 1.18026vh;
-                padding: 0;
-                margin-bottom: 1.07vh;
+            .news__image {
+                min-width: 41.6251rem;
+                height: 22.8751rem;
+                background-size: cover;
+                background-position: center;
+                border-radius: 2rem;
+                margin-bottom: 3rem;
+                margin: 0 auto;
+                margin-bottom: 2rem; 
+
+                @media (max-width:$mobile-big) {
+                    width: 32.19vh;
+                    height: 17.276vh;
+                    margin: 0;
+                    margin-bottom: 2.14592vh;
+                    border-radius: 1.71674vh;
+                }
             }
 
-            &.bold {
-                text-align: center;
-                font-weight: 600;
+            .date { 
+                color: $base-black;
+                font-size: 1.5rem;
+                font-family: $font-mont;
+                margin-bottom: 2rem;
+                padding: 0 5rem;
+
+                @media (max-width:$mobile-big) {
+                    font-size: 1.39485vh;
+                    padding: 0;
+                    margin-bottom: 2.14592vh;
+                }
+            }
+
+            .texts {
+                display: flex;
+                justify-content: flex-start;
+                align-items: flex-start;
+                flex-direction: column;
+                width: 100%;
+
+                .text {
+                    color: $base-black;
+                    font-size: 1rem;
+                    font-family: $font-mont;
+                    margin-bottom: 1rem;
+
+                    @media (max-width:$mobile-big) {
+                        font-size: 1.18026vh;
+                        padding: 0;
+                        margin-bottom: 1.07vh;
+                    }
+
+                    &.bold {
+                        text-align: center;
+                        font-weight: 600;
+                    }
+                }
             }
         }
+
 
         .likes {
             display: flex;

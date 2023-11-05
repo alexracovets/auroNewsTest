@@ -7,11 +7,12 @@ SubArrow.propTypes = {
     vector: PropTypes.string.isRequired,
     clickAction: PropTypes.func.isRequired,
     currentSlide: PropTypes.number.isRequired,
-    slider: PropTypes.object.isRequired
+    slider: PropTypes.object.isRequired,
+    itemsLength: PropTypes.number
 };
 
 
-export default function SubArrow({ vector, clickAction, currentSlide, slider }) {
+export default function SubArrow({ vector, clickAction, currentSlide, slider, itemsLength }) {
     const [disabled, setDisabled] = useState(null);
     const [slides, setSlides] = useState(null);
 
@@ -22,8 +23,10 @@ export default function SubArrow({ vector, clickAction, currentSlide, slider }) 
     useEffect(() => {
         if (vector === 'prev') {
             currentSlide === 0 ? setDisabled(true) : setDisabled(false)
-        } else currentSlide === (slides - 1) ? setDisabled(true) : setDisabled(false)
-    }, [currentSlide, slides, vector])
+        } else {
+            currentSlide === itemsLength-1 ? setDisabled(true) : setDisabled(false)
+        }
+    }, [currentSlide, slides, vector, itemsLength])
 
     return (
         <button className={

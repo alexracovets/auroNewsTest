@@ -1,0 +1,102 @@
+@import '../../../global/variable.scss';
+
+.PopUp_wrapper {
+    background-color: #FFFAD9;
+    width: 100%;
+    height: auto;
+    margin: 0 3.5rem;
+    padding: 3.75rem 10.625rem 3.75rem 8.125rem;
+    border-radius: 2.5rem;
+    position: relative;
+
+    @media (max-width:$mobile-big) {
+        width: 100%;
+        margin: 0 auto;
+        border-radius: 3.21888vh;
+        padding: 6.43777vh 4.29185vh;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        flex-direction: column;
+        overflow-y: scroll;
+    }
+
+    @media (max-width:370px) {
+        padding: 1.5vh;
+    }
+
+    .cross {
+        position: absolute;
+        right: 6.25rem;
+        top: 3.125rem;
+        width: 2.8125rem;
+        height: 2.8125rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+
+        @media (max-width:$mobile-big) {
+            width: 2.468vh;
+            height: 2.468vh;
+            top: 3.97vh;
+            right: 4.293vh;
+        }
+
+        @media (max-width:370px) {
+            right: 2vh;
+        }
+
+        svg {
+            width: 100%;
+            height: auto;
+        }
+    }
+
+    .image {
+        width: 11.375rem;
+        height: 13.6875rem;
+        background-size: cover;
+        background-position: center;
+        border-radius: 1.25rem;
+        margin-right: 2.5rem;
+        margin-bottom: 2.5rem;
+        float: left;
+
+        @media (max-width:$mobile-big) {
+            float: none;
+            width: 14.807vh;
+            height: 18.242vh;
+            margin: 0 auto;
+            margin-bottom: 3.21888vh;
+            border-radius: 0.536481vh;
+        }
+    }
+
+    .title {
+        font-size: 2rem;
+        font-family: $font-mont;
+        font-weight: bold;
+        margin-bottom: 1.3125rem;
+
+        @media (max-width:$mobile-big) {
+            font-size: 2.36051vh;
+            margin-bottom: 2.14592vh;
+        }
+    }
+
+    .texts {
+        p {
+            font-size: 1rem;
+            font-family: $font-mont;
+            margin-bottom: 1rem;
+
+            @media (max-width:$mobile-big) {
+                text-align: center;
+                font-size: 1.18026vh;
+                margin-bottom: 1vh;
+            }
+        }
+    }
+
+}

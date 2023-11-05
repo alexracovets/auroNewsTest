@@ -1,0 +1,97 @@
+@import '../../../global/variable.scss';
+
+.slider {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 88.251rem;
+    margin-bottom: 1rem;
+
+    .arrow {
+        &.arrow_Prev {
+            display: none !important;
+        }
+    }
+
+
+    .item {
+        display: flex !important;
+        justify-content: flex-start;
+        align-items: flex-end;
+        width: 100%;
+        max-width: 72.751rem;
+        margin: 0 auto;
+        background-color: $opacity-yellow;
+        padding: 2rem 3.25rem;
+        border-radius: 1.875rem;
+        cursor: pointer;
+
+        .item__image {
+            min-width: 19.125rem;
+            width: 17rem;
+            height: 19.125rem;
+            border-radius: 1.875rem;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-size: cover;
+            background-position: center;
+            margin-right: 2.5rem;
+        }
+
+        .item__content {
+            display: flex;
+            justify-content: flex-start;
+            align-items: flex-start;
+            flex-direction: column;
+
+            .description {
+                font-size: 2rem;
+                color: $base-black;
+                font-family: $font-mont;
+                font-weight: 600;
+                margin-top: 1rem;
+                margin-bottom: 0.9375rem;
+            }
+
+            .item__texts {
+                margin-bottom: 2.5rem;
+                width: 100%;
+                max-width: 44.3125rem;
+
+                p {
+                    font-size: 1rem;
+                    color: $base-black;
+                    font-family: $font-mont;
+                    margin-bottom: 1.5rem;
+
+                    &:last-of-type {
+                        margin-bottom: 0;
+                    }
+                }
+            }
+
+
+            .btn {
+                display: flex;
+                justify-content: flex-start;
+                align-items: flex-start;
+                width: 100%;
+
+                button {
+                    width: 100%;
+                    max-width: 18.7501rem;
+                    height: 4.06251rem;
+
+
+                    div {
+                        font-weight: 500;
+                        font-size: 1.125rem;
+                    }
+                }
+            }
+        }
+    }
+}

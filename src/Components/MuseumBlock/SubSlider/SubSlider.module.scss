@@ -1,0 +1,48 @@
+.sub_slider {
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 84rem;
+
+    .slick {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .item {
+            display: flex !important;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            height: 14rem;
+            padding: 0;
+            padding: 0 0.4rem;
+
+            .item__image {
+                width: 8.18751rem;
+                height: 9.3751rem;
+                background-size: cover;
+                background-position: center;
+                border-radius: 1.25rem;
+                opacity: 0.5;
+                transition: all ease-in-out 200ms;
+                transition-delay: 0ms;
+                margin: 0;
+
+                &.active {
+                    width: 11.0001rem;
+                    height: 12.5001rem;
+                    opacity: 1;
+                    transition: all ease-in-out 200ms;
+                    transition-delay: 0ms;
+                }
+            }
+        }
+    }
+
+    .arrows {
+        position: relative;
+        width: 100%;
+        height: 6rem;
+    }
+}
