@@ -2,7 +2,7 @@
 
 header {
     position: fixed;
-    z-index: 10;
+    z-index: 9;
     width: 100%;
     pointer-events: none;
     transform: translateY(0);
@@ -10,10 +10,9 @@ header {
     background-color: $base-white;
 
     @media (max-width:$mobile-big) {
+        background-color: $opacity-yellow;
         align-items: flex-start;
-        padding: 4.29185vh;
-        padding-top: 2.3vh;
-        padding-bottom: 0;
+        padding: 0;
         height: 10vh;
         overflow: hidden;
     }
@@ -28,6 +27,12 @@ header {
         align-items: center;
         padding: 1.625rem 5rem;
         background-color: $opacity-yellow;
+
+        @media (max-width:$mobile-big) {
+            background-color: transparent;
+            padding: 4.29185vh;
+            padding-top: 2.3vh;
+        }
 
         .logo {
             left: 5rem;

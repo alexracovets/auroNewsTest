@@ -8,6 +8,25 @@
     padding: 3.75rem 10.625rem 3.75rem 8.125rem;
     border-radius: 2.5rem;
     position: relative;
+    overflow-y: scroll;
+    max-height: 70vh;
+    scrollbar-color: $base-yellow $base-sand;
+    scrollbar-width: thin;
+
+    &::-webkit-scrollbar {
+        width: 0.25rem;
+        border-radius: 0.25rem;
+    }
+
+    &::-webkit-scrollbar-track {
+        background-color: $base-sand;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: $base-yellow;
+        border-radius: 0.25rem;
+        height: 1.25rem;
+    }
 
     @media (max-width:$mobile-big) {
         width: 100%;
@@ -29,8 +48,8 @@
         position: absolute;
         right: 6.25rem;
         top: 3.125rem;
-        width: 2.8125rem;
-        height: 2.8125rem;
+        width: 2.81251rem;
+        height: 2.81251rem;
         display: flex;
         justify-content: center;
         align-items: center;
