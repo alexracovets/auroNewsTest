@@ -19,8 +19,8 @@
         padding: 0 3vw;
     }
 
-    @media (max-width:530px) { 
-        height: 4vh;  
+    @media (max-width:530px) {
+        height: 4vh;
     }
 
     .text {
@@ -41,6 +41,11 @@
         height: auto;
 
         @media (max-width:$mobile-big) {
+            width: 2vw;
+            margin-left: 2vw;
+        }
+
+        @media (max-width:530px) {
             width: 2.3vw;
             margin-left: 2vw;
         }

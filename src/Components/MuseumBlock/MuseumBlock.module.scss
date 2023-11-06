@@ -129,7 +129,7 @@
 
                         .item__image {
                             width: 40vw;
-                            height: 45vw;
+                            height: 30vw;
                             border-radius: 3.25027vh;
                             background-size: cover;
                             background-position: center;
@@ -137,6 +137,11 @@
                             margin-bottom: 3.25027vh;
 
                             @media (max-width:530px) {
+                                width: 65.117vw;
+                                height: 50vw;
+                            }
+
+                            @media (max-width:450px) {
                                 width: 65.117vw;
                                 height: 74.42vw;
                             }

@@ -66,6 +66,10 @@
         width: 1.1255rem;
 
         @media(max-width:$mobile-big) {
+            width: 2vw;
+        }
+
+        @media(max-width:530pxF) {
             width: 2.794vw;
         }
     }
