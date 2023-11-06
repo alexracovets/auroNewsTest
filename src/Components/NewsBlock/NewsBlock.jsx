@@ -28,6 +28,7 @@ export default function NewsBlock() {
     const fetch = () => fetchData(dataRef, setSlides, true);
     const clickItem = (toSlide) => slider.slickGoTo(toSlide) && setActiveSlide(toSlide);
     const goToPage = (item) => navigate(`/news/${item.key}`);
+    const btnHandler = (item, toSlide) => goToPage(item) && clickItem(toSlide);
 
     useEffect(() => {
         fetch();
@@ -69,7 +70,7 @@ export default function NewsBlock() {
     };
 
     const renderButtoms = () => slides.map((news, index) => (
-        <button className={index === activeSlide ? s.newsItem + ' ' + s.active : s.newsItem} key={index} onClick={() => clickItem(index)}>
+        <button className={index === activeSlide ? s.newsItem + ' ' + s.active : s.newsItem} key={index} onClick={() => btnHandler(news, index)}>
             <div className={s.title}>
                 {checkLength(news.title, 50)}
             </div>

@@ -57,7 +57,7 @@
                 display: flex;
                 justify-content: flex-start;
                 align-items: flex-start;
-                width: 27rem;
+                width: 34rem;
                 padding: 0;
 
                 @media (max-width:$mobile-big) {
@@ -69,7 +69,7 @@
 
                     a {
                         display: block;
-                        font-size: 1rem;
+                        font-size: 1.3rem;
                         font-family: $font-mont;
                         color: $base-black;
                         padding: 0.46875rem;
