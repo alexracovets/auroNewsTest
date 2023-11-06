@@ -18,8 +18,9 @@
         margin: 2.5rem auto;
 
         @media (max-width:$mobile-big) {
-            font-size: 3.64807vh;
+            font-size: 7.90697vw;
             margin-bottom: 0;
+            margin-top: 0;
         }
     }
 
@@ -31,120 +32,128 @@
 
         &.mobile {
             display: none;
-        }
+            position: relative;
+            height: 74.72747vh;
 
-        @media (max-width:$mobile-big) {
-            &.desktop {
-                display: none;
-            }
-
-            &.mobile {
+            .back {
+                position: fixed;
+                left: -10vw;
+                top: 7vh;
+                width: 31.863vw;
+                height: 31.863vw;
+                background-color: $base-yellow;
+                border-radius: 50%;
                 display: flex;
-                position: relative;
-                height: 65.5vh;
+                justify-content: center;
+                align-items: center;
+                transition: all ease-in-out 300ms;
 
-                .back {
-                    position: absolute;
-                    left: -8.95057vh;
-                    top: -7.90899vh;
-                    width: 14.6996vh;
-                    height: 14.6996vh;
-                    background-color: $base-yellow;
-                    border-radius: 50%;
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
+                .text {
+                    font-size: 2.4vw;
+                    font-family: $font-mont;
+                    font-weight: 500;
+                    text-transform: uppercase;
+                    opacity: 0;
+                    transition: all ease-in-out 300ms;
+                }
+
+                &.active {
+                    width: 23.258vw;
+                    height: 23.258vw;
+                    left: 2vw;
+                    top: 4vh;
+                    cursor: pointer;
                     transition: all ease-in-out 300ms;
 
                     .text {
-                        font-size: 0.988vh;
-                        font-family: $font-mont;
-                        font-weight: 500;
-                        text-transform: uppercase;
-                        opacity: 0;
-                        transition: all ease-in-out 300ms;
-                    }
-
-                    &.active {
-                        width: 10.72965vh;
-                        height: 10.72965vh;
-                        left: -2.93309vh;
-                        top: -10.72965vh;
-                        cursor: pointer;
-                        transition: all ease-in-out 300ms;
-
-                        .text {
-                            opacity: 1;
-                            transition: all ease-in-out 300ms;
-                        }
-                    }
-
-                }
-
-                .pagination {
-                    position: absolute;
-                    left: 0;
-                    top: 0;
-                    width: 100%;
-                    height: 100%;
-                    opacity: 0;
-                    pointer-events: none;
-                    transition: all ease-in-out 300ms;
-
-                    &.active {
-                        pointer-events: all;
                         opacity: 1;
                         transition: all ease-in-out 300ms;
                     }
                 }
 
-                .short__info {
-                    position: absolute;
-                    left: 0;
-                    top: 0;
+            }
+
+            .pagination {
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                opacity: 0;
+                pointer-events: none;
+                transition: all ease-in-out 300ms;
+                margin-top: 9.22747vh;
+
+                &.active {
+                    pointer-events: all;
+                    opacity: 1;
+                    transition: all ease-in-out 300ms;
+                }
+            }
+
+            .short__info {
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                opacity: 0;
+                pointer-events: none;
+                transition: all ease-in-out 300ms;
+                padding-top: 3.21888vh;
+
+                &.active {
+                    pointer-events: all;
+                    opacity: 1;
+                    transition: all ease-in-out 300ms;
+                }
+
+                .mobile_slider {
+                    display: flex;
+                    justify-content: flex-start;
+                    align-items: flex-start;
+                    flex-direction: column;
                     width: 100%;
                     height: 100%;
-                    opacity: 0;
-                    pointer-events: none;
-                    transition: all ease-in-out 300ms;
 
-                    &.active {
-                        pointer-events: all;
-                        opacity: 1;
-                        transition: all ease-in-out 300ms;
-                    }
-
-                    .mobile_slider {
+                    .item {
                         display: flex;
-                        justify-content: flex-start;
-                        align-items: flex-start;
+                        justify-content: center;
+                        align-items: center;
                         flex-direction: column;
-                        width: 100%;
-                        height: 100%;
-                        padding-top: 3.25027vh;
+                        margin-bottom: 3vh;
 
-                        .item {
+                        @media (max-width:530px) {
+                            margin-bottom: 0;
+                        }
+
+                        .item__image {
+                            width: 40vw;
+                            height: 45vw;
+                            border-radius: 3.25027vh;
+                            background-size: cover;
+                            background-position: center;
+                            margin: 0 auto;
+                            margin-bottom: 3.25027vh;
+
+                            @media (max-width:530px) {
+                                width: 65.117vw;
+                                height: 74.42vw;
+                            }
+                        }
+
+                        .item__content {
                             display: flex;
                             justify-content: center;
                             align-items: center;
                             flex-direction: column;
 
-                            .item__image {
-                                width: 30.337vh;
-                                height: 34.67vh;
-                                border-radius: 3.25027vh;
-                                background-size: cover;
-                                background-position: center;
-                                margin: 0 auto;
-                                margin-bottom: 3.25027vh;
-                            }
-
                             .description {
-                                font-size: 22px;
+                                font-size: 5.11627vw;
                                 text-align: center;
                                 font-weight: 600;
                                 font-family: $font-mont;
-                                margin-bottom: 20px;
+                                margin-bottom: 2.14592vh;
                             }
 
                             .item__texts {
@@ -156,10 +165,10 @@
 
                                 p {
                                     width: 100%;
-                                    font-size: 13px;
+                                    font-size: 3.02325vw;
                                     text-align: center;
                                     font-family: $font-mont;
-                                    margin-bottom: 15px;
+                                    margin-bottom: 1.60944vh;
                                 }
                             }
 
@@ -169,14 +178,22 @@
                                 align-items: center;
                             }
                         }
+
+
                     }
                 }
             }
         }
 
+        @media (max-width:$mobile-big) {
+            &.desktop {
+                display: none;
+            }
 
-
-      
+            &.mobile {
+                display: flex;
+            }
+        }
 
         .descriptions {
             display: flex;
@@ -216,9 +233,7 @@
                     margin-bottom: 0;
                 }
             }
-        } 
+        }
 
     }
 }
-
- 

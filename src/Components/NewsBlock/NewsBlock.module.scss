@@ -70,10 +70,10 @@
                     &.mobile {
                         display: none;
                         width: 100%;
-                        font-size: 2.36051vh;
+                        font-size: 5.11628vw;
                         text-align: left;
                         font-family: $font-mont;
-                        padding: 0 3.00429vh;
+                        padding: 0 6.51162vw;
                         margin-bottom: 1.60944vh;
 
                         @media(max-width:$mobile-big) {
@@ -93,12 +93,12 @@
                         display: none;
 
                         @media(max-width:$mobile-big) {
-                            font-size: 1.39485vh;
+                            font-size: 3.02325vw;
                             display: block;
                             width: 100%;
                             margin-top: 0rem;
                             margin-bottom: 2.14592vh;
-                            padding: 0 3.00429vh;
+                            padding: 0 6.51162vw;
                         }
                     }
 
@@ -118,7 +118,7 @@
                     padding: 0 4.375rem;
 
                     @media(max-width:$mobile-big) {
-                        padding: 0 4vh;
+                        padding: 0 9vw;
                         margin-bottom: 3.17811vh;
                         margin-top: -2.16878vh;
                     }
@@ -133,7 +133,7 @@
                         width: 100%;
 
                         @media(max-width:$mobile-big) {
-                            max-width: 2.8vh;
+                            max-width: 6.98vw;
                         }
 
                         svg {
@@ -147,7 +147,7 @@
                             font-family: $font-mont;
 
                             @media(max-width:$mobile-big) {
-                                font-size: 1.5vh;
+                                font-size: 3.25581vw;
                             }
                         }
                     }
@@ -198,7 +198,7 @@
                         max-width: 30.81252rem;
 
                         @media(max-width:$mobile-big) {
-                            padding: 0 3.00429vh;
+                            padding: 0 6.51162vw;
                             max-width: 100%;
                         }
 
@@ -213,7 +213,7 @@
 
                             @media(max-width:$mobile-big) {
                                 width: 100%;
-                                max-width: 27vh;
+                                max-width: 61vw;
                                 margin-bottom: 2vh;
                             }
 
@@ -225,7 +225,7 @@
                                 margin-bottom: 2rem;
 
                                 @media(max-width:$mobile-big) {
-                                    font-size: 1.18026vh;
+                                    font-size: 2.55815vw;
                                     margin-bottom: 1vh;
 
                                     &:nth-of-type(2) {
@@ -257,11 +257,15 @@
                             border: none;
 
                             @media(max-width:$mobile-big) {
-                                font-size: 1.5vh;
-                                width: 17.9vh;
+                                font-size: 3.25581vw;
+                                width: 37.8vw;
+                                height: 5vh;
+                                padding: 0 4vw;
+                                border-radius: 5vh;
+                            }
+
+                            @media (max-width:530px) {
                                 height: 3.82vh;
-                                padding: 0 3vh;
-                                border-radius: 3vh;
                             }
                         }
                     }
@@ -291,7 +295,7 @@
         margin-bottom: 3.125rem;
 
         @media(max-width:$mobile-big) {
-            font-size: 3.64807vh;
+            font-size: 7.90697vw;
             margin-bottom: 4.29185vh;
         }
     }
@@ -367,9 +371,8 @@
 
             @media(max-width:$mobile-big) {
                 margin: 0.804721vh auto;
-                font-size: 1.93133vh;
                 height: 16.095vh;
-                padding: 2.6824vh;
+                padding: 2.6824vh 5.81395vw;
             }
 
             .title {

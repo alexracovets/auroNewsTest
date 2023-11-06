@@ -7,7 +7,7 @@ export default function Museum() {
         <>
             <style>
                 {`
-                    @media screen and (max-width: 767px) { 
+                    @media screen and (max-width: 768px) { 
                         .feedback {
                             display: none;
                         }  

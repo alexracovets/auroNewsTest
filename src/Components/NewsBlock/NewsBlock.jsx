@@ -41,7 +41,7 @@ export default function NewsBlock() {
                     <div className={s.wrapper}>
                         <div className={s.image} style={{ backgroundImage: `url(${news.image})` }}></div>
                         <div className={s.date + ' ' + s.mobile}>{news.date}</div>
-                        <h3 className={s.title + ' ' + s.mobile}>{checkLength(news.title, 35)}</h3>
+                        <h3 className={s.title + ' ' + s.mobile}>{checkLength(news.title, 30)}</h3>
                         <div className={s.content}>
                             <div className={s.description}>
                                 {news.text && news.text[0] && <p>{checkLength(news.text[0].value, 192)}</p>}

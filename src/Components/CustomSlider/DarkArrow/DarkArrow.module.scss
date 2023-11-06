@@ -17,9 +17,15 @@
 
     @media(max-width:$mobile-big) {
         top: auto;
+        bottom: -7vh;
+        width: 7vw;
+        height: 7vw;
+    }
+
+    @media(max-width:530px) {
         bottom: -8.4vh;
-        width: 5.6vh;
-        height: 5.6vh;
+        width: 11.63vw;
+        height: 11.63vw;
     }
 
     &:hover {
@@ -57,10 +63,10 @@
 
     svg {
         transform: translateX(-0.3rem);
-        width: 1.1rem;
+        width: 1.1255rem;
 
         @media(max-width:$mobile-big) {
-            width: 1.33vh;
+            width: 2.794vw;
         }
     }
 }

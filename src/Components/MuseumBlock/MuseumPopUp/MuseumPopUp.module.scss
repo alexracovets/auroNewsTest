@@ -8,62 +8,34 @@
     padding: 3.75rem 10.625rem 3.75rem 8.125rem;
     border-radius: 2.5rem;
     position: relative;
-    overflow-y: scroll;
-    max-height: 70vh;
-    scrollbar-color: $base-yellow $base-sand;
-    scrollbar-width: thin;
-
-    &::-webkit-scrollbar {
-        width: 0.25rem;
-        border-radius: 0.25rem;
-    }
-
-    &::-webkit-scrollbar-track {
-        background-color: $base-sand;
-    }
-
-    &::-webkit-scrollbar-thumb {
-        background-color: $base-yellow;
-        border-radius: 0.25rem;
-        height: 1.25rem;
-    }
 
     @media (max-width:$mobile-big) {
         width: 100%;
         margin: 0 auto;
         border-radius: 3.21888vh;
-        padding: 6.43777vh 4.29185vh;
+        padding: 6.43777vh 9.30232vw;
+        padding-bottom: 4.29185vh;
         display: flex;
         justify-content: flex-start;
         align-items: center;
         flex-direction: column;
         overflow-y: scroll;
-    }
-
-    @media (max-width:370px) {
-        padding: 1.5vh;
+        height: 100vh;
     }
 
     .cross {
         position: absolute;
-        right: 6.25rem;
-        top: 3.125rem;
-        width: 2.81251rem;
-        height: 2.81251rem;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        top: 2.8125rem;
+        right: 3.75rem;
+        width: 3.6875rem;
+        height: 3.6875rem;
         cursor: pointer;
 
         @media (max-width:$mobile-big) {
-            width: 2.468vh;
-            height: 2.468vh;
+            width: auto;
+            height: 4.444vh;
+            right: 8vw;
             top: 3.97vh;
-            right: 4.293vh;
-        }
-
-        @media (max-width:370px) {
-            right: 2vh;
         }
 
         svg {
@@ -73,22 +45,22 @@
     }
 
     .image {
-        width: 11.375rem;
-        height: 13.6875rem;
+        width: 14.445rem;
+        height: 17.382rem;
         background-size: cover;
         background-position: center;
         border-radius: 1.25rem;
-        margin-right: 2.5rem;
-        margin-bottom: 2.5rem;
+        margin-right: 3.174605rem;
+        margin-bottom: 3.492065rem;
         float: left;
 
         @media (max-width:$mobile-big) {
             float: none;
-            width: 14.807vh;
-            height: 18.242vh;
+            min-width: 32.095vw;
+            min-height: 39.535vw;
             margin: 0 auto;
             margin-bottom: 3.21888vh;
-            border-radius: 0.536481vh;
+            border-radius: 3.21888vh;
         }
     }
 
@@ -99,12 +71,51 @@
         margin-bottom: 1.3125rem;
 
         @media (max-width:$mobile-big) {
-            font-size: 2.36051vh;
-            margin-bottom: 2.14592vh;
+            font-size: 5.11627vw;
+            margin-bottom: 1vh;
+        }
+    }
+
+    .text {
+
+        &.desktop {
+            font-size: 1.26984rem;
+            font-family: $font-mont;
+            margin-bottom: 1rem;
+
+            @media (max-width:$mobile-big) {
+                display: none;
+            }
         }
     }
 
     .texts {
+        display: none;
+        overflow-y: scroll;
+        scrollbar-color: $base-yellow $base-sand;
+        scrollbar-width: thin;
+
+        @media (max-width:$mobile-big) {
+            display: block;
+            font-size: 2.55815vw;
+            padding: 2.14592vh 0;
+        }
+
+        &::-webkit-scrollbar {
+            width: 0.25rem;
+            border-radius: 0.25rem;
+        }
+
+        &::-webkit-scrollbar-track {
+            background-color: $base-sand;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            background-color: $base-yellow;
+            border-radius: 0.25rem;
+            height: 1.25rem;
+        }
+
         p {
             font-size: 1rem;
             font-family: $font-mont;
@@ -112,7 +123,7 @@
 
             @media (max-width:$mobile-big) {
                 text-align: center;
-                font-size: 1.18026vh;
+                font-size: 2.55815vw;
                 margin-bottom: 1vh;
             }
         }

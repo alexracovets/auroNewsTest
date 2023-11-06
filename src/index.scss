@@ -49,11 +49,7 @@ section {
   padding: 5rem;
 
   @media (max-width:$mobile-big) {
-    padding: 4.29185vh;
-  }
-
-  @media (max-width:$mobile-small) {
-    padding: 1.55vh;
+    padding: 4.29185vh 9.30232vw;
   }
 }
 
@@ -69,6 +65,14 @@ button {
 html {
   // font-size: 1.058201vw;
   font-size: 0.833333vw;
+
+  @media(max-width:1280px) {
+    font-size: 1.05vw;
+  }
+
+  @media(max-width:1024px) {
+    font-size: 1vw;
+  }
 
   @media(max-width:$mobile-big) {
     font-size: 1vw;
@@ -88,4 +92,4 @@ html {
 a {
   color: $base-black;
   cursor: pointer;
-} 
+}

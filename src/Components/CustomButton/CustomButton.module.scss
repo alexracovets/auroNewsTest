@@ -14,15 +14,13 @@
 
     @media (max-width:$mobile-big) {
         border-radius: 2.5vh;
-        height: 4vh;
-        max-width: 30vh;
-        padding: 0 2vh;
+        height: 5vh;
+        max-width: 46.515vw;
+        padding: 0 3vw;
     }
 
-    @media (max-width:$mobile) {
-        border-radius: 3vh;
-        height: 4.83vh;
-        max-width: 21.46vh;
+    @media (max-width:530px) { 
+        height: 4vh;  
     }
 
     .text {
@@ -33,11 +31,7 @@
         text-transform: uppercase;
 
         @media (max-width:$mobile-big) {
-            font-size: 2vh;
-        }
-
-        @media (max-width:$mobile) {
-            font-size: 1.28755vh;
+            font-size: 2.7907vw;
         }
     }
 
@@ -47,13 +41,8 @@
         height: auto;
 
         @media (max-width:$mobile-big) {
-            width: 1vh;
-            margin-left: 1vh;
-        }
-
-        @media (max-width:$mobile) {
-            width: 1.07vh;
-            margin-left: 1.28755vh;
+            width: 2.3vw;
+            margin-left: 2vw;
         }
     }
 }

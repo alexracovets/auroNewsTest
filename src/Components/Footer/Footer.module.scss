@@ -11,13 +11,9 @@
 
     @media (max-width:$mobile-big) {
         background-color: $base-white;
-        padding: 4.29185vh;
-        padding-top: 0.536481vh;
+        padding:  2.32559vw;
         height: 8.5vh;
-    }
-
-    @media (max-width:$mobile-small) {
-        padding: 1.55vh;
+        overflow: hidden;
     }
 
     .menu {
@@ -80,13 +76,8 @@
                         @media (max-width:$mobile-big) {
                             text-transform: uppercase;
                             flex: 1;
-                            font-size: 1.03872vh;
-                            padding: 0 0.4721435vh;
-                        }
-
-                        @media (max-width:420px) {
-                            font-size: 0.9vh;
-                            padding: 0 0.3vh;
+                            font-size: 3.02325vw;
+                            padding: 0 1vw;
                         }
 
                         &:hover {

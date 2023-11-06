@@ -27,25 +27,15 @@
     }
 
     .title {
-        text-align: center;
-        font-size: 3rem;
+        font-size: 4rem;
         color: $base-red;
         font-family: $font-rounds;
-        margin-bottom: 0rem;
-        margin-bottom: 3rem;
+        text-align: center;
+        display: block;
+        margin-bottom: 5.25rem;
 
         @media (max-width:$mobile-big) {
-            font-size: 4vh;
-            margin-bottom: 1.5vh;
-        }
-
-        @media (max-width:$mobile) {
-            font-size: 2.57511vh;
-            margin-bottom: 1.60944vh;
-        }
-
-        @media (max-width:$mobile-small) {
-            font-size: 2.2vh;
+            font-size: 5.5814vw;
             margin-bottom: 1.5vh;
         }
     }
@@ -75,7 +65,7 @@
 
                 .name {
                     color: $base-black;
-                    font-size: 1.50215vh;
+                    font-size: 3.25582vw;
                     font-family: $font-mont;
                     font-weight: 600;
                 }
@@ -88,9 +78,14 @@
 
                     .date {
                         color: $base-black;
-                        font-size: 1.18026vh;
+                        font-size: 2vw;
                         font-family: $font-mont;
-                        margin-bottom: 2.897vh;
+                        margin-bottom: 1.5vh;
+
+                        @media (max-width:570px) {
+                            font-size: 2.55815vw;
+                            margin-bottom: 2.897vh;
+                        }
                     }
 
                     .likes {
@@ -100,14 +95,22 @@
                         flex-direction: column;
 
                         svg {
-                            width: 2.5vh;
+                            width: 4vw;
                             height: auto;
+
+                            @media (max-width:570px) {
+                                width: 6vw;
+                            }
                         }
 
                         .count {
                             color: $base-black;
-                            font-size: 1.15vh;
+                            font-size: 2.2vw;
                             font-family: $font-mont;
+
+                            @media (max-width:570px) {
+                                font-size: 2.6vw;
+                            }
                         }
                     }
                 }
@@ -209,55 +212,6 @@
                 background-color: $base-sand;
                 position: relative;
 
-                @media (max-width:$mobile-big) {
-                    flex-direction: row;
-                    align-items: center;
-                    justify-content: space-between;
-                    padding: 1.5vh 3vh;
-                    margin-bottom: 0;
-                    border-radius: 1.5vh;
-
-                    .right {
-                        display: flex;
-                        justify-content: space-between;
-                        align-items: flex-end;
-                        flex-direction: column;
-
-                        .date {
-                            font-size: 1.7vh;
-                            margin-bottom: 1vh;
-                        }
-                    }
-                }
-
-                @media (max-width:$mobile) {
-                    padding: 2.15vh 3.2vh;
-                    margin-bottom: 0;
-                    border-radius: 1vh;
-
-                    .right {
-
-                        .date {
-                            font-size: 1.18026vh;
-                            margin-bottom: 2.897vh;
-                        }
-                    }
-                }
-
-                @media (max-width:$mobile-small) {
-                    padding: 2.5vh 3.5vh;
-                    margin-bottom: 0;
-                    border-radius: 1vh;
-
-                    .right {
-
-                        .date {
-                            font-size: 1.18026vh;
-                            margin-bottom: 2.897vh;
-                        }
-                    }
-                }
-
                 .content {
                     display: flex;
                     justify-content: center;
@@ -273,19 +227,6 @@
                         font-weight: 600;
                         width: 100%;
                         margin-bottom: 0.798125rem;
-
-                        @media (max-width:$mobile-big) {
-                            font-size: 1.7vh;
-                            margin-bottom: 0;
-                        }
-
-                        @media (max-width:$mobile) {
-                            font-size: 1.71674vh;
-                        }
-
-                        @media (max-width:$mobile-small) {
-                            font-size: 1.5vh;
-                        }
                     }
 
                     .content__button {
@@ -345,32 +286,9 @@
                         align-items: center;
                         flex-direction: column;
 
-                        @media (max-width:$mobile-big) {
-                            position: initial;
-                            flex-direction: row;
-                        }
-
-                        @media (max-width:$mobile) {
-                            flex-direction: column;
-                        }
-
                         svg {
                             width: 1.4849375rem;
                             height: auto;
-
-                            @media (max-width:$mobile-big) {
-                                width: 2vh;
-                                margin-right: 0.5vh;
-                            }
-
-                            @media (max-width:$mobile) {
-                                width: 2.085vh;
-                                margin-right: 0;
-                            }
-
-                            @media (max-width:$mobile-small) {
-                                width: 2vh;
-                            }
                         }
 
                         .count {
@@ -378,18 +296,6 @@
                             font-size: 1rem;
                             text-align: center;
                             font-family: $font-mont;
-
-                            @media (max-width:$mobile-big) {
-                                font-size: 1.6vh;
-                            }
-
-                            @media (max-width:$mobile) {
-                                font-size: 1.15vh;
-                            }
-
-                            @media (max-width:$mobile-small) {
-                                font-size: 1.3vh;
-                            }
                         }
                     }
                 }
@@ -411,7 +317,7 @@
 
             @media (max-width:$mobile-big) {
                 display: flex;
-                max-width: 21.5vh;
+                max-width: 47vw;
                 height: auto;
             }
         }

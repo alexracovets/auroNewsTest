@@ -54,7 +54,7 @@ export default function NewsShort() {
     const renderItemsMobile = () => items.length > 0 && (
         <div className={s.item} key={items[0].key}>
             <div className={s.name}>
-                {checkLength(items[0].title, 42)}
+                {checkLength(items[0].title, 35)}
             </div>
             <div className={s.right}>
                 <div className={s.date}>

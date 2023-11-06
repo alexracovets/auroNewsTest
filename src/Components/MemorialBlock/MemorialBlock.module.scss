@@ -18,19 +18,9 @@
         margin: 2.5rem auto;
 
         @media (max-width:$mobile-big) {
-            font-size: 4vh;
-            margin-bottom: 1.5vh;
-            margin-top: 0;
-        }
-
-        @media (max-width:$mobile) {
-            font-size: 3.64807vh;
+            font-size: 7.90697vw;
             margin-bottom: 3.21888vh;
-        }
-
-        @media (max-width:$mobile-small) {
-            font-size: 2.2vh;
-            margin-bottom: 1.5vh;
+            margin-top: 0;
         }
     }
 }
@@ -48,7 +38,7 @@
         align-items: center;
         flex-direction: column;
         background-color: $ligth-gray;
-        padding: 3.21888vh 5.90129vh;
+        padding: 3.21888vh 12.7907vw;
         border-radius: 1.9068vh;
         position: relative;
 
@@ -66,7 +56,7 @@
             svg {
                 width: 8.155vh;
                 height: 12.769vh;
-                transform: translateY(-8.5vh);
+                transform: translateY(-8.7vh);
             }
         }
 
@@ -80,36 +70,38 @@
             z-index: 1;
 
             .image {
-                width: 21.46vh;
-                height: 21.46vh;
+                width: 30vw;
+                height: 30vw;
                 background-size: cover;
                 background-position: center;
                 border-radius: 1.5vh;
-                margin-bottom: 4.5vh;
+                margin-bottom: 1vh;
                 filter: grayscale(1);
 
-                @media (max-width:$mobile) {
-                    margin-bottom: 2.6824vh;
+                @media (max-width:530px) {
+                    width: 46.515vw;
+                    height: 46.515vw;
+                    margin-bottom: 4.5vh;
                 }
             }
 
             .name {
                 text-align: center;
-                font-size: 2.14592vh;
+                font-size: 4.65116vw;
                 margin-bottom: 1.072965vh;
                 font-weight: 600;
                 font-family: $font-mont;
             }
 
             .age {
-                font-size: 1.39485vh;
+                font-size: 3.02325vw;
                 font-weight: 500;
                 font-family: $font-mont;
                 margin-bottom: 1.072965vh;
             }
 
             .position {
-                font-size: 1.39485vh;
+                font-size: 3.02325vw;
                 font-weight: 500;
                 font-family: $font-mont;
                 margin-bottom: 3vh;
@@ -123,15 +115,8 @@
 
                 button {
                     width: 100%;
-                    max-width: 60vh;
-                    font-size: 1.5vh;
+                    max-width: 56vw;
                     height: 5vh;
-
-                    @media (max-width:$mobile) {
-                        width: 100%;
-                        max-width: 100%;
-                        font-size: 1.18026vh;
-                    }
                 }
             }
         }
@@ -171,20 +156,12 @@ form {
         border: 0.0625rem solid $base-black;
 
         @media (max-width:$mobile-big) {
-            font-size: 1.5vh;
+            font-size: 3vw;
             width: 100%;
             height: 4vh;
             border-radius: 4vh;
-            border: 0.1vh solid $base-black;
-            padding: 0 3vh;
-        }
-
-        @media (max-width:$mobile) {
-            font-size: 1.072965vh;
-            height: 3.22vh;
-            border-radius: 3.22vh;
-            border: 0.0912017vh solid $base-black;
-            padding: 0 2.46781vh;
+            border: 0.25vw solid $base-black;
+            padding: 0 3vw;
         }
     }
 
@@ -211,7 +188,7 @@ form {
         max-width: 100%;
         height: 100%;
         border-radius: 3.5503vh;
-        padding: 4.29185vh;
+        padding: 4.29185vh 9.30232vw;
     }
 
     .cross {
@@ -223,17 +200,10 @@ form {
         cursor: pointer;
 
         @media (max-width:$mobile-big) {
-            width: 4.444vh;
+            width: auto;
             height: 4.444vh;
-            right: 4.293vh;
+            right: 8vw;
             top: 3.97vh;
-        }
-
-        @media (max-width:380px) {
-            width: 4vh;
-            height: 4vh;
-            right: 1vh;
-            top: 1.97vh;
         }
 
         svg {
@@ -275,8 +245,8 @@ form {
             }
 
             @media (max-width:$mobile-big) {
-                width: 21.46vh;
-                height: 21.46vh;
+                width: 46.515vw;
+                height: 46.515vw;
                 margin: 0 auto;
                 border-radius: 1.718vh;
                 margin-bottom: 2.14592vh;
@@ -307,7 +277,7 @@ form {
 
                 @media (max-width:$mobile-big) {
                     text-align: center;
-                    font-size: 1.93133vh;
+                    font-size: 4.18605vw;
                     margin-bottom: 1.71674vh;
                 }
             }
@@ -322,7 +292,7 @@ form {
 
                 @media (max-width:$mobile-big) {
                     text-align: center;
-                    font-size: 1.71674vh;
+                    font-size: 3.72092vw;
                     margin-bottom: 2.14592vh;
                 }
             }
@@ -360,10 +330,9 @@ form {
 
         @media (max-width:$mobile-big) {
             border-radius: 1.7vh;
-            padding: 4.82833vh 2.6824vh 7.29614vh 2.6824vh;
+            padding: 4.82833vh 5.81395vw 7.29614vh 5.81395vw;
             justify-content: flex-start;
             align-items: flex-start;
-            overflow: scroll;
         }
 
         p {
@@ -378,7 +347,7 @@ form {
             }
 
             @media (max-width:$mobile-big) {
-                font-size: 1.39485vh;
+                font-size: 3.02325vw;
                 margin-bottom: 1.60944vh;
             }
 
