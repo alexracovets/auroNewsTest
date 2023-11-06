@@ -6,7 +6,7 @@ import CustomButton from "../../CustomButton/CustomButton";
 
 MainSlider.propTypes = {
     slides: PropTypes.array,
-    moreInfo: PropTypes.func,
+    setIsPopUpOpen: PropTypes.func,
     slider1: PropTypes.object,
     slider2: PropTypes.object,
     currentSlide: PropTypes.number,
@@ -15,7 +15,7 @@ MainSlider.propTypes = {
 
 import s from "./MainSlider.module.scss";
 
-export default function MainSlider({ slides, moreInfo, slider1, slider2, currentSlide, setCurrentSlide }) {
+export default function MainSlider({ slides, setIsPopUpOpen, slider1, slider2, currentSlide, setCurrentSlide }) {
 
     const setting = {
         arrows: true,
@@ -72,7 +72,7 @@ export default function MainSlider({ slides, moreInfo, slider1, slider2, current
                         {item.text && (item.text[1] && <p>{checkLength(120, item.text[1].value)}</p>)}
                         {item.text && (item.text[2] && <p>...</p>)}
                     </div>
-                    <div className={s.btn} onClick={() => { moreInfo(item) }}>
+                    <div className={s.btn} onClick={() => { setIsPopUpOpen(true) }}>
                         <CustomButton text={"детальніше"} />
                     </div>
                 </div>

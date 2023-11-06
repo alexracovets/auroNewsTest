@@ -8,7 +8,7 @@ SubSlider.propTypes = {
     slider1: PropTypes.object,
     slider2: PropTypes.object,
     currentSlide: PropTypes.number,
-    setCurrentSlide: PropTypes.func,
+    setCurrentSlide: PropTypes.func
 };
 
 import s from "./SubSlider.module.scss";
@@ -17,7 +17,7 @@ export default function SubSlider({ slides, slider1, slider2, currentSlide }) {
 
     const toSlide = (index) => {
         slider1.current.slickGoTo(index);
-        slider2.current.slickGoTo(index)
+        slider2.current.slickGoTo(index); 
     }
 
     const setting = {

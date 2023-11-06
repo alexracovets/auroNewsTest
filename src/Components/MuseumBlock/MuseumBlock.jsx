@@ -48,17 +48,9 @@ export default function MuseumBlock() {
         setCurrentPage(pageNumber);
     };
 
-    const moreInfo = (info) => {
-        if (!info) return setIsPopUpOpen(false);
-        setSelectedItem(info);
-        setIsPopUpOpen(true);
-    }
-
-    const closePopUp = () => {
-        setSelectedItem(null);
-        setIsPopUpOpen(false);
-    }
-
+    useEffect(() => {
+        setSelectedItem(slides[currentSlide])
+    }, [currentSlide, slides])
 
     const checkLength = (number, string) => {
         if (string.length <= number) {
@@ -81,7 +73,7 @@ export default function MuseumBlock() {
                         {item.text && (item.text[0] && <p>{checkLength(90, item.text[0].value)}</p>)}
                         {item.text && (item.text[1] && <p>{checkLength(90, item.text[1].value)}</p>)}
                     </div>
-                    <div className={s.btn} onClick={() => { moreInfo(item) }}>
+                    <div className={s.btn} onClick={() => { setIsPopUpOpen(true) }}>
                         <CustomButton text={"детальніше"} />
                     </div>
                 </div>
@@ -134,7 +126,7 @@ export default function MuseumBlock() {
             <section className={s.MuseumBlock}>
                 <div className={s.title}>Музей</div>
                 <div className={s.MuseumBlock_wrapper + ' ' + s.desktop}>
-                    <MainSlider slides={slides} moreInfo={moreInfo} slider1={slider1} slider2={slider2} currentSlide={currentSlide} setCurrentSlide={setCurrentSlide} />
+                    <MainSlider slides={slides} setIsPopUpOpen={setIsPopUpOpen} slider1={slider1} slider2={slider2} currentSlide={currentSlide} setCurrentSlide={setCurrentSlide} />
                     <SubSlider slides={slides} slider1={slider1} slider2={slider2} currentSlide={currentSlide} />
                 </div>
                 <div className={s.MuseumBlock_wrapper + ' ' + s.mobile}>
@@ -164,7 +156,7 @@ export default function MuseumBlock() {
                     </div>
                 </div>
             </section >
-            <MuseumPopUp isPopUpOpen={isPopUpOpen} selectedItem={selectedItem} closePopUp={closePopUp} />
+            <MuseumPopUp isPopUpOpen={isPopUpOpen} selectedItem={selectedItem} closePopUp={() => setIsPopUpOpen(false)} />
         </>
     );
 }
