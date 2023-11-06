@@ -76,6 +76,10 @@
                 border-radius: 1.5vh;
                 z-index: 0;
                 transform: translateY(3vh);
+
+                @media (max-width:350px) {
+                    max-width: 100%;
+                }
             }
         }
 

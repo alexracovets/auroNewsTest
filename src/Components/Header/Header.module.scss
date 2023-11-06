@@ -34,6 +34,10 @@ header {
             padding-top: 2.3vh;
         }
 
+        @media (max-width:350px) {
+            padding: 2vh 4vw;
+        }
+
         .logo {
             left: 5rem;
             top: 1.625rem;

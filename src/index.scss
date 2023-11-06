@@ -32,7 +32,6 @@ body::-webkit-scrollbar {
 
 #root {
   max-width: 100vw;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
   overflow: hidden;
@@ -50,6 +49,10 @@ section {
 
   @media (max-width:$mobile-big) {
     padding: 4.29185vh 9.30232vw;
+  }
+
+  @media (max-width:350px) {
+    padding: 4.29185vh 4vw;
   }
 }
 

@@ -16,6 +16,10 @@
         overflow: hidden;
         cursor: pointer;
 
+        @media (max-width:350px) {
+            width: 22.56vw;
+        }
+
         &.active {
             opacity: 1;
             transition: all ease-in-out 300ms;

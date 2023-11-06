@@ -23,6 +23,10 @@
         height: 100vh;
     }
 
+    @media (max-width:350px) {
+        padding: 6.43777vh 4vw;
+    }
+
     .cross {
         position: absolute;
         top: 2.8125rem;
