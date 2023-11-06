@@ -6,6 +6,7 @@ import CustomButton from '../CustomButton/CustomButton';
 
 import firestoreRef from '../../const/firestoreRef';
 import fetchData from '../../const/fetchData';
+import checkLength from '../../const/checkLength';
 
 import s from './NewsShort.module.scss';
 
@@ -22,8 +23,7 @@ export default function NewsShort() {
             <div className={s.item} key={item.key}>
                 <div className={s.content}>
                     <div className={s.name}>
-
-                        {item.title.length > 57 ? item.title.slice(0, 57) + "..." : item.title}
+                        {checkLength(item.title, 57)}
                     </div>
                     <button className={s.content__button} onClick={() => goToPage(item)}>
                         <div className={s.button__text}>дізнатись більше</div>
@@ -54,7 +54,7 @@ export default function NewsShort() {
     const renderItemsMobile = () => items.length > 0 && (
         <div className={s.item} key={items[0].key}>
             <div className={s.name}>
-                {items[0].title}
+                {checkLength(items[0].title, 42)}
             </div>
             <div className={s.right}>
                 <div className={s.date}>
@@ -103,7 +103,12 @@ export default function NewsShort() {
                     {renderItems()}
                 </div>
             </div>
-            <div className={s.list + ' ' + s.mobile}>{renderItemsMobile()}</div>
+            <div className={s.list + ' ' + s.mobile}>
+                {renderItemsMobile()}
+            </div>
+            <div className={s.all + ' ' + s.mobile}>
+                <Link to="/news" className={s.link}><CustomButton text="Всі Новини" /></Link>
+            </div>
         </section>
     )
 }

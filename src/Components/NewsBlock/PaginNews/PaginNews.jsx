@@ -1,7 +1,9 @@
+import { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 
+import checkLength from '../../../const/checkLength';
+
 import s from './PaginNews.module.scss';
-import { useEffect, useState } from 'react';
 
 PaginNews.propTypes = {
     currentNews: PropTypes.array.isRequired,
@@ -23,7 +25,7 @@ export default function PaginNews({ currentNews, activeSlide, clickItem }) {
                 news && news.map((item, index) => (
                     <div className={index === activeSlide ? s.newsItem + ' ' + s.active : s.newsItem} key={index} onClick={() => clickItem(index)}>
                         <div className={s.title}>
-                            {item.title}
+                            {checkLength(item.title, 30)}
                         </div>
                         <div className={s.info}>
                             <div className={s.date}>

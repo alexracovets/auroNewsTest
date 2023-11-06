@@ -20,6 +20,7 @@
         @media (max-width:$mobile-big) {
             font-size: 4vh;
             margin-bottom: 1.5vh;
+            margin-top: 0;
         }
 
         @media (max-width:$mobile) {
@@ -65,7 +66,7 @@
             svg {
                 width: 8.155vh;
                 height: 12.769vh;
-                transform: translateY(-9vh);
+                transform: translateY(-8.5vh);
             }
         }
 
@@ -104,13 +105,14 @@
                 font-size: 1.39485vh;
                 font-weight: 500;
                 font-family: $font-mont;
+                margin-bottom: 1.072965vh;
             }
 
             .position {
                 font-size: 1.39485vh;
                 font-weight: 500;
                 font-family: $font-mont;
-                margin-bottom: 2.6824vh;
+                margin-bottom: 3vh;
             }
 
             .btn {
@@ -151,6 +153,7 @@ form {
         justify-content: center;
         align-items: center;
         margin-bottom: 1.5vh;
+        max-width: 100%;
     }
 
     @media (max-width:$mobile) {
@@ -169,7 +172,7 @@ form {
 
         @media (max-width:$mobile-big) {
             font-size: 1.5vh;
-            width: 25vh;
+            width: 100%;
             height: 4vh;
             border-radius: 4vh;
             border: 0.1vh solid $base-black;
@@ -178,7 +181,6 @@ form {
 
         @media (max-width:$mobile) {
             font-size: 1.072965vh;
-            width: 18.242vh;
             height: 3.22vh;
             border-radius: 3.22vh;
             border: 0.0912017vh solid $base-black;

@@ -13,8 +13,8 @@
         margin: 0 0.1vh;
         padding-bottom: 0.552vh;
         opacity: 0.65;
-        cursor: pointer;
         transition: all ease-in-out 300ms;
+        cursor: pointer;
 
         &.active {
             opacity: 1;

@@ -7,6 +7,7 @@ import PaginNews from './PaginNews/PaginNews';
 
 import firestoreRef from '../../const/firestoreRef';
 import fetchData from '../../const/fetchData';
+import checkLength from '../../const/checkLength';
 
 import s from './NewsBlock.module.scss';
 
@@ -27,11 +28,6 @@ export default function NewsBlock() {
     const fetch = () => fetchData(dataRef, setSlides, true);
     const clickItem = (toSlide) => slider.slickGoTo(toSlide) && setActiveSlide(toSlide);
     const goToPage = (item) => navigate(`/news/${item.key}`);
-    const checkLength = (string, count) => {
-        let checked;
-        string.length <= count ? checked = string : checked = string.substring(0, count - 3) + '...';
-        return checked
-    };
 
     useEffect(() => {
         fetch();
@@ -45,7 +41,7 @@ export default function NewsBlock() {
                     <div className={s.wrapper}>
                         <div className={s.image} style={{ backgroundImage: `url(${news.image})` }}></div>
                         <div className={s.date + ' ' + s.mobile}>{news.date}</div>
-                        <h3 className={s.title + ' ' + s.mobile}>{news.title}</h3>
+                        <h3 className={s.title + ' ' + s.mobile}>{checkLength(news.title, 35)}</h3>
                         <div className={s.content}>
                             <div className={s.description}>
                                 {news.text && news.text[0] && <p>{checkLength(news.text[0].value, 192)}</p>}

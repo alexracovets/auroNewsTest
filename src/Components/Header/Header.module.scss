@@ -10,7 +10,7 @@ header {
     background-color: $base-white;
 
     @media (max-width:$mobile-big) {
-        background-color: $opacity-yellow;
+        background-color: transparent;
         align-items: flex-start;
         padding: 0;
         height: 10vh;

@@ -58,6 +58,60 @@
 
         &.mobile {
             display: none;
+            justify-content: center;
+            align-items: center;
+            background-color: $opacity-yellow;
+            border-radius: 1vh;
+            min-height: 11.91vh;
+            margin-bottom: 2.6824vh;
+
+            .item {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                width: 100%;
+                padding: 1.808vh 3.21888vh;
+
+
+                .name {
+                    color: $base-black;
+                    font-size: 1.50215vh;
+                    font-family: $font-mont;
+                    font-weight: 600;
+                }
+
+                .right {
+                    display: flex;
+                    justify-content: flex-start;
+                    align-items: flex-end;
+                    flex-direction: column;
+
+                    .date {
+                        color: $base-black;
+                        font-size: 1.18026vh;
+                        font-family: $font-mont;
+                        margin-bottom: 2.897vh;
+                    }
+
+                    .likes {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        flex-direction: column;
+
+                        svg {
+                            width: 2.5vh;
+                            height: auto;
+                        }
+
+                        .count {
+                            color: $base-black;
+                            font-size: 1.15vh;
+                            font-family: $font-mont;
+                        }
+                    }
+                }
+            }
         }
 
         @media (max-width:$mobile-big) {
@@ -110,22 +164,6 @@
                 font-family: $font-mont;
                 font-weight: 600;
                 margin-bottom: 6.25rem;
-            }
-
-            .all {
-                width: 100%;
-                height: 4.68752rem;
-                max-width: 21.8751rem;
-                display: flex;
-                justify-content: flex-start;
-                align-items: flex-start;
-                margin-bottom: 0;
-
-                .link {
-                    .customBtm {
-                        padding: 1.408rem 1.5rem;
-                    }
-                }
             }
         }
 
@@ -355,6 +393,33 @@
                         }
                     }
                 }
+            }
+        }
+    }
+
+    .all {
+        width: 100%;
+        height: 4.68752rem;
+        max-width: 21.8751rem;
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+        margin-bottom: 0;
+
+        &.mobile {
+            display: none;
+
+            @media (max-width:$mobile-big) {
+                display: flex;
+                max-width: 21.5vh;
+                height: auto;
+            }
+        }
+
+        .link {
+
+            .customBtm {
+                padding: 1.408rem 1.5rem;
             }
         }
     }

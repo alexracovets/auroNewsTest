@@ -23,6 +23,7 @@
         @media(max-width:$mobile-big) {
             max-width: 100%;
             padding-bottom: 11vh;
+            margin-top: 0rem;
         }
 
         .slide {
@@ -181,6 +182,7 @@
                             width: 91.72vw;
                             height: 20.172vh;
                             max-width: 100%;
+                            margin: 0 auto;
                             margin-bottom: 2.6824vh;
                             transform: none;
                             border-radius: 1.71674vh;
@@ -257,7 +259,8 @@
                             @media(max-width:$mobile-big) {
                                 font-size: 1.5vh;
                                 width: 17.9vh;
-                                padding: 1.45vh 3vh;
+                                height: 3.82vh;
+                                padding: 0 3vh;
                                 border-radius: 3vh;
                             }
                         }

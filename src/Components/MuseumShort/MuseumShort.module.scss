@@ -29,7 +29,6 @@
         font-family: $font-rounds;
         text-align: center;
         display: block;
-        margin: 0 auto;
         margin-bottom: 5.25rem;
 
         @media (max-width:$mobile-big) {
@@ -38,9 +37,13 @@
         }
 
         @media (max-width:$mobile) {
-            font-size: 2.14592vh;
+            font-size: 2.57511vh;
             margin-bottom: 1.60944vh;
-            padding-bottom: 0.536481vh;
+        }
+
+        @media (max-width:$mobile-small) {
+            font-size: 2.2vh;
+            margin-bottom: 1.5vh;
         }
     }
 
