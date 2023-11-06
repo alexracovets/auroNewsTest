@@ -55,6 +55,13 @@ export default function Footer() {
                     </ul>
                 </nav>
             </div>
+
+            <div className={s.circles}>
+                <div className={s.first}></div>
+                <div className={s.second}></div>
+                <div className={s.third}></div>
+                <div className={s.fourd}></div>
+            </div>
         </footer>
     )
 }

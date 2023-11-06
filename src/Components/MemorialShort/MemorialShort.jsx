@@ -32,11 +32,22 @@ export default function MemorialShort() {
                 <div className={s.right} style={{ backgroundImage: `url(${memorial})` }}></div>
             </div>
             <div className={s.memorialShort_wrapper + ' ' + s.mobile}>
-                <div className={s.backSide}></div>
+                <div className={s.backSide}>
+                    <div className={s.circles}>
+                        <div className={s.first}></div>
+                        <div className={s.second}></div>
+                        <div className={s.third}></div>
+                        <div className={s.fourd}></div>
+                    </div>
+                </div>
                 <div className={s.img} style={{ backgroundImage: `url(${memorial})` }}></div>
                 <Link to="/memorial">
                     <CustomButton text={"читати більше"} />
                 </Link>
+            </div>
+
+            <div className={s.circles}>
+                <div className={s.first}></div>
             </div>
         </section>
     )

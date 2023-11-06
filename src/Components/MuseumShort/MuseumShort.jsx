@@ -28,11 +28,27 @@ export default function MuseumShort() {
                 </div>
             </div>
             <div className={s.MuseumShort_wrapper + ' ' + s.mobile}>
-                <div className={s.backSide}></div>
+                <div className={s.backSide}>
+                    <div className={s.circles}>
+                        <div className={s.first}></div>
+                        <div className={s.second}></div>
+                        <div className={s.third}></div>
+                        <div className={s.fourd}></div>
+                    </div>
+                </div>
                 <div className={s.img} style={{ backgroundImage: `url(${museum})` }}></div>
                 <Link to="/museum">
                     <CustomButton text={"читати більше"} />
                 </Link>
+            </div>
+
+            <div className={s.circles}>
+                <div className={s.first}></div>
+                <div className={s.second}></div>
+                <div className={s.third}></div>
+                <div className={s.fourd}></div>
+                <div className={s.fifth}></div>
+                <div className={s.sixth}></div>
             </div>
         </section>
     )

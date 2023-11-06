@@ -3,8 +3,9 @@
 .tittle_context {
     height: auto;
     background-color: $base-sand;
-    padding-top: 7.2rem; 
+    padding-top: 7.2rem;
     padding-bottom: 1rem;
+    position: relative;
 
     .title,
     .sub_title {
@@ -12,12 +13,16 @@
         color: $base-black;
         max-width: 67rem;
         margin: 0 auto;
+        position: relative;
+        z-index: 1;
     }
 
     .title {
         font-size: 4rem;
         font-family: $font-rounds;
         margin: 2.5rem auto;
+        position: relative;
+        z-index: 1;
 
         span {
             color: $base-red;
@@ -29,6 +34,8 @@
         font-family: $font-mont;
         margin: 0 auto;
         margin-bottom: 1.875rem;
+        position: relative;
+        z-index: 1;
     }
 
     .hero_block {
@@ -37,6 +44,8 @@
         align-items: center;
         flex-direction: column;
         font-family: $font-mont;
+        position: relative;
+        z-index: 1;
 
         .block__title {
             font-size: 1.5rem;
@@ -76,6 +85,7 @@
         position: relative;
         transform: translateY(3rem);
         margin-top: -5rem;
+        z-index: 1;
 
         img {
             width: 100%;
@@ -87,5 +97,92 @@
 
     @media (max-width:768px) {
         display: none;
+    }
+
+
+    .circles {
+
+        .first,
+        .second,
+        .third,
+        .fourd,
+        .fifth,
+        .sixth,
+        .seventh {
+            position: absolute;
+            z-index: 0;
+            border-radius: 50%;
+            background-color: $base-white;
+        }
+
+        .first {
+            left: -5rem;
+            bottom: 19rem;
+            width: 15.625rem;
+            height: 15.625rem;
+        }
+
+        .second {
+            left: 32.4rem;
+            bottom: 7rem;
+            width: 4.875rem;
+            height: 4.875rem;
+
+            @media (max-width:1280px) {
+                left: 20rem;
+                bottom: 8rem;
+            }
+
+            @media (max-width:1024px) {
+                left: 22rem;
+                bottom: 9rem;
+            }
+        }
+
+        .third {
+            left: -2.5rem;
+            bottom: -3.5rem;
+            width: 10rem;
+            height: 10rem;
+        }
+
+        .fourd {
+            right: -6rem;
+            bottom: -3.5rem;
+            width: 13.8125rem;
+            height: 13.8125rem;
+        }
+
+        .fifth {
+            right: 30.5rem;
+            bottom: 13.5rem;
+            width: 11.0625rem;
+            height: 11.0625rem;
+
+            @media (max-width:1280px) {
+                right: 18rem;
+            }
+
+            @media (max-width:1024px) {
+                right: 21rem;
+                bottom: 14rem;
+            }
+        }
+
+        .sixth {
+            right: -2.4375rem;
+            bottom: 26rem;
+            width: 4.875rem;
+            height: 4.875rem;
+        }
+
+        .seventh {
+            background-color: $base-yellow;
+            z-index: 10;
+            right: -4.6875rem;
+            top: -5.3125rem;
+            width: 19.375rem;
+            height: 19.375rem;
+        }
     }
 }
