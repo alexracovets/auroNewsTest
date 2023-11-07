@@ -28,11 +28,11 @@
 
         .back__wrapper {
             display: flex;
-            justify-content: flex-start;
-            align-items: flex-start;
+            justify-content: center;
+            align-items: center;
             position: absolute;
             left: 0;
-            top: 1rem;
+            top: -3rem;
             z-index: 10;
 
             @media (max-width:$mobile-big) {
@@ -46,6 +46,10 @@
                 background-color: transparent;
                 border: none;
                 margin: 0;
+                width: 7rem;
+                height: 7rem;
+                background-color: $base-yellow;
+                border-radius: 50%;
 
                 @media (max-width:$mobile-big) {
                     font-size: 1.39485vh;
