@@ -52,6 +52,7 @@
                 justify-content: center;
                 align-items: center;
                 transition: all ease-in-out 300ms;
+                z-index: -1;
 
                 .text {
                     font-size: 2.4vw;
@@ -88,6 +89,7 @@
                 pointer-events: none;
                 transition: all ease-in-out 300ms;
                 margin-top: 9.22747vh;
+                z-index: 1;
 
                 &.active {
                     pointer-events: all;
@@ -106,6 +108,7 @@
                 pointer-events: none;
                 transition: all ease-in-out 300ms;
                 padding-top: 3.21888vh;
+                z-index: 1;
 
                 &.active {
                     pointer-events: all;
@@ -189,6 +192,48 @@
                             }
                         }
 
+
+                    }
+                }
+            }
+
+            .circles {
+                display: none;
+
+                @media(max-width:$mobile-big) {
+                    display: block;
+                }
+
+                .first,
+                .second,
+                .third,
+                .fourd {
+                    position: absolute;
+                    z-index: -1;
+                    border-radius: 50%;
+                    background-color: $base-white;
+                }
+
+                .first { 
+                    width: 13.955vw;
+                    height: 13.955vw;
+
+                    @media(max-width:$mobile-big) {
+                        display: block;
+                        top: 0;
+                        right: 5.35vw;
+
+                    }
+                }
+
+                .second { 
+                    width: 13.955vw;
+                    height: 13.955vw;
+
+                    @media(max-width:$mobile-big) {
+                        display: block;
+                        top: 0;
+                        right: 5.35vw;
 
                     }
                 }

@@ -7,7 +7,7 @@
 
     @media(max-width:$mobile-big) {
         margin: 0 auto;
-        height: 88vh;
+        // height: 88vh;
         margin-top: 12vh;
         padding-top: 8.3691vh;
         padding-bottom: 0;
@@ -300,6 +300,15 @@
                         left: 8.25rem;
                         width: 6.3751rem;
                         height: 6.3751rem;
+
+                        @media(max-width:$mobile-big) {
+                            display: block;
+                            top: auto;
+                            bottom: 16vh;
+                            left: -3.7225vw;
+                            width: 7.445vw;
+                            height: 7.445vw;
+                        }
                     }
 
                     .second {
@@ -307,6 +316,15 @@
                         right: 4.6875rem;
                         width: 9.0625rem;
                         height: 9.0625rem;
+
+                        @media(max-width:$mobile-big) {
+                            top: auto;
+                            left: auto;
+                            bottom: -5vw;
+                            right: 24.42vw;
+                            width: 13.258vw;
+                            height: 13.258vw;
+                        }
                     }
 
                     .third {
@@ -314,6 +332,15 @@
                         left: 20rem;
                         width: 9.0625rem;
                         height: 9.0625rem;
+
+                        @media(max-width:$mobile-big) {
+                            top: auto;
+                            left: auto;
+                            bottom: 12vh;
+                            right: -4.885vw;
+                            width: 13.258vw;
+                            height: 13.258vw;
+                        }
                     }
 
                     .fourd {
@@ -321,6 +348,15 @@
                         right: 25.5rem;
                         width: 6.375rem;
                         height: 6.375rem;
+
+                        @media(max-width:$mobile-big) {
+                            top: auto;
+                            left: auto;
+                            bottom: 21.5vh;
+                            right: 32.326vw;
+                            width: 7.445vw;
+                            height: 7.445vw;
+                        }
                     }
                 }
             }
@@ -349,7 +385,12 @@
 
 
             @media(max-width:$mobile-big) {
-                display: none;
+                z-index: 0;
+                right: auto;
+                top: 0;
+                left: -11vw;
+                width: 34.864vw;
+                height: 34.864vw;
             }
         }
     }
@@ -515,6 +556,10 @@
 
             @media (max-width:1024px) {
                 left: -6rem;
+            }
+
+            @media(max-width:$mobile-big) {
+                display: none;
             }
         }
     }
