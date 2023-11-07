@@ -1,26 +1,32 @@
 @import '../../global/variable.scss';
 
 .adminePanel {
-    font-size: 1rem;
-    font-family: $font-mont;
     display: flex;
     justify-content: center;
     align-items: center;
-    text-transform: uppercase;
     margin-top: 3rem;
     padding: 0.5rem 0;
 
     .item {
+        font-size: 1.5rem;
+        font-family: "Montserrat", sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        max-width: 15rem;
+        margin: 0 1rem;
         padding: 0.5rem;
-        cursor: pointer;
-        margin: 0 0.5rem;
         background-color: $opacity-yellow;
+        border-radius: 0.75rem;
+        cursor: pointer;
+        transition: all ease-out 300ms;
 
         &:hover,
         &.active {
-            background-color: aqua;
+            background-color: $base-yellow;
+            font-weight: 600;
+            box-shadow: 0 0 0 0.5rem $opacity-yellow;
         }
-
-
     }
 }
