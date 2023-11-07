@@ -23,7 +23,7 @@ export default function NewsShort() {
             <div className={s.item} key={item.key}>
                 <div className={s.content}>
                     <div className={s.name}>
-                        {checkLength(item.title, 57)}
+                        {checkLength(item.title, 47)}
                     </div>
                     <button className={s.content__button} onClick={() => goToPage(item)}>
                         <div className={s.button__text}>дізнатись більше</div>
