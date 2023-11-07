@@ -2,6 +2,7 @@
 
 .MuseumBlock {
     padding-top: 7.2rem;
+    position: relative;
 
     @media (max-width:$mobile-big) {
         padding-top: 12vh;
@@ -16,6 +17,8 @@
         text-align: center;
         display: block;
         margin: 2.5rem auto;
+        position: relative;
+        z-index: 1;
 
         @media (max-width:$mobile-big) {
             font-size: 7.90697vw;
@@ -29,6 +32,8 @@
         justify-content: center;
         align-items: center;
         flex-direction: column;
+        position: relative;
+        z-index: 1;
 
         &.mobile {
             display: none;
@@ -240,5 +245,30 @@
             }
         }
 
+    }
+
+    .circles {
+
+        .first {
+            position: absolute;
+            border-radius: 50%;
+            background-color: $base-yellow;
+        }
+
+        .first {
+            z-index: 10;
+            right: -4.6875rem;
+            top: -5.3125rem;
+            width: 19.375rem;
+            height: 19.375rem;
+
+            @media (max-width:1280px) {
+                right: -2rem;
+            }
+
+            @media(max-width:$mobile-big) {
+                display: none;
+            }
+        }
     }
 }

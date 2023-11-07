@@ -76,6 +76,12 @@ export default function MainSlider({ slides, setIsPopUpOpen, slider1, slider2, c
                         <CustomButton text={"детальніше"} />
                     </div>
                 </div>
+                <div className={s.circles}>
+                    <div className={s.first}></div>
+                    <div className={s.second}></div>
+                    <div className={s.third}></div>
+                    <div className={s.fourd}></div>
+                </div>
             </div>
         ));
     };

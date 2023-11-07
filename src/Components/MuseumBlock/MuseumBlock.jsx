@@ -155,6 +155,9 @@ export default function MuseumBlock() {
                         </div>
                     </div>
                 </div>
+                <div className={s.circles}>
+                    <div className={s.first}></div>
+                </div>
             </section >
             <MuseumPopUp isPopUpOpen={isPopUpOpen} selectedItem={selectedItem} closePopUp={() => setIsPopUpOpen(false)} />
         </>

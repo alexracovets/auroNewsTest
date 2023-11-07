@@ -64,6 +64,12 @@ export default function NewsBlock() {
                             </div>
                         </div>
                     </div>
+                    <div className={s.circles}>
+                        <div className={s.first}></div>
+                        <div className={s.second}></div>
+                        <div className={s.third}></div>
+                        <div className={s.fourd}></div>
+                    </div>
                 </div>
             </div>
         ));
@@ -94,6 +100,9 @@ export default function NewsBlock() {
                 <div className={s.slider}>
                     <CustomSlider renderSlide={renderSlide} afterChange={(index) => setActiveSlide(index)} setSlider={setSlider} isArrow={true} />
                 </div>
+                <div className={s.circles}>
+                    <div className={s.first}></div>
+                </div>
             </section>
             <section className={s.subNewsSlider}>
                 <h3>Новини</h3>
@@ -113,6 +122,9 @@ export default function NewsBlock() {
                     paginate={paginate}
                     currentPage={currentPage}
                 />
+                <div className={s.circles}>
+                    <div className={s.first}></div>
+                </div>
             </section >
         </>
     )
