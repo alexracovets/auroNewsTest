@@ -5,7 +5,7 @@ import { useEffect, useState } from 'react';
 DarkArrow.propTypes = {
     vector: PropTypes.string.isRequired,
     clickAction: PropTypes.func.isRequired,
-    currentSlide: PropTypes.number.isRequired,
+    currentSlide: PropTypes.number,
     slider: PropTypes.object.isRequired
 };
 

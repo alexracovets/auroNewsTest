@@ -26,7 +26,7 @@ export default function Memorials({ currentMemo, moreInfo }) {
 
     return (
         <div className={s.memorial}>
-            {
+            {memorials.length > 0 ?
                 memorials.map((item, index) => (
                     <div className={s.item} key={index}>
                         <div className={s.trident}>
@@ -44,7 +44,10 @@ export default function Memorials({ currentMemo, moreInfo }) {
                             </div>
                         </div>
                     </div>
-                ))
+                )) :
+                <div className={s.item + ' ' + s.noResault}>
+                    Пошук не дав результатів
+                </div>
             }
         </div>
     )

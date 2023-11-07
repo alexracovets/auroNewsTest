@@ -113,7 +113,7 @@ export default function NewsBlock() {
                     <PaginNews
                         currentNews={currentNews}
                         activeSlide={activeSlide}
-                        clickItem={clickItem}
+                        btnHandler={btnHandler}
                     />
                 </div>
                 <Pagination

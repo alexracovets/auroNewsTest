@@ -8,10 +8,10 @@ import s from './PaginNews.module.scss';
 PaginNews.propTypes = {
     currentNews: PropTypes.array.isRequired,
     activeSlide: PropTypes.number.isRequired,
-    clickItem: PropTypes.func.isRequired,
+    btnHandler: PropTypes.func.isRequired,
 };
 
-export default function PaginNews({ currentNews, activeSlide, clickItem }) {
+export default function PaginNews({ currentNews, activeSlide, btnHandler }) {
     const [news, setNews] = useState([]);
 
     useEffect(() => {
@@ -23,7 +23,7 @@ export default function PaginNews({ currentNews, activeSlide, clickItem }) {
         <>
             {
                 news && news.map((item, index) => (
-                    <div className={index === activeSlide ? s.newsItem + ' ' + s.active : s.newsItem} key={index} onClick={() => clickItem(index)}>
+                    <div className={index === activeSlide ? s.newsItem + ' ' + s.active : s.newsItem} key={index} onClick={() => btnHandler(item, index)}>
                         <div className={s.title}>
                             {checkLength(item.title, 30)}
                         </div>

@@ -25,7 +25,7 @@ header {
         display: flex;
         justify-content: center;
         align-items: center;
-        padding: 1.625rem 5rem;
+        padding: 2.4rem 5rem;
         background-color: $opacity-yellow;
 
         @media (max-width:$mobile-big) {
@@ -39,6 +39,7 @@ header {
         }
 
         .logo {
+            position: absolute;
             left: 5rem;
             top: 1.625rem;
             display: flex;
@@ -84,7 +85,7 @@ header {
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                max-width: 40rem;
+                max-width: 48rem;
                 margin: 0 auto;
                 padding: 0;
 
@@ -103,7 +104,6 @@ header {
                         text-transform: uppercase;
                         font-family: $font-mont;
                         padding: 0.546875rem;
-                        color: $base-black;
                         pointer-events: all;
                         transition: all ease-in 100ms;
                         text-wrap: nowrap;
