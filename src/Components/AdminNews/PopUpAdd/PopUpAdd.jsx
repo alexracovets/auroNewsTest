@@ -159,7 +159,7 @@ export default function PopUpAdd({ dataRef, setPopUpAdd, updateList }) {
                     <input type="checkbox" checked={isBold} onChange={() => setIsBold(!isBold)} />
                 </div>
                 <div className={s.buttom} onClick={() => createMemorial()}>
-                    <CustomButton text='Створити Меморіал' noArrow />
+                    <CustomButton text='Створити новину' noArrow />
                 </div>
             </div>
         </form>
