@@ -177,6 +177,7 @@ header {
         align-items: center;
         padding: 1vw;
         cursor: pointer;
+        z-index: 3;
 
         &.disable {
             display: none;
@@ -195,6 +196,8 @@ header {
             align-items: center;
             flex-direction: column;
             padding: 0;
+            position: relative;
+            z-index: 2;
 
             li {
                 margin: 1.072965vh auto;
@@ -205,7 +208,7 @@ header {
                     justify-content: center;
                     align-items: center;
                     font-family: $font-mont;
-                    width: 41.864vw;
+                    width: 52vw;
                     height: 5.365vh;
                     background-color: $base-yellow;
                     border: 0.25vw solid $base-black;
@@ -216,5 +219,68 @@ header {
                 }
             }
         }
+    }
+
+    .first,
+    .second,
+    .third,
+    .fourd,
+    .fived,
+    .sixed,
+    .sevened {
+        position: absolute;
+        z-index: 0;
+        border-radius: 50%;
+        background-color: $base-white;
+        transition: all ease-in-out 500ms;
+    }
+
+    .first {
+        width: 27.315vw;
+        height: 27.315vw;
+        top: -5vw;
+        left: -10vw;
+    }
+
+    .second {
+        width: 22.794vw;
+        height: 22.794vw;
+        top: 16.631vh;
+        right: -5vw;
+    }
+
+    .third {
+        width: 61.63vw;
+        height: 61.63vw;
+        bottom: 10.528vh;
+        right: -30.815vw;
+    }
+
+    .fourd {
+        width: 49.535vw;
+        height: 49.535vw;
+        bottom: -24.7675vw;
+        left: -3vw;
+    }
+
+    .fived {
+        width: 9.77vw;
+        height: 9.77vw;
+        bottom: 17vh;
+        right: 45vw;
+    }
+
+    .sixed {
+        width: 12.56vw;
+        height: 12.56vw;
+        top: 25vh;
+        left: 6vw;
+    }
+
+    .sevened {
+        width: 28.14vw;
+        height: 28.14vw;
+        bottom: 35vh;
+        left: -8vw;
     }
 }
