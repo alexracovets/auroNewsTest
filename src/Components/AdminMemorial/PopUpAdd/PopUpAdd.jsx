@@ -12,21 +12,31 @@ import s from './PopUpAdd.module.scss';
 
 PopUpAdd.propTypes = {
     dataRef: PropTypes.object.isRequired,
-    fetchData: PropTypes.func.isRequired,
     setPopUpAdd: PropTypes.func.isRequired,
+    updateList: PropTypes.func.isRequired
 };
 
-export default function PopUpAdd({ dataRef, fetchData, setPopUpAdd }) {
+export default function PopUpAdd({ dataRef, setPopUpAdd, updateList }) {
     const [isBold, setIsBold] = useState(false);
     const [imageLoad, setImageLoad] = useState(false);
-    const [memorialData, setMemorialData] = useState({ 
+    const [dataItem, setDataItem] = useState({
         image: null,
         name: null,
         age: null,
         position: null,
         text: [],
+        date: null,
+        count: -1,
         key: null
     });
+
+    const getDate = () => {
+        const currentDate = new Date();
+        const day = currentDate.getDate();
+        const month = currentDate.getMonth() + 1;
+        const year = currentDate.getFullYear();
+        dataItem.date = `${day < 10 ? '0' : ''}${day}.${month < 10 ? '0' : ''}${month}.${year}`;
+    }
 
     const handleInputChange = async (e, name, key) => {
         if (name === 'image') {
@@ -36,15 +46,15 @@ export default function PopUpAdd({ dataRef, fetchData, setPopUpAdd }) {
             try {
                 await uploadBytes(imageRef, file);
                 const downloadURL = await getDownloadURL(imageRef);
-                setMemorialData((prevData) => ({ ...prevData, ['image']: downloadURL }));
-                setMemorialData((prevData) => ({ ...prevData, ['key']: v4() }));
+                setDataItem((prevData) => ({ ...prevData, ['image']: downloadURL }));
+                setDataItem((prevData) => ({ ...prevData, ['key']: v4() }));
                 setImageLoad(true);
             } catch (error) {
-                console.error("Error uploading image:", error);
+                console.error("Помилка завантаження зображення:", error);
             }
         } else if (name === 'text') {
             const { value } = e.target;
-            setMemorialData((prevData) => {
+            setDataItem((prevData) => {
                 const newTextArray = prevData.text.map((item) =>
                     item.key === key ? { ...item, 'value': value } : item
                 );
@@ -55,7 +65,7 @@ export default function PopUpAdd({ dataRef, fetchData, setPopUpAdd }) {
             });
         } else {
             const { value } = e.target;
-            setMemorialData((prevData) => ({
+            setDataItem((prevData) => ({
                 ...prevData,
                 [name]: value,
             }));
@@ -63,7 +73,7 @@ export default function PopUpAdd({ dataRef, fetchData, setPopUpAdd }) {
     };
 
     const handleRemoveText = (keyToRemove) => {
-        setMemorialData((prevData) => {
+        setDataItem((prevData) => {
             const newTextArray = prevData.text.filter((item) => item.key !== keyToRemove);
             return {
                 ...prevData,
@@ -74,24 +84,27 @@ export default function PopUpAdd({ dataRef, fetchData, setPopUpAdd }) {
 
     const addText = (bold) => {
         const key = v4();
-        setMemorialData((prevData) => ({
+        setDataItem((prevData) => ({
             ...prevData,
             text: Array.isArray(prevData.text) ? [...prevData.text, { key, 'value': '', 'bold': bold }] : [{ key, 'value': '', 'bold': bold }],
         }));
     };
 
-    const createMemorial = () => {
+    const createItem = () => {
+        getDate();
         if (
-            memorialData.image &&
-            memorialData.name &&
-            memorialData.age &&
-            memorialData.position
+            dataItem.image &&
+            dataItem.name &&
+            dataItem.age &&
+            dataItem.position
         ) {
             dataRef
-                .child(memorialData.key)
-                .set(memorialData)
+                .child(dataItem.key)
+                .set(dataItem)
                 .then(() => {
-                    fetchData();
+                    updateList()
+                })
+                .then(() => {
                     setPopUpAdd(false);
                 });
         }
@@ -104,25 +117,20 @@ export default function PopUpAdd({ dataRef, fetchData, setPopUpAdd }) {
                     <CrossSvg />
                 </div>
                 <div className={s.wrapper_label}>
-                    <div
-                        className={s.download_wrapper}
-                    >
-                        <div
-                            className={s.download}
-                            style={{ backgroundImage: imageLoad ? `url(${memorialData.image})` : 'none' }}
-                        ></div>
+                    <div className={s.download_wrapper} >
+                        <div className={s.download} style={{ backgroundImage: imageLoad ? `url(${dataItem.image})` : 'none' }} ></div>
                     </div>
                     <label htmlFor='image' className={s.label_image}>
                         <div className={s.status}>{imageLoad ? 'Фото завантажене' : 'Додати фото'}</div>
                     </label>
-                </div> 
+                </div>
                 <input type='text' placeholder='ПIП' onChange={(e) => handleInputChange(e, 'name')} />
                 <input type='text' placeholder='Роки життя' onChange={(e) => handleInputChange(e, 'age')} />
                 <input type='text' placeholder='Посада' onChange={(e) => handleInputChange(e, 'position')} />
                 <input id='image' className={s.image} type='file' onChange={(e) => handleInputChange(e, 'image')} />
                 <div className={s.text_wrapper}>
-                    {memorialData.text &&
-                        memorialData.text.map((item) => {
+                    {dataItem.text &&
+                        dataItem.text.map((item) => {
                             return (
                                 <div key={item.key} className={s.input_text}>
                                     <input
@@ -150,7 +158,7 @@ export default function PopUpAdd({ dataRef, fetchData, setPopUpAdd }) {
                     </div>
                     <input type="checkbox" checked={isBold} onChange={() => setIsBold(!isBold)} />
                 </div>
-                <div className={s.buttom} onClick={() => createMemorial()}>
+                <div className={s.buttom} onClick={() => createItem()}>
                     <CustomButton text='Створити Меморіал' noArrow />
                 </div>
             </div>

@@ -1,3 +1,6 @@
+
+
+
 import { useState } from 'react';
 import { ref, uploadBytes, getDownloadURL } from 'firebase/storage';
 import { storage } from '../../../firebase';
@@ -20,11 +23,12 @@ PopUpEdit.propTypes = {
 export default function PopUpEdit({ dataRef, fetchData, item, setPopUpEdit }) {
     const [isBold, setIsBold] = useState(false);
     const [imageLoad, setImageLoad] = useState(true);
-    const [memorialData, setMemorialData] = useState({
+    const [dataItem, setDataItem] = useState({
         image: item.image,
         name: item.name,
         age: item.age,
         position: item.position,
+        date: item.date,
         text: item.text || [],
         key: item.key
     });
@@ -37,14 +41,14 @@ export default function PopUpEdit({ dataRef, fetchData, item, setPopUpEdit }) {
             try {
                 await uploadBytes(imageRef, file);
                 const downloadURL = await getDownloadURL(imageRef);
-                setMemorialData((prevData) => ({ ...prevData, ['image']: downloadURL }));
+                setDataItem((prevData) => ({ ...prevData, ['image']: downloadURL }));
                 setImageLoad(true);
             } catch (error) {
-                console.error("Error uploading image:", error);
+                console.error("Помилка завантаження зображення:", error);
             }
         } else if (name === 'text') {
             const { value } = e.target;
-            setMemorialData((prevData) => {
+            setDataItem((prevData) => {
                 const newTextArray = prevData.text.map((item) =>
                     item.key === key ? { ...item, 'value': value } : item
                 );
@@ -55,7 +59,7 @@ export default function PopUpEdit({ dataRef, fetchData, item, setPopUpEdit }) {
             });
         } else {
             const { value } = e.target;
-            setMemorialData((prevData) => ({
+            setDataItem((prevData) => ({
                 ...prevData,
                 [name]: value,
             }));
@@ -63,7 +67,7 @@ export default function PopUpEdit({ dataRef, fetchData, item, setPopUpEdit }) {
     };
 
     const handleRemoveText = (keyToRemove) => {
-        setMemorialData((prevData) => {
+        setDataItem((prevData) => {
             const newTextArray = prevData.text.filter((item) => item.key !== keyToRemove);
             return {
                 ...prevData,
@@ -74,7 +78,7 @@ export default function PopUpEdit({ dataRef, fetchData, item, setPopUpEdit }) {
 
     const addText = (bold) => {
         const key = v4();
-        setMemorialData((prevData) => ({
+        setDataItem((prevData) => ({
             ...prevData,
             text: Array.isArray(prevData.text) ? [...prevData.text, { key, 'value': '', 'bold': bold }] : [{ key, 'value': '', 'bold': bold }],
         }));
@@ -82,11 +86,11 @@ export default function PopUpEdit({ dataRef, fetchData, item, setPopUpEdit }) {
 
     const change = async () => {
         try {
-            await dataRef.child(memorialData.key).set(memorialData);
+            await dataRef.child(dataItem.key).set(dataItem);
             fetchData();
             setPopUpEdit(false);
         } catch (error) {
-            console.error('Помилка зміни меморіалу:', error);
+            console.error('Помилка зміни:', error);
         }
     };
 
@@ -100,20 +104,21 @@ export default function PopUpEdit({ dataRef, fetchData, item, setPopUpEdit }) {
                     <div className={s.download_wrapper}>
                         <div
                             className={s.download}
-                            style={{ backgroundImage: imageLoad ? `url(${memorialData.image})` : 'none' }}
+                            style={{ backgroundImage: imageLoad ? `url(${dataItem.image})` : 'none' }}
                         ></div>
                     </div>
                     <label htmlFor='image' className={s.label_image}>
                         <div className={s.status}>{imageLoad ? 'Фото завантажене' : 'Додати фото'}</div>
                     </label>
                 </div>
-                <input type='text' placeholder='ПIП' onChange={(e) => handleInputChange(e, 'name')} value={memorialData.name} />
-                <input type='text' placeholder='Роки життя' onChange={(e) => handleInputChange(e, 'age')} value={memorialData.age} />
-                <input type='text' placeholder='Посада' onChange={(e) => handleInputChange(e, 'position')} value={memorialData.position} />
+                {console.log(dataItem)}
+                <input type='text' placeholder='ПIП' onChange={(e) => handleInputChange(e, 'name')} value={dataItem.name} />
+                <input type='text' placeholder='Роки життя' onChange={(e) => handleInputChange(e, 'age')} value={dataItem.age} />
+                <input type='text' placeholder='Посада' onChange={(e) => handleInputChange(e, 'position')} value={dataItem.position} />
                 <input id='image' className={s.image} type='file' onChange={(e) => handleInputChange(e, 'image')} />
                 <div className={s.text_wrapper}>
-                    {memorialData.text &&
-                        memorialData.text.map((item) => {
+                    {dataItem.text &&
+                        dataItem.text.map((item) => {
                             return (
                                 <div key={item.key} className={s.input_text}>
                                     <input

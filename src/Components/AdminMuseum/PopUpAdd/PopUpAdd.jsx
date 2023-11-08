@@ -20,8 +20,8 @@ export default function PopUpAdd({ dataRef, setPopUpAdd, updateList }) {
     const [isBold, setIsBold] = useState(false);
     const [imageLoad, setImageLoad] = useState(false);
     const [dataItem, setDataItem] = useState({
-        title: null,
         image: null,
+        title: null,
         text: [],
         date: null,
         count: -1,
@@ -98,7 +98,9 @@ export default function PopUpAdd({ dataRef, setPopUpAdd, updateList }) {
                 .child(dataItem.key)
                 .set(dataItem)
                 .then(() => {
-                    updateList();
+                    updateList()
+                })
+                .then(() => {
                     setPopUpAdd(false);
                 });
         }
