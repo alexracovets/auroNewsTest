@@ -84,6 +84,15 @@ export default function NewsDetailes({ id }) {
                             </div>
                         </div>
                     </div>
+                    <div className={s.circles}>
+                        <div className={s.first}></div>
+                        <div className={s.second}></div>
+                        <div className={s.third}></div>
+                        <div className={s.fourd}></div>
+                        <div className={s.fived}></div>
+                        <div className={s.sixed}></div>
+                        <div className={s.sevened}></div>
+                    </div>
                 </section >
             }
         </>

@@ -68,10 +68,13 @@
                 max-width: 44.3125rem;
 
                 p {
+                    width: 100%;
+                    max-width: 100%;
                     font-size: 1rem;
                     color: $base-black;
                     font-family: $font-mont;
                     margin-bottom: 1.5rem;
+                    word-wrap: break-word;
 
                     &:last-of-type {
                         margin-bottom: 0;

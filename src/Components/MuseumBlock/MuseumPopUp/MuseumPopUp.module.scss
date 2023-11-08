@@ -81,7 +81,10 @@
     }
 
     .text {
-
+        width: 100%;
+        max-width: 100%;
+        word-wrap: break-word;
+        
         &.desktop {
             font-size: 1.26984rem;
             font-family: $font-mont;
@@ -98,6 +101,7 @@
         overflow-y: scroll;
         scrollbar-color: $base-yellow $base-sand;
         scrollbar-width: thin;
+        width: 100%;
 
         @media (max-width:$mobile-big) {
             display: block;
@@ -124,6 +128,7 @@
             font-size: 1rem;
             font-family: $font-mont;
             margin-bottom: 1rem;
+            word-wrap: break-word;
 
             @media (max-width:$mobile-big) {
                 text-align: center;
