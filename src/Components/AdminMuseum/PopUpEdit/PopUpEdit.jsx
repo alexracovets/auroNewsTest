@@ -20,9 +20,10 @@ PopUpEdit.propTypes = {
 export default function PopUpEdit({ dataRef, fetchData, item, setPopUpEdit }) {
     const [isBold, setIsBold] = useState(false);
     const [imageLoad, setImageLoad] = useState(true);
-    const [data, setData] = useState({
+    const [dataItem, setDataItem] = useState({
         title: item.title,
         image: item.image,
+        date: item.date,
         text: item.text || [],
         key: item.key
     });
@@ -35,14 +36,14 @@ export default function PopUpEdit({ dataRef, fetchData, item, setPopUpEdit }) {
             try {
                 await uploadBytes(imageRef, file);
                 const downloadURL = await getDownloadURL(imageRef);
-                setData((prevData) => ({ ...prevData, ['image']: downloadURL }));
+                setDataItem((prevData) => ({ ...prevData, ['image']: downloadURL }));
                 setImageLoad(true);
             } catch (error) {
-                console.error("Error uploading image:", error);
+                console.error("Помилка завантаження зображення:", error);
             }
         } else if (name === 'text') {
             const { value } = e.target;
-            setData((prevData) => {
+            setDataItem((prevData) => {
                 const newTextArray = prevData.text.map((item) =>
                     item.key === key ? { ...item, 'value': value } : item
                 );
@@ -53,7 +54,7 @@ export default function PopUpEdit({ dataRef, fetchData, item, setPopUpEdit }) {
             });
         } else {
             const { value } = e.target;
-            setData((prevData) => ({
+            setDataItem((prevData) => ({
                 ...prevData,
                 [name]: value,
             }));
@@ -61,7 +62,7 @@ export default function PopUpEdit({ dataRef, fetchData, item, setPopUpEdit }) {
     };
 
     const handleRemoveText = (keyToRemove) => {
-        setData((prevData) => {
+        setDataItem((prevData) => {
             const newTextArray = prevData.text.filter((item) => item.key !== keyToRemove);
             return {
                 ...prevData,
@@ -72,7 +73,7 @@ export default function PopUpEdit({ dataRef, fetchData, item, setPopUpEdit }) {
 
     const addText = (bold) => {
         const key = v4();
-        setData((prevData) => ({
+        setDataItem((prevData) => ({
             ...prevData,
             text: Array.isArray(prevData.text) ? [...prevData.text, { key, 'value': '', 'bold': bold }] : [{ key, 'value': '', 'bold': bold }],
         }));
@@ -80,11 +81,11 @@ export default function PopUpEdit({ dataRef, fetchData, item, setPopUpEdit }) {
 
     const change = async () => {
         try {
-            await dataRef.child(data.key).set(data);
+            await dataRef.child(dataItem.key).set(dataItem);
             fetchData();
             setPopUpEdit(false);
         } catch (error) {
-            console.error('Помилка зміни меморіалу:', error);
+            console.error('Помилка зміни:', error);
         }
     };
 
@@ -98,18 +99,19 @@ export default function PopUpEdit({ dataRef, fetchData, item, setPopUpEdit }) {
                     <div className={s.download_wrapper}>
                         <div
                             className={s.download}
-                            style={{ backgroundImage: imageLoad ? `url(${data.image})` : 'none' }}
+                            style={{ backgroundImage: imageLoad ? `url(${dataItem.image})` : 'none' }}
                         ></div>
                     </div>
                     <label htmlFor='image' className={s.label_image}>
                         <div className={s.status}>{imageLoad ? 'Фото завантажене' : 'Додати фото'}</div>
                     </label>
                 </div>
-                <input type='text' placeholder='Заголовок' onChange={(e) => handleInputChange(e, 'title')} value={data.title} />
+                <input type='text' placeholder='Заголовок' onChange={(e) => handleInputChange(e, 'title')} value={dataItem.title} />
+                <input type="text" placeholder="Дата створення" onChange={(e) => handleInputChange(e, 'date')} value={dataItem.date} />
                 <input id='image' className={s.image} type='file' onChange={(e) => handleInputChange(e, 'image')} />
                 <div className={s.text_wrapper}>
-                    {data.text &&
-                        data.text.map((item) => {
+                    {dataItem.text &&
+                        dataItem.text.map((item) => {
                             return (
                                 <div key={item.key} className={s.input_text}>
                                     <input

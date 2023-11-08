@@ -19,7 +19,7 @@ PopUpAdd.propTypes = {
 export default function PopUpAdd({ dataRef, setPopUpAdd, updateList }) {
     const [isBold, setIsBold] = useState(false);
     const [imageLoad, setImageLoad] = useState(false);
-    const [newsData, setNewslData] = useState({
+    const [dataItem, setDataItem] = useState({
         title: null,
         image: null,
         text: [],
@@ -34,7 +34,7 @@ export default function PopUpAdd({ dataRef, setPopUpAdd, updateList }) {
         const day = currentDate.getDate();
         const month = currentDate.getMonth() + 1;
         const year = currentDate.getFullYear();
-        newsData.date = `${day < 10 ? '0' : ''}${day}.${month < 10 ? '0' : ''}${month}.${year}`;
+        dataItem.date = `${day < 10 ? '0' : ''}${day}.${month < 10 ? '0' : ''}${month}.${year}`;
     }
 
     const handleInputChange = async (e, name, key) => {
@@ -45,15 +45,15 @@ export default function PopUpAdd({ dataRef, setPopUpAdd, updateList }) {
             try {
                 await uploadBytes(imageRef, file);
                 const downloadURL = await getDownloadURL(imageRef);
-                setNewslData((prevData) => ({ ...prevData, ['image']: downloadURL }));
-                setNewslData((prevData) => ({ ...prevData, ['key']: v4() }));
+                setDataItem((prevData) => ({ ...prevData, ['image']: downloadURL }));
+                setDataItem((prevData) => ({ ...prevData, ['key']: v4() }));
                 setImageLoad(true);
             } catch (error) {
-                console.error("Error uploading image:", error);
+                console.error("Помилка завантаження зображення:", error);
             }
         } else if (name === 'text') {
             const { value } = e.target;
-            setNewslData((prevData) => {
+            setDataItem((prevData) => {
                 const newTextArray = prevData.text.map((item) =>
                     item.key === key ? { ...item, 'value': value } : item
                 );
@@ -64,7 +64,7 @@ export default function PopUpAdd({ dataRef, setPopUpAdd, updateList }) {
             });
         } else {
             const { value } = e.target;
-            setNewslData((prevData) => ({
+            setDataItem((prevData) => ({
                 ...prevData,
                 [name]: value,
             }));
@@ -72,7 +72,7 @@ export default function PopUpAdd({ dataRef, setPopUpAdd, updateList }) {
     };
 
     const handleRemoveText = (keyToRemove) => {
-        setNewslData((prevData) => {
+        setDataItem((prevData) => {
             const newTextArray = prevData.text.filter((item) => item.key !== keyToRemove);
             return {
                 ...prevData,
@@ -83,21 +83,21 @@ export default function PopUpAdd({ dataRef, setPopUpAdd, updateList }) {
 
     const addText = (bold) => {
         const key = v4();
-        setNewslData((prevData) => ({
+        setDataItem((prevData) => ({
             ...prevData,
             text: [...prevData.text, { key, 'value': '', 'bold': bold }],
         }));
     };
 
-    const createMemorial = () => {
+    const createItem = () => {
         getDate();
         if (
-            newsData.title &&
-            newsData.image
+            dataItem.title &&
+            dataItem.image
         ) {
             dataRef
-                .child(newsData.key)
-                .set(newsData)
+                .child(dataItem.key)
+                .set(dataItem)
                 .then(() => {
                     updateList()
                 })
@@ -110,17 +110,10 @@ export default function PopUpAdd({ dataRef, setPopUpAdd, updateList }) {
     return (
         <form className={s.add_memo}>
             <div className={s.memo_wrapper}>
-                <div className={s.cross_main} onClick={() => setPopUpAdd(false)}>
-                    <CrossSvg />
-                </div>
+                <div className={s.cross_main} onClick={() => setPopUpAdd(false)}> <CrossSvg /> </div>
                 <div className={s.wrapper_label}>
-                    <div
-                        className={s.download_wrapper}
-                    >
-                        <div
-                            className={s.download}
-                            style={{ backgroundImage: imageLoad ? `url(${newsData.image})` : 'none' }}
-                        ></div>
+                    <div className={s.download_wrapper} >
+                        <div className={s.download} style={{ backgroundImage: imageLoad ? `url(${dataItem.image})` : 'none' }} ></div>
                     </div>
                     <label htmlFor='image' className={s.label_image}>
                         <div className={s.status}>{imageLoad ? 'Фото завантажене' : 'Додати фото'}</div>
@@ -129,8 +122,8 @@ export default function PopUpAdd({ dataRef, setPopUpAdd, updateList }) {
                 <input type='text' placeholder='Заголовок' onChange={(e) => handleInputChange(e, 'title')} />
                 <input id='image' className={s.image} type='file' onChange={(e) => handleInputChange(e, 'image')} />
                 <div className={s.text_wrapper}>
-                    {newsData.text &&
-                        newsData.text.map((item) => {
+                    {dataItem.text &&
+                        dataItem.text.map((item) => {
                             return (
                                 <div key={item.key} className={s.input_text}>
                                     <input
@@ -148,17 +141,13 @@ export default function PopUpAdd({ dataRef, setPopUpAdd, updateList }) {
                 </div>
                 <div className={s.addText} onClick={() => addText(isBold)}>
                     <div className={s.text_name}>Додати текст</div>
-                    <div className={s.text_plus}>
-                        <PlusSvg />
-                    </div>
+                    <div className={s.text_plus}> <PlusSvg /> </div>
                 </div>
                 <div className={s.isFat}>
-                    <div className={s.text}>
-                        Жирний текст
-                    </div>
+                    <div className={s.text}> Жирний текст </div>
                     <input type="checkbox" checked={isBold} onChange={() => setIsBold(!isBold)} />
                 </div>
-                <div className={s.buttom} onClick={() => createMemorial()}>
+                <div className={s.buttom} onClick={() => createItem()}>
                     <CustomButton text='Створити новину' noArrow />
                 </div>
             </div>

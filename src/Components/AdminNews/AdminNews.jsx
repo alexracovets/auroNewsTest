@@ -1,18 +1,18 @@
 import { useState, useEffect } from 'react';
 
-import PopUpEdit from './PopUpEdit/PopUpEdit';
-import PopUpAdd from './PopUpAdd/PopUpAdd';
-import CrossSvg from './CrossSvg/CrossSvg';
 import SettingSvg from './SettingSvg/SettingSvg';
+import PopUpEdit from './PopUpEdit/PopUpEdit';
+import CrossSvg from './CrossSvg/CrossSvg';
+import PopUpAdd from './PopUpAdd/PopUpAdd';
 import Arrow from './Arrow/Arrow';
 
-import firestoreRef from '../../const/firestoreRef';
-import fetchData from '../../const/fetchData';
 import deleteDataItem from '../../const/deleteDataItem';
-import editDataItem from '../../const/editDataItem';
 import changePosition from '../../const/changePosition';
+import editDataItem from '../../const/editDataItem';
+import firestoreRef from '../../const/firestoreRef';
 import checkLength from '../../const/checkLength';
 import updateList from '../../const/updateList';
+import fetchData from '../../const/fetchData';
 import heart from '/img/heart.svg'
 
 import s from './AdminNews.module.scss';
@@ -88,7 +88,7 @@ export default function AdminNews() {
             <div className={s.added} onClick={() => setPopUpAdd(true)}>
                 Додати Новину
             </div>
-            <div className={s.news}>
+            <div className={s.items}>
                 {renderItems(titles.first, 0, 1,)}
                 {renderItems(titles.five, 1, 6)}
                 {renderItems(titles.other, 6)}
