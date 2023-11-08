@@ -23,11 +23,11 @@ export default function InputsNews({ name, dataItem, imageLoad, setDataItem, set
                 <label className={s.label_image} htmlFor='image'>
                     {imageLoad ? 'Фото завантажене' : 'Додати фото'}
                 </label>
-                <input id='image' className={s.image} type='file' onChange={(e) => handleInputChangeEdit(e, name, 'image', null, setDataItem, setImageLoad)} />
+                <input id='image' className={s.image} type='file' onChange={(e) => handleInputChangeEdit(e, name, dataItem, 'image', null, setDataItem, setImageLoad)} />
             </div>
-            <input type='text' placeholder='Заголовок' onChange={(e) => handleInputChangeEdit(e, name, 'title', null, setDataItem, setImageLoad)} value={dataItem.title} />
-            <input type='number' placeholder="Лайки" onChange={(e) => handleInputChangeEdit(e, name, 'likes', null, setDataItem, setImageLoad)} value={dataItem.likes} />
-            <input type="text" placeholder="Дата створення" onChange={(e) => handleInputChangeEdit(e, name, 'date', null, setDataItem, setImageLoad)} value={dataItem.date} />
+            <input type='text' placeholder='Заголовок' onChange={(e) => handleInputChangeEdit(e, name, dataItem, 'title', null, setDataItem, setImageLoad)} value={dataItem.title} />
+            <input type='number' placeholder="Лайки" onChange={(e) => handleInputChangeEdit(e, name, dataItem, 'likes', null, setDataItem, setImageLoad)} value={dataItem.likes} />
+            <input type="text" placeholder="Дата створення" onChange={(e) => handleInputChangeEdit(e, name, dataItem, 'date', null, setDataItem, setImageLoad)} value={dataItem.date} />
             <div className={s.texts}>
                 {dataItem.text &&
                     dataItem.text.map((item) => {
@@ -37,7 +37,7 @@ export default function InputsNews({ name, dataItem, imageLoad, setDataItem, set
                                     type='text'
                                     placeholder='Введіть текст'
                                     style={{ fontWeight: item.bold ? 'bold' : 'normal' }}
-                                    onChange={(e) => handleInputChangeEdit(e, name, 'text', item.key, setDataItem, setImageLoad)}
+                                    onChange={(e) => handleInputChangeEdit(e, name, dataItem, 'text', item.key, setDataItem, setImageLoad)}
                                     value={item.value}
                                 />
                                 <div className={s.cross} onClick={() => handleRemoveText(item.key, setDataItem)}>

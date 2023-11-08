@@ -63,8 +63,7 @@ export default function RenderNews({ items, dataRef, setDataItem, setItems, setP
                                     <div className={s.arrow + ' ' + s.arrowTop} onClick={() => changePosition(item, items, dataRef, fetchItem, false)}><Arrow /></div>
                                 </div>
                                 <div className={s.setting} onClick={() => editDataItem(item, setDataItem, setPopUpEdit)}><SettingSvg /></div>
-                                <div className={s.cross} onClick={() => deleteDataItem(item.key, dataRef, setItems)}><CrossSvg /></div>
-                                <div className={s.setting__cross} onClick={() => deleteDataItem(item.key, dataRef, setItems)}><CrossSvg /></div>
+                                <div className={s.cross} onClick={() => deleteDataItem(item, dataRef, setItems)}><CrossSvg /></div>
                             </div>
                         </div>
                     ))}

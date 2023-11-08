@@ -1,12 +1,15 @@
 import { ref, uploadBytes, getDownloadURL } from 'firebase/storage';
-import { storage } from '../../firebase';
 import { v4 } from 'uuid';
 
-const handleInputChangeEdit = async (e, storageName, name, key, setData, setImage) => {
+import { storage } from '../../firebase';
+import deleteImage from './deleteImage';
+
+const handleInputChangeEdit = async (e, storageName, element, name, key, setData, setImage) => {
     if (name === 'image') {
         const file = e.target.files[0];
         const imageRef = ref(storage, `${storageName}/${file.name + v4()}`);
-
+        setImage(false);
+        deleteImage(element);
         try {
             await uploadBytes(imageRef, file);
             const downloadURL = await getDownloadURL(imageRef);

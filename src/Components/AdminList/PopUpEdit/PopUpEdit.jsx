@@ -30,7 +30,7 @@ export default function PopUpEdit({ name, dataRef, fetchData, item, setPopUpEdit
         image: item.image || null,
         age: item.age || null,
         position: item.position || null,
-        likes: item.likes || null,
+        likes: item.likes || 0,
         text: item.text || [],
         date: item.date,
         key: item.key

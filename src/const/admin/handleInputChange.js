@@ -6,7 +6,7 @@ const handleInputChange = async (e, storageName, name, key, setData, setImage) =
     if (name === 'image') {
         const file = e.target.files[0];
         const imageRef = ref(storage, `${storageName}/${file.name + v4()}`);
-
+        
         try {
             await uploadBytes(imageRef, file);
             const downloadURL = await getDownloadURL(imageRef);

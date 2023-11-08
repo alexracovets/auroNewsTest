@@ -23,11 +23,11 @@ export default function InputsMemorial({ name, dataItem, imageLoad, setDataItem,
                 <label className={s.label_image} htmlFor='image'>
                     {imageLoad ? 'Фото завантажене' : 'Додати фото'}
                 </label>
-                <input id='image' className={s.image} type='file' onChange={(e) => handleInputChangeEdit(e, name, 'image', null, setDataItem, setImageLoad)} />
+                <input id='image' className={s.image} type='file' onChange={(e) => handleInputChangeEdit(e, name, dataItem, 'image', null, setDataItem, setImageLoad)} />
             </div>
-            <input type='text' placeholder='ПIП' onChange={(e) => handleInputChangeEdit(e, name, 'title', null, setDataItem, setImageLoad)} value={dataItem.title} />
-            <input type='text' placeholder='Роки життя' onChange={(e) => handleInputChangeEdit(e, name, 'age', null, setDataItem, setImageLoad)} value={dataItem.age} />
-            <input type='text' placeholder='Посада' onChange={(e) => handleInputChangeEdit(e, name, 'position', null, setDataItem, setImageLoad)} value={dataItem.position} />
+            <input type='text' placeholder='ПIП' onChange={(e) => handleInputChangeEdit(e, name, dataItem, 'title', null, setDataItem, setImageLoad)} value={dataItem.title} />
+            <input type='text' placeholder='Роки життя' onChange={(e) => handleInputChangeEdit(e, name, dataItem, 'age', null, setDataItem, setImageLoad)} value={dataItem.age} />
+            <input type='text' placeholder='Посада' onChange={(e) => handleInputChangeEdit(e, name, dataItem, 'position', null, setDataItem, setImageLoad)} value={dataItem.position} />
             <div className={s.texts}>
                 {dataItem.text &&
                     dataItem.text.map((item) => {
@@ -37,7 +37,7 @@ export default function InputsMemorial({ name, dataItem, imageLoad, setDataItem,
                                     type='text'
                                     placeholder='Введіть текст'
                                     style={{ fontWeight: item.bold ? 'bold' : 'normal' }}
-                                    onChange={(e) => handleInputChangeEdit(e, name, 'text', item.key, setDataItem, setImageLoad)}
+                                    onChange={(e) => handleInputChangeEdit(e, name, dataItem, 'text', item.key, setDataItem, setImageLoad)}
                                     value={item.value}
                                 />
                                 <div className={s.cross} onClick={() => handleRemoveText(item.key, setDataItem)}>
