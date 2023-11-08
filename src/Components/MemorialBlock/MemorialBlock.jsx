@@ -20,7 +20,7 @@ export default function MemorialBlock() {
     const [value, setValue] = useState('');
     const sliderRef = useRef(null);
     const fitered = memorials.filter(memo => {
-        return memo.name.toLowerCase().includes(value.toLowerCase())
+        return memo.title.toLowerCase().includes(value.toLowerCase())
     });
 
     const settings = {
@@ -51,7 +51,7 @@ export default function MemorialBlock() {
 
     const fetchData = async () => {
         try {
-            const dbRef = firestore.ref('data/memorials');
+            const dbRef = firestore.ref('data/memorial');
             const snapshot = await dbRef.once('value');
 
             const data = snapshot.val();
@@ -103,7 +103,7 @@ export default function MemorialBlock() {
                         </div>
                         <div className={s.slider__wrapper}>
                             <div className={s.image} style={{ backgroundImage: `url(${memo.image})` }}></div>
-                            <div className={s.name}>{memo.name}</div>
+                            <div className={s.name}>{memo.title}</div>
                             <div className={s.age}>{memo.age}</div>
                             <div className={s.position}>{memo.position}</div>
                             <div className={s.btn} onClick={() => moreInfo(memo)} >
@@ -162,7 +162,7 @@ export default function MemorialBlock() {
                             <div className={s.img} style={{ backgroundImage: `url(${selectedItem.image})` }}>
                             </div>
                             <div className={s.info}>
-                                <div className={s.name}>{selectedItem.name}</div>
+                                <div className={s.name}>{selectedItem.title}</div>
                                 <div className={s.position}>{selectedItem.position}</div>
                             </div>
                         </div>

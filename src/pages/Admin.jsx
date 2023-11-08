@@ -1,9 +1,7 @@
 import { useState } from "react";
-import AdminMemorial from "../Components/AdminMemorial/AdminMemorial";
-import AdminPanel from "../Components/AdminPanel/AdminPanel";
-import AdminNews from "../Components/AdminNews/AdminNews";
-import AdminMuseum from "../Components/AdminMuseum/AdminMuseum";
 
+import AdminPanel from "../Components/AdminPanel/AdminPanel";
+import AdminList from "../Components/AdminList/AdminList";
 
 export default function Admin() {
     const [selectedMenuItem, setSelectedMenuItem] = useState('');
@@ -15,9 +13,9 @@ export default function Admin() {
     return (
         <section>
             <AdminPanel selectedMenuItem={selectedMenuItem} onMenuItemClick={handleMenuItemClick} />
-            {selectedMenuItem === 'memorial' && <AdminMemorial />}
-            {selectedMenuItem === 'news' && <AdminNews />}
-            {selectedMenuItem === 'museum' && <AdminMuseum />}
+            {selectedMenuItem === 'news' && <AdminList name={selectedMenuItem} title={'Додати Новину'} />}
+            {selectedMenuItem === 'memorial' && <AdminList name={selectedMenuItem} title={'Додати Меморіал'} />}
+            {selectedMenuItem === 'museum' && <AdminList name={selectedMenuItem} title={'Додати Музей'} />}
         </section>
     )
 }

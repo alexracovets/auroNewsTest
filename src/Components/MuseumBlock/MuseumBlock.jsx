@@ -30,7 +30,7 @@ export default function MuseumBlock() {
 
     const fetchData = async () => {
         try {
-            const dbRef = firestore.ref("data/museums");
+            const dbRef = firestore.ref("data/museum");
             const snapshot = await dbRef.once("value");
 
             const data = snapshot.val();

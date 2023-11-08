@@ -1,9 +1,10 @@
+import { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 
 import CustomButton from '../../CustomButton/CustomButton';
 
 import s from './Memorials.module.scss';
-import { useEffect, useState } from 'react';
+
 
 Memorials.propTypes = {
     currentMemo: PropTypes.array.isRequired,
@@ -23,7 +24,6 @@ export default function Memorials({ currentMemo, moreInfo }) {
         setMemorials(currentMemo)
     }, [currentMemo])
 
-
     return (
         <div className={s.memorial}>
             {memorials.length > 0 ?
@@ -36,7 +36,7 @@ export default function Memorials({ currentMemo, moreInfo }) {
                         </div>
                         <div className={s.item_left} style={{ backgroundImage: `url(${item.image})` }}> </div>
                         <div className={s.item_rigth}>
-                            <div className={s.item_name}>{checkLength(item.name, 70)} </div>
+                            <div className={s.item_name}>{checkLength(item.title, 70)} </div>
                             <div className={s.item_age}> {checkLength(item.age, 48)} </div>
                             <div className={s.item_position}>{checkLength(item.position, 48)} </div>
                             <div className={s.btn} onClick={() => moreInfo(item)}>

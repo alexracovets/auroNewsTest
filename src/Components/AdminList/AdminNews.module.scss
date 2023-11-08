@@ -1,0 +1,180 @@
+@import '../../global/variable.scss';
+
+.added {
+    color: $base-black;
+    font-size: 2rem;
+    font-family: $font-mont;
+    font-weight: 600;
+    padding: 0.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    margin-bottom: 2rem;
+    width: 100%;
+    max-width: 35rem;
+    border-radius: 1.25rem;
+    background-color: $opacity-yellow;
+    box-shadow: 0 0 0 0 $opacity-yellow;
+    transition: all ease-in-out 300ms;
+    cursor: pointer;
+
+    &:hover {
+        background-color: $base-yellow;
+        box-shadow: 0 0 0 0.5rem $opacity-yellow;
+    }
+}
+
+.items {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+
+    .wrapperBlock {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 100%;
+        max-width: 60rem;
+        margin: 0.5rem auto;
+        padding: 1rem 2rem 1.5rem 2rem;
+        background-color: $opacity-yellow;
+        border-radius: 2rem;
+
+        &.five {
+            background-color: $ligth-blue;
+        }
+
+        &.other {
+            background-color: $ligth-green;
+        }
+
+        .title {
+            color: $base-black;
+            font-size: 1.75rem;
+            font-family: $font-mont;
+            font-weight: 600;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: $base-yellow;
+            width: 100%;
+            max-width: 23rem;
+            padding: 0.75rem;
+            border-radius: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .items {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            width: 100%;
+
+            .item {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                width: 100%;
+                margin: 0.5rem auto;
+                border-radius: 0.5rem;
+                overflow: hidden;
+
+                .item_content {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    background-color: $base-yellow;
+                    border-radius: 1rem;
+                    padding: 0.5rem 1rem;
+                    height: 5rem;
+                    width: 100%;
+
+                    .date {
+                        font-size: 1.5rem;
+                        font-family: $font-open;
+                        font-weight: 600;
+                        margin-right: 5rem;
+                        letter-spacing: -1px;
+                    }
+
+                    .name {
+                        font-size: 1.5rem;
+                        font-family: $font-mont;
+                        text-align: left;
+                        font-weight: 600;
+                        width: 100%;
+                    }
+
+                    .like {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        flex-direction: column;
+
+                        img {
+                            max-width: 1.75rem;
+                            height: auto;
+                        }
+
+                        .count {
+                            font-size: 1.25rem;
+                            font-family: $font-mont;
+                            font-weight: 600;
+                        }
+                    }
+                }
+
+
+                .item_setting {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    padding: 0 0.5rem;
+
+                    .arrows .arrow,
+                    .setting,
+                    .cross {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        width: 3rem;
+                        height: 3rem;
+                        padding: 0.5rem;
+                        margin: 0 0.25rem;
+                        cursor: pointer;
+
+                        svg {
+                            width: 100%;
+                            height: auto;
+                        }
+                    }
+
+                    .arrows {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+
+                        .arrow {
+                            width: 2.5rem;
+                            height: 2.5rem;
+                            padding: 0;
+
+                            &.arrowBottom {
+                                transform: rotate(180deg);
+                            }
+                        }
+                    }
+
+                    .cross {
+                        padding: 0;
+                    }
+                }
+            }
+        }
+    }
+}
