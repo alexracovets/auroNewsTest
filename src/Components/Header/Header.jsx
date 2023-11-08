@@ -25,7 +25,26 @@ export default function Header() {
         };
     }, []);
 
-    const links = [
+    const linksDesktop = [
+        {
+            name: 'Головна',
+            path: '/',
+        },
+        {
+            name: 'Новини',
+            path: '/news',
+        },
+        {
+            name: 'Наші Герої',
+            path: '/memorial',
+        },
+        {
+            name: 'Музей',
+            path: '/museum',
+        }
+    ]
+
+    const linksMobile = [
         {
             name: 'Головна',
             path: '/',
@@ -54,6 +73,12 @@ export default function Header() {
             behavior: 'smooth',
         });
     };
+    const scrollToBottom = () => {
+        window.scrollTo({
+            top: document.documentElement.scrollHeight,
+            behavior: 'smooth',
+        });
+    }
 
     return (
         <>
@@ -66,7 +91,7 @@ export default function Header() {
                     </div>
                     <nav>
                         <ul>
-                            {links.map((link, index) => (
+                            {linksDesktop.map((link, index) => (
                                 <li key={index}>
                                     <NavLink
                                         to={link.path}
@@ -77,6 +102,9 @@ export default function Header() {
                                     </NavLink>
                                 </li>
                             ))}
+                            <li onClick={() => { scrollToBottom() }}>
+                                <a>Контакти</a>
+                            </li>
                         </ul>
                     </nav>
                     <div className={!isPopUp ? s.burger : s.burger + ' ' + s.disable} onClick={() => setIsPopUp(true)}>
@@ -96,7 +124,7 @@ export default function Header() {
                 </div>
                 <nav>
                     <ul>
-                        {links.map((link, index) => (
+                        {linksMobile.map((link, index) => (
                             <li key={index}>
                                 <NavLink
                                     to={link.path}
