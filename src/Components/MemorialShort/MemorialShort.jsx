@@ -1,12 +1,22 @@
+import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 
 import CustomButton from '../CustomButton/CustomButton';
-import { Link } from 'react-router-dom';
 import memorial from '/img/memorial.jpg';
 
 import s from './MemorialShort.module.scss';
 
 export default function MemorialShort() {
+    const [isLoadImage, setIsLoadImage] = useState(false);
 
+    useEffect(() => {
+        const image = new Image();
+        image.src = memorial;
+        image.onload = () => {
+            setIsLoadImage(true)
+        };
+    }, []);
+    
     return (
         <section className={s.memorialShort}>
             <h3 className={s.title}>
@@ -29,7 +39,7 @@ export default function MemorialShort() {
                         <Link to="/memorial"><CustomButton text={"читати більше"} /></Link>
                     </div>
                 </div>
-                <div className={s.right} style={{ backgroundImage: `url(${memorial})` }}></div>
+                <div className={isLoadImage ? s.right + ' ' + s.active : s.right} style={{ backgroundImage: `url(${memorial})` }}></div>
             </div>
             <div className={s.memorialShort_wrapper + ' ' + s.mobile}>
                 <div className={s.backSide}>
@@ -40,7 +50,7 @@ export default function MemorialShort() {
                         <div className={s.fourd}></div>
                     </div>
                 </div>
-                <div className={s.img} style={{ backgroundImage: `url(${memorial})` }}></div>
+                <div className={isLoadImage ? s.img + ' ' + s.active : s.img} style={{ backgroundImage: `url(${memorial})` }}></div>
                 <Link to="/memorial">
                     <CustomButton text={"читати більше"} />
                 </Link>

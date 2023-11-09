@@ -1,29 +1,18 @@
 import { useState, useEffect } from 'react';
 import { Link, NavLink, useLocation } from 'react-router-dom';
+
 import handleScroll from '../../const/handleScroll.js'
 
-import s from './Header.module.scss';
+import scrollTo from '../../const/scrollTo.js';
 import logo from '/img/logo.svg';
+
+import s from './Header.module.scss';
 
 export default function Header() {
     const location = useLocation();
     const [isScrolled, setIsScrolled] = useState(false);
     const [isPopUp, setIsPopUp] = useState(false);
-
-    useEffect(() => {
-        setIsScrolled(false);
-        scrollToTop()
-    }, [location.pathname]);
-
-    useEffect(() => {
-        const scrollHandler = () => handleScroll(setIsScrolled);
-
-        window.addEventListener('scroll', scrollHandler);
-
-        return () => {
-            window.removeEventListener('scroll', scrollHandler);
-        };
-    }, []);
+    const [isLoadImage, setIsLoadImage] = useState(false);
 
     const linksDesktop = [
         {
@@ -67,28 +56,33 @@ export default function Header() {
         }
     ]
 
-    const scrollToTop = () => {
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth',
-        });
-    };
-    const scrollToBottom = () => {
-        window.scrollTo({
-            top: document.documentElement.scrollHeight,
-            behavior: 'smooth',
-        });
-    }
+    useEffect(() => {
+        setIsScrolled(false);
+        scrollTo(true);
+    }, [location.pathname]);
+
+    useEffect(() => {
+        const image = new Image();
+        image.src = logo;
+        image.onload = () => {
+            setIsLoadImage(true)
+        };
+    }, []);
+
+    useEffect(() => {
+        const scrollHandler = () => handleScroll(setIsScrolled);
+        window.addEventListener('scroll', scrollHandler);
+        return () => {
+            window.removeEventListener('scroll', scrollHandler);
+        };
+    }, []);
 
     return (
         <>
             <header className={isScrolled ? s.disable : null} >
                 <div className={s.header_wrapper}>
-                    <div className={s.logo}>
-                        <Link to="/">
-                            <img src={logo} alt="logo" />
-                        </Link>
-                    </div>
+                    <Link to="/" className={isLoadImage ? s.logo + ' ' + s.active : s.logo} style={{ backgroundImage: `url(/img/logo.svg)` }}>
+                    </Link>
                     <nav>
                         <ul>
                             {linksDesktop.map((link, index) => (
@@ -102,7 +96,7 @@ export default function Header() {
                                     </NavLink>
                                 </li>
                             ))}
-                            <li onClick={() => { scrollToBottom() }}>
+                            <li onClick={() => { scrollTo(false) }}>
                                 <a>Контакти</a>
                             </li>
                         </ul>

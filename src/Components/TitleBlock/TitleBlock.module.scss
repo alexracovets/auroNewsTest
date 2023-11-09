@@ -84,14 +84,20 @@
         align-items: center;
         position: relative;
         transform: translateY(3rem);
+        margin: 0 auto;
         margin-top: -5rem;
         z-index: 1;
+        width: 42.0001rem;
+        height: 22rem;
+        border-radius: 1.875rem;
+        background-size: contain;
+        background-position: center;
+        opacity: 0;
+        transition: all ease-in 300ms;
+        transition-delay: 50ms;
 
-        img {
-            width: 100%;
-            max-width: 42rem;
-            border-radius: 1.875rem;
-            overflow: hidden;
+        &.active {
+            opacity: 1;
         }
     }
 

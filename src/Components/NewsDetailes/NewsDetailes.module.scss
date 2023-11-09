@@ -121,6 +121,13 @@
                 border-radius: 2rem;
                 margin: 0 auto;
                 margin-bottom: 3rem;
+                opacity: 0;
+                transition: all ease-in 300ms;
+                transition-delay: 50ms;
+
+                &.active {
+                    opacity: 1;
+                }
 
                 @media (max-width:$mobile-big) {
                     width: 69.77vw;

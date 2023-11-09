@@ -7,7 +7,6 @@
 
     @media(max-width:$mobile-big) {
         margin: 0 auto;
-        // height: 88vh;
         margin-top: 12vh;
         padding-top: 8.3691vh;
         padding-bottom: 0;
@@ -189,6 +188,13 @@
                         background-position: center;
                         background-color: $base-yellow;
                         transform: translateX(-1.0625rem);
+                        opacity: 0;
+                        transition: all ease-in 300ms;
+                        transition-delay: 50ms;
+
+                        &.active {
+                            opacity: 1;
+                        }
 
                         @media(max-width:$mobile-big) {
                             width: 91.72vw;
@@ -208,7 +214,7 @@
                         flex-direction: column;
                         width: 100%;
                         max-width: 30.81252rem;
-                        position: relative; 
+                        position: relative;
 
                         @media(max-width:$mobile-big) {
                             padding: 0 6.51162vw;

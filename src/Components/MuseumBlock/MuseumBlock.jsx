@@ -158,7 +158,7 @@ export default function MuseumBlock() {
                         <div className={isInfo ? s.first + ' ' + s.active : s.first}></div>
                         <div className={isInfo ? s.second + ' ' + s.active : s.second}></div>
                         <div className={isInfo ? s.third + ' ' + s.active : s.third}></div>
-                        <div className={isInfo ? s.fourd + ' ' + s.active : s.fourd}></div> 
+                        <div className={isInfo ? s.fourd + ' ' + s.active : s.fourd}></div>
                     </div>
                 </div>
                 <div className={s.circles}>

@@ -41,17 +41,26 @@ header {
         .logo {
             position: absolute;
             left: 5rem;
-            top: 1.625rem;
+            top: 1rem;
+            height: 4.2505rem;
+            width: 12.5001rem;
             display: flex;
             justify-content: center;
             align-items: center;
-            max-width: 11.5005rem;
-            width: 100%;
             pointer-events: all;
+            background-size: cover;
+            background-position: center;
+            opacity: 0;
+            transition: all ease-in 300ms;
+            transition-delay: 50ms;
+
+            &.active {
+                opacity: 1;
+            }
 
             @media (max-width:$mobile-big) {
-                height: 4.295vh;
-                width: auto;
+                width: 116px;
+                height: 40px;
                 position: initial;
             }
 

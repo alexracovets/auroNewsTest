@@ -1,8 +1,18 @@
-import main from '/img/main.jpg'
+import { useEffect, useState } from 'react';
+import main from '/img/main.jpg';
 
 import s from './TitleBlock.module.scss';
 
 export default function TitleBlock() {
+    const [isLoadImage, setIsLoadImage] = useState(false);
+
+    useEffect(() => {
+        const image = new Image();
+        image.src = main;
+        image.onload = () => {
+            setIsLoadImage(true)
+        };
+    }, []);
 
     return (
         <section className={s.tittle_context}>
@@ -22,8 +32,7 @@ export default function TitleBlock() {
                     <li>волонтерять, донатять та допомагають чим можуть;</li>
                 </ul>
             </div>
-            <div className={s.title_image}>
-                <img src={main} alt="CHK" />
+            <div className={isLoadImage ? s.title_image + ' ' + s.active : s.title_image} style={{ backgroundImage: `url(${main})` }}>
             </div>
             <div className={s.circles}>
                 <div className={s.first}></div>

@@ -17,6 +17,14 @@ export default function Pagination({ memoPerPage, totalMemo, paginate, currentPa
         pageNumbers.push(i)
     }
 
+    const numbers = () => pageNumbers.map(number => (
+        <li key={number} className={currentPage === number ? s.page_link + ' ' + s.active : s.page_link} onClick={() => paginate(number)}>
+            <a className={currentPage === number ? s.page_link + ' ' + s.active : s.page_link} >
+                {number}
+            </a>
+        </li>
+    ))
+
     return (
         <div className={s.pagination_wrapper}>
             <button className={s.arrow} onClick={() => paginate(currentPage === 1 ? currentPage : --currentPage)}>
@@ -25,15 +33,7 @@ export default function Pagination({ memoPerPage, totalMemo, paginate, currentPa
                 </svg>
             </button>
             <ul className={s.pagination}>
-                {
-                    pageNumbers.map(number => (
-                        <li key={number} className={currentPage === number ? s.page_link + ' ' + s.active : s.page_link} onClick={() => paginate(number)}>
-                            <a className={currentPage === number ? s.page_link + ' ' + s.active : s.page_link} >
-                                {number}
-                            </a>
-                        </li>
-                    ))
-                }
+                {numbers()}
             </ul >
             <button className={s.arrow} onClick={() => paginate(currentPage === pageNumbers.length ? currentPage : ++currentPage)}>
                 <svg xmlns="http://www.w3.org/2000/svg" width="11" height="23" viewBox="0 0 11 23" fill="none">
