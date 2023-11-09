@@ -38,7 +38,6 @@ export default function SubSlider({ slides, activeSlide, btnHandler, currentNews
     ))
 
     return (
-
         <section className={s.subNewsSlider}>
             <h3>Новини</h3>
             <div className={s.news + ' ' + s.desktop}>
