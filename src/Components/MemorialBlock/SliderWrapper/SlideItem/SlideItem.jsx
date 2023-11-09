@@ -6,7 +6,7 @@ import CustomButton from "../../../CustomButton/CustomButton";
 import s from '../../MemorialBlock.module.scss';
 
 SlideItem.propTypes = {
-    memo: PropTypes.array,
+    memo: PropTypes.object,
     moreInfo: PropTypes.func
 };
 
