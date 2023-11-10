@@ -2,6 +2,7 @@ import PropTypes from 'prop-types';
 
 import s from './Museums.module.scss';
 import { useEffect, useState } from 'react';
+import Museum from './Museum/Museum';
 
 Museums.propTypes = {
     currentMemo: PropTypes.array.isRequired,
@@ -21,9 +22,7 @@ export default function Museums({ currentMemo, showInfo, currentSlide }) {
         <div className={s.museums}>
             {
                 museums.map((item, index) => (
-                    <div className={currentSlide === index ? s.item + ' ' + s.active : s.item} key={index} onClick={() => { showInfo(index) }}>
-                        <div className={s.item__image} style={{ backgroundImage: `url(${item.image})` }}> </div>
-                    </div>
+                    <Museum key={index} index={index} item={item} showInfo={showInfo} currentSlide={currentSlide} />
                 ))
             }
         </div>

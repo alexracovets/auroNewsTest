@@ -24,17 +24,25 @@
                 background-size: cover;
                 background-position: center;
                 border-radius: 1.25rem;
-                opacity: 0.5;
+                opacity: 0;
                 transition: all ease-in-out 200ms;
                 transition-delay: 0ms;
                 margin: 0;
 
+                &.show {
+                    opacity: 0.5;
+                }
+
                 &.active {
                     width: 11.0001rem;
                     height: 12.5001rem;
-                    opacity: 1;
+                    opacity: 0;
                     transition: all ease-in-out 200ms;
                     transition-delay: 0ms;
+
+                    &.show {
+                        opacity: 1;
+                    }
                 }
             }
         }

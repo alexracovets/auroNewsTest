@@ -1,9 +1,6 @@
 import { useState, useEffect, useRef } from "react";
-import Slider from "react-slick";
 import { firestore } from "../../firebase";
 
-import CustomArrow from "../CustomSlider/CustomArrow/CustomArrow";
-import CustomButton from "../CustomButton/CustomButton";
 import Pagination from './Pagination/Pagination';
 import Museums from './Museums/Museums';
 
@@ -11,6 +8,7 @@ import s from "./MuseumBlock.module.scss";
 import MuseumPopUp from "./MuseumPopUp/MuseumPopUp";
 import MainSlider from "./MainSlider/MainSlider";
 import SubSlider from "./SubSlider/SubSlider";
+import MobileSlider from "./MobileSlider/MobileSlider";
 
 export default function MuseumBlock() {
     const [slides, setSlides] = useState([]);
@@ -28,6 +26,7 @@ export default function MuseumBlock() {
     const firstMemoIndex = lastMemoIndex - memoPerPage;
     const currentMemo = slides.slice(firstMemoIndex, lastMemoIndex);
 
+    
     const fetchData = async () => {
         try {
             const dbRef = firestore.ref("data/museum");
@@ -52,70 +51,10 @@ export default function MuseumBlock() {
         setSelectedItem(slides[currentSlide])
     }, [currentSlide, slides])
 
-    const checkLength = (number, string) => {
-        if (string.length <= number) {
-            return string
-        } else {
-            const truncatedString = string.substring(0, (+number - 3)) + '...';
-            return truncatedString
-        }
-    };
-    const renderMobileSlide = () => {
-        return slides.map((item) => (
-            <div className={s.item} key={item.key}>
-                <div
-                    className={s.item__image}
-                    style={{ backgroundImage: `url(${item.image})` }}
-                ></div>
-                <div className={s.item__content}>
-                    <div className={s.description}>{item.title}</div>
-                    <div className={s.item__texts}>
-                        {item.text && (item.text[0] && <p>{checkLength(90, item.text[0].value)}</p>)}
-                        {item.text && (item.text[1] && <p>{checkLength(90, item.text[1].value)}</p>)}
-                    </div>
-                    <div className={s.btn} onClick={() => { setIsPopUpOpen(true) }}>
-                        <CustomButton text={"детальніше"} />
-                    </div>
-                </div>
-            </div>
-        ));
-    };
-
     const showInfo = (slide) => {
         slider3.current.slickGoTo(slide);
         setIsInfo(true)
     }
-
-    const settingsMobile = {
-        arrows: true,
-        dots: false,
-        infinite: false,
-        lazyLoad: true,
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        initialSlide: 0,
-        speed: 300,
-        swipeToSlide: true,
-        prevArrow: <CustomArrow
-            vector="prev"
-            clickAction={() => {
-                slider3.current.slickPrev();
-            }}
-            currentSlide={Number(currentSlide)}
-            slider={slider3}
-        />,
-        nextArrow: <CustomArrow
-            vector="next"
-            clickAction={() => {
-                slider3.current.slickNext();
-            }}
-            currentSlide={Number(currentSlide)}
-            slider={slider3}
-        />,
-        afterChange: (index) => {
-            setCurrentSlide(index);
-        },
-    };
 
     useEffect(() => {
         fetchData();
@@ -144,16 +83,7 @@ export default function MuseumBlock() {
                             currentPage={currentPage}
                         />
                     </div>
-                    <div className={isInfo ? s.short__info + ' ' + s.active : s.short__info}>
-                        <div className={s.mobile_slider}>
-                            <Slider
-                                ref={slider3}
-                                {...settingsMobile}
-                            >
-                                {renderMobileSlide()}
-                            </Slider>
-                        </div>
-                    </div>
+                    <MobileSlider isInfo={isInfo} slides={slides} slider3={slider3} currentSlide={currentSlide} setCurrentSlide={setCurrentSlide} setIsPopUpOpen={setIsPopUpOpen} />
                     <div className={s.circles}>
                         <div className={isInfo ? s.first + ' ' + s.active : s.first}></div>
                         <div className={isInfo ? s.second + ' ' + s.active : s.second}></div>

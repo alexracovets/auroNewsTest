@@ -12,12 +12,13 @@ SubSlider.propTypes = {
 };
 
 import s from "./SubSlider.module.scss";
+import SliderItem from './SliderItem/SliderItem';
 
 export default function SubSlider({ slides, slider1, slider2, currentSlide }) {
 
     const toSlide = (index) => {
         slider1.current.slickGoTo(index);
-        slider2.current.slickGoTo(index); 
+        slider2.current.slickGoTo(index);
     }
 
     const setting = {
@@ -34,14 +35,7 @@ export default function SubSlider({ slides, slider1, slider2, currentSlide }) {
 
     const renderSlide = () => {
         return slides.map((item, index) => (
-            <div className={s.item} key={item.key} onClick={() => toSlide(index)}>
-                <div
-                    className={
-                        currentSlide === index ? s.item__image + " " + s.active : s.item__image
-                    }
-                    style={{ backgroundImage: `url(${item.image})` }}
-                ></div>
-            </div>
+            <SliderItem key={item.key} currentSlide={currentSlide} item={item} index={index} toSlide={toSlide} />
         ));
     };
 
