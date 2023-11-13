@@ -7,6 +7,11 @@
     @media (max-width:$mobile-big) {
         padding-top: 0;
         background-color: $opacity-yellow;
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+        flex-direction: column;
+        flex: 1;
     }
 
     .title {
@@ -37,7 +42,8 @@
         &.mobile {
             display: none;
             position: relative;
-            min-height: 80dvh;
+            flex: 1;
+            width: 100%;
 
             .back {
                 position: absolute;
@@ -88,13 +94,18 @@
                 opacity: 0;
                 pointer-events: none;
                 transition: all ease-in-out 300ms;
-                margin-top: 20vw;
+                padding-top: 20vw;
                 z-index: 1;
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+                flex-direction: column;
 
                 &.active {
                     pointer-events: all;
                     opacity: 1;
                     transition: all ease-in-out 300ms;
+
                 }
             }
 

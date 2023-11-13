@@ -9,7 +9,7 @@
     @media (max-width:$mobile-big) {
         padding-top: 0;
         background-color: $opacity-yellow;
-        min-height: 91.5dvh;
+        flex: 1;
     }
 
     .title {

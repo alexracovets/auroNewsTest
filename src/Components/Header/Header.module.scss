@@ -185,7 +185,8 @@ header {
             .fived,
             .sixed,
             .sevened {
-                transition: all cubic-bezier(.88, .14, .57, 1.03) 500ms;
+                transition: all ease-out 500ms;
+                opacity: 1;
             }
 
             .first {
@@ -193,6 +194,7 @@ header {
                 height: 27.315vw;
                 top: -5vw;
                 left: -10vw;
+                transition-delay: 0ms;
             }
 
             .second {
@@ -200,6 +202,7 @@ header {
                 height: 22.794vw;
                 top: 16.631dvh;
                 right: -5vw;
+                transition-delay: 50ms;
             }
 
             .third {
@@ -207,6 +210,7 @@ header {
                 height: 61.63vw;
                 bottom: 10.528dvh;
                 right: -30.815vw;
+                transition-delay: 100ms;
             }
 
             .fourd {
@@ -214,6 +218,7 @@ header {
                 height: 49.535vw;
                 bottom: -24.7675vw;
                 left: -3vw;
+                transition-delay: 150ms;
             }
 
             .fived {
@@ -221,6 +226,7 @@ header {
                 height: 9.77vw;
                 bottom: 17dvh;
                 right: 45vw;
+                transition-delay: 200ms;
             }
 
             .sixed {
@@ -228,6 +234,7 @@ header {
                 height: 12.56vw;
                 top: 25dvh;
                 left: 6vw;
+                transition-delay: 250ms;
             }
 
             .sevened {
@@ -235,6 +242,7 @@ header {
                 height: 28.14vw;
                 bottom: 35dvh;
                 left: -8vw;
+                transition-delay: 300ms;
             }
         }
     }
@@ -310,6 +318,7 @@ header {
         transition: all linear 0ms;
         width: 0;
         height: 0;
+        opacity: 0;
 
 
         &:hover {
@@ -327,13 +336,13 @@ header {
     }
 
     .second {
-        top: 0;
+        top: 16.631dvh;
         right: 0;
     }
 
     .third {
-        bottom: 0;
-        right: 0;
+        bottom: 10.528dvh;
+        right: -30.815vw;
     }
 
     .fourd {
@@ -342,18 +351,18 @@ header {
     }
 
     .fived {
-        bottom: 0;
-        right: 0;
+        bottom: 17dvh;
+        right: 45vw;
     }
 
     .sixed {
-        top: 0;
-        left: 0;
+        top: 25dvh;
+        left: -4vw;
     }
 
     .sevened {
-        bottom: 0;
-        left: 0;
+        bottom: 35dvh;
+        left: -9vw;
     }
 }
 
