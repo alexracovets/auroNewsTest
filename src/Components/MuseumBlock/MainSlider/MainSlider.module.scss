@@ -43,6 +43,12 @@
             margin-right: 2.5rem;
             position: relative;
             z-index: 1;
+            opacity: 0;
+            transition: all ease-in 300ms;
+
+            &.active {
+                opacity: 1;
+            }
         }
 
         .item__content {

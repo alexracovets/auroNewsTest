@@ -2,8 +2,6 @@ import PropTypes from 'prop-types';
 import Slider from "react-slick";
 
 import CustomArrow from "../../CustomSlider/CustomArrow/CustomArrow";
-import CustomButton from "../../CustomButton/CustomButton";
-import checkLength from '../../../const/checkLength';
 
 MainSlider.propTypes = {
     slides: PropTypes.array,
@@ -15,6 +13,7 @@ MainSlider.propTypes = {
 };
 
 import s from "./MainSlider.module.scss";
+import SliderItem from './SliderItem/SliderItem';
 
 export default function MainSlider({ slides, setIsPopUpOpen, slider1, slider2, currentSlide, setCurrentSlide }) {
 
@@ -49,26 +48,7 @@ export default function MainSlider({ slides, setIsPopUpOpen, slider1, slider2, c
 
     const renderSlide = () => {
         return slides.map((item) => (
-            <div className={s.item} key={item.key}>
-                <div className={s.item__image} style={{ backgroundImage: `url(${item.image})` }}></div>
-                <div className={s.item__content}>
-                    <div className={s.description}>{item.title}</div>
-                    <div className={s.item__texts}>
-                        {item.text && (item.text[0] && <p>{checkLength(item.text[0].value, 246)}</p>)}
-                        {item.text && (item.text[1] && <p>{checkLength(item.text[1].value, 120)}</p>)}
-                        {item.text && (item.text[2] && <p>...</p>)}
-                    </div>
-                    <div className={s.btn} onClick={() => { setIsPopUpOpen(true) }}>
-                        <CustomButton text={"детальніше"} />
-                    </div>
-                </div>
-                <div className={s.circles}>
-                    <div className={s.first}></div>
-                    <div className={s.second}></div>
-                    <div className={s.third}></div>
-                    <div className={s.fourd}></div>
-                </div>
-            </div>
+            <SliderItem key={item.key} item={item} setIsPopUpOpen={setIsPopUpOpen} />
         ));
     };
 
