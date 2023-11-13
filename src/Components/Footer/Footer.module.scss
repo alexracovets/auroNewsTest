@@ -12,7 +12,9 @@
     @media (max-width:$mobile-big) {
         background-color: $base-white;
         padding: 2.32559vw;
-        height: 8.5dvh;
+        padding-bottom: 7vw;
+        padding-top: 7vw;
+        // height: 8.5dvh;
     }
 
     .menu {

@@ -177,6 +177,65 @@ header {
             transition: opacity ease-in-out 300ms;
             opacity: 1;
             z-index: 9;
+
+            .first,
+            .second,
+            .third,
+            .fourd,
+            .fived,
+            .sixed,
+            .sevened {
+                transition: all cubic-bezier(.88, .14, .57, 1.03) 500ms;
+            }
+
+            .first {
+                width: 27.315vw;
+                height: 27.315vw;
+                top: -5vw;
+                left: -10vw;
+            }
+
+            .second {
+                width: 22.794vw;
+                height: 22.794vw;
+                top: 16.631dvh;
+                right: -5vw;
+            }
+
+            .third {
+                width: 61.63vw;
+                height: 61.63vw;
+                bottom: 10.528dvh;
+                right: -30.815vw;
+            }
+
+            .fourd {
+                width: 49.535vw;
+                height: 49.535vw;
+                bottom: -24.7675vw;
+                left: -3vw;
+            }
+
+            .fived {
+                width: 9.77vw;
+                height: 9.77vw;
+                bottom: 17dvh;
+                right: 45vw;
+            }
+
+            .sixed {
+                width: 12.56vw;
+                height: 12.56vw;
+                top: 25dvh;
+                left: 6vw;
+            }
+
+            .sevened {
+                width: 28.14vw;
+                height: 28.14vw;
+                bottom: 35dvh;
+                left: -8vw;
+            }
         }
     }
 
@@ -248,55 +307,62 @@ header {
         z-index: 0;
         border-radius: 50%;
         background-color: $base-white;
-        transition: all ease-in-out 500ms;
+        transition: all linear 0ms;
+        width: 0;
+        height: 0;
+
+
+        &:hover {
+            animation-name: show;
+            animation-duration: 300ms;
+            animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+            animation-fill-mode: forwards;
+        }
     }
 
+
     .first {
-        width: 27.315vw;
-        height: 27.315vw;
-        top: -5vw;
-        left: -10vw;
+        top: 0;
+        left: 0;
     }
 
     .second {
-        width: 22.794vw;
-        height: 22.794vw;
-        top: 16.631dvh;
-        right: -5vw;
+        top: 0;
+        right: 0;
     }
 
     .third {
-        width: 61.63vw;
-        height: 61.63vw;
-        bottom: 10.528dvh;
-        right: -30.815vw;
+        bottom: 0;
+        right: 0;
     }
 
     .fourd {
-        width: 49.535vw;
-        height: 49.535vw;
-        bottom: -24.7675vw;
-        left: -3vw;
+        bottom: 0;
+        left: 0;
     }
 
     .fived {
-        width: 9.77vw;
-        height: 9.77vw;
-        bottom: 17dvh;
-        right: 45vw;
+        bottom: 0;
+        right: 0;
     }
 
     .sixed {
-        width: 12.56vw;
-        height: 12.56vw;
-        top: 25dvh;
-        left: 6vw;
+        top: 0;
+        left: 0;
     }
 
     .sevened {
-        width: 28.14vw;
-        height: 28.14vw;
-        bottom: 35dvh;
-        left: -8vw;
+        bottom: 0;
+        left: 0;
+    }
+}
+
+@keyframes show {
+    0% {
+        transform: scale(1);
+    }
+
+    100% {
+        transform: scale(1.3);
     }
 }
