@@ -39,6 +39,10 @@ body::-webkit-scrollbar {
   min-height: 100dvh;
 }
 
+main {
+  flex: 1;
+}
+
 section {
   position: relative;
   width: 100vw;
