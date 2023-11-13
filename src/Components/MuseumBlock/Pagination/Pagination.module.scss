@@ -14,11 +14,7 @@
         margin: 0 2.7rem;
 
         @media (max-width:$mobile-big) {
-            margin: 2vh 5vw;
-        }
-
-        @media (max-width:530px) {
-            margin: 3.73134vh 8vw;
+            margin: 3vw 5vw;
         }
 
         li {
@@ -51,7 +47,7 @@
         background-color: transparent;
 
         @media (max-width:$mobile-big) {
-            padding: 0 0.799574vh;
+            padding: 0 1.5vw;
         }
 
         svg {

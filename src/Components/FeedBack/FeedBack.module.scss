@@ -4,11 +4,12 @@
     background-color: $base-white;
     padding-top: 0;
     padding-bottom: 6.25rem;
+    position: relative;
 
     @media (max-width:$mobile-big) {
-        padding-top: 12vh;
+        padding-top: 0;
         background-color: $opacity-yellow;
-        height: 91.5vh;
+        min-height: 91.5dvh;
     }
 
     .title {
@@ -18,10 +19,12 @@
         text-align: center;
         display: block;
         margin-bottom: 3.125rem;
+        position: relative;
+        z-index: 1;
 
         @media (max-width:$mobile-big) {
-            font-size: 3.64807vh;
-            margin-bottom: 4.29185vh;
+            font-size: 7.90697vw;
+            margin-bottom: 9.1vw;
         }
     }
 
@@ -31,6 +34,8 @@
         justify-content: center;
         align-items: center;
         flex-direction: column;
+        position: relative;
+        z-index: 1;
 
         &.desktop {
             @media (max-width:$mobile-big) {
@@ -221,20 +226,20 @@
                 justify-content: center;
                 align-items: center;
                 flex-direction: column;
-                margin-bottom: 4.29185vh;
+                margin-bottom: 9.1vw;
 
                 p {
                     color: $base-black;
-                    font-size: 1.50215vh;
+                    font-size: 3.25582vw;
                     text-align: center;
                     font-family: $font-mont;
                     font-weight: 600;
-                    margin-bottom: 1.2vh;
+                    margin-bottom: 2.5vw;
                 }
 
                 a {
                     color: $base-black;
-                    font-size: 1.39485vh;
+                    font-size: 3vw;
                     text-align: center;
                     font-family: $font-mont;
                     font-weight: 400;
@@ -251,11 +256,11 @@
 
                 .contacts__title {
                     color: $base-black;
-                    font-size: 1.50215vh;
+                    font-size: 3.25582vw;
                     text-align: center;
                     font-family: $font-mont;
                     font-weight: 600;
-                    margin-bottom: 2.145925vh;
+                    margin-bottom: 4.65116vw;
                 }
 
                 .contacts__wrapper {
@@ -263,8 +268,8 @@
                     justify-content: space-between;
                     align-items: center;
                     width: 100%;
-                    padding: 0 2.25322vh;
-                    margin-bottom: 4.29185vh;
+                    padding: 0 4vw;
+                    margin-bottom: 9.1vw;
 
                     @media (max-width:$mobile-big) {
                         justify-content: center;
@@ -283,7 +288,7 @@
                         }
 
                         .item {
-                            margin-bottom: 2.145925vh;
+                            margin-bottom: 4.65116vw;
 
                             @media (max-width:$mobile-big) {
                                 display: flex;
@@ -296,7 +301,7 @@
                             a {
                                 color: $base-black;
                                 text-align: left;
-                                font-size: 1.18026vh;
+                                font-size: 2.8vw;
                                 font-family: $font-mont;
                                 font-weight: 600;
                                 line-height: 1.194;
@@ -306,34 +311,22 @@
                             p {
                                 color: $smallOpacity-gray;
                                 text-align: left;
-                                font-size: 1.18026vh;
+                                font-size: 2.8vw;
                                 font-family: $font-mont;
                                 font-style: italic;
                                 font-weight: 400;
                                 line-height: 1.194;
                                 white-space: nowrap;
-
-                                @media (max-width:350px) {
-                                    font-size: 1vh;
-                                }
                             }
                         }
                     }
 
                     .left {
-                        padding-right: 3.32618vh;
-
-                        @media (max-width:350px) {
-                            padding-right: 1vh;
-                        }
+                        padding-right: 7vw;
                     }
 
                     .right {
-                        padding-left: 3.32618vh;
-
-                        @media (max-width:350px) {
-                            padding-left: 1vh;
-                        }
+                        padding-left: 7vw;
                     }
                 }
 
@@ -345,48 +338,112 @@
 
                     .title {
                         color: $base-black;
-                        font-size: 1.50215vh;
+                        font-size: 3.25582vw;
                         text-align: center;
                         font-family: $font-mont;
                         font-weight: 600;
-                        margin-bottom: 2.145925vh;
+                        margin-bottom: 4.65116vw;
                     }
 
                     a {
                         color: $base-red;
-                        font-size: 1.39485vh;
+                        font-size: 3.02325vw;
                         text-align: center;
                         font-family: $font-mont;
                         font-weight: 600;
                         cursor: pointer;
-                        margin-bottom: 1.072965vh;
+                        margin-bottom: 2.32559vw;
                     }
 
                     .name {
                         color: $base-black;
-                        font-size: 1.39485vh;
+                        font-size: 3.02325vw;
                         text-align: center;
                         font-family: $font-mont;
                         font-weight: 600;
-                        margin-bottom: 1.072965vh;
+                        margin-bottom: 2.32559vw;
                     }
 
                     .position {
                         color: $smallOpacity-gray;
                         text-align: center;
-                        font-size: 1.18026vh;
+                        font-size: 2.7vw;
                         font-family: $font-mont;
                         font-style: italic;
                         font-weight: 400;
-                        margin-bottom: 4.29185vh;
+                        margin-bottom: 9.1vw;
                     }
 
                     .logo {
-                        width: 11.696vh;
-                        height: 4.078vh;
+                        width: 25.35vw;
+                        height: 8.84vw;
                     }
                 }
             }
+        }
+    }
+
+    .circles {
+        display: none;
+
+        @media(max-width:$mobile-big) {
+            display: block;
+        }
+
+        .first,
+        .second,
+        .third,
+        .fourd,
+        .fived,
+        .sixed {
+            position: absolute;
+            z-index: 0;
+            border-radius: 50%;
+            background-color: $base-white;
+            transition: all ease-in-out 500ms;
+        }
+
+        .first {
+            width: 17.91vw;
+            height: 17.91vw;
+            top: 7dvh;
+            left: -8vw;
+        }
+
+        .second {
+            width: 26.745vw;
+            height: 26.745vw;
+            top: 10dvh;
+            right: -13vw;
+            background-color: $base-yellow;
+        }
+
+        .third {
+            width: 10.932vw;
+            height: 10.932vw;
+            top: 38dvh;
+            left: 13vw;
+        }
+
+        .fourd {
+            width: 7.91vw;
+            height: 7.91vw;
+            bottom: 41dvh;
+            right: 9vw;
+        }
+
+        .fived {
+            width: 15.305vw;
+            height: 15.305vw;
+            bottom: 13dvh;
+            right: -6vw;
+        }
+
+        .sixed {
+            width: 9.362vw;
+            height: 9.362vw;
+            bottom: 13dvh;
+            left: 9.362vw;
         }
     }
 }

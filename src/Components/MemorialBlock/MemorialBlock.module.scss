@@ -5,9 +5,8 @@
     padding-bottom: 6.25rem;
 
     @media(max-width:$mobile-big) {
-        margin-top: 12vh;
+        margin-top: 0;
         padding-top: 0;
-        min-height: 79.5vh;
     }
 
     .title {
@@ -20,7 +19,7 @@
 
         @media (max-width:$mobile-big) {
             font-size: 7.90697vw;
-            margin-bottom: 3.21888vh;
+            margin-bottom: 6.97675vw;
             margin-top: 0;
         }
     }
@@ -39,8 +38,8 @@
         align-items: center;
         flex-direction: column;
         background-color: $ligth-gray;
-        padding: 3.21888vh 12.7907vw;
-        border-radius: 1.9068vh;
+        padding: 6.97675vw 12.7907vw;
+        border-radius: 4.18605vw;
         position: relative;
 
         &.noResault {
@@ -62,9 +61,9 @@
             z-index: 0;
 
             svg {
-                width: 8.155vh;
-                height: 12.769vh;
-                transform: translateY(-8.7vh);
+                width: 17.675vw;
+                height: 27.675vw;
+                transform: translateY(-20vw);
             }
         }
 
@@ -82,8 +81,8 @@
                 height: 30vw;
                 background-size: cover;
                 background-position: center;
-                border-radius: 1.5vh;
-                margin-bottom: 1vh;
+                border-radius: 3.724vw;
+                margin-bottom: 5.81395vw;
                 filter: grayscale(1);
                 opacity: 0;
                 transition: all ease-in 300ms;
@@ -96,14 +95,14 @@
                 @media (max-width:530px) {
                     width: 46.515vw;
                     height: 46.515vw;
-                    margin-bottom: 4.5vh;
+                    margin-bottom: 5.81395vw;
                 }
             }
 
             .name {
                 text-align: center;
                 font-size: 4.65116vw;
-                margin-bottom: 1.072965vh;
+                margin-bottom: 3vw;
                 font-weight: 600;
                 font-family: $font-mont;
             }
@@ -112,14 +111,14 @@
                 font-size: 3.02325vw;
                 font-weight: 500;
                 font-family: $font-mont;
-                margin-bottom: 1.072965vh;
+                margin-bottom: 3vw;
             }
 
             .position {
                 font-size: 3.02325vw;
                 font-weight: 500;
                 font-family: $font-mont;
-                margin-bottom: 3vh;
+                margin-bottom: 7vw;
             }
 
             .btn {
@@ -131,7 +130,7 @@
                 button {
                     width: 100%;
                     max-width: 56vw;
-                    height: 5vh;
+                    height: 10.468vw;
                 }
             }
         }
@@ -152,12 +151,8 @@ form {
         display: flex;
         justify-content: center;
         align-items: center;
-        margin-bottom: 1.5vh;
+        margin-bottom: 6.98vw;
         max-width: 100%;
-    }
-
-    @media (max-width:$mobile) {
-        margin-bottom: 4.18455vh;
     }
 
     input {
@@ -173,8 +168,8 @@ form {
         @media (max-width:$mobile-big) {
             font-size: 3vw;
             width: 100%;
-            height: 4vh;
-            border-radius: 4vh;
+            height: 6.98vw;
+            border-radius: 6.98vw;
             border: 0.25vw solid $base-black;
             padding: 0 3vw;
         }
@@ -195,19 +190,15 @@ form {
     border-radius: 2rem;
     overflow: hidden;
 
-    @media (max-width:1000px) {
-        max-width: 70rem;
-    }
-
     @media (max-width:$mobile-big) {
         max-width: 100%;
         height: 100%;
-        border-radius: 3.5503vh;
-        padding: 4.29185vh 9.30232vw;
+        border-radius: 6.98vw;
+        padding: 9.30233vw;
     }
 
     @media (max-width:350px) {
-        padding: 4.29185vh 4vw;
+        padding: 4vw;
     }
 
     .cross {
@@ -252,13 +243,10 @@ form {
         width: 100%;
         margin-bottom: 2.5rem;
 
-        @media (max-width:1000px) {
+        @media (max-width:$mobile-big) {
             justify-content: center;
             align-items: center;
             flex-direction: column;
-        }
-
-        @media (max-width:$mobile-big) {
             margin-bottom: 0;
         }
 
@@ -285,11 +273,16 @@ form {
             }
 
             @media (max-width:$mobile-big) {
+                width: 30vw;
+                height: 30vw;
+                margin: 0 auto;
+                border-radius: 3.724vw;
+                margin-bottom: 4.65116vw;
+            }
+
+            @media (max-width:500px) {
                 width: 46.515vw;
                 height: 46.515vw;
-                margin: 0 auto;
-                border-radius: 1.718vh;
-                margin-bottom: 2.14592vh;
             }
         }
 
@@ -318,7 +311,7 @@ form {
                 @media (max-width:$mobile-big) {
                     text-align: center;
                     font-size: 4.18605vw;
-                    margin-bottom: 1.71674vh;
+                    margin-bottom: 3.5vw;
                 }
             }
 
@@ -333,7 +326,7 @@ form {
                 @media (max-width:$mobile-big) {
                     text-align: center;
                     font-size: 3.72092vw;
-                    margin-bottom: 2.14592vh;
+                    margin-bottom: 4.7vw;
                 }
             }
         }
@@ -348,7 +341,7 @@ form {
         background-color: $base-white;
         border-radius: 2rem;
         padding: 3.3125rem 2.5rem;
-        max-height: 40vh;
+        max-height: 40dvh;
         overflow-y: scroll;
         scrollbar-color: $smallOpacity-gray $opacity-gray;
         scrollbar-width: thin;
@@ -369,8 +362,8 @@ form {
         }
 
         @media (max-width:$mobile-big) {
-            border-radius: 1.7vh;
-            padding: 4.82833vh 5.81395vw 7.29614vh 5.81395vw;
+            border-radius: 3.26vw;
+            padding: 10.46511vw 5.81395vw 13.9535vw 5.81395vw;
             justify-content: flex-start;
             align-items: flex-start;
         }
@@ -388,7 +381,7 @@ form {
 
             @media (max-width:$mobile-big) {
                 font-size: 3.02325vw;
-                margin-bottom: 1.60944vh;
+                margin-bottom: 3.4vw;
             }
 
             &:last-of-type {

@@ -4,12 +4,11 @@
     padding-top: 7.2rem;
     padding-bottom: 6.25rem;
     position: relative;
-    min-height: 100vh;
 
     @media(max-width:$mobile-big) {
         margin: 0 auto;
-        margin-top: 12vh;
-        padding-top: 8.3691vh;
+        margin-top: 0;
+        padding-top: 13.9535vw;
         padding-bottom: 0;
         min-height: auto;
     }
@@ -25,7 +24,7 @@
 
         @media(max-width:$mobile-big) {
             max-width: 100%;
-            padding-bottom: 11vh;
+            padding-bottom: 20vw;
             margin-top: 0rem;
         }
 
@@ -52,7 +51,7 @@
                 z-index: 0;
 
                 @media(max-width:$mobile-big) {
-                    border-radius: 1.71674vh;
+                    border-radius: 3.724vw;
                     max-width: 100%;
                     padding: 0;
                 }
@@ -81,7 +80,7 @@
                         text-align: left;
                         font-family: $font-mont;
                         padding: 0 6.51162vw;
-                        margin-bottom: 1.60944vh;
+                        margin-bottom: 3.48837vw;
 
                         @media(max-width:$mobile-big) {
                             display: block;
@@ -106,7 +105,7 @@
                             display: block;
                             width: 100%;
                             margin-top: 0rem;
-                            margin-bottom: 2.14592vh;
+                            margin-bottom: 4.65116vw;
                             padding: 0 6.51162vw;
                         }
                     }
@@ -130,8 +129,8 @@
 
                     @media(max-width:$mobile-big) {
                         padding: 0 9vw;
-                        margin-bottom: 3.17811vh;
-                        margin-top: -2.16878vh;
+                        margin-bottom: 6.74418vw;
+                        margin-top: -5vw;
                     }
 
                     .like__wrapper {
@@ -200,12 +199,12 @@
 
                         @media(max-width:$mobile-big) {
                             width: 91.72vw;
-                            height: 20.172vh;
+                            height: 43.724vw;
                             max-width: 100%;
                             margin: 0 auto;
-                            margin-bottom: 2.6824vh;
+                            margin-bottom: 5.81395vw;
                             transform: none;
-                            border-radius: 1.71674vh;
+                            border-radius: 3.724vw;
                         }
                     }
 
@@ -235,7 +234,7 @@
                             @media(max-width:$mobile-big) {
                                 width: 100%;
                                 max-width: 61vw;
-                                margin-bottom: 2vh;
+                                margin-bottom: 4.65116vw;
                             }
 
                             p {
@@ -247,7 +246,7 @@
 
                                 @media(max-width:$mobile-big) {
                                     font-size: 2.55815vw;
-                                    margin-bottom: 1vh;
+                                    margin-bottom: 0;
 
                                     &:nth-of-type(2) {
                                         display: none;
@@ -280,13 +279,9 @@
                             @media(max-width:$mobile-big) {
                                 font-size: 3.25581vw;
                                 width: 37.8vw;
-                                height: 5vh;
+                                height: 8.234vw;
                                 padding: 0 4vw;
-                                border-radius: 5vh;
-                            }
-
-                            @media (max-width:530px) {
-                                height: 3.82vh;
+                                border-radius: 8.234vw;
                             }
                         }
                     }
@@ -313,7 +308,7 @@
                         @media(max-width:$mobile-big) {
                             display: block;
                             top: auto;
-                            bottom: 16vh;
+                            bottom: 34vw;
                             left: -3.7225vw;
                             width: 7.445vw;
                             height: 7.445vw;
@@ -329,7 +324,7 @@
                         @media(max-width:$mobile-big) {
                             top: auto;
                             left: auto;
-                            bottom: -5vw;
+                            bottom: -6vw;
                             right: 24.42vw;
                             width: 13.258vw;
                             height: 13.258vw;
@@ -345,7 +340,7 @@
                         @media(max-width:$mobile-big) {
                             top: auto;
                             left: auto;
-                            bottom: 12vh;
+                            bottom: 24vw;
                             right: -4.885vw;
                             width: 13.258vw;
                             height: 13.258vw;
@@ -361,7 +356,7 @@
                         @media(max-width:$mobile-big) {
                             top: auto;
                             left: auto;
-                            bottom: 21.5vh;
+                            bottom: 47vw;
                             right: 32.326vw;
                             width: 7.445vw;
                             height: 7.445vw;
@@ -412,8 +407,7 @@
 
     @media(max-width:$mobile-big) {
         margin: 0 auto;
-        // height: 100vh;
-        padding-top: 6.0944vh;
+        padding-top: 10vw;
         padding-bottom: 0;
     }
 
@@ -426,7 +420,7 @@
 
         @media(max-width:$mobile-big) {
             font-size: 7.90697vw;
-            margin-bottom: 4.29185vh;
+            margin-bottom: 9.30233vw;
         }
     }
 
@@ -453,7 +447,7 @@
             height: auto;
             padding: 0;
             overflow: auto;
-            margin-bottom: 6.26566vh;
+            margin-bottom: 11.6279vw;
 
             &.mobile {
                 display: flex;
@@ -500,9 +494,9 @@
             }
 
             @media(max-width:$mobile-big) {
-                margin: 0.804721vh auto;
-                height: 16.095vh;
-                padding: 2.6824vh 5.81395vw;
+                margin: 1.744185vw auto;
+                height: 34.885vw;
+                padding: 5.81395vw;
             }
 
             .title {

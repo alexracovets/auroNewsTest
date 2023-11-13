@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import Slider from "react-slick";
 
-import SubArrow from "../SubArrow/SubArrow";
+import SubArrow from "./SubArrow/SubArrow";
 
 SubSlider.propTypes = {
     slides: PropTypes.array,

@@ -10,11 +10,10 @@ header {
     background-color: $base-white;
 
     @media (max-width:$mobile-big) {
+        position: initial;
         background-color: transparent;
         align-items: flex-start;
-        padding: 0;
-        height: 10vh;
-        overflow: hidden;
+        transition: none;
     }
 
     &.disable {
@@ -30,12 +29,11 @@ header {
 
         @media (max-width:$mobile-big) {
             background-color: transparent;
-            padding: 4.29185vh 9.30232vw;
-            padding-top: 2.3vh;
+            padding: 5.7vw 9.30232vw 9.305vw 9.30232vw;
         }
 
         @media (max-width:350px) {
-            padding: 2vh 4vw;
+            padding: 6vw 4vw 9.305vw 4vw;
         }
 
         .logo {
@@ -50,6 +48,7 @@ header {
             pointer-events: all;
             background-size: cover;
             background-position: center;
+            background-repeat: no-repeat;
             opacity: 0;
             transition: all ease-in 300ms;
             transition-delay: 50ms;
@@ -59,8 +58,8 @@ header {
             }
 
             @media (max-width:$mobile-big) {
-                width: 116px;
-                height: 40px;
+                width: 26.98vw;
+                height: 9.305vw;
                 position: initial;
             }
 
@@ -132,13 +131,13 @@ header {
             justify-content: center;
             align-items: center;
             position: absolute;
-            right: 3.97vh;
-            top: 2.9vh;
+            right: 8.605vw;
+            top: 7.91vw;
             z-index: 10;
             cursor: pointer;
             pointer-events: all;
-            height: 3.863vh;
-            width: auto;
+            height: 8.374vw;
+            width: 8.374vw;
 
             @media (max-width:$mobile-big) {
                 display: flex;
@@ -146,6 +145,11 @@ header {
                 &.disable {
                     display: none;
                 }
+            }
+
+            svg {
+                width: 100%;
+                height: auto;
             }
         }
     }
@@ -158,7 +162,7 @@ header {
     left: 0;
     top: 0;
     width: 100vw;
-    height: 100vh;
+    height: 100dvh;
     background-color: $base-yellow;
     justify-content: center;
     align-items: center;
@@ -167,9 +171,10 @@ header {
     @media (max-width:$mobile-big) {
         display: flex;
         opacity: 0;
-        transition: all ease-in-out 300ms;
+        transition: opacity ease-in-out 0ms;
 
         &.active {
+            transition: opacity ease-in-out 300ms;
             opacity: 1;
             z-index: 9;
         }
@@ -177,15 +182,15 @@ header {
 
     .cross {
         position: fixed;
-        right: 4.293vh;
-        top: 3.5vh;
-        width: auto;
-        height: 2.668vh;
+        right: 8.605vw;
+        top: 7.91vw;
+        height: 8.374vw;
+        width: 8.374vw;
         display: flex;
         justify-content: center;
         align-items: center;
-        padding: 1vw;
         cursor: pointer;
+        padding: 1vw;
         z-index: 3;
 
         &.disable {
@@ -194,6 +199,7 @@ header {
 
         svg {
             width: 100%;
+            height: auto;
         }
     }
 
@@ -209,7 +215,7 @@ header {
             z-index: 2;
 
             li {
-                margin: 1.072965vh auto;
+                margin: 1.165vw auto;
 
                 a {
                     color: $base-black;
@@ -217,11 +223,11 @@ header {
                     justify-content: center;
                     align-items: center;
                     font-family: $font-mont;
-                    width: 52vw;
-                    height: 5.365vh;
+                    width: 41.864vw;
+                    height: 11.63vw;
                     background-color: $base-yellow;
                     border: 0.25vw solid $base-black;
-                    border-radius: 5.365vh;
+                    border-radius: 11.63vw;
                     font-weight: 500;
                     text-transform: uppercase;
                     font-size: 3.85vw;
@@ -255,14 +261,14 @@ header {
     .second {
         width: 22.794vw;
         height: 22.794vw;
-        top: 16.631vh;
+        top: 16.631dvh;
         right: -5vw;
     }
 
     .third {
         width: 61.63vw;
         height: 61.63vw;
-        bottom: 10.528vh;
+        bottom: 10.528dvh;
         right: -30.815vw;
     }
 
@@ -276,21 +282,21 @@ header {
     .fived {
         width: 9.77vw;
         height: 9.77vw;
-        bottom: 17vh;
+        bottom: 17dvh;
         right: 45vw;
     }
 
     .sixed {
         width: 12.56vw;
         height: 12.56vw;
-        top: 25vh;
+        top: 25dvh;
         left: 6vw;
     }
 
     .sevened {
         width: 28.14vw;
         height: 28.14vw;
-        bottom: 35vh;
+        bottom: 35dvh;
         left: -8vw;
     }
 }

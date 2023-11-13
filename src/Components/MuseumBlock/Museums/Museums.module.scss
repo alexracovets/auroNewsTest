@@ -3,7 +3,7 @@
 .museums {
     display: inline-block;
     width: 100%;
-    height: 55.165vh;
+    height: 55.165dvh;
 
     .item {
         float: left;
@@ -12,7 +12,7 @@
         margin: 0.22vw;
         opacity: 0.65;
         transition: all ease-in-out 300ms;
-        border-radius: 0.537vh;
+        border-radius: 1.2vw;
         overflow: hidden;
         cursor: pointer;
 

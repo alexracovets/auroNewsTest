@@ -1,9 +1,16 @@
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
+
 import logo from '/img/logo.svg';
 
 import s from './Footer.module.scss';
 
-export default function Footer() {
+Footer.propTypes = {
+    yellow: PropTypes.bool,
+    wievPort: PropTypes.number
+};
+
+export default function Footer({ yellow, wievPort }) {
 
     const links = [
         {
@@ -36,7 +43,7 @@ export default function Footer() {
     };
 
     return (
-        <footer className={s.footer}>
+        <footer className={s.footer} style={{ backgroundColor: yellow || wievPort > 768 ? 'rgba(255, 221, 0, 0.15)' : '#fff' }}>
             <div className={s.menu}>
                 <div className={s.logo}>
                     <Link to="/" onClick={scrollToTop}>

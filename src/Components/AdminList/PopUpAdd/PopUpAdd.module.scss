@@ -15,6 +15,10 @@
     z-index: 1000;
     overflow-y: scroll;
 
+    @media(max-width:$mobile-big) {
+        padding: 15rem 4rem;
+    }
+
     .form_wrapper {
         display: flex;
         justify-content: center;
@@ -23,6 +27,10 @@
         width: 100%;
         max-width: 40rem;
 
+        @media(max-width:$mobile-big) {
+            max-width: 100%;
+        }
+
         .cross {
             width: 3rem;
             height: 3rem;
@@ -30,6 +38,14 @@
             right: 3rem;
             top: 3rem;
             cursor: pointer;
+
+
+            @media(max-width:$mobile-big) {
+                width: 7rem;
+                height: 7rem;
+                top: 7rem;
+                right: 7rem;
+            }
         }
 
         input {
@@ -47,6 +63,13 @@
             border-radius: 0.5rem;
             overflow: hidden;
 
+            @media(max-width:$mobile-big) {
+                font-size: 3rem;
+                height: 7rem;
+                margin: 1rem auto;
+                padding: 0 1rem;
+            }
+
             &.image {
                 display: none;
             }
@@ -63,10 +86,23 @@
             border-radius: 1rem;
             background-color: $opacity-yellow;
 
+            @media(max-width:$mobile-big) {
+                flex-direction: column;
+                margin: 2rem auto;
+                padding: 3rem;
+                border-radius: 2rem;
+            }
+
             .label_wrapper {
                 margin-right: 1rem;
                 background-color: $opacity-yellow;
                 border-radius: 1rem;
+
+                @media(max-width:$mobile-big) {
+                    margin-right: 0;
+                    border-radius: 5rem;
+                    margin-bottom: 4rem;
+                }
 
                 .download {
                     display: block;
@@ -77,6 +113,12 @@
                     overflow: hidden;
                     background-repeat: no-repeat;
                     background-size: cover;
+
+                    @media(max-width:$mobile-big) {
+                        width: 40rem;
+                        height: 40rem;
+                        border-radius: 3rem;
+                    }
                 }
             }
 
@@ -92,6 +134,11 @@
                 background-color: $opacity-yellow;
                 border: 0.1rem solid $base-yellow;
                 cursor: pointer;
+
+                @media(max-width:$mobile-big) {
+                    font-size: 4rem;
+                    padding: 2rem 4rem;
+                }
             }
         }
 
@@ -106,16 +153,33 @@
             background-color: rgba(255, 221, 0, 0.15);
             margin: 0.5rem auto;
 
+            @media(max-width:$mobile-big) {
+                margin: 2rem auto;
+                border: 0.4rem solid #fd0;
+                border-radius: 1rem;
+                padding: 2rem 3rem;
+            }
+
             .text_name {
                 font-size: 1rem;
                 font-family: $font-mont;
                 padding: 1rem 0;
                 margin-right: 1rem;
+
+                @media(max-width:$mobile-big) {
+                    font-size: 4rem;
+                    margin-right: 3rem;
+                }
             }
 
             .text_plus {
                 width: 1.5rem;
                 height: 1.5rem;
+
+                @media(max-width:$mobile-big) {
+                    width: 5rem;
+                    height: 5rem;
+                }
             }
         }
 
@@ -139,6 +203,11 @@
                     font-weight: 500;
                     padding: 1rem;
                     cursor: pointer;
+
+                    @media(max-width:$mobile-big) {
+                        font-size: 4rem;
+                        padding: 1rem 2rem;
+                    }
                 }
             }
         }
@@ -149,9 +218,18 @@
             justify-content: center;
             align-items: center;
 
+            @media(max-width:$mobile-big) {
+                margin-top: 3rem;
+                margin-bottom: 3rem;
+            }
+
             .text {
                 font-size: 1rem;
                 font-family: $font-rubik;
+
+                @media(max-width:$mobile-big) {
+                    font-size: 5rem;
+                }
             }
 
             input {
@@ -160,11 +238,30 @@
                 height: 1rem;
                 margin: 0 1rem;
                 cursor: pointer;
+
+                @media(max-width:$mobile-big) {
+                    width: 5rem;
+                    height: 5rem;
+                    margin-left: 2rem;
+                }
             }
         }
 
         .buttom {
             margin-top: 2rem;
+
+            @media(max-width:$mobile-big) {
+                width: 100%;
+
+                button {
+                    width: 100%;
+                    max-width: 100%;
+
+                    div {
+                        font-size: 5vw;
+                    }
+                }
+            }
         }
     }
 }

@@ -18,11 +18,9 @@ export default function Home() {
                 `}
             </style>
             <TitleBlock />
-            <div className="mobile-wrapper">
-                <NewsShort />
-                <MuseumShort />
-                <MemorialShort />
-            </div>
+            <NewsShort />
+            <MuseumShort />
+            <MemorialShort />
             <div className="feedback">
                 <FeedBack />
             </div>

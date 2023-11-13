@@ -50,11 +50,11 @@ section {
   padding: 5rem;
 
   @media (max-width:$mobile-big) {
-    padding: 4.29185vh 9.30232vw;
+    padding: 9.30233vw;
   }
 
   @media (max-width:350px) {
-    padding: 4.29185vh 4vw;
+    padding: 4vw;
   }
 }
 
@@ -77,20 +77,6 @@ html {
 
   @media(max-width:1024px) {
     font-size: 1vw;
-  }
-
-  @media(max-width:$mobile-big) {
-    font-size: 1vw;
-  }
-}
-
-@media(max-width:$mobile-big) {
-  .mobile-wrapper {
-    width: 100%;
-    height: 100%;
-    margin-top: 12vh;
-    max-height: 91.5vh;
-    overflow: hidden;
   }
 }
 

@@ -7,16 +7,17 @@
     position: relative;
 
     @media (max-width:$mobile-big) {
+        min-height: 25.5dvh;
         background-color: $base-white;
-        height: 26.5vh;
         width: 100%;
-        padding-top: 1vh;
-        padding-bottom: 3vh;
+        padding-top: 0;
+        padding-bottom: 0;
         display: flex;
-        justify-content: flex-start;
+        justify-content: center;
         align-items: center;
         flex-direction: column;
         overflow: hidden;
+        margin-bottom: 9.30232vw;
     }
 
     .title {
@@ -31,7 +32,7 @@
 
         @media (max-width:$mobile-big) {
             font-size: 5.5814vw;
-            margin-bottom: 1.5vh;
+            margin-bottom: 3.48837vw;
         }
     }
 
@@ -55,12 +56,12 @@
             .img {
                 position: relative;
                 width: 46.515vw;
-                height: 12vh;
+                height: 23.258vw;
                 background-position: center;
                 background-size: cover;
-                border-radius: 1vh;
+                border-radius: 1.63vw;
                 overflow: hidden;
-                margin-bottom: 1vh;
+                margin-bottom: 2.32559vw;
                 z-index: 1;
                 opacity: 0;
                 transition: all ease-in 300ms;
@@ -68,10 +69,6 @@
 
                 &.active {
                     opacity: 1;
-                }
-
-                @media (max-width:530px) {
-                    margin-bottom: 2vh;
                 }
             }
 
@@ -82,10 +79,10 @@
                 background-color: $opacity-yellow;
                 width: 100%;
                 max-width: 82vw;
-                height: 13vh;
-                border-radius: 1.5vh;
-                z-index: 0;
-                transform: translateY(3vh);
+                height: 25.585vw;
+                border-radius: 3.02325vw;
+                z-index: -1;
+                transform: translateY(5vw);
 
                 @media (max-width:350px) {
                     max-width: 100%;
@@ -113,14 +110,14 @@
 
                         .first {
                             left: -4.7675vw;
-                            bottom: 2vh;
+                            bottom: 2dvh;
                             width: 9.535vw;
                             height: 9.535vw;
                         }
 
                         .second {
                             left: 14vw;
-                            top: 1vh;
+                            top: 1dvh;
                             width: 6.747vw;
                             height: 6.747vw;
                         }

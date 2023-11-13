@@ -9,10 +9,12 @@ AdminPanel.propTypes = {
 export default function AdminPanel({ selectedMenuItem, onMenuItemClick }) {
 
     return (
-        <div className={s.adminePanel}>
-            <div className={selectedMenuItem === 'news' ? s.item + ' ' + s.active : s.item} onClick={() => onMenuItemClick('news')}>Новини</div>
-            <div className={selectedMenuItem === 'memorial' ? s.item + ' ' + s.active : s.item} onClick={() => onMenuItemClick('memorial')}>Меморіал</div>
-            <div className={selectedMenuItem === 'museum' ? s.item + ' ' + s.active : s.item} onClick={() => onMenuItemClick('museum')}>Музей</div>
-        </div>
+        <section className={s.AdminPanel}>
+            <div className={s.AdminPanel_wrapper}>
+                <div className={selectedMenuItem === 'news' ? s.item + ' ' + s.active : s.item} onClick={() => onMenuItemClick('news')}>Новини</div>
+                <div className={selectedMenuItem === 'memorial' ? s.item + ' ' + s.active : s.item} onClick={() => onMenuItemClick('memorial')}>Меморіал</div>
+                <div className={selectedMenuItem === 'museum' ? s.item + ' ' + s.active : s.item} onClick={() => onMenuItemClick('museum')}>Музей</div>
+            </div>
+        </section>
     )
 }

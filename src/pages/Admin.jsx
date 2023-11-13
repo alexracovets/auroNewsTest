@@ -12,7 +12,7 @@ export default function Admin() {
     };
 
     return (
-        <section>
+        <>
             {
                 passValid ? <>
                     <AdminPanel selectedMenuItem={selectedMenuItem} onMenuItemClick={handleMenuItemClick} />
@@ -21,7 +21,6 @@ export default function Admin() {
                     {selectedMenuItem === 'museum' && <AdminList name={selectedMenuItem} title={'Додати Музей'} />}
                 </> : <AdminPassword setPassValid={setPassValid} />
             }
-
-        </section>
+        </>
     )
 }

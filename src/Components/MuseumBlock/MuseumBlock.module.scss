@@ -5,8 +5,7 @@
     position: relative;
 
     @media (max-width:$mobile-big) {
-        padding-top: 12vh;
-        height: 91.5vh;
+        padding-top: 0;
         background-color: $opacity-yellow;
     }
 
@@ -38,12 +37,12 @@
         &.mobile {
             display: none;
             position: relative;
-            height: 74.72747vh;
+            min-height: 80dvh;
 
             .back {
-                position: fixed;
-                left: -10vw;
-                top: 7vh;
+                position: absolute;
+                left: -18vw;
+                top: -18vw;
                 width: 31.863vw;
                 height: 31.863vw;
                 background-color: $base-yellow;
@@ -66,10 +65,11 @@
                 &.active {
                     width: 23.258vw;
                     height: 23.258vw;
-                    left: 2vw;
-                    top: 4vh;
+                    left: -6vw;
+                    top: -18vw;
                     cursor: pointer;
                     transition: all ease-in-out 300ms;
+                    z-index: 2;
 
                     .text {
                         opacity: 1;
@@ -88,7 +88,7 @@
                 opacity: 0;
                 pointer-events: none;
                 transition: all ease-in-out 300ms;
-                margin-top: 9.22747vh;
+                margin-top: 20vw;
                 z-index: 1;
 
                 &.active {
@@ -107,7 +107,7 @@
                 opacity: 0;
                 pointer-events: none;
                 transition: all ease-in-out 300ms;
-                padding-top: 3.21888vh;
+                padding-top: 6.97675vw;
                 z-index: 1;
 
                 &.active {
@@ -129,7 +129,7 @@
                         justify-content: center;
                         align-items: center;
                         flex-direction: column;
-                        margin-bottom: 3vh;
+                        margin-bottom: 6.97675vw;
 
                         @media (max-width:530px) {
                             margin-bottom: 0;
@@ -138,11 +138,11 @@
                         .item__image {
                             width: 40vw;
                             height: 30vw;
-                            border-radius: 3.25027vh;
+                            border-radius: 6.97675vw;
                             background-size: cover;
                             background-position: center;
                             margin: 0 auto;
-                            margin-bottom: 3.25027vh;
+                            margin-bottom: 6.97675vw;
                             opacity: 0;
                             transition: all ease-in 300ms;
                             transition-delay: 50ms;
@@ -174,7 +174,7 @@
                                 text-align: center;
                                 font-weight: 600;
                                 font-family: $font-mont;
-                                margin-bottom: 2.14592vh;
+                                margin-bottom: 4.65116vw;
                             }
 
                             .item__texts {
@@ -184,13 +184,14 @@
                                 justify-content: center;
                                 align-items: center;
                                 flex-direction: column;
+                                margin-bottom: 6.97675vw;
 
                                 p {
                                     width: 100%;
                                     font-size: 3.02325vw;
                                     text-align: center;
                                     font-family: $font-mont;
-                                    margin-bottom: 1.60944vh;
+                                    margin-bottom: 3vw;
                                     white-space: initial;
                                     word-wrap: break-word;
 
@@ -206,10 +207,9 @@
                                 align-items: center;
                                 width: 100%;
                                 max-width: 55.815vw;
-                                margin-top: 3.21888vh;
 
                                 button {
-                                    height: 4.83vh;
+                                    height: 10.468vw;
                                     width: 100%;
                                     max-width: 100%;
 
@@ -246,14 +246,14 @@
                 .first {
                     width: 6vw;
                     height: 6vw;
-                    top: 23vh;
+                    top: 23dvh;
                     left: 23vw;
                     display: block;
 
                     &.active {
                         width: 10vw;
                         height: 10vw;
-                        top: 10vh;
+                        top: 10dvh;
                         left: 0vw;
                     }
                 }
@@ -265,7 +265,7 @@
                     right: 5.35vw;
 
                     &.active {
-                        top: -2vh;
+                        top: -2dvh;
                         right: 0vw;
                     }
                 }
@@ -273,11 +273,11 @@
                 .third {
                     width: 18.14vw;
                     height: 18.14vw;
-                    top: 31vh;
+                    top: 31dvh;
                     right: -13.35vw;
 
                     &.active {
-                        top: 31vh;
+                        top: 31dvh;
                         right: -16vw;
                     }
                 }
@@ -291,7 +291,7 @@
                     &.active {
                         width: 19.77vw;
                         height: 19.77vw;
-                        bottom: 30vh;
+                        bottom: 30dvh;
                         left: -8vw;
                     }
                 }

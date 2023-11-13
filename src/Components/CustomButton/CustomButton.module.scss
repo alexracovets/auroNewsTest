@@ -13,14 +13,10 @@
     background: $base-yellow;
 
     @media (max-width:$mobile-big) {
-        border-radius: 2.5vh;
-        height: 5vh;
+        border-radius: 10.468vw;
+        height: 10.468vw;
         max-width: 46.515vw;
         padding: 0 3vw;
-    }
-
-    @media (max-width:530px) {
-        height: 4vh;
     }
 
     .text {

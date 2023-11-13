@@ -1,14 +1,19 @@
-import { useState, useEffect } from 'react';
 import { Link, NavLink, useLocation } from 'react-router-dom';
+import { useState, useEffect } from 'react';
+import PropTypes from 'prop-types';
 
 import handleScroll from '../../const/handleScroll.js'
-
 import scrollTo from '../../const/scrollTo.js';
 import logo from '/img/logo.svg';
 
 import s from './Header.module.scss';
 
-export default function Header() {
+Header.propTypes = {
+    yellow: PropTypes.bool
+};
+
+export default function Header({ yellow }) {
+    const [windowWidth, setWindowWidth] = useState(window.innerWidth);
     const location = useLocation();
     const [isScrolled, setIsScrolled] = useState(false);
     const [isPopUp, setIsPopUp] = useState(false);
@@ -56,6 +61,24 @@ export default function Header() {
         }
     ]
 
+    const scrollMove = () => {
+        const scrollHandler = () => handleScroll(setIsScrolled);
+        window.addEventListener('scroll', scrollHandler);
+        return () => {
+            window.removeEventListener('scroll', scrollHandler);
+        };
+    }
+
+    useEffect(() => {
+        const handleResize = () => {
+            setWindowWidth(window.innerWidth);
+        };
+        window.addEventListener('resize', handleResize);
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        };
+    }, []);
+
     useEffect(() => {
         setIsScrolled(false);
         scrollTo(true);
@@ -70,16 +93,14 @@ export default function Header() {
     }, []);
 
     useEffect(() => {
-        const scrollHandler = () => handleScroll(setIsScrolled);
-        window.addEventListener('scroll', scrollHandler);
-        return () => {
-            window.removeEventListener('scroll', scrollHandler);
-        };
-    }, []);
+        if (windowWidth > 768) {
+            scrollMove();
+        }
+    }, [windowWidth]);
 
     return (
         <>
-            <header className={isScrolled ? s.disable : null} >
+            <header className={isScrolled ? s.disable : null} style={{ backgroundColor: yellow ? 'rgba(255, 221, 0, 0.15)' : '#fff' }}>
                 <div className={s.header_wrapper}>
                     <Link to="/" className={isLoadImage ? s.logo + ' ' + s.active : s.logo} style={{ backgroundImage: `url(/img/logo.svg)` }}>
                     </Link>
