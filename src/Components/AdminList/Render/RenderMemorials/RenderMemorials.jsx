@@ -14,10 +14,11 @@ RenderMemorials.propTypes = {
     items: PropTypes.array,
     setDataItem: PropTypes.func,
     setPopUpEdit: PropTypes.func,
-    name: PropTypes.string
+    name: PropTypes.string,
+    update: PropTypes.func
 };
 
-export default function RenderMemorials({ items, setDataItem, setPopUpEdit, name }) {
+export default function RenderMemorials({ items, setDataItem, setPopUpEdit, name, update }) {
 
 
     const renderMemorial = () => {
@@ -36,7 +37,7 @@ export default function RenderMemorials({ items, setDataItem, setPopUpEdit, name
                                     <div className={s.arrow + ' ' + s.arrowTop} ><Arrow /></div>
                                 </div>
                                 <div className={s.setting} onClick={() => editDataItem(item, setDataItem, setPopUpEdit)}><SettingSvg /></div>
-                                <div className={s.cross} onClick={() => dataItemDelete(item.key, name)}><CrossSvg /></div>
+                                <div className={s.cross} onClick={() => dataItemDelete(item.key, name, update)}><CrossSvg /></div>
                             </div>
                         </div>
                     ))}

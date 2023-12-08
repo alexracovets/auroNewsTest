@@ -34,9 +34,9 @@ export default function AdminList({ name, title }) {
         <section>
             <div className={s.added} onClick={() => setPopUpAdd(true)}>{title}</div>
             <div className={s.items}>
-                {name === 'news-list' && <RenderNews items={items} setDataItem={setDataItem} setPopUpEdit={setPopUpEdit} name={name} />}
-                {name === 'memorial-list' && <RenderMemorials items={items} setDataItem={setDataItem} setPopUpEdit={setPopUpEdit} name={name} />}
-                {name === 'museum-list' && <RenderMuseums items={items} setDataItem={setDataItem} setPopUpEdit={setPopUpEdit} name={name} />}
+                {name === 'news-list' && <RenderNews items={items} setDataItem={setDataItem} setPopUpEdit={setPopUpEdit} name={name} update={getItem} />}
+                {name === 'memorial-list' && <RenderMemorials items={items} setDataItem={setDataItem} setPopUpEdit={setPopUpEdit} name={name} update={getItem} />}
+                {name === 'museum-list' && <RenderMuseums items={items} setDataItem={setDataItem} setPopUpEdit={setPopUpEdit} name={name} update={getItem} />}
             </div>
             {popUpAdded && <PopUpAdd name={name} setPopUpAdd={setPopUpAdd} update={getItem} />}
             {popUpEdit && <PopUpEdit name={name} item={dataItem} setPopUpEdit={setPopUpEdit} update={getItem} />}
