@@ -1,5 +1,7 @@
 import PropTypes from 'prop-types';
+import { useState } from 'react';
 
+import PopUpDelete from '../../PopUpDelete/PopUpDelete';
 import SettingSvg from '../../SettingSvg/SettingSvg';
 import CrossSvg from '../../CrossSvg/CrossSvg';
 import Arrow from '../../Arrow/Arrow';
@@ -20,7 +22,7 @@ RenderNews.propTypes = {
 };
 
 export default function RenderNews({ items, setDataItem, setPopUpEdit, name, update }) {
-
+    const [deletKey, setDeletKey] = useState(null);
     const titles = {
         first: {
             value: 'Головна Новина',
@@ -36,6 +38,9 @@ export default function RenderNews({ items, setDataItem, setPopUpEdit, name, upd
         }
     }
 
+    const deletItem = () => {
+        dataItemDelete(deletKey, name, update)
+    }
     const renderNews = (wrapper, start, end) => {
         return (
             <div className={s.wrapperBlock + ' ' + wrapper.style}>
@@ -59,7 +64,7 @@ export default function RenderNews({ items, setDataItem, setPopUpEdit, name, upd
                                     <div className={s.arrow + ' ' + s.arrowTop}><Arrow /></div>
                                 </div>
                                 <div className={s.setting} onClick={() => editDataItem(item, setDataItem, setPopUpEdit)}><SettingSvg /></div>
-                                <div className={s.cross} onClick={() => dataItemDelete(item.key, name, update)}><CrossSvg /></div>
+                                <div className={s.cross} onClick={() => setDeletKey(item.key)}><CrossSvg /></div>
                             </div>
                         </div>
                     ))}
@@ -73,6 +78,7 @@ export default function RenderNews({ items, setDataItem, setPopUpEdit, name, upd
             {renderNews(titles.first, 0, 1,)}
             {renderNews(titles.five, 1, 6)}
             {renderNews(titles.other, 6)}
+            <PopUpDelete action={deletItem} deletKey={deletKey} setDeletKey={setDeletKey} />
         </>
     );
 }

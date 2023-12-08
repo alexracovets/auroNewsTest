@@ -1,5 +1,7 @@
 import PropTypes from 'prop-types';
+import { useState } from 'react';
 
+import PopUpDelete from '../../PopUpDelete/PopUpDelete';
 import SettingSvg from '../../SettingSvg/SettingSvg';
 import CrossSvg from '../../CrossSvg/CrossSvg';
 import Arrow from '../../Arrow/Arrow';
@@ -19,7 +21,10 @@ RenderMuseums.propTypes = {
 };
 
 export default function RenderMuseums({ items, setDataItem, setPopUpEdit, name, update }) {
-
+    const [deletKey, setDeletKey] = useState(null);
+    const deletItem = () => {
+        dataItemDelete(deletKey, name, update)
+    }
     const renderMuseum = () => {
         return (
             <div className={s.wrapperBlock}>
@@ -36,7 +41,7 @@ export default function RenderMuseums({ items, setDataItem, setPopUpEdit, name, 
                                     <div className={s.arrow + ' ' + s.arrowTop} ><Arrow /></div>
                                 </div>
                                 <div className={s.setting} onClick={() => editDataItem(item, setDataItem, setPopUpEdit)}><SettingSvg /></div>
-                                <div className={s.cross} onClick={() => dataItemDelete(item.key, name, update)}><CrossSvg /></div>
+                                <div className={s.cross} onClick={() => setDeletKey(item.key)}><CrossSvg /></div>
                             </div>
                         </div>
                     ))}
@@ -46,6 +51,10 @@ export default function RenderMuseums({ items, setDataItem, setPopUpEdit, name, 
     }
 
     return (
-        renderMuseum()
+        <>
+            {renderMuseum()}
+            <PopUpDelete action={deletItem} deletKey={deletKey} setDeletKey={setDeletKey} />
+        </>
+
     );
 }

@@ -1,0 +1,76 @@
+@import '../../../global/variable.scss';
+
+.PopDelet {
+    position: fixed;
+    z-index: -1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100dvh;
+    background-color: $opacity-yellow;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: all ease-in-out 400ms;
+
+    &.active {
+        opacity: 1;
+        z-index: 10;
+    }
+
+    .wrapper {
+        width: 80%;
+        border-radius: 2rem;
+        height: 100%;
+        max-height: 40dvh;
+        background-color: $base-white;
+        padding: 2rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+
+        .title {
+            font-family: $font-mont;
+            font-size: 3rem;
+        }
+
+        .btns {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            margin-top: 3rem;
+
+            .btn {
+                color: $base-black;
+                font-size: 2rem;
+                font-family: "Montserrat", sans-serif;
+                font-weight: 600;
+                padding: 1rem 0.5rem;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin: 0 auto;
+                margin-bottom: 2rem;
+                width: 100%;
+                max-width: 35rem;
+                border: none;
+                border-radius: 1.25rem;
+                box-shadow: 0 0 0 0 rgba(255, 221, 0, 0.15);
+                transition: all ease-in-out 300ms;
+                cursor: pointer;
+
+                &.yeas {
+                    background-color: $base-red;
+                    color: $base-white;
+                }
+
+                &.no {
+                    background-color: $base-yellow;
+                }
+            }
+        }
+    }
+}

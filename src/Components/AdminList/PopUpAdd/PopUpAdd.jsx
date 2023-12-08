@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import { v4 } from 'uuid';
 
@@ -24,6 +24,7 @@ PopUpAdd.propTypes = {
 
 export default function PopUpAdd({ name, setPopUpAdd, update }) {
     const [isBold, setIsBold] = useState(false);
+    const [btnText, setBtnText] = useState(null)
     const [imageLoad, setImageLoad] = useState(false);
     const [dataItem, setDataItem] = useState({
         image: null,
@@ -36,6 +37,16 @@ export default function PopUpAdd({ name, setPopUpAdd, update }) {
         key: v4(),
         age: 34
     });
+
+    useEffect(() => {
+        if (name === 'news-list') {
+            setBtnText('Створити новину')
+        } else if (name === 'memorial-list') {
+            setBtnText('Створити меморіал')
+        } else if (name === 'museum-list') {
+            setBtnText('Створити музей')
+        }
+    }, [name])
 
     return (
         <form className={s.addForm}>
@@ -52,10 +63,8 @@ export default function PopUpAdd({ name, setPopUpAdd, update }) {
                     <div className={s.text}> Жирний текст </div>
                     <input type="checkbox" checked={isBold} onChange={() => setIsBold(!isBold)} />
                 </div>
-                <div className={s.buttom}
-                    onClick={() => dataItemAdd(name, dataItem, setPopUpAdd, update)}
-                >
-                    <CustomButton text='Створити новину' noArrow />
+                <div className={s.buttom} onClick={() => dataItemAdd(name, dataItem, setPopUpAdd, update)}>
+                    <CustomButton text={btnText} noArrow />
                 </div>
             </div>
         </form>
