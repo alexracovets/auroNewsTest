@@ -1,6 +1,6 @@
 import { v4 } from 'uuid';
 
-const addText = (bold, setDataItem) => {
+const textInputAdd = (bold, setDataItem) => {
     const key = v4();
     setDataItem((prevData) => ({
         ...prevData,
@@ -8,4 +8,4 @@ const addText = (bold, setDataItem) => {
     }));
 };
 
-export default addText;
+export default textInputAdd;

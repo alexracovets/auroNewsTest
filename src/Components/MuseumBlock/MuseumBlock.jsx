@@ -1,14 +1,14 @@
 import { useState, useEffect, useRef } from "react";
-import { firestore } from "../../firebase";
 
+import MobileSlider from "./MobileSlider/MobileSlider";
+import MuseumPopUp from "./MuseumPopUp/MuseumPopUp";
+import dataFetch from "../../const/admin/dataFetch";
 import Pagination from './Pagination/Pagination';
+import MainSlider from "./MainSlider/MainSlider";
+import SubSlider from "./SubSlider/SubSlider";
 import Museums from './Museums/Museums';
 
 import s from "./MuseumBlock.module.scss";
-import MuseumPopUp from "./MuseumPopUp/MuseumPopUp";
-import MainSlider from "./MainSlider/MainSlider";
-import SubSlider from "./SubSlider/SubSlider";
-import MobileSlider from "./MobileSlider/MobileSlider";
 
 export default function MuseumBlock() {
     const [slides, setSlides] = useState([]);
@@ -26,23 +26,6 @@ export default function MuseumBlock() {
     const firstMemoIndex = lastMemoIndex - memoPerPage;
     const currentMemo = slides.slice(firstMemoIndex, lastMemoIndex);
 
-    
-    const fetchData = async () => {
-        try {
-            const dbRef = firestore.ref("data/museum");
-            const snapshot = await dbRef.once("value");
-
-            const data = snapshot.val();
-
-            if (data) {
-                const museumsArray = Object.values(data);
-                setSlides(museumsArray);
-            }
-        } catch (error) {
-            console.error("Помилка завантаження:", error);
-        }
-    };
-
     const paginate = (pageNumber) => {
         setCurrentPage(pageNumber);
     };
@@ -57,7 +40,7 @@ export default function MuseumBlock() {
     }
 
     useEffect(() => {
-        fetchData();
+        dataFetch('museum-list', setSlides);
     }, []);
 
     return (

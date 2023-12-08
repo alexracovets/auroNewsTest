@@ -1,7 +1,8 @@
 import PropTypes from 'prop-types';
 
 import handleInputChange from '../../../../const/admin/handleInputChange';
-import handleRemoveText from '../../../../const/admin/handleRemoveText';
+import textInputRemove from '../../../../const/admin/textInputRemove';
+import uploadImage from '../../../../const/admin/uploadImage';
 
 import s from '../PopUpAdd.module.scss';
 
@@ -13,7 +14,8 @@ InputsNews.propTypes = {
     setImageLoad: PropTypes.func,
 };
 
-export default function InputsNews({ name, dataItem, imageLoad, setDataItem, setImageLoad }) {
+export default function InputsNews({ dataItem, imageLoad, setDataItem, setImageLoad }) {
+
     return (
         <>
             <div className={s.label}>
@@ -23,9 +25,9 @@ export default function InputsNews({ name, dataItem, imageLoad, setDataItem, set
                 <label className={s.label_image} htmlFor='image'>
                     {imageLoad ? 'Фото завантажене' : 'Додати фото'}
                 </label>
-                <input id='image' className={s.image} type='file' onChange={(e) => handleInputChange(e,name, 'image', null, setDataItem, setImageLoad)} />
+                <input id='image' className={s.image} type='file' onChange={(e) => uploadImage(e.target.files[0], setDataItem, setImageLoad)} />
             </div>
-            <input type='text' placeholder='Заголовок' onChange={(e) => handleInputChange(e,name, 'title', null, setDataItem, setImageLoad)} />
+            <input type='text' placeholder='Заголовок' onChange={(e) => handleInputChange(e.target.value, 'title', setDataItem)} />
             <div className={s.texts}>
                 {dataItem.text &&
                     dataItem.text.map((item) => {
@@ -35,9 +37,9 @@ export default function InputsNews({ name, dataItem, imageLoad, setDataItem, set
                                     type='text'
                                     placeholder='Введіть текст'
                                     style={{ fontWeight: item.bold ? 'bold' : 'normal' }}
-                                    onChange={(e) => handleInputChange(e, 'text', item.key, setDataItem, setImageLoad)}
+                                    onChange={(e) => handleInputChange(e.target.value, 'text', setDataItem)}
                                 />
-                                <div className={s.cross} onClick={() => handleRemoveText(item.key, setDataItem)}>
+                                <div className={s.cross} onClick={() => textInputRemove(item.key, setDataItem)}>
                                     X
                                 </div>
                             </div>

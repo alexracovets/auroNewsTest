@@ -1,11 +1,10 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from 'react-router-dom';
 
-import firestoreRef from '../../const/firestoreRef';
-import fetchData from '../../const/fetchData';
-
 import MainSlider from "./MainSlider/MainSlider";
 import SubSlider from "./SubSlider/SubSlider";
+
+import dataFetch from "../../const/admin/dataFetch";
 
 export default function NewsBlock() {
     const [currentPage, setCurrentPage] = useState(1);
@@ -19,15 +18,14 @@ export default function NewsBlock() {
     const firstMemoIndex = lastMemoIndex - newsPerPage;
     const currentNews = slides.slice(firstMemoIndex, lastMemoIndex);
 
-    const dataRef = firestoreRef('/data/news');
     const paginate = (newsNumber) => setCurrentPage(newsNumber)
     const clickItem = (toSlide) => slider.slickGoTo(toSlide) && setActiveSlide(toSlide);
     const goToPage = (item) => navigate(`/news/${item.key}`);
     const btnHandler = (item, toSlide) => goToPage(item) && clickItem(toSlide);
 
     useEffect(() => {
-        fetchData(dataRef, setSlides, true)
-    }, [dataRef]);
+        dataFetch('news-list', setSlides);
+    }, []);
 
     return (
         <>

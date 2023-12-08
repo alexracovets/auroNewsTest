@@ -4,9 +4,8 @@ import { useNavigate } from 'react-router-dom';
 
 import CustomButton from '../CustomButton/CustomButton';
 
-import firestoreRef from '../../const/firestoreRef';
-import fetchData from '../../const/fetchData';
 import checkLength from '../../const/checkLength';
+import dataFetch from "../../const/admin/dataFetch";
 
 import s from './NewsShort.module.scss';
 
@@ -14,8 +13,6 @@ export default function NewsShort() {
     const navigate = useNavigate();
     const [items, setItems] = useState([]);
 
-    const dataRef = firestoreRef('/data/news');
-    const fetch = () => fetchData(dataRef, setItems, true);
     const goToPage = (item) => navigate(`/news/${item.key}`);
 
     const renderItems = () => items.map((item) => {
@@ -73,8 +70,8 @@ export default function NewsShort() {
     )
 
     useEffect(() => {
-        (items.length === 0) && fetch();
-    }, [items]);
+        dataFetch('news-list', setItems)
+    }, []);
 
     return (
         <section className={s.short_news}>

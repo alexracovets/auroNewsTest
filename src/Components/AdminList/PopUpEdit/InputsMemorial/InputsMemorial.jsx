@@ -1,7 +1,8 @@
 import PropTypes from 'prop-types';
 
-import handleInputChangeEdit from '../../../../const/admin/handleInputChangeEdit';
-import handleRemoveText from '../../../../const/admin/handleRemoveText';
+import handleInputChange from '../../../../const/admin/handleInputChange';
+import textInputRemove from '../../../../const/admin/textInputRemove';
+import uploadImage from '../../../../const/admin/uploadImage';
 
 import s from '../PopUpEdit.module.scss';
 
@@ -13,7 +14,7 @@ InputsMemorial.propTypes = {
     setImageLoad: PropTypes.func,
 };
 
-export default function InputsMemorial({ name, dataItem, imageLoad, setDataItem, setImageLoad }) {
+export default function InputsMemorial({ dataItem, imageLoad, setDataItem, setImageLoad }) {
     return (
         <>
             <div className={s.label}>
@@ -23,11 +24,11 @@ export default function InputsMemorial({ name, dataItem, imageLoad, setDataItem,
                 <label className={s.label_image} htmlFor='image'>
                     {imageLoad ? 'Фото завантажене' : 'Додати фото'}
                 </label>
-                <input id='image' className={s.image} type='file' onChange={(e) => handleInputChangeEdit(e, name, dataItem, 'image', null, setDataItem, setImageLoad)} />
+                <input id='image' className={s.image} type='file' onChange={(e) => uploadImage(e.target.files[0], setDataItem, setImageLoad)} />
             </div>
-            <input type='text' placeholder='ПIП' onChange={(e) => handleInputChangeEdit(e, name, dataItem, 'title', null, setDataItem, setImageLoad)} value={dataItem.title} />
-            <input type='text' placeholder='Роки життя' onChange={(e) => handleInputChangeEdit(e, name, dataItem, 'age', null, setDataItem, setImageLoad)} value={dataItem.age} />
-            <input type='text' placeholder='Посада' onChange={(e) => handleInputChangeEdit(e, name, dataItem, 'position', null, setDataItem, setImageLoad)} value={dataItem.position} />
+            <input type='text' placeholder='ПIП' value={dataItem.title} onChange={(e) => handleInputChange(e.target.value, 'title', setDataItem)} />
+            <input type='text' placeholder='Роки життя' value={dataItem.age} onChange={(e) => handleInputChange(e.target.value, 'age', setDataItem)} />
+            <input type='text' placeholder='Посада' value={dataItem.position} onChange={(e) => handleInputChange(e.target.value, 'position', setDataItem)} />
             <div className={s.texts}>
                 {dataItem.text &&
                     dataItem.text.map((item) => {
@@ -37,10 +38,10 @@ export default function InputsMemorial({ name, dataItem, imageLoad, setDataItem,
                                     type='text'
                                     placeholder='Введіть текст'
                                     style={{ fontWeight: item.bold ? 'bold' : 'normal' }}
-                                    onChange={(e) => handleInputChangeEdit(e, name, dataItem, 'text', item.key, setDataItem, setImageLoad)}
                                     value={item.value}
+                                    onChange={(e) => handleInputChange(e.target.value, 'text', setDataItem)}
                                 />
-                                <div className={s.cross} onClick={() => handleRemoveText(item.key, setDataItem)}>
+                                <div className={s.cross} onClick={() => textInputRemove(item.key, setDataItem)}>
                                     X
                                 </div>
                             </div>

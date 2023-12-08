@@ -1,4 +1,4 @@
-const handleRemoveText = (keyToRemove, setDataItem) => {
+const textInputRemove = (keyToRemove, setDataItem) => {
     setDataItem((prevData) => {
         const newTextArray = prevData.text.filter((item) => item.key !== keyToRemove);
         return {
@@ -8,4 +8,4 @@ const handleRemoveText = (keyToRemove, setDataItem) => {
     });
 };
 
-export default handleRemoveText
+export default textInputRemove

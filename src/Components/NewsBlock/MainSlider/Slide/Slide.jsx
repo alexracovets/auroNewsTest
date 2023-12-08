@@ -31,8 +31,8 @@ export default function Slide({ news, goToPage }) {
                     <h3 className={s.title + ' ' + s.mobile}>{checkLength(news.title, 30)}</h3>
                     <div className={s.content}>
                         <div className={s.description}>
-                            {news.text && news.text[0] && <p>{checkLength(news.text[0].value, 192)}</p>}
-                            {news.text && news.text[1] && <p>{checkLength(news.text[1].value, 192)}</p>}
+                            {news.text && news.text[0] && <p className={news.text[0].bold && s.bold}>{checkLength(news.text[0].value, 192)}</p>}
+                            {news.text && news.text[1] && <p className={news.text[1].bold && s.bold}>{checkLength(news.text[1].value, 192)}</p>}
                         </div>
                         <button className={s.read} onClick={() => goToPage(news)}>читати</button>
                     </div>

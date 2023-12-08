@@ -1,49 +1,50 @@
 import { useState } from 'react';
 import PropTypes from 'prop-types';
+import { v4 } from 'uuid';
 
-import CustomButton from "../../CustomButton/CustomButton";
 import PlusSvg from "../PlusSvg/PlusSvg";
 import CrossSvg from '../CrossSvg/CrossSvg';
-
-import createItem from '../../../const/admin/createItem';
-import addText from '../../../const/admin/addText';
-import getDate from '../../../const/admin/getDate'; 
-
-import s from './PopUpAdd.module.scss';
 import InputsNews from './InputsNews/InputsNews';
 import InputsMuseum from './InputsMuseum/InputsMuseum';
+import CustomButton from "../../CustomButton/CustomButton";
 import InputsMemorial from './InputsMemorial/InputsMemorial';
 
+import textInputAdd from '../../../const/admin/textInputAdd';
+import dataItemAdd from '../../../const/admin/dataItemAdd';
+import getDate from '../../../const/admin/getDate';
+
+import s from './PopUpAdd.module.scss';
+
+
 PopUpAdd.propTypes = {
-    name: PropTypes.string.isRequired,
-    dataRef: PropTypes.object.isRequired,
-    setPopUpAdd: PropTypes.func.isRequired,
-    updateList: PropTypes.func.isRequired
+    name: PropTypes.string,
+    setPopUpAdd: PropTypes.func,
+    update: PropTypes.func
 };
 
-export default function PopUpAdd({ name, dataRef, setPopUpAdd, updateList }) {
+export default function PopUpAdd({ name, setPopUpAdd, update }) {
     const [isBold, setIsBold] = useState(false);
     const [imageLoad, setImageLoad] = useState(false);
     const [dataItem, setDataItem] = useState({
         image: null,
         title: null,
-        age: null,
         position: null,
         text: [],
         date: getDate(),
         likes: 0,
         count: -1,
-        key: null
+        key: v4(),
+        age: 34
     });
-
+    console.log(dataItem.position)
     return (
         <form className={s.addForm}>
             <div className={s.form_wrapper}>
                 <div className={s.cross} onClick={() => setPopUpAdd(false)}><CrossSvg /></div>
-                {name === 'news' ? <InputsNews name={name} dataItem={dataItem} imageLoad={imageLoad} setDataItem={setDataItem} setImageLoad={setImageLoad} /> : null}
-                {name === 'memorial' ? <InputsMemorial name={name} dataItem={dataItem} imageLoad={imageLoad} setDataItem={setDataItem} setImageLoad={setImageLoad} /> : null}
-                {name === 'museum' ? <InputsMuseum name={name} dataItem={dataItem} imageLoad={imageLoad} setDataItem={setDataItem} setImageLoad={setImageLoad} /> : null}
-                <div className={s.addText} onClick={() => addText(isBold, setDataItem)}>
+                {name === 'news-list' && <InputsNews name={name} dataItem={dataItem} imageLoad={imageLoad} setDataItem={setDataItem} setImageLoad={setImageLoad} />}
+                {name === 'memorial-list' && <InputsMemorial name={name} dataItem={dataItem} imageLoad={imageLoad} setDataItem={setDataItem} setImageLoad={setImageLoad} />}
+                {name === 'museum-list' && <InputsMuseum name={name} dataItem={dataItem} imageLoad={imageLoad} setDataItem={setDataItem} setImageLoad={setImageLoad} />}
+                <div className={s.addText} onClick={() => textInputAdd(isBold, setDataItem)}>
                     <div className={s.text_name}>Додати текст</div>
                     <div className={s.text_plus}> <PlusSvg /> </div>
                 </div>
@@ -51,7 +52,9 @@ export default function PopUpAdd({ name, dataRef, setPopUpAdd, updateList }) {
                     <div className={s.text}> Жирний текст </div>
                     <input type="checkbox" checked={isBold} onChange={() => setIsBold(!isBold)} />
                 </div>
-                <div className={s.buttom} onClick={() => createItem(dataItem, ['image', 'title', 'date'], dataRef, updateList, setPopUpAdd)}>
+                <div className={s.buttom}
+                    onClick={() => dataItemAdd(name, dataItem, setPopUpAdd, update)}
+                >
                     <CustomButton text='Створити новину' noArrow />
                 </div>
             </div>

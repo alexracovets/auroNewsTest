@@ -1,19 +1,15 @@
 import { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 
-import PopUpEdit from './PopUpEdit/PopUpEdit';
 import PopUpAdd from './PopUpAdd/PopUpAdd';
-
-import changePosition from '../../const/changePosition';
-import firestoreRef from '../../const/firestoreRef';
-import updateList from '../../const/updateList';
-import fetchData from '../../const/fetchData';
-
-import s from './AdminNews.module.scss';
+import PopUpEdit from './PopUpEdit/PopUpEdit';
 import RenderNews from './Render/RenderNews/RenderNews';
 import RenderMuseums from './Render/RenderMuseums/RenderMuseums';
 import RenderMemorials from './Render/RenderMemorials/RenderMemorials';
 
+import dataFetch from '../../const/admin/dataFetch';
+
+import s from './AdminNews.module.scss';
 
 AdminList.propTypes = {
     name: PropTypes.string.isRequired,
@@ -26,26 +22,24 @@ export default function AdminList({ name, title }) {
     const [popUpEdit, setPopUpEdit] = useState(false);
     const [dataItem, setDataItem] = useState(null);
 
-    const dataRef = firestoreRef(`/data/${name}`);
-    const fetch = () => fetchData(dataRef, setItems, true);
-    const update = () => updateList(dataRef, fetch);
+    const getItem = (name) => {
+        dataFetch(name, setItems)
+    }
 
     useEffect(() => {
-        (items.length === 0) && fetch();
-    }, [items]);
+        getItem(name)
+    }, [name]);
 
     return (
         <section>
-            <div className={s.added} onClick={() => setPopUpAdd(true)}>
-                {title}
-            </div>
+            <div className={s.added} onClick={() => setPopUpAdd(true)}>{title}</div>
             <div className={s.items}>
-                {name === 'news' ? <RenderNews items={items} dataRef={dataRef} setDataItem={setDataItem} setItems={setItems} setPopUpEdit={setPopUpEdit} /> : null}
-                {name === 'memorial' ? <RenderMemorials items={items} dataRef={dataRef} setDataItem={setDataItem} setItems={setItems} setPopUpEdit={setPopUpEdit} /> : null}
-                {name === 'museum' ? <RenderMuseums items={items} dataRef={dataRef} setDataItem={setDataItem} setItems={setItems} setPopUpEdit={setPopUpEdit} /> : null}
+                {name === 'news-list' && <RenderNews items={items} setDataItem={setDataItem} setPopUpEdit={setPopUpEdit} name={name} />}
+                {name === 'memorial-list' && <RenderMemorials items={items} setDataItem={setDataItem} setPopUpEdit={setPopUpEdit} name={name} />}
+                {name === 'museum-list' && <RenderMuseums items={items} setDataItem={setDataItem} setPopUpEdit={setPopUpEdit} name={name} />}
             </div>
-            {popUpAdded && <PopUpAdd name={name} dataRef={dataRef} fetchData={fetch} setPopUpAdd={setPopUpAdd} changePosition={changePosition} updateList={update} />}
-            {popUpEdit && <PopUpEdit name={name} dataRef={dataRef} fetchData={fetch} item={dataItem} setPopUpEdit={setPopUpEdit} />}
+            {popUpAdded && <PopUpAdd name={name} setPopUpAdd={setPopUpAdd} update={getItem} />}
+            {popUpEdit && <PopUpEdit name={name} item={dataItem} setPopUpEdit={setPopUpEdit} update={getItem} />}
         </section >
     );
 }

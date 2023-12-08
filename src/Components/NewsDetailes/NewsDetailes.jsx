@@ -2,11 +2,11 @@ import { useState, useEffect } from "react";
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
-import updateLikes from '../../const/updateLikes';
-import findPage from '../../const/findPage';
+import dataItemLikes from "../../const/admin/dataItemLikes";
 import heart from '/img/heart.svg'
 
 import s from './NewsDetailes.module.scss';
+import dataItemGet from "../../const/admin/dataItemGet";
 
 NewsDetailes.propTypes = {
     id: PropTypes.string.isRequired
@@ -16,6 +16,13 @@ export default function NewsDetailes({ id }) {
     const [data, setData] = useState(null);
     const [likeActive, setLikeActive] = useState(true);
     const [isLoadImage, setIsLoadImage] = useState(false);
+
+    const getData = (id) => {
+        const storageData = JSON.parse(localStorage.getItem('news'));
+        const findStorage = storageData.indexOf(id);
+        setLikeActive(findStorage);
+        dataItemGet(id, setData);
+    }
 
     useEffect(() => {
         if (data) {
@@ -29,10 +36,7 @@ export default function NewsDetailes({ id }) {
     }, [data]);
 
     useEffect(() => {
-        const storageData = JSON.parse(localStorage.getItem('news')) || [];
-        const findStorage = storageData.includes(id);
-        setLikeActive(findStorage);
-        findPage(id, setData)
+        getData(id)
     }, [id]);
 
     return (
@@ -66,7 +70,7 @@ export default function NewsDetailes({ id }) {
                             <div className={s.date}>
                                 {data.date}
                             </div>
-                            <div className={!likeActive ? s.likes : s.likes + ' ' + s.active} onClick={() => updateLikes(data.key, setData, setLikeActive)}>
+                            <div className={likeActive ? s.likes : s.likes + ' ' + s.active} onClick={() => dataItemLikes(id, getData)}>
                                 <div className={s.heart}>
                                     <img src={heart} alt="heart" />
                                 </div>

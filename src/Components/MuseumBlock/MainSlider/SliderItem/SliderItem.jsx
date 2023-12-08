@@ -5,7 +5,7 @@ import CustomButton from "../../../CustomButton/CustomButton";
 import checkLength from '../../../../const/checkLength';
 
 SliderItem.propTypes = {
-    item: PropTypes.array,
+    item: PropTypes.object,
     setIsPopUpOpen: PropTypes.func
 };
 

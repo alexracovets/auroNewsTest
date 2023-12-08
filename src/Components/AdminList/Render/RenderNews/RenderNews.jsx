@@ -4,26 +4,21 @@ import SettingSvg from '../../SettingSvg/SettingSvg';
 import CrossSvg from '../../CrossSvg/CrossSvg';
 import Arrow from '../../Arrow/Arrow';
 
-import deleteDataItem from '../../../../const/deleteDataItem';
-import changePosition from '../../../../const/changePosition';
-import editDataItem from '../../../../const/editDataItem';
+import dataItemDelete from '../../../../const/admin/dataItemDelete';
+import editDataItem from '../../../../const/admin/dataItemEdit';
 import checkLength from '../../../../const/checkLength';
-import fetchData from '../../../../const/fetchData';
 import heart from '/img/heart.svg'
 
 import s from '../../AdminNews.module.scss';
 
 RenderNews.propTypes = {
     items: PropTypes.array,
-    dataRef: PropTypes.object,
     setDataItem: PropTypes.func,
     setPopUpEdit: PropTypes.func,
-    setItems: PropTypes.func
+    name: PropTypes.string
 };
 
-export default function RenderNews({ items, dataRef, setDataItem, setItems, setPopUpEdit }) {
-
-    const fetchItem = () => fetchData(dataRef, setItems, true);
+export default function RenderNews({ items, setDataItem, setPopUpEdit, name }) {
 
     const titles = {
         first: {
@@ -59,11 +54,11 @@ export default function RenderNews({ items, dataRef, setDataItem, setItems, setP
                             </div>
                             <div className={s.item_setting}>
                                 <div className={s.arrows}>
-                                    <div className={s.arrow + ' ' + s.arrowBottom} onClick={() => changePosition(item, items, dataRef, fetchItem, true)}><Arrow /></div>
-                                    <div className={s.arrow + ' ' + s.arrowTop} onClick={() => changePosition(item, items, dataRef, fetchItem, false)}><Arrow /></div>
+                                    <div className={s.arrow + ' ' + s.arrowBottom}><Arrow /></div>
+                                    <div className={s.arrow + ' ' + s.arrowTop}><Arrow /></div>
                                 </div>
                                 <div className={s.setting} onClick={() => editDataItem(item, setDataItem, setPopUpEdit)}><SettingSvg /></div>
-                                <div className={s.cross} onClick={() => deleteDataItem(item, dataRef, setItems)}><CrossSvg /></div>
+                                <div className={s.cross} onClick={() => dataItemDelete(item.key, name)}><CrossSvg /></div>
                             </div>
                         </div>
                     ))}

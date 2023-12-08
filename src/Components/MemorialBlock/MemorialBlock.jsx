@@ -2,11 +2,10 @@ import { useEffect, useState } from 'react';
 
 import Search from './Search/Search';
 import SliderWrapper from './SliderWrapper/SliderWrapper';
-import firestoreRef from '../../const/firestoreRef';
-import fetchData from '../../const/fetchData';
 import MemorialPopUp from './MemorialPopUp/MemorialPopUp';
 import Pagination from './Pagination/Pagination';
 import Memorials from './Memorials/Memorials';
+import dataFetch from "../../const/admin/dataFetch";
 
 import s from './MemorialBlock.module.scss';
 
@@ -23,8 +22,6 @@ export default function MemorialBlock() {
         return memo.title.toLowerCase().includes(value.toLowerCase())
     });
 
-    const dataRef = firestoreRef(`/data/memorial`);
-
     const lastMemoIndex = currentPage * memoPerPage;
     const firstMemoIndex = lastMemoIndex - memoPerPage;
     const currentMemo = fitered.slice(firstMemoIndex, lastMemoIndex);
@@ -40,8 +37,8 @@ export default function MemorialBlock() {
     }
 
     useEffect(() => {
-        fetchData(dataRef, setMemorials, true)
-    }, [dataRef]);
+        dataFetch('memorial-list', setMemorials);
+    }, []);
 
     return (
         <section className={s.memo}>
