@@ -8,7 +8,7 @@ import InputsMuseum from './InputsMuseum/InputsMuseum';
 import CustomButton from "../../CustomButton/CustomButton";
 import InputsMemorial from './InputsMemorial/InputsMemorial';
 
-import changeItem from '../../../const/admin/changeItem';
+import dataItemChange from '../../../const/admin/dataItemChange';
 import textInputAdd from '../../../const/admin/textInputAdd';
 
 import s from './PopUpEdit.module.scss';
@@ -51,7 +51,7 @@ export default function PopUpEdit({ name, item, setPopUpEdit, update }) {
                     <input type="checkbox" checked={isBold} onChange={() => setIsBold(!isBold)} />
                 </div>
                 <div className={s.buttom} onClick={() =>
-                    changeItem(name, dataItem, update, setPopUpEdit)
+                    dataItemChange(name, dataItem, update, setPopUpEdit)
                 }>
                     <CustomButton text='Застосувати Зміни' noArrow />
                 </div>

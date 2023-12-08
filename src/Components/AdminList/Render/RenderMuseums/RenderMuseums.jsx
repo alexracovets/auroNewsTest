@@ -6,6 +6,7 @@ import SettingSvg from '../../SettingSvg/SettingSvg';
 import CrossSvg from '../../CrossSvg/CrossSvg';
 import Arrow from '../../Arrow/Arrow';
 
+import dataItemPosition from '../../../../const/admin/dataItemPosition';
 import dataItemDelete from '../../../../const/admin/dataItemDelete';
 import editDataItem from '../../../../const/admin/dataItemEdit';
 import checkLength from '../../../../const/checkLength';
@@ -37,8 +38,8 @@ export default function RenderMuseums({ items, setDataItem, setPopUpEdit, name, 
                             </div>
                             <div className={s.item_setting}>
                                 <div className={s.arrows}>
-                                    <div className={s.arrow + ' ' + s.arrowBottom} ><Arrow /></div>
-                                    <div className={s.arrow + ' ' + s.arrowTop} ><Arrow /></div>
+                                    <div className={s.arrow + ' ' + s.arrowBottom} onClick={() => dataItemPosition(item, items, name, true, update)}><Arrow /></div>
+                                    <div className={s.arrow + ' ' + s.arrowTop} onClick={() => dataItemPosition(item, items, name, false, update)}><Arrow /></div>
                                 </div>
                                 <div className={s.setting} onClick={() => editDataItem(item, setDataItem, setPopUpEdit)}><SettingSvg /></div>
                                 <div className={s.cross} onClick={() => setDeletKey(item.key)}><CrossSvg /></div>

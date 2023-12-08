@@ -1,4 +1,4 @@
-const newChangeItem = (name, dataItem, update, setPopUpEdit) => {
+const dataItemChange = (name, dataItem, update, setPopUpEdit) => {
     fetch(`http://localhost:3000/${name.slice(0, -5)}/${dataItem.key}`, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
@@ -14,4 +14,4 @@ const newChangeItem = (name, dataItem, update, setPopUpEdit) => {
         });
 };
 
-export default newChangeItem;
+export default dataItemChange;

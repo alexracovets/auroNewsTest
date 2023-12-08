@@ -64,7 +64,7 @@ export default function PopUpAdd({ name, setPopUpAdd, update }) {
                     <input type="checkbox" checked={isBold} onChange={() => setIsBold(!isBold)} />
                 </div>
                 <div className={s.buttom} onClick={() => dataItemAdd(name, dataItem, setPopUpAdd, update)}>
-                    <CustomButton text={btnText} noArrow />
+                    {btnText && <CustomButton text={btnText} noArrow />}
                 </div>
             </div>
         </form>
