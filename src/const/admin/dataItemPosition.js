@@ -2,7 +2,7 @@ const dataItemPosition = (item, items, name, isPluse, update) => {
     let currentItem = item;
     let changedItem = null;
 
-    const updateItem = async (current, chaged) => {
+    const changePosittions = async (current, chaged) => {
         try {
             await fetch(`http://localhost:3000/${name.slice(0, -5)}/${current.key}`, {
                 method: 'PUT',
@@ -35,7 +35,7 @@ const dataItemPosition = (item, items, name, isPluse, update) => {
         currentItem.count = newCurrentCount;
         changedItem.count = newChangedCount;
 
-        updateItem(currentItem, changedItem);
+        return changePosittions(currentItem, changedItem);
     } else return null
 
 
