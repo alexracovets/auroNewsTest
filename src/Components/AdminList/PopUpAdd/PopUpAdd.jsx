@@ -36,7 +36,7 @@ export default function PopUpAdd({ name, setPopUpAdd, update }) {
         key: v4(),
         age: 34
     });
-    
+
     return (
         <form className={s.addForm}>
             <div className={s.form_wrapper}>

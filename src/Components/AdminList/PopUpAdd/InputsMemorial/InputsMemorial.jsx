@@ -38,7 +38,7 @@ export default function InputsMemorial({ dataItem, imageLoad, setDataItem, setIm
                                     type='text'
                                     placeholder='Введіть текст'
                                     style={{ fontWeight: item.bold ? 'bold' : 'normal' }}
-                                    onChange={(e) => handleInputChange(e.target.value, 'text', setDataItem)}
+                                    onChange={(e) => handleInputChange(e.target.value, 'text', setDataItem, item.key)}
                                 />
                                 <div className={s.cross} onClick={() => textInputRemove(item.key, setDataItem)}>
                                     X

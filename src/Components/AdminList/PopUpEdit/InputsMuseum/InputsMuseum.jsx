@@ -38,7 +38,7 @@ export default function InputsMuseum({ dataItem, imageLoad, setDataItem, setImag
                                     placeholder='Введіть текст'
                                     style={{ fontWeight: item.bold ? 'bold' : 'normal' }}
                                     value={item.value}
-                                    onChange={(e) => handleInputChange(e.target.value, 'text', setDataItem)}
+                                    onChange={(e) => handleInputChange(e.target.value, 'text', setDataItem, item.key)}
                                 />
                                 <div className={s.cross} onClick={() => textInputRemove(item.key, setDataItem)}>
                                     X
