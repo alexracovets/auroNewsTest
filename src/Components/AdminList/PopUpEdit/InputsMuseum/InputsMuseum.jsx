@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+import { FaDeleteLeft } from "react-icons/fa6";
 
 import handleInputChange from '../../../../const/admin/handleInputChange';
 import textInputRemove from '../../../../const/admin/textInputRemove';
@@ -41,7 +42,7 @@ export default function InputsMuseum({ dataItem, imageLoad, setDataItem, setImag
                                     onChange={(e) => handleInputChange(e.target.value, 'text', setDataItem, item.key)}
                                 />
                                 <div className={s.cross} onClick={() => textInputRemove(item.key, setDataItem)}>
-                                    X
+                                    <FaDeleteLeft />
                                 </div>
                             </div>
                         );

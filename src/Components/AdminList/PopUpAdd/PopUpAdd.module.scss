@@ -198,15 +198,29 @@
 
                 .cross {
                     position: initial;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
                     font-size: 1.5rem;
                     font-family: $font-rubik;
                     font-weight: 500;
-                    padding: 1rem;
                     cursor: pointer;
+                    border-radius: 50%;
+                    margin: 0 0.5rem;
+                    width: 1.5rem;
+                    height: 1.5rem;
 
                     @media(max-width:$mobile-big) {
-                        font-size: 4rem;
-                        padding: 1rem 2rem;
+                        margin: 0 auto;
+                        margin-left: 4rem;
+                        width: 6rem;
+                        height: 5.5rem;
+                    }
+
+                    svg {
+                        color: $base-red;
+                        width: 100%;
+                        height: auto;
                     }
                 }
             }
