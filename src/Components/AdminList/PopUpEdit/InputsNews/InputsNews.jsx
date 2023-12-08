@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+import { GoDash } from "react-icons/go";
 
 import handleInputChange from '../../../../const/admin/handleInputChange';
 import textInputRemove from '../../../../const/admin/textInputRemove';
@@ -42,7 +43,7 @@ export default function InputsNews({ dataItem, imageLoad, setDataItem, setImageL
                                     onChange={(e) => handleInputChange(e.target.value, 'text', setDataItem, item.key)}
                                 />
                                 <div className={s.cross} onClick={() => textInputRemove(item.key, setDataItem)}>
-                                    X
+                                    <GoDash />
                                 </div>
                             </div>
                         );
