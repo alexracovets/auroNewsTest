@@ -19,9 +19,18 @@ export default function NewsDetailes({ id }) {
 
     const getData = (id) => {
         const storageData = JSON.parse(localStorage.getItem('news'));
-        const findStorage = storageData.indexOf(id);
-        setLikeActive(findStorage);
-        dataItemGet(id, setData);
+        if (storageData) {
+            const findStorage = storageData.indexOf(id);
+            setLikeActive(findStorage);
+            dataItemGet(id, setData);
+        } else {
+            localStorage.setItem('news', JSON.stringify([id]));
+            const storageData = JSON.parse(localStorage.getItem('news'));
+            const findStorage = storageData.indexOf(id);
+            setLikeActive(findStorage);
+            dataItemGet(id, setData);
+        }
+
     }
 
     useEffect(() => {

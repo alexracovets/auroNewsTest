@@ -4,7 +4,7 @@ const dataItemLikes = (key, getData) => {
     const findStorageIndex = storageData.indexOf(key);
     const isPlus = findStorageIndex === -1 ? true : false;
 
-    fetch(`http://localhost:3000/news/like/${key}`, {
+    fetch(import.meta.env.VITE_SERVER_PREFIX + `/news/like/${key}`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ like: isPlus })

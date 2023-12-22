@@ -4,12 +4,12 @@ const dataItemPosition = (item, items, name, isPluse, update) => {
 
     const changePosittions = async (current, chaged) => {
         try {
-            await fetch(`http://localhost:3000/${name.slice(0, -5)}/${current.key}`, {
+            await fetch(import.meta.env.VITE_SERVER_PREFIX + `/${name.slice(0, -5)}/${current.key}`, {
                 method: 'PUT',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(current)
             });
-            await fetch(`http://localhost:3000/${name.slice(0, -5)}/${chaged.key}`, {
+            await fetch(import.meta.env.VITE_SERVER_PREFIX + `/${name.slice(0, -5)}/${chaged.key}`, {
                 method: 'PUT',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(chaged)

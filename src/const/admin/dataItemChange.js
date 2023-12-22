@@ -1,5 +1,5 @@
 const dataItemChange = (name, dataItem, update, setPopUpEdit) => {
-    fetch(`http://localhost:3000/${name.slice(0, -5)}/${dataItem.key}`, {
+    fetch(import.meta.env.VITE_SERVER_PREFIX + `/${name.slice(0, -5)}/${dataItem.key}`, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(dataItem)

@@ -1,5 +1,5 @@
 const dataItemAdd = (name, data, setPopUpAdd, update) => {
-    fetch(`http://localhost:3000/${name.slice(0, -5)}`, {
+    fetch(import.meta.env.VITE_SERVER_PREFIX + `/${name.slice(0, -5)}`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(data),

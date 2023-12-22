@@ -1,6 +1,6 @@
 const dataItemDelete = (id, name, update) => {
 
-    fetch(`http://localhost:3000/${name.slice(0, -5)}/${id}`, {
+    fetch(import.meta.env.VITE_SERVER_PREFIX + `/${name.slice(0, -5)}/${id}`, {
         method: "DELETE"
     })
         .then(response => response.json())

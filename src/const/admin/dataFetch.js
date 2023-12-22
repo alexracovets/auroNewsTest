@@ -1,5 +1,5 @@
 const dataFetch = (path, setState) => {
-    fetch(`http://localhost:3000/${path}`)
+    fetch(import.meta.env.VITE_SERVER_PREFIX + `/${path}`)
         .then(response => response.json())
         .then(data => {
             const rest = Object.values(data);

@@ -3,13 +3,13 @@ const uploadImage = (file, setData, setImageLoad) => {
     const formData = new FormData();
     formData.append('image', file);
 
-    fetch(`http://localhost:3000/upload`, {
+    fetch(import.meta.env.VITE_SERVER_PREFIX + `/upload`, {
         method: 'POST',
         body: formData
     })
         .then(response => response.json())
         .then((response) => {
-            setData((prevData) => ({ ...prevData, ['image']: `http://localhost:3000${response.filename}` }));
+            setData((prevData) => ({ ...prevData, ['image']: `${response.filename}` }));
             setImageLoad(true)
         }
         )

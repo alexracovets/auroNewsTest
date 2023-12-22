@@ -1,5 +1,5 @@
 const dataItemGet = (id, setData) => {
-    fetch(`http://localhost:3000/news/${id}`)
+    fetch(import.meta.env.VITE_SERVER_PREFIX + `/news/${id}`)
         .then(response => response.json())
         .then(data => {
             const rest = data;
