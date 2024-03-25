@@ -8,6 +8,11 @@
     border-radius: 2.5rem;
     position: relative;
 
+    &.hide {
+        opacity: 0;
+        transition: all ease-in 300ms;
+    }
+
     @media (max-width:$mobile-big) {
         max-width: 100%;
         height: 100%;
@@ -49,6 +54,8 @@
         margin-right: 3.174605rem;
         margin-bottom: 3.492065rem;
         float: left;
+        cursor: zoom-in;
+        position: relative;
 
         @media (max-width:$mobile-big) {
             float: none;
@@ -133,4 +140,69 @@
         }
     }
 
+}
+
+.modal {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 10;
+    width: 100%;
+    height: 100dvh;
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+
+    @media (max-width:$mobile-big) {
+        padding: 2rem;
+    }
+
+    .close {
+        position: absolute;
+        right: 2.5rem;
+        top: 2rem;
+        cursor: pointer;
+        background-color: $base-yellow;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 11;
+        border-radius: 50%;
+        padding: 0.5rem;
+
+        @media (max-width:$mobile-big) {
+            right: 1rem;
+            top: 1.5rem;
+        }
+    }
+
+    .modalContent {
+        width: 70%;
+        height: 100%;
+        position: relative;
+        overflow: overlay;
+        scrollbar-width: thin;
+        scrollbar-color: $base-yellow transparent;
+        display: flex;
+        border-radius: 1rem;
+
+        @media (max-width:$mobile-big) {
+            width: 90%;
+        }
+
+        img {
+            width: 100%;
+            height: auto;
+            // a
+            // &.zoom_in {
+            //     cursor: zoom-in;
+            // }
+
+            // &.zoom_out {
+            //     cursor: zoom-out;
+            // }
+        }
+    }
 }

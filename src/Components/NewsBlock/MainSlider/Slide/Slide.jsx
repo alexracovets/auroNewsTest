@@ -15,7 +15,7 @@ export default function Slide({ news, goToPage }) {
 
     useEffect(() => {
         const image = new Image();
-        image.src = news.image;
+        image.src = import.meta.env.VITE_SERVER_URL === '' ? news.image : import.meta.env.VITE_SERVER_URL + `/${news.image}`;
         image.onload = () => {
             setIsLoadImage(true)
         };
@@ -26,7 +26,7 @@ export default function Slide({ news, goToPage }) {
             <div className={s.wrapperSlider}>
                 <h3 className={s.title + ' ' + s.desktop}>{checkLength(news.title, 50)} </h3>
                 <div className={s.wrapper}>
-                    <div className={isLoadImage ? s.image + ' ' + s.active : s.image} style={{ backgroundImage: `url(${news.image})` }}></div>
+                    <div className={isLoadImage ? s.image + ' ' + s.active : s.image} style={{ backgroundImage: `url(${import.meta.env.VITE_SERVER_URL}${news.image})` }}></div>
                     <div className={s.date + ' ' + s.mobile}>{news.date}</div>
                     <h3 className={s.title + ' ' + s.mobile}>{checkLength(news.title, 30)}</h3>
                     <div className={s.content}>

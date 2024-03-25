@@ -15,7 +15,7 @@ export default function Museum({ index, item, showInfo, currentSlide }) {
 
     useEffect(() => {
         const image = new Image();
-        image.src = item.image;
+        image.src = import.meta.env.VITE_SERVER_URL === '' ? item.image : import.meta.env.VITE_SERVER_URL + `/${item.image}`;
         image.onload = () => {
             setIsLoadImage(true)
         };
@@ -23,7 +23,7 @@ export default function Museum({ index, item, showInfo, currentSlide }) {
 
     return (
         <div className={currentSlide === index ? s.item + ' ' + s.active : s.item} onClick={() => { showInfo(index) }}>
-            <div className={isLoadImage ? s.item__image + ' ' + s.active : s.item__image} style={{ backgroundImage: `url(${item.image})` }}> </div>
+            <div className={isLoadImage ? s.item__image + ' ' + s.active : s.item__image} style={{ backgroundImage: `url(${import.meta.env.VITE_SERVER_URL}${item.image})` }}> </div>
         </div>
     )
 }

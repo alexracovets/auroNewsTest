@@ -16,7 +16,7 @@ export default function SliderItem({ item, setIsPopUpOpen }) {
 
     useEffect(() => {
         const image = new Image();
-        image.src = item.image;
+        image.src = import.meta.env.VITE_SERVER_URL === '' ? item.image : import.meta.env.VITE_SERVER_URL + `/${item.image}`;
         image.onload = () => {
             setIsLoadImage(true)
         };
@@ -24,7 +24,11 @@ export default function SliderItem({ item, setIsPopUpOpen }) {
 
     return (
         <div className={s.item} key={item.key}>
-            <div className={isLoadImage ? s.item__image + ' ' + s.active : s.item__image} style={{ backgroundImage: `url(${item.image})` }} ></div>
+            <div
+                className={isLoadImage ? s.item__image + ' ' + s.active : s.item__image}
+                style={{ backgroundImage: `url(${import.meta.env.VITE_SERVER_URL}${item.image})` }}
+                onClick={() => { setIsPopUpOpen(true) }}
+            ></div>
             <div className={s.item__content}>
                 <div className={s.description}>{item.title}</div>
                 <div className={s.item__texts}>

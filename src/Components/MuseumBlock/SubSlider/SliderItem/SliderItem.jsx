@@ -15,7 +15,7 @@ export default function SliderItem({ currentSlide, item, index, toSlide }) {
 
     useEffect(() => {
         const image = new Image();
-        image.src = item.image;
+        image.src = import.meta.env.VITE_SERVER_URL === '' ? item.image : import.meta.env.VITE_SERVER_URL + `/${item.image}`;
         image.onload = () => {
             setIsLoadImage(true)
         };
@@ -28,7 +28,7 @@ export default function SliderItem({ currentSlide, item, index, toSlide }) {
                     isLoadImage ? (currentSlide === index ? s.item__image + " " + s.active : s.item__image) + ' ' + s.show :
                         currentSlide === index ? s.item__image + " " + s.active : s.item__image
                 }
-                style={{ backgroundImage: `url(${item.image})` }}
+                style={{ backgroundImage: `url(${import.meta.env.VITE_SERVER_URL}${item.image})` }}
             ></div>
         </div>
     );
